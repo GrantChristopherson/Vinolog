@@ -12,6 +12,10 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
     bio = db.Column(db.String(1000))
 
+    tastings = db.relationship('Tasting', back_populates='user',cascade='all, delete')
+    discussions = db.relationship('Discussion', back_populates='user',cascade='all, delete')
+
+
     @property
     def password(self):
         return self.hashed_password
