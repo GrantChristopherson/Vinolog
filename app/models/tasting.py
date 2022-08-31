@@ -22,7 +22,7 @@ class Tasting(db.Model):
   love = db.Column(db.Boolean, nullable=False)
 
   user = db.relationship('User', back_populates='tastings')
-  discusstion = db.relationship('Discussion', back_populates='tastings',cascade='all, delete')
+  discussions = db.relationship('Discussion', back_populates='tastings',cascade='all, delete')
 
 
   def to_dict(self):

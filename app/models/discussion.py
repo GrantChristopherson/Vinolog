@@ -12,7 +12,7 @@ class Discussion(db.Model):
   comment = db.Column(db.Text, nullable=False)
 
   user = db.relationship('User', back_populates='discussions')
-  tasting = db.relationship('Tasting', back_populates='discussions')
+  tastings = db.relationship('Tasting', back_populates='discussions')
 
 
   def to_dict(self):
