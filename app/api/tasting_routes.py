@@ -63,5 +63,6 @@ def post_tasting():
     )
     db.session.add(tasting)
     db.session.commit()
-  
-  return {'errors': form.errors}, 401
+    return tasting.to_dict()
+  else:
+    return {'errors': form.errors}, 401
