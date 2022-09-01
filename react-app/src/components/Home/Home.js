@@ -9,7 +9,7 @@ const Home = () => {
   
   return (
     <div className='loginSignupContainer'>
-      <div className='loginLinkWrapper'>
+      {/* <div className='loginLinkWrapper'>
         <NavLink to='/login' className={'loginLink'} exact={true} activeClassName='active'>
           Login
         </NavLink>
@@ -18,7 +18,7 @@ const Home = () => {
         <NavLink to='/sign-up' className={'signupLink'} exact={true} activeClassName='active'>
           Sign Up
         </NavLink>
-      </div>
+      </div> */}
     </div>
   );
 };
