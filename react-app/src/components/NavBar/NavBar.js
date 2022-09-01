@@ -14,30 +14,28 @@ const NavBar = () => {
   return (
     <nav className='navContainer'>
       <ul className='ulNav'>
-        <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </li>
+        <NavLink to='/' exact={true} activeClassName='active'>
+          Home
+        </NavLink>
         <div className='loginSignUp'>
-        <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
+          {!user && <NavLink to='/login' exact={true} activeClassName='active'>
             Login
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
+          </NavLink>}
+          {!user && <NavLink to='/sign-up' exact={true} activeClassName='active'>
             Sign Up
-          </NavLink>
-        </li>
+          </NavLink>}
         </div>
-        {user && <li className='logout'>
-          <LogoutButton />
-        </li>}
+        {user && <LogoutButton />}
       </ul>
     </nav>
   );
 }
+        
+        
+        
+        
+        
+        
 
 
 export default NavBar;
