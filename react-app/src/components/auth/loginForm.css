@@ -1,0 +1,12 @@
+.loginFormContainer {
+  display: flex;
+  height:100%;
+  max-width: 40%;
+  margin: 20% auto 10% 5%;
+  background-color: rgba(255, 255, 255, 0.014);
+}
+
+.loginForm {
+  justify-content: space-between;
+  align-items: vertical;
+}

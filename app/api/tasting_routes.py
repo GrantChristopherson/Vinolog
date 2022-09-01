@@ -20,7 +20,7 @@ def validation_errors_to_error_messages(validation_errors):
 
 
 
-# Get current user's tasting cards
+# Get current user's tasting cards  #tested successfully
 @tasting_routes.route('/')
 @login_required
 def tastings():
@@ -30,7 +30,7 @@ def tastings():
 
 
 
-# Get all user loved tasting cards
+# Get all user loved tasting cards   #tested successfully
 @tasting_routes.route('/loved')
 @login_required
 def all_loved_tastings():
@@ -63,5 +63,6 @@ def post_tasting():
     )
     db.session.add(tasting)
     db.session.commit()
-  
-  return {'errors': form.errors}, 401
+    return tasting.to_dict()
+  else:
+    return {'errors': form.errors}, 401
