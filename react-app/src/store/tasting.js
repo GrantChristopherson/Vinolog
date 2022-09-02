@@ -115,11 +115,11 @@ export default function tastingReducer(state = initialState, action) {
     };
     case CREATE_TASTING: {
       if (action?.tasting.love === false) {
-        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTasting:[...state?.lovedTastings]}
+        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings]}
         newState[action?.tasting.id] = action?.tasting
         return newState;
       } else {
-        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTasting:[...state?.lovedTastings, action?.tasting]}
+        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings, action?.tasting]}
         newState[action?.tasting.id] = action?.tasting
         return newState;
       };
