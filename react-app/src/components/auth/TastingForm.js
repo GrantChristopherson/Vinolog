@@ -12,7 +12,7 @@ const TastingForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
 
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState({});
   const [producer, setProducer] = useState('');
   const [region, setRegion] = useState('');
   const [vineyard, setVineyard] = useState('');
@@ -25,24 +25,24 @@ const TastingForm = () => {
   const [thoughts, setThoughts] = useState('');
   const [love, setLove] = useState(false);
 
-  if (!user) {
-    return <Redirect to='/' />;
-  }
+  // if (!user) {
+  //   return <Redirect to='/' />;
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     
-    let validateErrors = [];
-    const today = new Date();
-    if (vintage < 1900) validateErrors.push('Vintage can not be older than 1900');
-    if (vintage > today.getFullYear()) validateErrors.push('Vintage must be from this year or older')
-    if (typeof vintage != 'number') validateErrors.push('Vintage must be an integer');
+    // let validateErrors = [];
+    // const today = new Date();
+    // if (vintage < 1900) validateErrors.push('Vintage can not be older than 1900');
+    // if (vintage > today.getFullYear()) validateErrors.push('Vintage must be from this year or older')
+    // if (typeof vintage != 'number') validateErrors.push('Vintage must be an integer');
 
-    if (validateErrors.length > 0) {
-      setErrors(validateErrors);
-      return;
-    }
+    // if (validateErrors.length > 0) {
+    //   setErrors(validateErrors);
+    //   return;
+    // }
 
     const tasting = {
       producer,
@@ -185,7 +185,7 @@ const TastingForm = () => {
         </div>
         <div>
           <input className='vintageInput'
-          type='integer'
+          type='number'
           name='vintage'
           onChange={updateVintage}
           placeholder='Vintage'
@@ -285,16 +285,16 @@ const TastingForm = () => {
             type="radio"
             value={love}
             name='love'
-            checked={setLove === true}
-            // onChange={(e) => setLove(true)}
+            checked={love === true}
+            onChange={(e) => setLove(true)}
           />
-          {errors?.love &&
+          {/* {errors?.love &&
           <div className='error'>
             {errors?.love?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          }
+          } */}
           <button type='submit'>Submit</button>
         </div>
       </form>
