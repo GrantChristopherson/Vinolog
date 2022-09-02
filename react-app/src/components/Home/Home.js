@@ -22,6 +22,9 @@ const Home = () => {
         }} >
           Create a new tasting
           </h3>}
+          {/* <h3 className='allMyTastingCards'>
+            My Tasting Notes
+          </h3> */}
       </div>
       <TastingForm/>
     </div>
