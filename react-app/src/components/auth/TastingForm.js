@@ -12,12 +12,14 @@ const TastingForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
 
+  // const currentYear = new Date().getFullYear()
+
   const [errors, setErrors] = useState({});
   const [producer, setProducer] = useState('');
   const [region, setRegion] = useState('');
   const [vineyard, setVineyard] = useState('');
   const [varietal, setVarietal] = useState('');
-  const [vintage, setVintage] = useState();
+  const [vintage, setVintage] = useState(new Date().getFullYear());
   const [otherInfo, setOtherInfo] = useState('');
   const [sight, setSight] = useState('');
   const [nose, setNose] = useState('');
@@ -25,9 +27,9 @@ const TastingForm = () => {
   const [thoughts, setThoughts] = useState('');
   const [love, setLove] = useState(false);
 
-  // if (!user) {
-  //   return <Redirect to='/' />;
-  // }
+  if (!user) {
+    return <Redirect to='/' />;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +65,7 @@ const TastingForm = () => {
     setRegion('');
     setVineyard('');
     setVarietal('');
-    setVintage();
+    setVintage(new Date().getFullYear());
     setOtherInfo('');
     setSight('');
     setNose('');

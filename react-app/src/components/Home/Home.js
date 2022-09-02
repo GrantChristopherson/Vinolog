@@ -16,15 +16,20 @@ const Home = () => {
   return (
     <div>
       <div className='createTastingNavContainer'>
+        <h2>{user.username}</h2>
+        <h3>{user.bio}</h3>
         {user && <h3 className='createTastingOnClick' onClick= {async(e) => {
           e.preventDefault();
           setShowTastingForm(!showTastingForm)
         }} >
-          Create a new tasting
+          Create a new Tasting
           </h3>}
-          {/* <h3 className='allMyTastingCards'>
-            My Tasting Notes
-          </h3> */}
+          <h3 className='allMyTastingCards'>
+            My Tastings
+          </h3>
+          <h3 className='allMyTastingCards'>
+            Wines others love 
+          </h3>
       </div>
       <TastingForm/>
     </div>
