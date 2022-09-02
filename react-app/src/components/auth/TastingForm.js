@@ -117,7 +117,7 @@ const TastingForm = () => {
 
   return (
     <div className='createTastingContainer'>
-      <h2>New Wine Tasing</h2>
+      <h2>New Wine Tasting</h2>
       <form className='createTastingForm' onSubmit={handleSubmit}>
         <div>
           <input className='producerInput'
