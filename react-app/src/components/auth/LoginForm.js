@@ -5,11 +5,13 @@ import { login } from '../../store/session';
 import './loginForm.css'
 
 const LoginForm = () => {
+
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.session.user);
+
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
 
   const onLogin = async (e) => {
     e.preventDefault();
