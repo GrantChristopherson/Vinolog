@@ -16,5 +16,5 @@ class TastingForm(FlaskForm):
   nose = StringField('Nose', validators=[DataRequired(message='Description of wine aromatics is required')])
   palate = StringField('Palate', validators=[DataRequired(message='Description of the flavor profile is required')])
   thoughts = StringField('Additional Thoughts')
-  love = BooleanField('Love?', validators=[DataRequired(message='Input required... loved wines will be shared with all users')])
+  love = BooleanField('Love?')
   submit = SubmitField("Submit")

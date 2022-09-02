@@ -290,13 +290,13 @@ const TastingForm = () => {
             checked={love === true}
             onChange={(e) => setLove(true)}
           />
-          {/* {errors?.love &&
+          {errors?.love &&
           <div className='error'>
             {errors?.love?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } */}
+          }
           <button type='submit'>Submit</button>
         </div>
       </form>
