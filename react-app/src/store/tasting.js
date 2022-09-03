@@ -1,6 +1,8 @@
 const GET_MY_TASTINGS = 'tastings/GET_MY_TASTINGS';
 const GET_ALL_LOVED_TASTINGS = 'tastings/GET_ALL_LOVED_TASTINGS';
 const CREATE_TASTING = 'tastings/CREATE_TASTING';
+const EDIT_TASTING = 'tasting/EDIT_TASTING';
+const DELETE_TASTING = 'tasting/DELETE_TASTING';
 
 
 // ---------------------------------------------action creator-----------------------------------
@@ -29,6 +31,20 @@ const createTasting = (tasting) => {
 };
 
 
+const editTasting = (tasting) => {
+  return {
+    type: EDIT_TASTING,
+    tasting
+  }
+}
+
+
+const deleteTasting = (tastingId) => {
+  return {
+    type: DELETE_TASTING,
+    tastingId
+  }
+}
 
 
 // --------------------------------------------thunk action creator---------------------------------
@@ -76,7 +92,7 @@ export const createTastingThunk = (tasting) => async(dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    console.log("fetchedData------------------", data)
+    console.log("fetchedPOSTData------------------", data)
     dispatch(createTasting(data));
     return null;
   } else if (response.status < 500) {
@@ -87,6 +103,55 @@ export const createTastingThunk = (tasting) => async(dispatch) => {
   } else {
     return ['An error occurred. Please try again.']
   };
+};
+
+
+export const editTastingThunk = (tasting) => async(dispatch) => {
+  const response = await fetch(`/api/tastings/${tasting.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      producer: tasting.producer,
+      region: tasting.region,
+      vineyard: tasting.vineyard,
+      varietal: tasting.varietal,
+      vintage: tasting.vintage,
+      other_info: tasting.otherInfo,
+      sight: tasting.sight,
+      nose: tasting.nose,
+      palate: tasting.palate,
+      thoughts: tasting.thoughts,
+      love: tasting.love
+    }),
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    console.log("fetchedPUTData------------------", data)
+    dispatch(editTasting(data))
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    };
+  } else {
+    return ['An error occurred. Please try again.']
+  };
+};
+
+
+export const deleteTastingThunk = (tastingId) => async(dispatch) => {
+  const response = await fetch(`/api/tastings/${tastingId}`, {
+    method: 'DELETE',
+  })
+
+  const message = await response.json();
+  console.log("DELETETHUNK----", response, "--------MESSAGE", message)
+  dispatch(deleteTasting(tastingId));
+  return response
 };
 
 
@@ -124,6 +189,36 @@ export default function reducer(state = initialState, action) {
         return newState;
       };
     };
+    case EDIT_TASTING: {
+      state?.userTastings?.forEach((tasting, i) => {
+        if (tasting?.id === action?.tasting?.id) {
+          state?.userTastings.splice(i, 1, action?.tasting)
+        };
+      });
+      state?.lovedTastings?.forEach((tasting, i) => {
+        if (tasting?.id === action?.tasting?.id) {
+          state?.lovedTastings.splice(i, 1, action?.tasting)
+        };
+      });
+      state[action?.tasting?.id] = action?.tasting
+      if (action?.tasting.love === false) {
+        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings]}
+        newState[action?.tasting.id] = action?.tasting
+        return newState;
+      } else {
+        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings, action?.tasting]}
+        newState[action?.tasting.id] = action?.tasting
+        return newState;
+      }
+    };
+    case DELETE_TASTING: {
+      delete state?.action?.tastingId
+      let newUserTastings = state?.userTastings?.filter((tasting) => tasting?.id !== action?.tastingId)
+      let newLovedTastings = state?.lovedTastings?.filter((lovedTasting) => lovedTasting?.id !== action?.tastingId)
+
+      newState = {...state, userTastings:[...newUserTastings], lovedTastings:[...newLovedTastings]}
+      return newState
+    }
     default: {
       return state;
     };
