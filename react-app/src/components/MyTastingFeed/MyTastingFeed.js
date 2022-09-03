@@ -26,7 +26,7 @@ const MyTastingFeed = () => {
     <div className="myTastingFeedOuterContainer">
       <div className="myTastingFeedInnerContainer">
         {userTastings?.map((tasting) => {return (
-        <div className="tastingContainer">
+        <div key={tasting.id} className="tastingContainer">
           <TastingCard tasting={tasting}/>
         </div>
         )})}
