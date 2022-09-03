@@ -36,7 +36,7 @@ const TastingCard = ({tasting}) => {
           {showInfo && <h4>My Thoughts: {tasting?.thoughts}</h4>}
         </div>
           <div>
-            
+            EDIT LINK TO MODAL?
           </div>
       </div>
     </div>

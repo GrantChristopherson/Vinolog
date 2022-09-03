@@ -1,6 +1,6 @@
 from flask import Blueprint, redirect, request
 from flask_login import login_required, current_user
-from app.models import db, User, Tasting, Discussion
+from app.models import db, Tasting
 from app.forms.tasting_form import TastingForm
 
 tasting_routes = Blueprint('tastings', __name__)
@@ -40,7 +40,7 @@ def all_loved_tastings():
 
 
 
-# create a new tasting card
+# Create a new tasting card           #tested successfully
 @tasting_routes.route('/user/post', methods=['POST'])
 @login_required
 def post_tasting():
@@ -66,3 +66,49 @@ def post_tasting():
     return tasting.to_dict()
   else:
     return {'errors': form.errors}, 401
+
+
+
+# Update a tasting card  
+@tasting_routes.route('/<int:tasting_id>', methods=['PUT'])
+@login_required
+def edit_tasting_card(tasting_id):
+  tasting = Tasting.query.get(tasting_id)
+
+  if tasting.user_id != current_user.id:
+    redirect('api/auth/unauthorized')
+
+  form = TastingForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    tasting.producer = form.data['producer'],
+    tasting.region = form.data['region'],
+    tasting.vineyard = form.data['vineyard'],
+    tasting.varietal = form.data['varietal'],
+    tasting.vintage = form.data['vintage'],
+    tasting.other_info = form.data['other_info'],
+    tasting.sight = form.data['sight'],
+    tasting.nose = form.data['nose'],
+    tasting.palate = form.data['palate'],
+    tasting.thoughts = form.data['thoughts'],
+    tasting.love = form.data['love']
+
+    db.session.commit()
+    return tasting.to_dict()
+
+  return {'errors': form.errors}, 401
+
+
+
+# Delete a tasting card
+@tasting_routes.route('/<int:tasting_id>', methods=['DELETE'])
+@login_required
+def delete_tasting_card(tasting_id):
+  tasting = Tasting.query.get(tasting_id)
+
+  if tasting.user_id != current_user.id:
+    redirect('api/auth/unauthorized')
+
+  db.session.delete(post)
+  db.session.commit()
+  return {'message': 'Tasting Deleted'}
