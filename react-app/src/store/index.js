@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
-import tastingReducer from './tasting';
+import tastings from './tasting';
 
 const rootReducer = combineReducers({
   session,
-  tastingReducer,
+  tastings,
 });
 
 

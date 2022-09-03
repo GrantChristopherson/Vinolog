@@ -58,8 +58,9 @@ const TastingForm = () => {
       palate,
       thoughts,
       love
-    }
-    const data = await dispatch(createTastingThunk(tasting))
+    };
+    // const data = await dispatch(createTastingThunk(tasting))
+    dispatch(createTastingThunk(tasting));
 
     setProducer('');
     setRegion('');
@@ -72,8 +73,8 @@ const TastingForm = () => {
     setPalate('');
     setThoughts('');
     setLove(false);
-    setErrors([])
-  }
+    setErrors([]);
+  };
 
 
   const updateProducer = (e) => {

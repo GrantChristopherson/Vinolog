@@ -7,6 +7,7 @@ import UsersList from './components/UsersList';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home'
 
@@ -39,6 +40,12 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/tastings' exact={true} >
+          <MyTastingFeed />
+        </ProtectedRoute>
+        {/* <ProtectedRoute path='/lovedtastings' exact={true} >
+          <AllLovedFeed />
+        </ProtectedRoute> */}
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
