@@ -96,11 +96,11 @@ export const createTastingThunk = (tasting) => async(dispatch) => {
 
 
 const initialState = { userTastings: [], lovedTastings: []};
-export default function tastingReducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   let newState
   switch (action.type) {
     case GET_MY_TASTINGS: {
-      newState = {...state, userTastings:[...action?.userTastings], lovedTastings:[...state?.lovedTastings]}
+      newState = {...state, userTastings:[...action?.tastings], lovedTastings:[...state?.lovedTastings]}
       action?.userTastings?.forEach((tasting) => {
         newState[tasting?.id] = tasting
       });
