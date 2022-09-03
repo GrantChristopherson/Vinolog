@@ -109,6 +109,6 @@ def delete_tasting_card(tasting_id):
   if tasting.user_id != current_user.id:
     redirect('api/auth/unauthorized')
 
-  db.session.delete(post)
+  db.session.delete(tasting)
   db.session.commit()
   return {'message': 'Tasting Deleted'}
