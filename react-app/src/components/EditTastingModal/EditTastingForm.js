@@ -1,29 +1,28 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createTastingThunk } from '../../store/tasting';
-import './tastingForm.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { editTastingThunk } from '../../store/tasting';
+import './editTastingForm.css';
 
 
 
 
-const TastingForm = ({ setShowModal }) => {
+const EditTastingForm = ({ tasting, setShowModal }) => {
 
   const dispatch = useDispatch();
-
-  // const currentYear = new Date().getFullYear()
+  const user = useSelector(state => state?.session?.user)
 
   const [errors, setErrors] = useState({});
-  const [producer, setProducer] = useState('');
-  const [region, setRegion] = useState('');
-  const [vineyard, setVineyard] = useState('');
-  const [varietal, setVarietal] = useState('');
-  const [vintage, setVintage] = useState(new Date().getFullYear());
-  const [otherInfo, setOtherInfo] = useState('');
-  const [sight, setSight] = useState('');
-  const [nose, setNose] = useState('');
-  const [palate, setPalate] = useState('');
-  const [thoughts, setThoughts] = useState('');
-  const [love, setLove] = useState(false);
+  const [producer, setProducer] = useState(tasting?.producer);
+  const [region, setRegion] = useState(tasting?.region);
+  const [vineyard, setVineyard] = useState(tasting?.vineyard);
+  const [varietal, setVarietal] = useState(tasting?.varietal);
+  const [vintage, setVintage] = useState(tasting?.vintage);
+  const [otherInfo, setOtherInfo] = useState(tasting?.other_info);
+  const [sight, setSight] = useState(tasting?.sight);
+  const [nose, setNose] = useState(tasting?.nose);
+  const [palate, setPalate] = useState(tasting?.palate);
+  const [thoughts, setThoughts] = useState(tasting?.thoughts);
+  const [love, setLove] = useState(tasting?.love);
 
 
   const handleSubmit = async (e) => {
@@ -41,21 +40,24 @@ const TastingForm = ({ setShowModal }) => {
     //   return;
     // }
 
-    const tasting = {
+    const data = {
+      id: tasting.id,
       producer,
       region,
       vineyard,
       varietal,
       vintage,
-      otherInfo,
+      other_info: otherInfo,
       sight,
       nose,
       palate,
       thoughts,
-      love
+      love,
+      user: user
     };
-    // const data = await dispatch(createTastingThunk(tasting))
-    let data =  await dispatch(createTastingThunk(tasting));
+
+
+    dispatch(editTastingThunk(data));
 
     // setProducer('');
     // setRegion('');
@@ -69,12 +71,14 @@ const TastingForm = ({ setShowModal }) => {
     // setThoughts('');
     // setLove(false);
     // setErrors([]);
+
     if (data) {
       setErrors(data)
     } else {
       setShowModal(false)
-    }
+    };
   };
+    
 
 
   const updateProducer = (e) => {
@@ -119,9 +123,9 @@ const TastingForm = ({ setShowModal }) => {
 
 
   return (
-    <div className='createTastingContainer'>
-      <form className='createTastingForm' onSubmit={handleSubmit}>
-      <h2>New Wine Tasting</h2>
+    <div className='editTastingContainer'>
+      <form className='editTastingForm' onSubmit={handleSubmit}>
+      <h2>Update Wine Tasting</h2>
         <div className='inputContainer'>
         <div>
           <input className='producerInput'
@@ -131,13 +135,12 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Producer'
           value={producer}
           ></input>
-          {errors?.producer &&
-          <div className='error'>
+          {/* {errors?.producer && <div className='error'>
             {errors?.producer?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='regionInput'
@@ -147,13 +150,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Region'
           value={region}
           ></input>
-          {errors?.region &&
+          {/* {errors?.region &&
           <div className='error'>
             {errors?.region?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='vineyardInput'
@@ -163,13 +166,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Vineyard'
           value={vineyard}
           ></input>
-          {errors?.vineyard &&
+          {/* {errors?.vineyard &&
           <div className='error'>
             {errors?.vineyard?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='varietalInput'
@@ -179,13 +182,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Varietal / Type'
           value={varietal}
           ></input>
-          {errors?.varietal &&
+          {/* {errors?.varietal &&
           <div className='error'>
             {errors?.varietal?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='vintageInput'
@@ -195,13 +198,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Vintage'
           value={vintage}
           ></input>
-          {errors?.vintage &&
+          {/* {errors?.vintage &&
           <div className='error'>
             {errors?.vintage?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='otherInfoInput'
@@ -211,13 +214,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Additional Information...'
           value={otherInfo}
           ></input>
-          {errors?.otherInfo &&
+          {/* {errors?.otherInfo &&
           <div className='error'>
             {errors?.otherInfo?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='sightInput'
@@ -227,13 +230,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Sight'
           value={sight}
           ></input>
-          {errors?.sight &&
+          {/* {errors?.sight &&
           <div className='error'>
             {errors?.sight?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='noseInput'
@@ -243,13 +246,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Nose'
           value={nose}
           ></input>
-          {errors?.nose &&
+          {/* {errors?.nose &&
           <div className='error'>
             {errors?.nose?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='palateInput'
@@ -259,13 +262,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Palate'
           value={palate}
           ></input>
-          {errors?.palate &&
+          {/* {errors?.palate &&
           <div className='error'>
             {errors?.palate?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <input className='thoughtsInput'
@@ -275,13 +278,13 @@ const TastingForm = ({ setShowModal }) => {
           placeholder='Additional thoughts...'
           value={thoughts}
           ></input>
-          {errors?.thoughts &&
+          {/* {errors?.thoughts &&
           <div className='error'>
             {errors?.thoughts?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          } 
+          }  */}
         </div>
         <div>
           <label>Love the wine?</label>
@@ -292,17 +295,17 @@ const TastingForm = ({ setShowModal }) => {
             checked={love === true}
             onChange={(e) => setLove(true)}
           />
-          {errors?.love &&
+          {/* {errors?.love &&
           <div className='error'>
             {errors?.love?.map((error, i) => (
               <div key={i}>{error}</div>
             ))}
           </div>
-          }
+          } */}
         </div>
         <div>
-          <button type='submitNewWine'>Submit</button>
-          <button className="closeNewWine" onClick={()=>setShowModal(false)}>Close</button>
+          <button type='submitEditWine'>Update</button>
+          <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button>
         </div>
         </div>
       </form>
@@ -311,4 +314,4 @@ const TastingForm = ({ setShowModal }) => {
 };
 
 
-export default TastingForm;
+export default EditTastingForm;
