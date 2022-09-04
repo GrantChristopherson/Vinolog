@@ -10,6 +10,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
 import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home'
+import Splash from './components/Splash/Splash'
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path='/' exact={true}>
-         <Home />
+         <Splash />
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
@@ -40,6 +41,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/home' exact={true} >
+          <Home />
+        </ProtectedRoute>
         <ProtectedRoute path='/tastings' exact={true} >
           <MyTastingFeed />
         </ProtectedRoute>
@@ -52,9 +56,9 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
+        {/* <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
-        </ProtectedRoute>
+        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );

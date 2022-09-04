@@ -1,21 +1,24 @@
-import React, { useEffect, useState} from 'react';
-// import { useDispatch, useSelector } from "react-redux";
-// import { getMyTastingsThunk } from '../../store/tasting';
+import React, { useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteTastingThunk } from '../../store/tasting';
+import EditTastingModal from '../EditTastingModal';
 import './tastingCard.css'
 
 
 
 const TastingCard = ({tasting}) => {
 
-  // const dispatch = useDispatch()
-  // const user = useSelector(state => state?.session?.user)
+  const dispatch = useDispatch()
+  
   const [showInfo, setShowInfo] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
 
-  // I believe this is unneeded
-  // useEffect(()=>{
-  //   dispatch(getMyTastingsThunk())
-  // },[dispatch]);
+  const deleteHandler = async() => {
+
+    await dispatch(deleteTastingThunk(tasting?.id))
+  };
+
 
   return (
     <div className='tastingCardOuterContainer'>
@@ -35,9 +38,14 @@ const TastingCard = ({tasting}) => {
           {showInfo && <h4>Palate: {tasting?.palate}</h4>}
           {showInfo && <h4>My Thoughts: {tasting?.thoughts}</h4>}
         </div>
+        <div className="editContainer">
           <div>
-            EDIT LINK TO MODAL?
+            {showInfo && <button className='deleteIcon'onClick={deleteHandler}>Delete</button>}
           </div>
+          <div>
+            {!showModal && <EditTastingModal tasting={tasting} setShowModal={setShowModal}/>}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,14 @@
-.createTastingContainer {
+.editTastingModal {
+  position: absolute;
+  background-color:white;
+  border-radius: 8px;
+  max-width: 300vw;
+  overflow-y:auto;
+  /* height: 530px; */
+  min-height: 150px;
+}
+
+.editTastingContainer {
   display: flex;
   /* justify-content: center; */
   /* flex-direction: column;
@@ -9,12 +19,10 @@
   padding: 30px 100px 60px 50px;
 }
 
-.createTastingForm {
+.editTastingForm {
   /* display: flex; */
   /* justify-content: center; */
   /* flex-direction: column; */
   /* min-width: 200px; */
 
 }
-
-

@@ -54,7 +54,6 @@ export const getMyTastingsThunk = () => async(dispatch) => {
     headers: {}
   });
   const tastings = await response.json();
-  console.log('myTastings--------------', tastings)
   dispatch(getMyTastings(tastings?.tastings));
 };
 
@@ -64,7 +63,6 @@ export const getAllLovedTastingsThunk = () => async(dispatch) => {
     headers: {}
   });
   const tastings = await response.json();
-  console.log('allLovedTastings-------------', tastings)
   dispatch(getAllLovedTastings(tastings?.tastings));
 };
 
@@ -92,7 +90,6 @@ export const createTastingThunk = (tasting) => async(dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    console.log("fetchedPOSTData------------------", data)
     dispatch(createTasting(data));
     return null;
   } else if (response.status < 500) {
@@ -118,7 +115,7 @@ export const editTastingThunk = (tasting) => async(dispatch) => {
       vineyard: tasting.vineyard,
       varietal: tasting.varietal,
       vintage: tasting.vintage,
-      other_info: tasting.otherInfo,
+      other_info: tasting.other_info,
       sight: tasting.sight,
       nose: tasting.nose,
       palate: tasting.palate,
@@ -129,7 +126,6 @@ export const editTastingThunk = (tasting) => async(dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    console.log("fetchedPUTData------------------", data)
     dispatch(editTasting(data))
     return null;
   } else if (response.status < 500) {
@@ -149,7 +145,6 @@ export const deleteTastingThunk = (tastingId) => async(dispatch) => {
   })
 
   const message = await response.json();
-  console.log("DELETETHUNK----", response, "--------MESSAGE", message)
   dispatch(deleteTasting(tastingId));
   return response
 };
@@ -201,15 +196,8 @@ export default function reducer(state = initialState, action) {
         };
       });
       state[action?.tasting?.id] = action?.tasting
-      if (action?.tasting.love === false) {
-        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings]}
-        newState[action?.tasting.id] = action?.tasting
-        return newState;
-      } else {
-        newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings, action?.tasting]}
-        newState[action?.tasting.id] = action?.tasting
-        return newState;
-      }
+      newState = {...state, userTastings:[...state?.userTastings], lovedTastings:[...state?.lovedTastings]}
+      return newState;
     };
     case DELETE_TASTING: {
       delete state?.action?.tastingId
