@@ -10,7 +10,7 @@ import './allLovedFeed.css';
 const AllLovedFeed = () => {
 
   const dispatch = useDispatch();
-  const user = useSelector(state => state?.session?.user);
+  // const user = useSelector(state => state?.session?.user);
   const lovedWineTastings = useSelector(state => state?.tastings.lovedTastings);
 
 

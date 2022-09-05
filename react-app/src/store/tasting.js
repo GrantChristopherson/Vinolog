@@ -5,7 +5,7 @@ const EDIT_TASTING = 'tasting/EDIT_TASTING';
 const DELETE_TASTING = 'tasting/DELETE_TASTING';
 
 
-// ---------------------------------------------action creator-----------------------------------
+// ---------------------------------------------action creators-----------------------------------
 
 const getMyTastings = (tastings) => {
   return {
@@ -47,7 +47,7 @@ const deleteTasting = (tastingId) => {
 }
 
 
-// --------------------------------------------thunk action creator---------------------------------
+// --------------------------------------------thunk action creators---------------------------------
 
 export const getMyTastingsThunk = () => async(dispatch) => {
   const response = await fetch('/api/tastings/', {
@@ -155,9 +155,9 @@ export const deleteTastingThunk = (tastingId) => async(dispatch) => {
 // ----------------------------------------reducer----------------------------------------------------
 
 
-const initialState = { userTastings: [], lovedTastings: []};
+const initialState = { userTastings: [], lovedTastings: [] };
 export default function reducer(state = initialState, action) {
-  let newState
+  let newState;
   switch (action.type) {
     case GET_MY_TASTINGS: {
       newState = {...state, userTastings:[...action?.tastings], lovedTastings:[...state?.lovedTastings]}
@@ -206,7 +206,7 @@ export default function reducer(state = initialState, action) {
 
       newState = {...state, userTastings:[...newUserTastings], lovedTastings:[...newLovedTastings]}
       return newState
-    }
+    };
     default: {
       return state;
     };

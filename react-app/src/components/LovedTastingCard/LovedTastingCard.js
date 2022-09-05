@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTastingThunk } from '../../store/tasting';
 import EditTastingModal from '../EditTastingModal';
+import Discussion from '../Discussion/Discussion';
 import './lovedTastingCard.css';
 
 
@@ -13,6 +14,7 @@ const LovedTastingCard = ({lovedTasting}) => {
   
   const [showInfo, setShowInfo] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showDiscussion, setShowDiscussion] = useState(false);
 
 
   const deleteHandler = async() => {
@@ -33,7 +35,7 @@ const LovedTastingCard = ({lovedTasting}) => {
           {showInfo && <h4>{lovedTasting?.other_info}</h4>}
         </div>
         <div className='lovedTastingNotesContainer'>
-          <h3>Tasting Notes</h3>
+          {!showInfo && <h3>Tasting Notes</h3>}
           {showInfo && <h4>Sight: {lovedTasting?.sight}</h4>}
           {showInfo && <h4>Nose: {lovedTasting?.nose}</h4>}
           {showInfo && <h4>Palate: {lovedTasting?.palate}</h4>}
@@ -47,6 +49,12 @@ const LovedTastingCard = ({lovedTasting}) => {
             {!showModal && <EditTastingModal lovedTasting={lovedTasting} setShowModal={setShowModal}/>}
           </div>
         </div>}
+        <span>Add to discussion:</span> 
+        {showDiscussion && <div className='discussionOuterContainer'>
+          <div className='discussionInnerContainer'>
+            <Discussion lovedTasting={lovedTasting}/>
+          </div>
+        </div>}
       </div>
     </div>
   );
@@ -54,3 +62,4 @@ const LovedTastingCard = ({lovedTasting}) => {
 
 
 export default LovedTastingCard;
+

@@ -62,7 +62,7 @@ def create_comment(tasting_id):
 
 
 # Update a comment
-@discussion_routes.route('/comment/<int:id>', methods=['PUT'])
+@discussion_routes.route('/comments/<int:id>', methods=['PUT'])
 @login_required
 def edit_comment(id):
   comment = Discussion.query.get(id)
@@ -83,7 +83,7 @@ def edit_comment(id):
 
 
 # Delete a comment
-@discussion_routes.route('/comment/<int:id>', methods=['DELETE'])
+@discussion_routes.route('/comments/<int:id>', methods=['DELETE'])
 @login_required
 def delete_comment(id):
   comment = Discussion.query.get(id)
