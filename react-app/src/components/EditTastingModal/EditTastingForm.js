@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { editTastingThunk } from '../../store/tasting';
+import { editTastingThunk, deleteTastingThunk } from '../../store/tasting';
 import './editTastingForm.css';
 
 
 
 
-const EditTastingForm = ({ tasting, setShowModal }) => {
+const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user)
@@ -56,21 +56,7 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
       user: user
     };
 
-
     dispatch(editTastingThunk(data));
-
-    // setProducer('');
-    // setRegion('');
-    // setVineyard('');
-    // setVarietal('');
-    // setVintage(new Date().getFullYear());
-    // setOtherInfo('');
-    // setSight('');
-    // setNose('');
-    // setPalate('');
-    // setThoughts('');
-    // setLove(false);
-    // setErrors([]);
 
     if (data) {
       setErrors(data)
@@ -79,7 +65,6 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
     };
   };
     
-
 
   const updateProducer = (e) => {
     setProducer(e.target.value);
@@ -119,6 +104,11 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
 
   const updateThoughts = (e) => {
     setThoughts(e.target.value);
+  };
+
+
+  const deleteHandler = async() => {
+    await dispatch(deleteTastingThunk(lovedTasting?.id))
   };
 
 
@@ -306,6 +296,9 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
         <div>
           <button type='submitEditWine'>Update</button>
           <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button>
+        </div>
+        <div>
+          <button className='deleteIcon'onClick={deleteHandler}>Delete</button>
         </div>
         </div>
       </form>
