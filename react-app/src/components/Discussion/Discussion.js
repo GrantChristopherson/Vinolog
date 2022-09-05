@@ -13,6 +13,8 @@ const Discussion = ({ lovedTasting }) => {
   const user = useSelector(state => state?.session?.user);
   const [users, setUsers] = useState([]);
 
+  const lovedTastingComments = comments.filter((comment) => comment.tasting_id === lovedTasting.id)
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch('/api/users/');
@@ -45,23 +47,22 @@ const Discussion = ({ lovedTasting }) => {
   
     <div className='commentsOuterContainer'>
       <div className='commentsInnerContainer'>
-        {comments?.map((comment) => {  
+        {lovedTastingComments?.map((comment) => {  
           console.log('comment in return=========', comment)
           return (
             <div key={comment.id} className="commentcontainer">
               <div className="comment">
-                <div>
                 {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
                   <div key={filteredUser?.id}>
                     <h6>{filteredUser?.username}: {comment.comment}</h6>
                   </div>
-                ))}
-                </div>
+                ))} 
               </div>     
               <div className="editCommentButtonContainer">
               {comment?.user_id === user.id && comment?.tasting_id === lovedTasting.id ?
                 <button className="editComment" onClick={removeComment(comment?.id)}><i className="fa-solid fa-pen-to-square notepenIcon" > </i></button>  : null}
               </div>
+              
             </div>
           )
         })} 
