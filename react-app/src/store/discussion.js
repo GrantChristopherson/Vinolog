@@ -45,7 +45,7 @@ export const getCommentsThunk = () => async(dispatch) => {
     header: {}
   });
   const comments = await response.json();
-  dispatch(getComments(comments))
+  dispatch(getComments(comments.comment))
 };
 
 
@@ -119,6 +119,7 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case  GET_COMMENTS: {
       newState = {...state, comments:[...action?.comments]};
+      console.log('action.comments=================', action.comments)
       action?.comments?.forEach((comment) => {
         newState[comment?.id] = comment
       });

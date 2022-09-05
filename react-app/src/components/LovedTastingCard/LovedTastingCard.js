@@ -9,7 +9,7 @@ import './lovedTastingCard.css';
 
 const LovedTastingCard = ({lovedTasting}) => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
   
   const [showInfo, setShowInfo] = useState(false);
@@ -49,7 +49,9 @@ const LovedTastingCard = ({lovedTasting}) => {
             {!showModal && <EditTastingModal lovedTasting={lovedTasting} setShowModal={setShowModal}/>}
           </div>
         </div>}
-        <span>Add to discussion:</span> 
+      </div>
+      <div className='discussionWrapper' onClick={() => setShowDiscussion(!showDiscussion)}>
+        <h6>Discussion:</h6> 
         {showDiscussion && <div className='discussionOuterContainer'>
           <div className='discussionInnerContainer'>
             <Discussion lovedTasting={lovedTasting}/>
@@ -62,4 +64,5 @@ const LovedTastingCard = ({lovedTasting}) => {
 
 
 export default LovedTastingCard;
+      
 
