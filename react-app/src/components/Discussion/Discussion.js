@@ -6,11 +6,12 @@ import './discussion.css';
 
 
 
-const Discussion = ({ lovedTasting }) => {
+const Discussion = ({ lovedTasting, setShowDiscussion }) => {
 
   const dispatch = useDispatch()
-  const comments = useSelector((state) => (state?.discussion?.comments))
   const user = useSelector(state => state?.session?.user);
+  const comments = useSelector((state) => (state?.discussion?.comments))
+  const [showEditCommentForm, setShowEditCommentForm] = useState(false);
   const [users, setUsers] = useState([]);
 
   const lovedTastingComments = comments.filter((comment) => comment.tasting_id === lovedTasting.id)
@@ -19,25 +20,23 @@ const Discussion = ({ lovedTasting }) => {
     async function fetchData() {
       const response = await fetch('/api/users/');
       const data = await response.json();
-      console.log('data=============', data)
       setUsers(data.users);
     };
     fetchData();
   }, []);
   
-  console.log('comments========================', comments)
 
   useEffect(() => {
     (async () => {
       await dispatch(getCommentsThunk())
-
     })();
   }, [dispatch]);
+
       
 
-  const removeComment = (id) => async (e) => {
+  const deleteComment = (commentId) => async (e) => {
     e.preventDefault()
-    dispatch(deleteCommentThunk(id))
+    dispatch(deleteCommentThunk(commentId))
   };
 
 
@@ -48,25 +47,23 @@ const Discussion = ({ lovedTasting }) => {
     <div className='commentsOuterContainer'>
       <div className='commentsInnerContainer'>
         {lovedTastingComments?.map((comment) => {  
-          console.log('comment in return=========', comment)
           return (
-            <div key={comment.id} className="commentcontainer">
+            <div key={comment?.id} className="commentcontainer">
               <div className="comment">
                 {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
                   <div key={filteredUser?.id}>
-                    <h6>{filteredUser?.username}: {comment.comment}</h6>
+                    <h6>{filteredUser?.username}: {comment?.comment}</h6>
                   </div>
                 ))} 
               </div>     
               <div className="editCommentButtonContainer">
-              {comment?.user_id === user.id && comment?.tasting_id === lovedTasting.id ?
-                <button className="editComment" onClick={removeComment(comment?.id)}><i className="fa-solid fa-pen-to-square notepenIcon" > </i></button>  : null}
+              {comment?.user_id === user?.id ?
+                <button className="deleteComment" onClick={deleteComment(comment.id)}>Delete</button>  : null}
               </div>
-              
             </div>
           )
         })} 
-        <CreateCommentForm lovedTasting={lovedTasting} />
+        <CreateCommentForm lovedTasting={lovedTasting} setShowDiscussion={setShowDiscussion}/>
       </div>
     </div>
   );
@@ -74,3 +71,5 @@ const Discussion = ({ lovedTasting }) => {
 
 
 export default Discussion;
+              
+          

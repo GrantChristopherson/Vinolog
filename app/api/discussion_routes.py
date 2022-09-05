@@ -51,7 +51,7 @@ def create_comment(tasting_id):
     comment = Discussion(
       comment = form.data['comment'],
       tasting_id = tasting.id,
-      user_id = current_user
+      user_id = current_user.get_id()
     )
     db.session.add(comment)
     db.session.commit()
