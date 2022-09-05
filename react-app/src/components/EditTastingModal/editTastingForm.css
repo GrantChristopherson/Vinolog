@@ -1,0 +1,15 @@
+.deleteIcon {
+  background-color: transparent;
+  border: none;
+}
+
+
+.deletePenIcon {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.deleteIcon:hover{
+  background-color: rgba(128, 128, 128, 0.181);
+  border-radius: 50%;
+}
