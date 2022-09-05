@@ -25,8 +25,8 @@ def validation_errors_to_error_messages(validation_errors):
 @login_required
 def get_all_comments():
   comments = Discussion.query.all()
-
-  return {'comments': [comment.to_dict() for comment in comments]}
+  
+  return {'comment': [comment.to_dict() for comment in comments]}
 
 
 
@@ -36,7 +36,7 @@ def get_all_comments():
 def get_tasting_card_comments(tasting_id):
   comments = Discussion.query.filter(Discussion.tasting_id == tasting_id).all()
 
-  return {'comments': [comment.to_dict() for comment in comments]}
+  return {'comment': [comment.to_dict() for comment in comments]}
 
 
 
