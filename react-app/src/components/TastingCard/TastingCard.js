@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTastingThunk } from '../../store/tasting';
 import EditTastingModal from '../EditTastingModal';
-import './tastingCard.css'
+import './tastingCard.css';
 
 
 

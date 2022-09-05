@@ -6,7 +6,7 @@ import './editTastingModal.css';
 
 
 
-function EditTastingModal({ tasting }) {
+function EditTastingModal({ tasting, lovedTasting }) {
 
   const [showModal, setShowModal] = useState(false);
 
@@ -15,7 +15,7 @@ function EditTastingModal({ tasting }) {
       <button className='editIconBtn' onClick={() => setShowModal(true)}><i className="fa-solid fa-pen editPenIcon"></i></button>
       {showModal && (
         <Modal className={"editTastingModal"} onClose={() => setShowModal(false)}>
-           <EditTastingForm tasting={tasting} setShowModal={setShowModal}/>
+           <EditTastingForm tasting={tasting} lovedTasting={lovedTasting} setShowModal={setShowModal}/>
         </Modal>
       )};
     </>

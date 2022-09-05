@@ -21,15 +21,18 @@ const Home = () => {
           {user && <h3>Bio: {user.bio}</h3>}
           {user && <h3 className='createTastingOnClick' onClick= {() => {setShowModal(true)}}>
             Create a new Tasting
-            </h3>}
-            <div className='myFeedLinkContainer'>
-              <NavLink to='/tastings' className={'myTastingsLink'} exact={true} activeClassName='active'>
-                My Tastings Notes
-              </NavLink>
-            </div>
-            {user && <h3 className='allLovedTastingCards'>
-              Wines others love 
-            </h3>}
+          </h3>}
+          <div className='myFeedLinkContainer'>
+            <NavLink to='/tastings' className={'myTastingsLink'} exact={true} activeClassName='active'>
+              My Tastings Notes
+            </NavLink>
+          </div>
+          <div className='allLovedFeedLinkContainer'>
+            <h3> Be Social...</h3>
+            <NavLink to='/lovedtastings' className={'lovedTastingsLink'} exact={true} activeClassName='active'>
+              Check out the loved wine feed
+            </NavLink>
+          </div>
         </div>
         {showModal && (
         <Modal className={"createPostModal"} onClose={() => setShowModal(false)}>

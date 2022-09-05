@@ -34,9 +34,10 @@ def tastings():
 @tasting_routes.route('/loved')
 @login_required
 def all_loved_tastings():
-  tastings = Tasting.query.filter(Tasting.love == True).all()
+  # tastings = Tasting.query.filter(Tasting.love == True).all()
+  tastings = Tasting.query.all()
 
-  return {'tastings': [tasting.to_dict() for tasting in tastings]}
+  return {'tastings': [tasting.to_dict() for tasting in tastings  if tasting.love == True ]}
 
 
 
