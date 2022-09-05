@@ -50,11 +50,11 @@ const LovedTastingCard = ({lovedTasting}) => {
           </div>
         </div>}
       </div>
-      <div className='discussionWrapper' onClick={() => setShowDiscussion(!showDiscussion)}>
-        <h6>Discussion:</h6> 
+      <div className='discussionWrapper'>
+        <button className='closeDiscussionButton' onClick={() => setShowDiscussion(!showDiscussion)}>Discussion</button>
         {showDiscussion && <div className='discussionOuterContainer'>
           <div className='discussionInnerContainer'>
-            <Discussion lovedTasting={lovedTasting}/>
+            <Discussion lovedTasting={lovedTasting} setShowDiscussion={setShowDiscussion}/>
           </div>
         </div>}
       </div>

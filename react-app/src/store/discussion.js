@@ -50,6 +50,7 @@ export const getCommentsThunk = () => async(dispatch) => {
 
 
 export const createCommentThunk = (discussion, tastingId) => async(dispatch) => {
+  console.log('discussion, tastingId================', discussion, tastingId)
   const response = await fetch(`/api/discussion/tastings/${tastingId}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -119,15 +120,15 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case  GET_COMMENTS: {
       newState = {...state, comments:[...action?.comments]};
-      console.log('action.comments=================', action.comments)
       action?.comments?.forEach((comment) => {
         newState[comment?.id] = comment
       });
       return newState;
     };
     case CREATE_COMMENT: {
-      newState = {...state, comments:[...state?.comments, ...action?.discussion?.comment]};
-      newState[action?.discussion.id] = action?.discussion?.comment
+      console.log('action.comments=======', action.comment)
+      newState = {...state, comments:[...state?.comments, action?.comment]};
+      newState[action?.comment?.id] = action?.comment
       return newState;
     };
     case EDIT_COMMENT: {
