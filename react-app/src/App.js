@@ -10,8 +10,9 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
 import AllLovedFeed from './components/AllLovedFeed/AllLovedFeed';
 import NavBar from './components/NavBar/NavBar';
-import Home from './components/Home/Home'
-import Splash from './components/Splash/Splash'
+import Footer from './components/Footer/Footer';
+import Splash from './components/Splash/Splash';
+import Home from './components/Home/Home';
 
 
 function App() {
@@ -57,10 +58,8 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute> */}
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

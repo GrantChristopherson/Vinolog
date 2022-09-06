@@ -37,9 +37,10 @@ const Discussion = ({ lovedTasting, setShowDiscussion }) => {
   const deleteComment = (commentId) => async (e) => {
     e.preventDefault()
     dispatch(deleteCommentThunk(commentId))
+
   };
 
-
+  
 
 
   return (
@@ -57,7 +58,7 @@ const Discussion = ({ lovedTasting, setShowDiscussion }) => {
                 ))} 
               </div>     
               <div className="editCommentButtonContainer">
-              {comment?.user_id === user?.id ?
+              {comment?.user_id === user?.id && comment?.tasting_id === lovedTasting.id ?
                 <button className="deleteComment" onClick={deleteComment(comment.id)}>Delete</button>  : null}
               </div>
             </div>

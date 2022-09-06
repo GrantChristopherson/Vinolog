@@ -1,0 +1,18 @@
+.lovedTastingCardOuterContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.deleteIcon {
+  background-color: transparent;
+  border: none;
+}
+
+.deleteIcon:hover{
+  background-color: rgba(128, 128, 128, 0.181);
+  border-radius: 50%;
+}

@@ -10,6 +10,7 @@ const CreateCommentForm = ({ lovedTasting }) => {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user)
+  const comments = useSelector((state) => (state?.discussion?.comments))
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState([]);
 
@@ -32,7 +33,8 @@ const CreateCommentForm = ({ lovedTasting }) => {
 
     dispatch(createCommentThunk(data, lovedTasting.id))
     dispatch(getAllLovedTastingsThunk());
-
+    
+   
     setComment("");
     setErrors([]);
   };
