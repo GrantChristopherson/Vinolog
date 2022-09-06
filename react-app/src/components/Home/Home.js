@@ -23,13 +23,13 @@ const Home = () => {
             Create a new Tasting
           </h3>}
           <div className='myFeedLinkContainer'>
-            <NavLink to='/tastings' className={'myTastingsLink'} exact={true} activeClassName='active'>
+            <NavLink to='/tastings' className={'myTastingsLink'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
               My Tastings Notes
             </NavLink>
           </div>
           <div className='allLovedFeedLinkContainer'>
             <h3> Be Social...</h3>
-            <NavLink to='/lovedtastings' className={'lovedTastingsLink'} exact={true} activeClassName='active'>
+            <NavLink to='/lovedtastings' className={'lovedTastingsLink'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
               Check out the loved wine feed
             </NavLink>
           </div>

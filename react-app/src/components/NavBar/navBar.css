@@ -4,10 +4,30 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: #662f2b;
+  background-color: #660d19;
 }
 
 .ulNav {
   display: flex;
   justify-content: space-between;
+}
+
+.vinolog {
+  margin: 0 0 0 0;
+  color: #FFF3C4;
+}
+
+.signupButton {
+  margin: 1px 20px;
+  padding: 2px 40px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: #FFF3C4;}
+
+.loginButton {
+  margin: 1px 20px;
+  padding: 2px 40px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: #FFF3C4;
 }

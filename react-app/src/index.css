@@ -2,3 +2,8 @@
 * {
   box-sizing: border-box;
 }
+
+body  {
+  background: url('../src/assets/Shutterstock_93817174.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
