@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getCommentsThunk, deleteCommentThunk } from '../../store/discussion';
+import { getCommentsThunk } from '../../store/discussion';
 import CreateCommentForm from './CreateCommentForm';
+import EditCommentForm from './EditCommentForm';
 import './discussion.css';
 
 
@@ -32,15 +33,6 @@ const Discussion = ({ lovedTasting, setShowDiscussion }) => {
     })();
   }, [dispatch]);
 
-      
-
-  const deleteComment = (commentId) => async (e) => {
-    e.preventDefault()
-    dispatch(deleteCommentThunk(commentId))
-
-  };
-
-  
 
 
   return (
@@ -54,13 +46,12 @@ const Discussion = ({ lovedTasting, setShowDiscussion }) => {
                 {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
                   <div key={filteredUser?.id}>
                     <h6>{filteredUser?.username}: {comment?.comment}</h6>
+                    {comment?.user_id === user?.id && comment?.tasting_id === lovedTasting.id ?
+                    <h6 onClick={() => setShowEditCommentForm(!showEditCommentForm)}>Edit</h6>: null}
+                    {showEditCommentForm && comment?.user_id === user?.id && <EditCommentForm comment={comment} user={user} lovedTasting={lovedTasting} />} 
                   </div>
-                ))} 
+                ))}
               </div>     
-              <div className="editCommentButtonContainer">
-              {comment?.user_id === user?.id && comment?.tasting_id === lovedTasting.id ?
-                <button className="deleteComment" onClick={deleteComment(comment.id)}>Delete</button>  : null}
-              </div>
             </div>
           )
         })} 
