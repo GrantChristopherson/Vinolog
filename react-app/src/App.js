@@ -10,7 +10,6 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
 import AllLovedFeed from './components/AllLovedFeed/AllLovedFeed';
 import NavBar from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
 import Splash from './components/Splash/Splash';
 import Home from './components/Home/Home';
 
@@ -59,7 +58,6 @@ function App() {
           <User />
         </ProtectedRoute>
       </Switch>
-      <Footer />
     </BrowserRouter>
   );
 }

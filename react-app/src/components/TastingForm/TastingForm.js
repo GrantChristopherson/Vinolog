@@ -117,6 +117,14 @@ const TastingForm = ({ setShowModal }) => {
     setThoughts(e.target.value);
   };
 
+  const handleClick = (e) => {
+    if (love === false) {
+      setLove(true)
+    } else {
+      setLove(false)
+    }
+  }
+
 
   return (
     <div className='createTastingContainer'>
@@ -290,7 +298,7 @@ const TastingForm = ({ setShowModal }) => {
             value={love}
             name='love'
             checked={love === true}
-            onChange={(e) => setLove(true)}
+            onClick={handleClick}
           />
           {errors?.love &&
           <div className='error'>

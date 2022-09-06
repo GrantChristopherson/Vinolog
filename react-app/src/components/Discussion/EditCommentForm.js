@@ -35,6 +35,22 @@ const EditCommentForm = ({ comment, user, lovedTasting }) => {
     setErrors([]);
   };
 
+  const data = {
+    id: comment.id,
+    comment: comment
+  };
+
+  // const editComment = (data) => async (e) => {
+  //   e.preventDefault()
+
+  //   const data = {
+  //     id: comment.id,
+  //     comment: comment
+  //   };
+
+  //   dispatch(editCommentThunk(data, comment?.id))
+  // }
+
 
   const deleteComment = (commentId) => async (e) => {
     e.preventDefault()
@@ -54,7 +70,7 @@ const EditCommentForm = ({ comment, user, lovedTasting }) => {
             name='comment'
             onChange={(e) => setEditedComment(e.target.value)}
             placeholder='Comment...'
-            value={comment}
+            value={editedComment}
             required
           ></input>
           <div className='editDeleteButtonWrapper'>
