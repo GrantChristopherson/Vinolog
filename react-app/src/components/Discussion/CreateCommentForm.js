@@ -13,11 +13,11 @@ const CreateCommentForm = ({ lovedTasting }) => {
   const comments = useSelector((state) => (state?.discussion?.comments))
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState([]);
-
+  console.log('comment===== comment')
 
   useEffect(()=> {
 
-  },[comments])
+  },[comments.comment])
 
 
   const handleSubmit = async (e) => {
@@ -31,13 +31,13 @@ const CreateCommentForm = ({ lovedTasting }) => {
       setErrors(validateErrors);
       return;
     }
-
     const data = {
       comment
     };
+    console.log('data in handlesubmit=======', data)
 
-    dispatch(createCommentThunk(data, lovedTasting.id))
-    dispatch(getCommentsThunk());
+    await dispatch(createCommentThunk(data, lovedTasting.id))
+    await dispatch(getCommentsThunk());
     
    
     setComment("");

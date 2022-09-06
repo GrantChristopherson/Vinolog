@@ -64,6 +64,14 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
       setShowModal(false)
     };
   };
+
+  const handleClick = (e) => {
+    if (love === false) {
+      setLove(true)
+    } else {
+      setLove(false)
+    };
+  };
     
 
   const updateProducer = (e) => {
@@ -283,7 +291,7 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
             value={love}
             name='love'
             checked={love === true}
-            onChange={(e) => setLove(true)}
+            onClick={handleClick}
           />
           {/* {errors?.love &&
           <div className='error'>
