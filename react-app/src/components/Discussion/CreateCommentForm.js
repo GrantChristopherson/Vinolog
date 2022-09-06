@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCommentThunk, getCommentsThunk } from '../../store/discussion';
-import { getAllLovedTastingsThunk } from '../../store/tasting';
 import './createCommentForm.css';
 
 
@@ -9,11 +8,10 @@ import './createCommentForm.css';
 const CreateCommentForm = ({ lovedTasting }) => {
 
   const dispatch = useDispatch();
-  const user = useSelector(state => state?.session?.user)
   const comments = useSelector((state) => (state?.discussion?.comments))
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState([]);
-  console.log('comment===== comment')
+  
 
   useEffect(()=> {
 
@@ -34,7 +32,7 @@ const CreateCommentForm = ({ lovedTasting }) => {
     const data = {
       comment
     };
-    console.log('data in handlesubmit=======', data)
+    
 
     await dispatch(createCommentThunk(data, lovedTasting.id))
     await dispatch(getCommentsThunk());

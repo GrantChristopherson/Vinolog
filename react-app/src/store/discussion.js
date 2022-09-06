@@ -126,7 +126,6 @@ export default function reducer(state = initialState, action) {
       return newState;
     };
     case CREATE_COMMENT: {
-      console.log('action.comments=======', action.comment)
       newState = {...state, comments:[...state?.comments, action?.comment]};
       newState[action?.comment?.id] = action?.comment
       return newState;
@@ -139,6 +138,11 @@ export default function reducer(state = initialState, action) {
       });
       newState = {...state, comments:[...state?.comments]}
       newState[action?.comment?.id] = action?.comment
+      return newState
+    };
+    case DELETE_COMMENT: {
+      let newComments = state?.comments?.filter(comment => { return comment?.id !== action?.id})
+      newState = {...state, comments:[...newComments]}
       return newState
     };
     default: {
