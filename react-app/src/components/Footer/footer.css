@@ -1,0 +1,47 @@
+.footerContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #662f2b;
+}
+
+.aboutMeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.developer {
+  color: white;
+  padding: 6px;
+}
+
+.developerName {
+  color: white;
+  margin-right: 25px;
+  padding: 2px;
+}
+
+.linkedInIcon {
+  color: white;
+}
+
+.fa-linkedin-in {
+  color: white;
+}
+
+.fa-brands {
+  color: white;
+  padding: 10px;
+}
+
+.userLinkedInLink{
+  color: white;
+  padding: 8px;
+}
+
+.fa-github {
+  padding: 0px 15px 0px 20px;
+}
