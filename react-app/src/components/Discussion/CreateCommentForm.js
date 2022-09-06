@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createCommentThunk, getCommentsThunk } from '../../store/discussion';
 import { getAllLovedTastingsThunk } from '../../store/tasting';
@@ -15,6 +15,11 @@ const CreateCommentForm = ({ lovedTasting }) => {
   const [errors, setErrors] = useState([]);
 
 
+  useEffect(()=> {
+
+  },[comments])
+
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -23,8 +28,8 @@ const CreateCommentForm = ({ lovedTasting }) => {
     if (comment.length > 400) validateErrors.push('comment cannot be longer than 400 characters');
 
     if (validateErrors.length > 0) {
-        setErrors(validateErrors);
-        return;
+      setErrors(validateErrors);
+      return;
     }
 
     const data = {
@@ -32,7 +37,7 @@ const CreateCommentForm = ({ lovedTasting }) => {
     };
 
     dispatch(createCommentThunk(data, lovedTasting.id))
-    dispatch(getAllLovedTastingsThunk());
+    dispatch(getCommentsThunk());
     
    
     setComment("");
