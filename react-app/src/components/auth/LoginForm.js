@@ -29,6 +29,16 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
+  const demoUser = async (e) => {
+    e.preventDefault();
+    const email = 'demo@demo.io';
+    const password = 'password';
+    const data = await dispatch(login( email, password));
+    if (data) {
+      setErrors(data);
+    };
+  };
+
   if (user) {
     return <Redirect to='/' />;
   }
@@ -62,6 +72,9 @@ const LoginForm = () => {
           />
           <div className='loginButtonWrapper'>
             <button type='submit'>Login</button>
+          </div>
+          <div className='demoButtonWrapper'>
+            <button onClick={demoUser} >Demo</button>
           </div>
         </div>
       </form>
