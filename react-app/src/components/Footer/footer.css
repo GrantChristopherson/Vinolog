@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: #662f2b;
+  background-color: #660d19;
 }
 
 .aboutMeContainer {
@@ -14,31 +14,31 @@
 }
 
 .developer {
-  color: white;
+  color: #FFF3C4;
   padding: 6px;
 }
 
 .developerName {
-  color: white;
+  color: #FFF3C4;
   margin-right: 25px;
   padding: 2px;
 }
 
 .linkedInIcon {
-  color: white;
+  color: #FFF3C4;
 }
 
 .fa-linkedin-in {
-  color: white;
+  color: #FFF3C4;
 }
 
 .fa-brands {
-  color: white;
+  color: #FFF3C4;
   padding: 10px;
 }
 
 .userLinkedInLink{
-  color: white;
+  color: #FFF3C4;
   padding: 8px;
 }
 

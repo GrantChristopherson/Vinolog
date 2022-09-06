@@ -16,3 +16,23 @@
   justify-content: space-between;
   align-items: vertical;
 }
+
+.emailInput {
+  justify-content: right;
+  margin: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
+.passwordInput {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
+.errorMessages {
+  color: #c73649;
+  font-weight: bold;
+}

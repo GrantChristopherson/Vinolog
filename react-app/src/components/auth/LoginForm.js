@@ -36,14 +36,14 @@ const LoginForm = () => {
   return (
     <div className='loginFormContainer'>
       <form className='loginForm' onSubmit={onLogin}>
-        <div>
+        <div className='errorMessages'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
         <div>
           <label htmlFor='email'>Email</label>
-          <input
+          <input className='emailInput'
             name='email'
             type='text'
             placeholder='Email'
@@ -53,18 +53,23 @@ const LoginForm = () => {
         </div>
         <div>
           <label htmlFor='password'>Password</label>
-          <input
+          <input className='passwordInput'
             name='password'
             type='password'
             placeholder='Password'
             value={password}
             onChange={updatePassword}
           />
-          <button type='submit'>Login</button>
+          <div className='loginButtonWrapper'>
+            <button type='submit'>Login</button>
+          </div>
         </div>
       </form>
     </div>
   );
 };
 
+
+
 export default LoginForm;
+
