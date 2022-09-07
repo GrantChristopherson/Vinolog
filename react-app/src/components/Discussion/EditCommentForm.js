@@ -6,11 +6,11 @@ import './editCommentForm.css';
 
 
 const EditCommentForm = ({ comment, user, lovedTasting, setShowEditCommentForm }) => {
-  console.log('comment======', comment?.comment)
+  
   const dispatch = useDispatch();
   const [editedComment, setEditedComment] = useState(comment?.comment);
   const [errors, setErrors] = useState([]);
-  console.log('editedComment======', editedComment)
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -22,14 +22,14 @@ const EditCommentForm = ({ comment, user, lovedTasting, setShowEditCommentForm }
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
       return;
-    }
+    };
 
     const data = {
       id: comment.id,
       comment: editedComment
     };
     
-    dispatch(editCommentThunk(data, comment?.id))
+    dispatch(editCommentThunk(data, comment?.id));
     
     setEditedComment("");
     setErrors([]);
@@ -37,28 +37,12 @@ const EditCommentForm = ({ comment, user, lovedTasting, setShowEditCommentForm }
 
   };
 
-  // const data = {
-  //   id: comment.id,
-  //   comment: comment
-  // };
-
-  // const editComment = (data) => async (e) => {
-  //   e.preventDefault()
-
-  //   const data = {
-  //     id: comment.id,
-  //     comment: comment
-  //   };
-
-  //   dispatch(editCommentThunk(data, comment?.id))
-  // }
-
 
   const deleteComment = (commentId) => async (e) => {
     e.preventDefault()
 
-    await dispatch(deleteCommentThunk(commentId))
-    await dispatch(getCommentsThunk())
+    await dispatch(deleteCommentThunk(commentId));
+    await dispatch(getCommentsThunk());
     setShowEditCommentForm(false);
   };
     

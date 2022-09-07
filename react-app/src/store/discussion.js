@@ -72,7 +72,6 @@ export const createCommentThunk = (discussion, tastingId) => async(dispatch) => 
 
 
 export const editCommentThunk = (discussion, commentId) => async(dispatch) => {
-  console.log('thunk discussion======', discussion, commentId)
   const response = await fetch(`/api/discussion/comments/${commentId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
