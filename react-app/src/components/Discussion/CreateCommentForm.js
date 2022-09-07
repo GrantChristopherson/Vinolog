@@ -23,7 +23,15 @@ const CreateCommentForm = ({ lovedTasting }) => {
 
     let validateErrors = [];
     if (comment.length < 2) validateErrors.push('comment must be longer than 1 character');
-    if (comment.length > 400) validateErrors.push('comment cannot be longer than 400 characters');
+    if (comment.length > 150) validateErrors.push('comment cannot be longer than 150 characters');
+    for (let i = 0; i < comment.length; i++) {
+      let char = comment[i];
+      if (char === ' ') {
+        if (char[i + 1] === ' ') {
+          if (char[i + 2] === ' ') validateErrors.push('comment cannot have 3 or more consecutive spaces')
+        };
+      };
+    };
 
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
@@ -42,7 +50,10 @@ const CreateCommentForm = ({ lovedTasting }) => {
     setErrors([]);
   };
 
-
+  const handleCancel = () => {
+    setComment('')
+    setErrors([])
+  }
 
 
   return (
@@ -61,6 +72,7 @@ const CreateCommentForm = ({ lovedTasting }) => {
           <button className='commentButton' type="submit" >Submit</button>
         </div>
       </form>
+      <button className='cancelCreateButton' onClick={() => handleCancel()}>Clear</button>
     </div>
   );
 };

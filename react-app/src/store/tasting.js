@@ -144,7 +144,7 @@ export const deleteTastingThunk = (tastingId) => async(dispatch) => {
     method: 'DELETE',
   })
 
-  const message = await response.json();
+  await response.json();
   dispatch(deleteTasting(tastingId));
   return response
 };

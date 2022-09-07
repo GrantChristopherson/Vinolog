@@ -15,6 +15,7 @@ const LovedTastingCard = ({lovedTasting}) => {
   const [showInfo, setShowInfo] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showDiscussion, setShowDiscussion] = useState(false);
+  const [showBio, setShowBio] = useState(false);
 
 
   const deleteHandler = async() => {
@@ -25,9 +26,10 @@ const LovedTastingCard = ({lovedTasting}) => {
 
   return (
     <div className='lovedTastingCardOuterContainer'>
-      <div className='lovedTastingContainer' onClick={() => setShowInfo(!showInfo)}>
-        <h5>{lovedTasting?.user?.username}</h5>
-        <div className='lovedWineInfo'>
+      <div className='lovedTastingContainer'>
+        <h5 onClick={() => setShowBio(!showBio)}>{lovedTasting?.user?.username}</h5>
+        {showBio && <h6>User Bio: {lovedTasting?.user?.bio}</h6>}
+        <div className='lovedWineInfo' onClick={() => setShowInfo(!showInfo)}>
           <h2>{lovedTasting?.vintage} {lovedTasting?.producer}</h2>
           <h3>{lovedTasting?.varietal}</h3>
           {showInfo && <h4>{lovedTasting?.region}</h4>}

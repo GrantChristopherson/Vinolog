@@ -51,7 +51,7 @@ const LoginForm = () => {
             <div key={ind}>{error}</div>
           ))}
         </div>
-        <div>
+        <div className='emailWrapper'>
           <label htmlFor='email'>Email</label>
           <input className='emailInput'
             name='email'
@@ -61,7 +61,7 @@ const LoginForm = () => {
             onChange={updateEmail}
           />
         </div>
-        <div>
+        <div className='passwordWrapper'>
           <label htmlFor='password'>Password</label>
           <input className='passwordInput'
             name='password'
