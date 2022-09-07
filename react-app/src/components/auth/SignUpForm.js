@@ -5,6 +5,7 @@ import { signUp } from '../../store/session';
 import './signUpForm.css'
 
 const SignUpForm = () => {
+
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -13,8 +14,22 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
+
   const onSignUp = async (e) => {
     e.preventDefault();
+
+    // let validateErrors = [];
+    // if (comment.length < 2) validateErrors.push('comment must be longer than 1 character');
+    // if (comment.length > 400) validateErrors.push('comment cannot be longer than 400 characters');
+
+    // if (validateErrors.length > 0) {
+    //   setErrors(validateErrors);
+    //   return;
+    // }
+
+
+
+
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
@@ -46,7 +61,7 @@ const SignUpForm = () => {
   return (
     <div className='signUpFormContainer'>
       <form className='signUpForm' onSubmit={onSignUp}>
-        <div>
+        <div className='errorMessages'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}

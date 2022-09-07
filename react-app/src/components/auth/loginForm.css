@@ -18,7 +18,7 @@
 }
 
 .emailInput {
-  justify-content: right;
+  
   margin: 4px;
   padding: 8px;
   border-radius: 6px;
@@ -36,3 +36,4 @@
   color: #c73649;
   font-weight: bold;
 }
+
