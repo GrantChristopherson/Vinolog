@@ -73,6 +73,7 @@ export const createCommentThunk = (discussion, tastingId) => async(dispatch) => 
 
 
 export const editCommentThunk = (discussion, commentId) => async(dispatch) => {
+  console.log('thunk discussion======', discussion, commentId)
   const response = await fetch(`/api/discussion/comments/${commentId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -102,7 +103,7 @@ export const deleteCommentThunk = (commentId) => async(dispatch) => {
   })
 
   if (response.ok) {
-    const message = await response.json();
+    await response.json();
     dispatch(deleteComment(commentId));
     return response;
   };
