@@ -16,9 +16,9 @@ const EditCommentForm = ({ comment, user, lovedTasting, setShowEditCommentForm }
     e.preventDefault()
 
     let validateErrors = [];
-    if (comment.length < 2) validateErrors.push('comment must be longer than 1 character');
-    if (comment.length > 150) validateErrors.push('comment cannot be longer than 150 characters');
-    // if emptys space comment validations
+    if (editedComment.length < 2) validateErrors.push('comment must be longer than 1 character');
+    if (editedComment.length > 150) validateErrors.push('comment cannot be longer than 150 characters');
+    // if emptys space comment validations??
 
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
