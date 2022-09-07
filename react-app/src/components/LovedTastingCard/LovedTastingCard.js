@@ -27,8 +27,10 @@ const LovedTastingCard = ({lovedTasting}) => {
   return (
     <div className='lovedTastingCardOuterContainer'>
       <div className='lovedTastingContainer'>
-        <h5 onClick={() => setShowBio(!showBio)}>{lovedTasting?.user?.username}</h5>
-        {showBio && <h6>User Bio: {lovedTasting?.user?.bio}</h6>}
+        <div className='userInfoContainer' onClick={() => setShowBio(!showBio)}>
+          <h5>{lovedTasting?.user?.username}'s Wine Tasting</h5>
+          {showBio && <h6>{lovedTasting?.user?.username}'s Bio: {lovedTasting?.user?.bio}</h6>}
+        </div>
         <div className='lovedWineInfo' onClick={() => setShowInfo(!showInfo)}>
           <h2>{lovedTasting?.vintage} {lovedTasting?.producer}</h2>
           <h3>{lovedTasting?.varietal}</h3>
