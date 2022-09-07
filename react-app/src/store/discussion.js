@@ -50,7 +50,6 @@ export const getCommentsThunk = () => async(dispatch) => {
 
 
 export const createCommentThunk = (discussion, tastingId) => async(dispatch) => {
-  console.log('discussion, tastingId================', discussion, tastingId)
   const response = await fetch(`/api/discussion/tastings/${tastingId}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
