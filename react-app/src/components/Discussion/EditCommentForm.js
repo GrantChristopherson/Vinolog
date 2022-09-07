@@ -5,7 +5,7 @@ import './editCommentForm.css';
 
 
 
-const EditCommentForm = ({ comment, user, lovedTasting }) => {
+const EditCommentForm = ({ comment, user, lovedTasting, setShowEditCommentForm }) => {
   console.log('comment======', comment?.comment)
   const dispatch = useDispatch();
   const [editedComment, setEditedComment] = useState(comment?.comment);
@@ -26,13 +26,15 @@ const EditCommentForm = ({ comment, user, lovedTasting }) => {
 
     const data = {
       id: comment.id,
-      comment: comment
+      comment: editedComment
     };
-    console.log('data===============', data)
+    
     dispatch(editCommentThunk(data, comment?.id))
     
     setEditedComment("");
     setErrors([]);
+    setShowEditCommentForm(false);
+
   };
 
   // const data = {
@@ -57,6 +59,7 @@ const EditCommentForm = ({ comment, user, lovedTasting }) => {
 
     await dispatch(deleteCommentThunk(commentId))
     await dispatch(getCommentsThunk())
+    setShowEditCommentForm(false);
   };
     
    
