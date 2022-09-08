@@ -78,6 +78,9 @@ const TastingForm = ({ setShowModal }) => {
 
     setErrors(validateErrors)
 
+    if (errors.length) {
+      return
+    }
 
     const tasting = {
       producer,
@@ -93,7 +96,13 @@ const TastingForm = ({ setShowModal }) => {
       love
     };
 
-    dispatch(createTastingThunk(tasting));
+    let data = dispatch(createTastingThunk(tasting));
+
+    if (data) {
+       return data
+    } else {
+      setShowModal(false)
+  }
 
   };
 
