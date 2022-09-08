@@ -22,7 +22,7 @@ const Discussion = ({ lovedTasting, setShowDiscussion }) => {
       const data = await response.json();
       setUsers(data.users);
     };
-    fetchData();
+    // fetchData();
   }, []);
   
 
