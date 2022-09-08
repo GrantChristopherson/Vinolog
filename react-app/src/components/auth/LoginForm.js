@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import Splash from '../Splash/Splash';
 import './loginForm.css'
 
 const LoginForm = () => {
@@ -44,40 +45,43 @@ const LoginForm = () => {
   }
 
   return (
-    <div className='loginFormContainer'>
-      <form className='loginForm' onSubmit={onLogin}>
-        <div className='errorMessages'>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div className='emailWrapper'>
-          <label htmlFor='email'>Email</label>
-          <input className='emailInput'
-            name='email'
-            type='text'
-            placeholder='Email'
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <div className='passwordWrapper'>
-          <label htmlFor='password'>Password</label>
-          <input className='passwordInput'
-            name='password'
-            type='password'
-            placeholder='Password'
-            value={password}
-            onChange={updatePassword}
-          />
-          <div className='loginButtonWrapper'>
-            <button type='submit'>Login</button>
+    <div>
+      <Splash />
+      <div className='loginFormContainer'>
+        <form className='loginForm' onSubmit={onLogin}>
+          <div className='errorMessages'>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
           </div>
-          <div className='demoButtonWrapper'>
-            <button onClick={demoUser} >Demo</button>
+          <div className='emailWrapper'>
+            <label htmlFor='email'>Email</label>
+            <input className='emailInput'
+              name='email'
+              type='text'
+              placeholder='Email'
+              value={email}
+              onChange={updateEmail}
+            />
           </div>
-        </div>
-      </form>
+          <div className='passwordWrapper'>
+            <label htmlFor='password'>Password</label>
+            <input className='passwordInput'
+              name='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={updatePassword}
+            />
+            <div className='loginButtonWrapper'>
+              <div className='loginInnerWrapper'>
+                <button classname='loginDemoButtons' onClick={demoUser} >Demo</button>
+                <button classname='demoButton' type='submit'>Login</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
