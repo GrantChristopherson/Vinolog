@@ -5,7 +5,7 @@ import './createCommentForm.css';
 
 
 
-const CreateCommentForm = ({ lovedTasting }) => {
+const CreateCommentForm = ({ tasting }) => {
 
   const dispatch = useDispatch();
   const comments = useSelector((state) => (state?.discussion?.comments))
@@ -42,7 +42,7 @@ const CreateCommentForm = ({ lovedTasting }) => {
     };
     
 
-    await dispatch(createCommentThunk(data, lovedTasting.id))
+    await dispatch(createCommentThunk(data, tasting.id))
     await dispatch(getCommentsThunk());
     
    

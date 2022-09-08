@@ -16,9 +16,7 @@ const Sidebar = ({ user, setShowModal }) => {
         {/* {user && <h3 className='createTastingOnClick' onClick= {() => {setShowModal(true)}}>
           Create a new Tasting
         </h3>} */}
-        <NavLink to='/home' className={'myTastingsLink'} exact={true} 
-                                activeClassName='active' style={{textDecoration: 'none'}}
-                                onClick= {() => {setShowModal(true)}}>
+        <NavLink to='/tasting' className={'createTasting'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
             Create New Tasting
           </NavLink>
         <div className='myFeedLinkContainer'>

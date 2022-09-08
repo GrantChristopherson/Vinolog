@@ -77,7 +77,9 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
     };
 
     setErrors(validateErrors)
-    if (errors.length) {
+    let keyErrors = Object.keys(errors)
+    console.log('keyErrors========', keyErrors)
+    if (keyErrors) {
       return
     }
 
@@ -98,13 +100,15 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
     };
 
     
-    let data = dispatch(editTastingThunk(taste));
+    // let data = dispatch(editTastingThunk(taste));
     
-    if (data) {
-      return data
-    } else {
-     setShowModal(false)
-    };
+    // if (data) {
+    //   return data
+    // } else {
+    //  setShowModal(false)
+    // };
+    setShowModal(false)
+    dispatch(editTastingThunk(taste));
   };
 
 

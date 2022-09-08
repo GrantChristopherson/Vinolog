@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink, useHistory } from 'react-router-dom';
 import { createTastingThunk } from '../../store/tasting';
 import './tastingForm.css';
 
@@ -9,7 +10,7 @@ import './tastingForm.css';
 const TastingForm = ({ setShowModal }) => {
 
   const dispatch = useDispatch();
-
+  const history = useHistory();
 
   const [errors, setErrors] = useState({});
   const [producer, setProducer] = useState('');
@@ -75,13 +76,14 @@ const TastingForm = ({ setShowModal }) => {
         validateErrors['thoughts'] = 'Thoughts either can be null or between 3 and 200 characters';
       };
     };
-
+    
     setErrors(validateErrors)
-
-    if (errors.length) {
-      return
+    if (validateErrors !== undefined) {
+        console.log('errors=====', errors)
+        console.log('validateErrors=====', validateErrors)
+      return;
     }
-
+    console.log('empty object========', {})
     const tasting = {
       producer,
       region,
@@ -97,13 +99,15 @@ const TastingForm = ({ setShowModal }) => {
     };
 
     let data = dispatch(createTastingThunk(tasting));
-
     if (data) {
-       return data
-    } else {
-      setShowModal(false)
-    };
-
+      setErrors(data)
+      console.log('data=======', data)
+      history.push('/tastings')
+    }
+    
+      
+  
+    
   };
 
 
@@ -303,7 +307,9 @@ const TastingForm = ({ setShowModal }) => {
         </div>
         <div>
           <button  className='submitTasting'>Submit</button>
-          <button className="closeNewWine" onClick={()=>setShowModal(false)}>Close</button>
+          <NavLink to='/home' className={'myhome'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+            Cancel
+          </NavLink> 
         </div>
         </div>
       </form>

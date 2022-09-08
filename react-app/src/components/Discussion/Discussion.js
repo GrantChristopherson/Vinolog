@@ -7,14 +7,14 @@ import './discussion.css';
 
 
 
-const Discussion = ({ lovedTasting, setShowDiscussion }) => {
+const Discussion = ({ tasting, setShowDiscussion }) => {
 
   const dispatch = useDispatch()
   const user = useSelector(state => state?.session?.user);
   const comments = useSelector((state) => (state?.discussion?.comments))
   const [users, setUsers] = useState([]);
 
-  const lovedTastingComments = comments.filter((comment) => comment.tasting_id === lovedTasting.id)
+  const lovedTastingComments = comments.filter((comment) => comment.tasting_id === tasting.id)
 
   useEffect(() => {
     async function fetchData() {
@@ -43,13 +43,13 @@ const Discussion = ({ lovedTasting, setShowDiscussion }) => {
             <div key={comment?.id} className="commentcontainer">
               <div className="comment">
                 {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
-                  <Comment key={filteredUser.id} comment={comment} filteredUser={filteredUser} lovedTasting={lovedTasting} user={user} />
+                  <Comment key={filteredUser.id} comment={comment} filteredUser={filteredUser} tasting={tasting} user={user} />
                 ))}
               </div>     
             </div>
           )
         })} 
-        <CreateCommentForm lovedTasting={lovedTasting} setShowDiscussion={setShowDiscussion}/>
+        <CreateCommentForm tasting={tasting} setShowDiscussion={setShowDiscussion}/>
       </div>
     </div>
   );
