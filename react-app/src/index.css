@@ -1,10 +1,11 @@
 /* TODO Add site wide styles */
 * {
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body  {
-  background: url('../src/assets/Shutterstock_93817174.jpg') no-repeat center center fixed;
+  /* background: url('../src/assets/Shutterstock_93817174.jpg') no-repeat center center fixed; */
+  background-color: #b5b2a8;
   background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

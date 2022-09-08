@@ -3,8 +3,12 @@
   flex-direction: column;
   margin: 5px;
   padding: 30px;
-  background-color: white;
+  background-color: #FFF3C4;
   border-radius: 8px;
+}
+.tastingContainer {
+  padding: 80 px;
+  
 }
 
 .deleteIcon {

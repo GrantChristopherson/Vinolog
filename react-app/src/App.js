@@ -51,12 +51,6 @@ function App() {
         <ProtectedRoute path='/lovedtastings' exact={true} >
           <AllLovedFeed />
         </ProtectedRoute>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

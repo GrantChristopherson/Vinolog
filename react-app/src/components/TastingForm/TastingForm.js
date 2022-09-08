@@ -102,7 +102,7 @@ const TastingForm = ({ setShowModal }) => {
        return data
     } else {
       setShowModal(false)
-  }
+    };
 
   };
 

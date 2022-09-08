@@ -6,23 +6,23 @@ import './editTastingForm.css';
 
 
 
-const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
+const EditTastingForm = ({ tasting, setShowModal }) => {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user)
   
   const [errors, setErrors] = useState({});
-  const [producer, setProducer] = useState(lovedTasting?.producer);
-  const [region, setRegion] = useState(lovedTasting?.region);
-  const [vineyard, setVineyard] = useState(lovedTasting?.vineyard);
-  const [varietal, setVarietal] = useState(lovedTasting?.varietal);
-  const [vintage, setVintage] = useState(lovedTasting?.vintage);
-  const [otherInfo, setOtherInfo] = useState(lovedTasting?.other_info);
-  const [sight, setSight] = useState(lovedTasting?.sight);
-  const [nose, setNose] = useState(lovedTasting?.nose);
-  const [palate, setPalate] = useState(lovedTasting?.palate);
-  const [thoughts, setThoughts] = useState(lovedTasting?.thoughts);
-  const [love, setLove] = useState(lovedTasting?.love);
+  const [producer, setProducer] = useState(tasting?.producer);
+  const [region, setRegion] = useState(tasting?.region);
+  const [vineyard, setVineyard] = useState(tasting?.vineyard);
+  const [varietal, setVarietal] = useState(tasting?.varietal);
+  const [vintage, setVintage] = useState(tasting?.vintage);
+  const [otherInfo, setOtherInfo] = useState(tasting?.other_info);
+  const [sight, setSight] = useState(tasting?.sight);
+  const [nose, setNose] = useState(tasting?.nose);
+  const [palate, setPalate] = useState(tasting?.palate);
+  const [thoughts, setThoughts] = useState(tasting?.thoughts);
+  const [love, setLove] = useState(tasting?.love);
   
 
   const handleSubmit = async (e) => {
@@ -77,9 +77,12 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
     };
 
     setErrors(validateErrors)
+    if (errors.length) {
+      return
+    }
 
     const taste = {
-      id: lovedTasting.id,
+      id: tasting.id,
       producer,
       region,
       vineyard,
@@ -94,9 +97,16 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
       user: user
     };
 
-    dispatch(editTastingThunk(taste));
-    setShowModal(false);
+    
+    let data = dispatch(editTastingThunk(taste));
+    
+    if (data) {
+      return data
+    } else {
+     setShowModal(false)
+    };
   };
+
 
 
   const handleClick = (e) => {
@@ -150,7 +160,7 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
 
 
   const deleteHandler = async() => {
-    await dispatch(deleteTastingThunk(lovedTasting?.id))
+    await dispatch(deleteTastingThunk(tasting?.id))
   };
 
 
