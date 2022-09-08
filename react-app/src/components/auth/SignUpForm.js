@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import Splash from '../Splash/Splash';
 import './signUpForm.css'
 
 const SignUpForm = () => {
 
   const [errors, setErrors] = useState([]);
-  const [users, setUsers] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,23 +16,10 @@ const SignUpForm = () => {
   const dispatch = useDispatch();
 
 
-
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await fetch('/api/users/');
-  //     const data = await response.json();
-  //     setUsers(data.users);
-  //   };
-  //   fetchData();
-  // }, []);
-
-  
   const onSignUp = async (e) => {
     e.preventDefault();
 
     let validateErrors = [];
-    
     if (!username.length || !email.length || !password.length || !repeatPassword.length) {
       validateErrors.push('input fields must be filled in')
     }
@@ -41,16 +28,6 @@ const SignUpForm = () => {
       validateErrors.push('User Name must be between 6 and 30 characters')
     };
 
-    for (user in users) {
-      if (user.username === username) {
-        validateErrors.push('User Name must be unique')
-      } else if (user.email === email) {
-        validateErrors.push('Email must be unique')
-      };
-    };
-
-    
-    
     if (!email.includes('@')) {
       validateErrors.push('Must use a valid email')
     };
@@ -66,18 +43,16 @@ const SignUpForm = () => {
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
       return
-    }
+    };
 
     
    
-    ///////
-
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
         setErrors(data)
-      }
-    }
+      };
+    };
   };
 
   const updateUsername = (e) => {
@@ -101,52 +76,61 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className='signUpFormContainer'>
-      <form className='signUpForm' onSubmit={onSignUp}>
-        <div className='errorMessages'>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div>
-          <label>User Name</label>
-          <input
-            type='text'
-            name='username'
-            onChange={updateUsername}
-            value={username}
-          ></input>
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type='text'
-            name='email'
-            onChange={updateEmail}
-            value={email}
-          ></input>
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type='password'
-            name='password'
-            onChange={updatePassword}
-            value={password}
-          ></input>
-        </div>
-        <div>
-          <label>Repeat Password</label>
-          <input
-            type='password'
-            name='repeat_password'
-            onChange={updateRepeatPassword}
-            value={repeatPassword}
-            required={true}
-          ></input>
-        </div>
-        <button type='submit'>Sign Up</button>
-      </form>
+    <div>
+      <Splash />
+      <div className='signUpFormContainer'>
+        <form className='signUpForm' onSubmit={onSignUp}>
+          <div className='errorMessages'>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <div className='usernameWrapper'>
+            <label>Username</label>
+            <input 
+              type='text'
+              name='username'
+              placeholder='username'
+              onChange={updateUsername}
+              value={username}
+            ></input>
+          </div>
+          <div className='emailWrapper'>
+            <label>Email</label>
+            <input 
+              type='text'
+              name='email'
+              placeholder='email'
+              onChange={updateEmail}
+              value={email}
+            ></input>
+          </div>
+          <div className='passwordWrapper'>
+            <label>Password</label>
+            <input 
+              type='password'
+              name='password'
+              placeholder='password'
+              onChange={updatePassword}
+              value={password}
+            ></input>
+          </div>
+          <div className='repeatedPasswordWrapper'>
+            <label>Repeat Password</label>
+            <input 
+              type='password'
+              name='repeat_password'
+              placeholder='password'
+              onChange={updateRepeatPassword}
+              value={repeatPassword}
+              required={true}
+            ></input>
+          </div>
+          <div className='signUpButtonWrapper'>
+            <button type='submit'>Sign Up</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,6 @@ const Sidebar = ({ user, setShowModal }) => {
   return (
     <div className='userSidebarContainer'>
       {user && <h2>Welcome back, {user.username}!</h2>}
-      {user && <h3>Bio: {user.bio} change to 'update bio' click</h3>}
       {user && <h3 className='createTastingOnClick' onClick= {() => {setShowModal(true)}}>
         Create a new Tasting
       </h3>}

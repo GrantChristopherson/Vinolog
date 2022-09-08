@@ -1,14 +1,52 @@
+.splashOuterContainer {
+  padding: 0 0 0 20px;
+}
+
+
 .signUpFormContainer {
   display: flex;
+  justify-content: column;
   height:100%;
   max-width: 40%;
-  margin: 20% auto 10% 5%;
-  background-color: rgba(255, 255, 255, 0.014);
+  margin: 3% auto 10% 3%;
+  background-color: rgba(255, 255, 255 0.2);
 }
 
 .signUpForm {
   justify-content: space-between;
   align-items: vertical;
+}
+
+.usernameWrapper {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
+.emailWrapper {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
+.passwordWrapper {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
+.repeatedPasswordWrapper {
+  margin: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
+.signUpButtonWrapper {
+
 }
 
 .errorMessages {
