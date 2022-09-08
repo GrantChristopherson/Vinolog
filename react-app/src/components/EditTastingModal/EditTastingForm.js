@@ -10,7 +10,6 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user)
-  console.log('loveTasting======', lovedTasting)
   
   const [errors, setErrors] = useState({});
   const [producer, setProducer] = useState(lovedTasting?.producer);
@@ -24,6 +23,8 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
   const [palate, setPalate] = useState(lovedTasting?.palate);
   const [thoughts, setThoughts] = useState(lovedTasting?.thoughts);
   const [love, setLove] = useState(lovedTasting?.love);
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -75,9 +76,7 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
       };
     };
 
-    console.log('validateErrors=========', validateErrors)
     setErrors(validateErrors)
-    console.log('errors==========', errors)
 
     const taste = {
       id: lovedTasting.id,
@@ -96,13 +95,9 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
     };
 
     dispatch(editTastingThunk(taste));
-
-    // if (data) {
-    //   setErrors(data);
-    // } else {
-    //     setShowModal(false);
-    // };
+    setShowModal(false);
   };
+
 
   const handleClick = (e) => {
     if (love === false) {
@@ -166,7 +161,6 @@ const EditTastingForm = ({ tasting, lovedTasting, setShowModal }) => {
         <div className='inputContainer'>
         <div>
           {errors?.producer !== undefined && <div className='error'>
-            {console.log('errors==========', errors)}
             <div className='errors'>{errors.producer}</div>
           </div>
           } 
