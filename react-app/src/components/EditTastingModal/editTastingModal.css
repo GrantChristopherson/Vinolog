@@ -6,6 +6,7 @@
   overflow-y:auto;
   /* height: 530px; */
   min-height: 150px;
+  
 }
 
 .editTastingContainer {
@@ -19,10 +20,3 @@
   padding: 30px 100px 60px 50px;
 }
 
-.editTastingForm {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
-  /* min-width: 200px; */
-
-}
