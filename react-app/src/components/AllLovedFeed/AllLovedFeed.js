@@ -25,9 +25,9 @@ const AllLovedFeed = () => {
   return (
     <div className="allLovedFeedOuterContainer">
       <div className="allLovedFeedInnerContainer">
-        {lovedWineTastings?.map((lovedTasting) => {return (
-        <div key={lovedTasting?.id} className="lovedtastingContainer">
-          <LovedTastingCard lovedTasting={lovedTasting}/>
+        {lovedWineTastings?.map((tasting) => {return (
+        <div key={tasting?.id} className="lovedtastingContainer">
+          <LovedTastingCard tasting={tasting}/>
         </div>
         )})}
       </div>

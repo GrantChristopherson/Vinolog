@@ -1,41 +1,8 @@
-.userContainer {
-  /* display: flex; */
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 60%;
-  bottom: 0;
-  background-color: black;
-  z-index: 1;
-}
-
-.userSidebarContainer {
-  
+.outerContainer {
   display: flex;
-  justify-content: space-around;
-  /* padding: 100% 10px 100% 30px; */
-  flex-direction: column;
-  align-items: center;
-  height:100%;
-  max-width: 40%;
-  margin: 100px auto 0% 0;
-  background-color: #5d6480;
-  opacity: 0.2;
+  justify-content: space-between;
 }
 
-.createPostModal {
-  position: absolute;
-  background-color: white;
-  border-radius: 8px;
-  max-width: 300vw;
-  overflow-y:auto;
-  /* height: 530px; */
-  min-height: 150px;
+userSidebarContainer {
+  width: 200px
 }
-
-.aboutMeContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
