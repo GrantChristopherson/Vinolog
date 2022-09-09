@@ -11,17 +11,17 @@ const Home = () => {
 
   const user = useSelector(state => state?.session?.user)
 
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   
   return (
     <div className='homeContainer'>
       <div className='userContainer'>
-        <Sidebar user={user} setShowModal={setShowModal} />
-        {showModal && (
+        <Sidebar />
+        {/* {showModal && (
         <Modal className={"createPostModal"} onClose={() => setShowModal(false)}>
           <TastingForm setShowModal={setShowModal} />
         </Modal>
-        )}
+        )} */}
       </div>
     </div>
   );
