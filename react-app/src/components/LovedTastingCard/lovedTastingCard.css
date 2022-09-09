@@ -1,3 +1,7 @@
+.userInfoContainer {
+  cursor: pointer;
+}
+
 .userHeader {
   margin-bottom: 2px;
 }
@@ -8,15 +12,11 @@
 
 .lovedWineInfo {
   color: #660d19;
+  cursor: pointer;
 }
 
 .lovedTastingNotesContainer {
   color: black;
-}
-
-.lovedTastingHeader:hover {
-  background-color: rgba(128, 128, 128, 0.181);
-  border-radius: 50%;
 }
 
 .editContainer {

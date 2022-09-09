@@ -5,3 +5,9 @@
   font-weight: bold;
   background-color: #FFF3C4;
 }
+
+.logoutButton:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+  
+}

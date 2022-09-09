@@ -297,7 +297,7 @@ const TastingForm = () => {
             <div className='loveWrapperInput'>
               <label className='loveLabel'>Love this wine?</label>
               <input className='loveInput'
-                type="radio"
+                type="checkbox"
                 value={love}
                 name='love'
                 checked={love === true}

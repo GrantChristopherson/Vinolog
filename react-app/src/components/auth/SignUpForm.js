@@ -127,7 +127,7 @@ const SignUpForm = () => {
             ></input>
           </div>
           <div className='signUpButtonWrapper'>
-            <button type='submit'>Sign Up</button>
+            <button className='signUpButton' type='submit'>Sign Up</button>
           </div>
         </form>
       </div>
