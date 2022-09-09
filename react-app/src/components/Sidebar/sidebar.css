@@ -29,6 +29,15 @@
   font-weight: bold;
 }
 
+.createbarWrapper:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+
+.createbarWrapper:active {
+  opacity: .7;
+}
+
 .myFeedLinkContainer {
   display: flex;
   justify-content: space-between;
@@ -41,6 +50,15 @@
   font-weight: bold;
 }
 
+.mytastebarNav:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+
+.mytastebarNav:active {
+  opacity: .7;
+}
+
 .allLovedFeedLinkContainer {
   display: flex;
   justify-content: space-between;
@@ -51,6 +69,15 @@
   color: #660d19;
   font-size: 18px;
   font-weight: bold;
+}
+
+.lovedbarNav:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+
+.lovedbarNav:active {
+  opacity: .7;
 }
 
 .aboutMeContainer {
@@ -77,10 +104,12 @@
 .fa-brands {
   color: #660d19;
   margin: 0 100px 0 0;
+  padding: 0 0 0 40px;
+  font-size: 22px;
 }
 
 .userLinkedInLink{
   color: #660d19;
-  margin: 0 50px 0 0;
+  margin: 0 50px 0 50px;
 }
 

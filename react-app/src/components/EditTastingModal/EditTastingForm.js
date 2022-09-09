@@ -171,155 +171,155 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
   return (
     <div className='editTastingContainer'>
       <form className='editTastingForm' onSubmit={handleSubmit}>
-      <h2>Update Wine Tasting</h2>
         <div className='inputContainer'>
-        <div>
-          {errors?.producer !== undefined && <div className='error'>
-            <div className='errors'>{errors.producer}</div>
+          <h2 className='updateHeader'>Update Tasting</h2>
+          <div>
+            {errors?.producer !== undefined && <div className='error'>
+              <div className='errors'>{errors.producer}</div>
+            </div>
+            } 
+            <input className='producerInput'
+            type='text'
+            name='producer'
+            onChange={updateProducer}
+            placeholder='Producer'
+            value={producer}
+            ></input>
           </div>
-          } 
-          <input className='producerInput'
-          type='text'
-          name='producer'
-          onChange={updateProducer}
-          placeholder='Producer'
-          value={producer}
-          ></input>
-        </div>
-        <div>
-          {errors?.region !== undefined && <div className='error'>
-            <div className='errors'>{errors.region}</div>
+          <div>
+            {errors?.region !== undefined && <div className='error'>
+              <div className='errors'>{errors.region}</div>
+            </div>
+            }
+            <input className='regionInput'
+            type='text'
+            name='region'
+            onChange={updateRegion}
+            placeholder='Region'
+            value={region}
+            ></input>
           </div>
-          }
-          <input className='regionInput'
-          type='text'
-          name='region'
-          onChange={updateRegion}
-          placeholder='Region'
-          value={region}
-          ></input>
-        </div>
-        <div>
-          {errors?.vineyard !== undefined && <div className='error'>
-            <div className='errors'>{errors.vineyard}</div>
+          <div>
+            {errors?.vineyard !== undefined && <div className='error'>
+              <div className='errors'>{errors.vineyard}</div>
+            </div>
+            }
+            <input className='vineyardInput'
+            type='text'
+            name='vineyard'
+            onChange={updateVineyard}
+            placeholder='Vineyard'
+            value={vineyard}
+            ></input> 
           </div>
-          }
-          <input className='vineyardInput'
-          type='text'
-          name='vineyard'
-          onChange={updateVineyard}
-          placeholder='Vineyard'
-          value={vineyard}
-          ></input> 
-        </div>
-        <div>
-          {errors?.varietal !== undefined && <div className='error'>
-            <div className='errors'>{errors.varietal}</div>
+          <div>
+            {errors?.varietal !== undefined && <div className='error'>
+              <div className='errors'>{errors.varietal}</div>
+            </div>
+            }
+            <input className='varietalInput'
+            type='text'
+            name='varietal'
+            onChange={updateVarietal}
+            placeholder='Varietal / Type'
+            value={varietal}
+            ></input> 
           </div>
-          }
-          <input className='varietalInput'
-          type='text'
-          name='varietal'
-          onChange={updateVarietal}
-          placeholder='Varietal / Type'
-          value={varietal}
-          ></input> 
-        </div>
-        <div>
-          {errors?.vintage !== undefined && <div className='error'>
-            <div className='errors'>{errors.vintage}</div>
+          <div>
+            {errors?.vintage !== undefined && <div className='error'>
+              <div className='errors'>{errors.vintage}</div>
+            </div>
+            } 
+            <input className='vintageInput'
+            type='number'
+            name='vintage'
+            onChange={updateVintage}
+            placeholder='Vintage'
+            value={vintage}
+            ></input>
           </div>
-          } 
-          <input className='vintageInput'
-          type='number'
-          name='vintage'
-          onChange={updateVintage}
-          placeholder='Vintage'
-          value={vintage}
-          ></input>
-        </div>
-        <div>
-          {errors?.otherInfo !== undefined && <div className='error'>
-            <div className='errors'>{errors.otherInfo}</div>
+          <div>
+            {errors?.otherInfo !== undefined && <div className='error'>
+              <div className='errors'>{errors.otherInfo}</div>
+            </div>
+            }
+            <input className='otherInfoInput'
+            type='text'
+            name='otherInfo'
+            onChange={updateOtherInfo}
+            placeholder='Additional Information...'
+            value={otherInfo}
+            ></input> 
           </div>
-          }
-          <input className='otherInfoInput'
-          type='text'
-          name='otherInfo'
-          onChange={updateOtherInfo}
-          placeholder='Additional Information...'
-          value={otherInfo}
-          ></input> 
-        </div>
-        <div>
-          {errors?.sight !== undefined && <div className='error'>
-            <div className='errors'>{errors.sight}</div>
+          <div>
+            {errors?.sight !== undefined && <div className='error'>
+              <div className='errors'>{errors.sight}</div>
+            </div>
+            }
+            <input className='sightInput'
+            type='text'
+            name='sight'
+            onChange={updateSight}
+            placeholder='Sight'
+            value={sight}
+            ></input> 
           </div>
-          }
-          <input className='sightInput'
-          type='text'
-          name='sight'
-          onChange={updateSight}
-          placeholder='Sight'
-          value={sight}
-          ></input> 
-        </div>
-        <div>
-          {errors?.nose !== undefined && <div className='error'>
-            <div className='errors'>{errors.nose}</div>
+          <div>
+            {errors?.nose !== undefined && <div className='error'>
+              <div className='errors'>{errors.nose}</div>
+            </div>
+            }
+            <input className='noseInput'
+            type='text'
+            name='nose'
+            onChange={updateNose}
+            placeholder='Nose'
+            value={nose}
+            ></input> 
           </div>
-          }
-          <input className='noseInput'
-          type='text'
-          name='nose'
-          onChange={updateNose}
-          placeholder='Nose'
-          value={nose}
-          ></input> 
-        </div>
-        <div>
-          {errors?.palate !== undefined && <div className='error'>
-            <div className='errors'>{errors.palate}</div>
+          <div>
+            {errors?.palate !== undefined && <div className='error'>
+              <div className='errors'>{errors.palate}</div>
+            </div>
+            }
+            <input className='palateInput'
+            type='text'
+            name='palate'
+            onChange={updatePalate}
+            placeholder='Palate'
+            value={palate}
+            ></input> 
           </div>
-          }
-          <input className='palateInput'
-          type='text'
-          name='palate'
-          onChange={updatePalate}
-          placeholder='Palate'
-          value={palate}
-          ></input> 
-        </div>
-        <div>
-          {errors?.thoughts !== undefined && <div className='error'>
-            <div className='errors'>{errors.thoughts}</div>
+          <div>
+            {errors?.thoughts !== undefined && <div className='error'>
+              <div className='errors'>{errors.thoughts}</div>
+            </div>
+            }
+            <input className='thoughtsInput'
+            type='text'
+            name='thoughts'
+            onChange={updateThoughts}
+            placeholder='Additional thoughts...'
+            value={thoughts}
+            ></input> 
           </div>
-          }
-          <input className='thoughtsInput'
-          type='text'
-          name='thoughts'
-          onChange={updateThoughts}
-          placeholder='Additional thoughts...'
-          value={thoughts}
-          ></input> 
-        </div>
-        <div>
-          <label>Love the wine?</label>
-          <input
-            type="radio"
-            value={love}
-            name='love'
-            checked={love === true}
-            onChange={handleClick}
-          />
-        </div>
-        <div>
-          <button type='submitEditWine'>Update</button>
-          <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button>
-        </div>
-        <div>
-          <button className='deleteIcon'onClick={deleteHandler}>Delete</button>
-        </div>
+          <div className='editRadioLoveWrapper'>
+            <label className='editLoveLabel'>Love the wine?</label>
+            <input
+              type="radio"
+              value={love}
+              name='love'
+              checked={love === true}
+              onChange={handleClick}
+            />
+          </div>
+          <div className='editSubmitCloseWrapper'>
+            <button className='updatetastingButton' type='submitEditWine'>Update</button>
+            <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button>
+          </div>
+          <div>
+            <button className='deleteIcon'onClick={deleteHandler}>Delete</button>
+          </div>
         </div>
       </form>
     </div>

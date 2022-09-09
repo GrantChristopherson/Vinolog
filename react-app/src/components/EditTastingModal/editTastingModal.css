@@ -1,22 +1,35 @@
 .editTastingModal {
   position: absolute;
+  left: 25%;
   background-color:white;
-  border-radius: 8px;
+  border-radius: 20px;
   max-width: 300vw;
   overflow-y:auto;
-  /* height: 530px; */
+  height: 850px;
   min-height: 150px;
   
 }
 
 .editTastingContainer {
   display: flex;
-  /* justify-content: center; */
-  /* flex-direction: column;
-  align-items: center; */
-  height: 100%;
+  justify-content: center; 
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
   width: 60%;
   margin: 15% 15% 15% 15%;
-  padding: 30px 100px 60px 50px;
+  padding: 30px 0px 60px 50px;
 }
 
+.editTastingButton {
+  margin: 1px 20px;
+  padding: 1px 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: #d7d6d0;
+}
+
+.editTastingButton:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
