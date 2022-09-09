@@ -30,7 +30,7 @@ const AllLovedFeed = () => {
         <div key={tasting?.id} className="lovedtastingContainer">
           <LovedTastingCard tasting={tasting}/>
         </div>
-        )})}
+        )}).reverse()}
       </div>
     </div>
   );

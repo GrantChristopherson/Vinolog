@@ -41,7 +41,7 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/home' />;
   }
 
   return (
@@ -75,8 +75,8 @@ const LoginForm = () => {
             />
             <div className='loginButtonWrapper'>
               <div className='loginInnerWrapper'>
-                <button classname='loginDemoButtons' onClick={demoUser} >Demo</button>
-                <button classname='demoButton' type='submit'>Login</button>
+                <button className='loginDemoButtons' onClick={demoUser} >Demo</button>
+                <button className='demoButton' type='submit'>Login</button>
               </div>
             </div>
           </div>
