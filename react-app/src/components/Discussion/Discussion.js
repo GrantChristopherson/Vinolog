@@ -37,20 +37,18 @@ const Discussion = ({ tasting, setShowDiscussion }) => {
   return (
   
     <div className='commentsOuterContainer'>
-      <div className='commentsInnerContainer'>
-        {lovedTastingComments?.map((comment) => {  
-          return (
-            <div key={comment?.id} className="commentcontainer">
-              <div className="comment">
-                {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
-                  <Comment key={filteredUser.id} comment={comment} filteredUser={filteredUser} tasting={tasting} user={user} />
-                ))}
-              </div>     
-            </div>
-          )
-        })} 
-        <CreateCommentForm tasting={tasting} setShowDiscussion={setShowDiscussion}/>
-      </div>
+      {lovedTastingComments?.map((comment) => {  
+        return (
+          <div key={comment?.id} className="commentcontainer">
+            <div className="comment">
+              {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
+                <Comment key={filteredUser.id} comment={comment} filteredUser={filteredUser} tasting={tasting} user={user} />
+              ))}
+            </div>     
+          </div>
+        )
+      }).reverse()} 
+      {/* <CreateCommentForm tasting={tasting} setShowDiscussion={setShowDiscussion}/> */}
     </div>
   );
 };

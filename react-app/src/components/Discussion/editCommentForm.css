@@ -2,3 +2,41 @@
   color: #c73649;
   font-weight: bold;
 }
+
+.editCommentFormOuterContainer {
+  display: flex;
+  /* flex-direction: row-reverse; */
+}
+
+.editedCommentInput {
+  width: 200px;
+  border-radius: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+.editedCommentButton {
+  margin: 1px 0;
+  padding: 0 2px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: #d7d6d0;
+}
+
+.editedCommentButton:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+
+.deleteComment {
+  margin: 1px 0;
+  padding: 0 2px;
+  border-radius: 2px;
+  background-color: #d7d6d0;
+}
+
+.deleteComment {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+

@@ -1,4 +1,47 @@
 .errors {
   color: #c73649;
   font-weight: bold;
+  font-size: 14px;
 }
+
+.commentFormOuterContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+.commentInput {
+  width: 300px;
+}
+
+.commentButton {
+  margin: 1px 10px;
+  padding: 1px 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: #d7d6d0;
+}
+
+.commentButton:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+
+.cancelCreateButton {
+  margin: 1px 0;
+  padding: 0 2px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: #d7d6d0;
+}
+
+.cancelCreateButton:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+
+
+
+

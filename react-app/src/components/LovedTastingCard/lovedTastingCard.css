@@ -1,10 +1,27 @@
-.lovedTastingCardOuterContainer {
+.userHeader {
+  margin-bottom: 2px;
+}
+
+.bioSubtitle {
+  margin-top: 2px;
+}
+
+.lovedWineInfo {
+  color: #660d19;
+}
+
+.lovedTastingNotesContainer {
+  color: black;
+}
+
+.lovedTastingHeader:hover {
+  background-color: rgba(128, 128, 128, 0.181);
+  border-radius: 50%;
+}
+
+.editContainer {
   display: flex;
-  flex-direction: column;
-  margin: 5px;
-  padding: 30px;
-  background-color: white;
-  border-radius: 8px;
+  flex-direction: row-reverse;
 }
 
 .deleteIcon {
@@ -12,7 +29,33 @@
   border: none;
 }
 
-.deleteIcon:hover{
+.deleteIcon:hover {
   background-color: rgba(128, 128, 128, 0.181);
   border-radius: 50%;
+}
+
+.closeDiscussionButton {
+  margin: 1px 20px 10px 7px;
+  padding: 1px 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  background-color: #d7d6d0;
+}
+
+.closeDiscussionButton:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
+
+.discussionOuterContainer {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1px 1px;
+  max-height: 200px;
+  overflow-x: scroll;
+  overflow-wrap: normal;
+}
+
+.discussionInnerContainer {
+  padding: 0 15px;
 }

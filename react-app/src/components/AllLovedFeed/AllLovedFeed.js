@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllLovedTastingsThunk } from '../../store/tasting';
 import LovedTastingCard from "../LovedTastingCard/LovedTastingCard";
+import Sidebar from '../Sidebar/Sidebar';
 import './allLovedFeed.css';
 
 
@@ -10,7 +11,6 @@ import './allLovedFeed.css';
 const AllLovedFeed = () => {
 
   const dispatch = useDispatch();
-  // const user = useSelector(state => state?.session?.user);
   const lovedWineTastings = useSelector(state => state?.tastings.lovedTastings);
 
 
@@ -24,6 +24,7 @@ const AllLovedFeed = () => {
 
   return (
     <div className="allLovedFeedOuterContainer">
+      <Sidebar />
       <div className="allLovedFeedInnerContainer">
         {lovedWineTastings?.map((tasting) => {return (
         <div key={tasting?.id} className="lovedtastingContainer">

@@ -33,3 +33,53 @@
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 10px;
 }
+
+.producerInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.regionInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.vineyardInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.varietalInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.vintageInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.otherInfoInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.sightInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.noseInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.palateInput {
+  border-bottom-style: double;
+border-bottom-color: rgba(128, 128, 128, 0.01);
+}
+
+.thoughtsInput {
+  border-bottom-style: double;
+  border-bottom-color: rgba(128, 128, 128, 0.01);
+}
