@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0 0 20 0;
   width: 100%;
-  background-color: rgb(241, 244, 214);
+  background-color: #FFF3C4;
   border-radius: 50px;
 }
 
@@ -56,7 +56,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -68,7 +68,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -80,7 +80,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -92,7 +92,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -104,7 +104,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -116,7 +116,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -128,7 +128,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -140,7 +140,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -152,7 +152,7 @@
   border-right-style: none;
   border-left-style: none;
   width: 550px;
-  margin: 0;
+  margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
   border-radius: 5px;
@@ -162,6 +162,7 @@
 .loveWrapperInput {
   display: flex;
   justify-content: flex-end;
+  margin-top: 5px;
 }
 
 .loveLabel {
@@ -184,6 +185,17 @@
   font-weight: bold;
 }
 
-.myhome {
+.submitTasting:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}
 
+.myhome {
+  margin-top: 15px;
+  border-bottom-color: #c73649;
+}
+
+.myhome:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
 }

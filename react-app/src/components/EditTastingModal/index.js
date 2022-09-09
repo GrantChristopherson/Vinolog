@@ -12,12 +12,12 @@ function EditTastingModal({ tasting, lovedTasting }) {
 
   return (
     <>
-      <button className='editIconBtn' onClick={() => setShowModal(true)}><i className="fa-solid fa-pen editPenIcon"></i></button>
+      <button className='editTastingButton' onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal className={"editTastingModal"} onClose={() => setShowModal(false)}>
            <EditTastingForm tasting={tasting} lovedTasting={lovedTasting} setShowModal={setShowModal}/>
         </Modal>
-      )};
+      )}
     </>
   );
 };
