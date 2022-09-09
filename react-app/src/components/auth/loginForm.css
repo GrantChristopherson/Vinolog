@@ -1,16 +1,18 @@
-* {
-  box-sizing: border-box;
-}
-
 
 .loginFormContainer {
-
   display: flex;
   justify-content: column;
   height:100%;
   max-width: 40%;
   margin: 3% auto 10% 3%;
   background-color: rgba(255, 255, 255 0.2);
+}
+
+.loginBody {
+  flex-direction: row;
+  background-color: #ebe271;
+  height:100%;
+  max-width: 60%;
 }
 
 .loginForm {

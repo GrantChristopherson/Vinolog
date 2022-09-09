@@ -81,6 +81,8 @@ const LoginForm = () => {
             </div>
           </div>
         </form>
+        <div className='loginBody'>
+        </div>
       </div>
     </div>
   );
@@ -89,4 +91,5 @@ const LoginForm = () => {
 
 
 export default LoginForm;
+
 
