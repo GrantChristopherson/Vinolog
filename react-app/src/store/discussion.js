@@ -72,7 +72,7 @@ export const createCommentThunk = (discussion, tastingId) => async(dispatch) => 
 
 
 export const editCommentThunk = (discussion, commentId) => async(dispatch) => {
-  const response = await fetch(`/api/discussion/comments/${commentId}`, {
+  const response = await fetch(`/api/discussion/comments/edit/${commentId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -96,7 +96,7 @@ export const editCommentThunk = (discussion, commentId) => async(dispatch) => {
 
 
 export const deleteCommentThunk = (commentId) => async(dispatch) => {
-  const response = await fetch(`/api/discussion/comments/${commentId}`, {
+  const response = await fetch(`/api/discussion/comments/delete/${commentId}`, {
     method: 'DELETE',
   })
 

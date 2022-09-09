@@ -292,7 +292,7 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
           <div className='editRadioLoveWrapper'>
             <label className='editLoveLabel'>Love the wine?</label>
             <input
-              type="radio"
+              type="checkbox"
               value={love}
               name='love'
               checked={love === true}

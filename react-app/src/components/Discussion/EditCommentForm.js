@@ -42,8 +42,12 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
   const deleteComment = (commentId) => async (e) => {
     e.preventDefault()
 
-    await dispatch(deleteCommentThunk(commentId));
-    setShowEditCommentForm(false);
+    console.log('comment.commentId')
+    let data = await dispatch(deleteCommentThunk(commentId));
+    if (data) {
+      setShowEditCommentForm(false);
+
+    }
   };
     
    
