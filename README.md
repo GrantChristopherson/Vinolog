@@ -27,8 +27,7 @@ ___
 
 Technologies: 
 
-    Javascript Frontend: React Redux ...
-    Python Backend: Flask ..... 
+    Javascript Frontend with React and Redux.  Python Backend with Flask, Sequelize, SQLite3, SQLAlchemy and deployeed to Heroku via Docker.
 
 ----
 screenshots of site to be added ...
