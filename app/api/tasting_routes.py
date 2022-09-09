@@ -71,7 +71,7 @@ def post_tasting():
 
 
 # Update a tasting card  
-@tasting_routes.route('/<int:id>', methods=['PUT'])
+@tasting_routes.route('/edit/<int:id>', methods=['PUT'])
 @login_required
 def edit_tasting_card(id):
   tasting = Tasting.query.get(id)
@@ -92,7 +92,7 @@ def edit_tasting_card(id):
     tasting.palate = form.data['palate']
     tasting.thoughts = form.data['thoughts']
     tasting.love = form.data['love']
-    user = current_user
+    
 
     db.session.commit()
     return tasting.to_dict()

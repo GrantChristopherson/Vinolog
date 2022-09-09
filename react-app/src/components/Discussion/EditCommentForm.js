@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { editCommentThunk, deleteCommentThunk, getCommentsThunk } from '../../store/discussion';
+import { editCommentThunk, deleteCommentThunk } from '../../store/discussion';
 import './editCommentForm.css';
 
 
@@ -43,7 +43,6 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
     e.preventDefault()
 
     await dispatch(deleteCommentThunk(commentId));
-    await dispatch(getCommentsThunk());
     setShowEditCommentForm(false);
   };
     

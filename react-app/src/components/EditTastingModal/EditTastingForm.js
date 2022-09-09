@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { editTastingThunk, deleteTastingThunk } from '../../store/tasting';
+import { editTastingThunk } from '../../store/tasting';
 import './editTastingForm.css';
 
 
@@ -77,10 +77,8 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
     };
 
     setErrors(validateErrors)
-    let keyErrors = Object.keys(errors)
-    console.log('keyErrors========', keyErrors)
-    if (keyErrors) {
-      return
+    if (Object.keys(validateErrors).length) {
+      return;
     }
 
     const taste = {
@@ -99,20 +97,13 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
       user: user
     };
 
-    
-    // let data = dispatch(editTastingThunk(taste));
-    
-    // if (data) {
-    //   return data
-    // } else {
-    //  setShowModal(false)
-    // };
-    setShowModal(false)
-    dispatch(editTastingThunk(taste));
+    let data = dispatch(editTastingThunk(taste));
+    if (data) {
+      setShowModal(false)
+    };
   };
-
-
-
+    
+   
   const handleClick = (e) => {
     if (love === false) {
       setLove(true)
@@ -160,11 +151,6 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
 
   const updateThoughts = (e) => {
     setThoughts(e.target.value);
-  };
-
-
-  const deleteHandler = async() => {
-    await dispatch(deleteTastingThunk(tasting?.id))
   };
 
 
@@ -316,9 +302,6 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
           <div className='editSubmitCloseWrapper'>
             <button className='updatetastingButton' type='submitEditWine'>Update</button>
             <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button>
-          </div>
-          <div>
-            <button className='deleteIcon'onClick={deleteHandler}>Delete</button>
           </div>
         </div>
       </form>
