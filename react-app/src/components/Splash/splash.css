@@ -1,20 +1,37 @@
 .splashOuterContainer {
   display: flex;
-  margin: 100px 600px 100px 2px;
-  padding: 100px 50px;
+  flex-direction: column;
+  justify-content: space-around;
+  /* top: 100%;
+  bottom: 100%;
+  left: 100%;
+  right: 100%; */
+  margin: 100px 600px 100px 0px;
+  padding: 200px 200px 1000px  200px;
 };
 
 .slogan {
   display: flex;
   justify-content: center;
   padding: 15% 15% 15%  15px;
-  font-size: 300px;
+  font-size: 200px;
   background-color: black;
 };
 
-h3 {
+.personalJesus {
   display: flex;
   justify-content: center;
-  font-size: 300px;
+  font-size: 150px;
   color: black;
+}
+
+.splashQuote {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.documentTheJourney {
+  display: flex;
+  align-items: flex-end;
 }
