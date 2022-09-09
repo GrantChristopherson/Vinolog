@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getCommentsThunk } from '../../store/discussion';
-import CreateCommentForm from './CreateCommentForm';
 import Comment from './Comment';
 import './discussion.css';
 
@@ -35,7 +34,6 @@ const Discussion = ({ tasting, setShowDiscussion }) => {
 
 
   return (
-  
     <div className='commentsOuterContainer'>
       {lovedTastingComments?.map((comment) => {  
         return (
@@ -48,12 +46,12 @@ const Discussion = ({ tasting, setShowDiscussion }) => {
           </div>
         )
       }).reverse()} 
-      {/* <CreateCommentForm tasting={tasting} setShowDiscussion={setShowDiscussion}/> */}
     </div>
   );
 };
 
 
 export default Discussion;
+  
               
           

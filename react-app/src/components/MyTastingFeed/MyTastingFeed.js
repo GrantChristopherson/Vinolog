@@ -11,7 +11,6 @@ import './myTastingFeed.css';
 const MyTastingFeed = () => {
 
   const dispatch = useDispatch();
-  // const [showModal, setShowModal] = useState(false);
   const user = useSelector(state => state?.session?.user);
   const userTastings = useSelector(state => state?.tastings.userTastings);
 
@@ -32,7 +31,7 @@ const MyTastingFeed = () => {
         <div key={tasting.id} className="tastingContainer">
           <TastingCard tasting={tasting}/>
         </div>
-        )})}
+        )}).reverse()}
       </div>
     </div>
   );

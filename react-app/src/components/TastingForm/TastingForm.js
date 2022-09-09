@@ -79,12 +79,10 @@ const TastingForm = () => {
     };
     
     setErrors(validateErrors)
-    if (validateErrors !== undefined) {
-        console.log('errors=====', errors)
-        console.log('validateErrors=====', validateErrors)
+    if (Object.keys(validateErrors).length) {
       return;
     }
-    console.log('empty object========', {})
+    
     const tasting = {
       producer,
       region,
@@ -101,15 +99,13 @@ const TastingForm = () => {
 
     let data = dispatch(createTastingThunk(tasting));
     if (data) {
-      setErrors(data)
-      console.log('data=======', data)
       history.push('/tastings')
-    }
+    };
+  };
     
       
   
     
-  };
 
 
   const updateProducer = (e) => {

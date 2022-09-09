@@ -104,7 +104,7 @@ export const createTastingThunk = (tasting) => async(dispatch) => {
 
 
 export const editTastingThunk = (tasting) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/${tasting.id}`, {
+  const response = await fetch(`/api/tastings/edit/${tasting.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
