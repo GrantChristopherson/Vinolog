@@ -1,8 +1,86 @@
-.outerContainer {
+
+
+.userSidebarContainer {
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  padding: 15% 5% 70% 5%;
+  flex-direction: column;
+  height:100%;
+  max-width: 30%;
+  margin: 100px auto 0% 0;
+  background-color: #9c9c92;
+  border-radius: 0 70px 0 0;
+}
+
+.welcome {
+  padding: 0 0 20px 0;
+}
+
+.createbarWrapper {
   display: flex;
   justify-content: space-between;
 }
 
-userSidebarContainer {
-  width: 200px
+.createbarNav {
+  padding: 15px 15px 15px 0;
+  color: #660d19;
+  font-size: 20px;
+  font-weight: bold;
 }
+
+.myFeedLinkContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mytastebarNav {
+  padding: 15px 15px 15px 0;
+  color: #660d19;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.allLovedFeedLinkContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lovedbarNav {
+  padding: 15px 15px 15px 0;
+  color: #660d19;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.aboutMeContainer {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.developer {
+  color: black;
+  margin-right: 5px;
+  /* padding: 0 2px 0 0; */
+}
+
+.developerName {
+  color: black;
+}
+
+.mylinksContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.fa-brands {
+  color: #660d19;
+  margin: 0 100px 0 0;
+}
+
+.userLinkedInLink{
+  color: #660d19;
+  margin: 0 50px 0 0;
+}
+

@@ -1,15 +1,189 @@
-.createTastingContainer {
+.outerContainer {
   display: flex;
-  /* flex-direction: column;
-  align-items: center; */
-  height: 100%;
-  width: 80%;
-  margin: 15% 15% 15% 15%;
-  padding: 30px 100px 60px 50px;
+  flex-direction: row;
+
 }
 
+
+.createTastingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  margin: 0;
+  padding: 0 0 20 0;
+  width: 100%;
+  background-color: rgb(241, 244, 214);
+  border-radius: 50px;
+}
+
+.createTastingForm {
+  padding: 10%;
+  max-width: 40%;
+}
+
+.newTastingHeader {
+  color: #660d19;
+  font-weight: bold;
+  font-size: 22px;
+}
 
 .error {
   color: #c73649;
   font-weight: bold;
+  font-size: 14px;
+}
+
+.inputContainer {
+  margin: 0;
+  padding-top: 60%;
+  justify-content: space-evenly;
+}
+
+.producerInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.regionInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.vineyardInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.varietalInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.vintageInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.otherInfoInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.sightInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.noseInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.palateInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.thoughtsInput {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  width: 550px;
+  margin: 0;
+  padding: 3% 3% 3% 3%;
+  border: 0 0 0 0;
+  border-radius: 5px;
+  border-color: #9c9c92;
+}
+
+.loveWrapperInput {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.loveLabel {
+  color: #660d19;
+  font-weight: bold;
+}
+
+.submitOrCancelWrapper {
+ display: flex;
+ flex-direction:column;
+ align-items: center;
+}
+
+.submitTasting {
+  right: 40px;
+  width: 300px;
+  margin-top: 10px;
+  padding: 1% 1% 1% 1%;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.myhome {
+
 }
