@@ -7,11 +7,11 @@ import './splash.css'
 
 const Splash = () => {
 
-  const history = useHistory();
-  const user = useSelector(state => state?.session?.user);
-  if(user){
-      history.push('/home')
-  };
+  // const history = useHistory();
+  // const user = useSelector(state => state?.session?.user);
+  // if(user){
+  //     history.push('/home')
+  // };
 
   return (
     <div className='splashOuterContainer'>

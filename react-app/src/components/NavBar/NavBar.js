@@ -15,10 +15,11 @@ const NavBar = () => {
   return (
     <nav className='navContainer'>
       <ul className='ulNav'>
-        <NavLink to='/' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        {user ? <NavLink to='/home' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
           <h2 className ='vinolog' style={{textDecoration: 'none'}}>V  I  N  O  L  O  G</h2>
-          {/* <h5 className ='vinolog' style={{textDecoration: 'none'}}>Personal Wine Journel</h5> */}
-        </NavLink>
+        </NavLink> : <NavLink to='/' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+          <h2 className ='vinolog' style={{textDecoration: 'none'}}>V  I  N  O  L  O  G</h2>
+        </NavLink>}
         <div className='loginSignUp'>
           {!user && <NavLink to='/login' exact={true} activeClassName='active'>
             <button className='loginButton'>Login</button>;
