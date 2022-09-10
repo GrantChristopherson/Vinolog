@@ -22,20 +22,24 @@ const SignUpForm = () => {
     let validateErrors = [];
 
     if (username.length < 6 || username.length > 15) {
-      validateErrors.push('User Name must be between 6 and 15 characters')
+      validateErrors.push('* User Name must be between 6 and 15 characters')
     };
+    if (username.trim().length === 0) validateErrors.push('* Spacebar exclusive input is not a valid username');
 
     if (!email.includes('@' && '.')) {
-      validateErrors.push('Must use a valid email')
+      validateErrors.push('* Must use a valid email')
     };
+    if (email.length < 12 || email.length > 30) validateErrors.push('* Email must be between 12 and 30 characters');
+    if (email.trim().length === 0) validateErrors.push('* Spacebar exclusive input is not a valid email');
 
     if (password !== repeatPassword) {
-      validateErrors.push('passwords must match')
+      validateErrors.push('* Passwords must match')
     };
 
     if (password.length < 7 || password.length > 15) {
-      validateErrors.push('password must be between 7 and 15 characters')
+      validateErrors.push('* Password must be between 7 and 15 characters')
     }
+    if (password.trim().length === 0) validateErrors.push('* Spacebar exclusive input is not a valid password');
     
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
@@ -120,7 +124,6 @@ const SignUpForm = () => {
               placeholder='password'
               onChange={updateRepeatPassword}
               value={repeatPassword}
-              required={true}
             ></input>
           </div>
           <div className='signUpButtonWrapper'>

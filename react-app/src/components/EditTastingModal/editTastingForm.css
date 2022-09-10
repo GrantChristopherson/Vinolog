@@ -4,6 +4,10 @@
   color: #660d19;
 }
 
+textarea:focus, input:focus{
+  outline: none;
+}
+
 .editSubmitCloseWrapper {
   display: flex;
   flex-direction:column;
