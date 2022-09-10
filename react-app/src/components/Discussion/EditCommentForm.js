@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { editCommentThunk, deleteCommentThunk } from '../../store/discussion';
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { editCommentThunk, deleteCommentThunk, getCommentsThunk } from '../../store/discussion';
 import './editCommentForm.css';
 
 
@@ -8,8 +8,16 @@ import './editCommentForm.css';
 const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => {
   
   const dispatch = useDispatch();
+  // const comments = useSelector((state) => (state?.discussion))
   const [editedComment, setEditedComment] = useState(comment?.comment);
   const [errors, setErrors] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+    dispatch(getCommentsThunk())
+
+    })();
+  },[dispatch]);
   
 
   const handleSubmit = async (e) => {
@@ -18,7 +26,7 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
     let validateErrors = [];
     if (editedComment.length < 2) validateErrors.push('comment must be longer than 1 character');
     if (editedComment.length > 150) validateErrors.push('comment cannot be longer than 150 characters');
-    // if emptys space comment validations??
+    if (editedComment.trim().length === 0) validateErrors.push('only spacebar input is not valid');
 
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
@@ -39,15 +47,13 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
   };
 
 
-  const deleteComment = (commentId) => async (e) => {
+  const commentDeleter = (commentId) => async (e) => {
     e.preventDefault()
-
-    console.log('comment.commentId')
+   
     let data = await dispatch(deleteCommentThunk(commentId));
     if (data) {
       setShowEditCommentForm(false);
-
-    }
+    };
   };
     
    
@@ -68,7 +74,7 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
           <div className='editDeleteButtonWrapper'>
             <button className='editedCommentButton' type="submit" >Submit</button>
             {comment?.user_id === user?.id && comment?.tasting_id === tasting.id ?
-            <button className="deleteComment" onClick={deleteComment(comment.id)}>Delete</button>  : null}
+            <button className="deleteComment" onClick={commentDeleter(comment.id)}>Delete</button>  : null}
           </div>
         </div>
       </form>
