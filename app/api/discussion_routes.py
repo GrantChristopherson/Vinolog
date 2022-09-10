@@ -66,10 +66,6 @@ def create_comment(tasting_id):
 @login_required
 def edit_comment(id):
   comment = Discussion.query.get(id)
-
-  # if comment.user_id != current_user.id:
-  #   redirect('api/auth/unauthorized')
-
   form = DiscussionForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
@@ -77,7 +73,7 @@ def edit_comment(id):
 
     db.session.commit()
     return comment.to_dict()
-
+  
   return {'errors': form.errors}, 401
 
 

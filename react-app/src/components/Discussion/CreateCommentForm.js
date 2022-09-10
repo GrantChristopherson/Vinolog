@@ -22,19 +22,10 @@ const CreateCommentForm = ({ tasting }) => {
     e.preventDefault()
 
     let validateErrors = [];
-    if (!comment.length) validateErrors.push('empty input is not a valid comment');
-    if (comment.length < 2) validateErrors.push('comment must be longer than 1 character');
-    if (comment.length > 150) validateErrors.push('comment cannot be longer than 150 characters');
-    if (comment.trim().length === 0) validateErrors.push('only spacebar comment is not valid');
-    // for (let i = 0; i < comment.length; i++) {
-    //   let char = comment[i];
-    //   if (char === ' ') {
-    //     if (char[i + 1] === ' ') {
-    //       if (char[i + 2] === ' ') validateErrors.push('comment cannot have 3 or more consecutive spaces')
-    //     };
-    //   };
-    // };
-
+   
+    if (comment.length < 2 || comment.length > 75) validateErrors.push('* comment must be between 2 and 75 characters');
+    if (comment.trim().length === 0) validateErrors.push('* spacebar exclusive input is not valid as comment');
+   
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
       return;
@@ -69,7 +60,6 @@ const CreateCommentForm = ({ tasting }) => {
             onChange={(e) => setComment(e.target.value)}
             placeholder='Comment...'
             value={comment}
-            required
           ></input>
           <button className='commentButton' type="submit" >Submit</button>
         </div>
