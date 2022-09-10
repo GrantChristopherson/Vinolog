@@ -49,7 +49,7 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
 
     const today = new Date(); 
     if (vintage < 1900 || vintage > today.getFullYear()) {
-      validateErrors['vintage'] = `* Vintage must be younger than 1900 but not past this year (${today.getFullYear()})`;
+      validateErrors['vintage'] = `* Vintage must be between 1900 and this year (${today.getFullYear()})`;
     };
     
     if (otherInfo) {
