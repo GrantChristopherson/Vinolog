@@ -24,9 +24,8 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
     e.preventDefault()
 
     let validateErrors = [];
-    if (editedComment.length < 2) validateErrors.push('comment must be longer than 1 character');
-    if (editedComment.length > 150) validateErrors.push('comment cannot be longer than 150 characters');
-    if (editedComment.trim().length === 0) validateErrors.push('only spacebar input is not valid');
+    if (editedComment.length < 2 || editedComment.length > 75) validateErrors.push('* comment must be between 2 and 75 characters');
+    if (editedComment.trim().length === 0) validateErrors.push('* spacebar exclusive input is not valid as comment');
 
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
@@ -39,7 +38,7 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
     };
     
     dispatch(editCommentThunk(data, comment?.id));
-    
+
     setEditedComment("");
     setErrors([]);
     setShowEditCommentForm(false);
@@ -69,7 +68,7 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
             onChange={(e) => setEditedComment(e.target.value)}
             placeholder='Comment...'
             value={editedComment}
-            required
+
           ></input>
           <div className='editDeleteButtonWrapper'>
             <button className='editedCommentButton' type="submit" >Submit</button>
