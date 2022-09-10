@@ -20,15 +20,12 @@ const SignUpForm = () => {
     e.preventDefault();
 
     let validateErrors = [];
-    if (!username.length || !email.length || !password.length || !repeatPassword.length) {
-      validateErrors.push('input fields must be filled in')
-    }
 
-    if (username.length < 6 || username.length > 30) {
-      validateErrors.push('User Name must be between 6 and 30 characters')
+    if (username.length < 6 || username.length > 15) {
+      validateErrors.push('User Name must be between 6 and 15 characters')
     };
 
-    if (!email.includes('@')) {
+    if (!email.includes('@' && '.')) {
       validateErrors.push('Must use a valid email')
     };
 

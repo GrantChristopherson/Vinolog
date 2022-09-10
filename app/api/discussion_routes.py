@@ -89,4 +89,4 @@ def delete_comment(id):
   comment = Discussion.query.get(id)
   db.session.delete(comment)
   db.session.commit()
-  return {'commentId': comment.id}
+  return {'message': 'Comment Deleted'}

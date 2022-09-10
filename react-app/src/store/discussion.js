@@ -101,7 +101,7 @@ export const deleteCommentThunk = (commentId) => async(dispatch) => {
   })
 
   if (response.ok) {
-    await response.json();
+    const res = await response.json();
     dispatch(deleteComment(commentId));
     return response;
   };
@@ -140,7 +140,7 @@ export default function reducer(state = initialState, action) {
       return newState
     };
     case DELETE_COMMENT: {
-      let newComments = state?.comments?.filter(comment => { return comment?.id !== action?.id})
+      let newComments = state?.comments?.filter(comment => { return comment?.id !== action?.commentId})
       newState = {...state, comments:[...newComments]}
       return newState
     };

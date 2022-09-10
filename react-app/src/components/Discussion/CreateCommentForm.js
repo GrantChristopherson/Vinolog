@@ -22,8 +22,10 @@ const CreateCommentForm = ({ tasting }) => {
     e.preventDefault()
 
     let validateErrors = [];
+    if (!comment.length) validateErrors.push('empty input is not a valid comment');
     if (comment.length < 2) validateErrors.push('comment must be longer than 1 character');
     if (comment.length > 150) validateErrors.push('comment cannot be longer than 150 characters');
+    if (comment.trim().length === 0) validateErrors.push('only spacebar comment is not valid');
     // for (let i = 0; i < comment.length; i++) {
     //   let char = comment[i];
     //   if (char === ' ') {
