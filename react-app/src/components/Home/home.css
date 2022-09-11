@@ -1,12 +1,3 @@
-/* .createPostModal {
-  position: absolute;
-  background-color: white;
-  border-radius: 8px;
-  width: 300vw;
-  overflow-y:auto;
-  /* height: 530px; */
-  /* min-height: 150px; */
-/* } */ */
 
 
 .homeContainer {
@@ -31,3 +22,16 @@
   bottom: 0;
 }
 
+.footerHomeContainer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #660d19;
+}
+
+.homeFooterPhrase {
+  color: #FFF3C4;
+}

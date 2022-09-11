@@ -1,16 +1,18 @@
 
 
 .userSidebarContainer {
+  position: fixed;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   top: 0;
-  padding: 15% 5% 70% 5%;
+  bottom: 0;
+  left: 0;
+  padding: 15% 4% 30% 3%;
   flex-direction: column;
   height:100%;
   max-width: 30%;
-  margin: 100px auto 0% 0;
+  margin: 0;
   background-color: #9c9c92;
-  border-radius: 0 70px 0 0;
 }
 
 .welcome {
@@ -25,7 +27,7 @@
 .createbarNav {
   padding: 15px 15px 15px 0;
   color: #660d19;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
