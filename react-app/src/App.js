@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authenticate } from './store/session';
 import LoginPage from './components/auth/LoginPage';
-import SignUpForm from './components/auth/SignUpForm';
+import SignUpPage from './components/auth/SignUpPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
 import AllLovedFeed from './components/AllLovedFeed/AllLovedFeed';
@@ -39,7 +39,7 @@ function App() {
           <LoginPage />
         </Route>
         <Route path='/sign-up' exact={true}>
-          <SignUpForm />
+          <SignUpPage />
         </Route>
         <ProtectedRoute path='/home' exact={true} >
           <Home />

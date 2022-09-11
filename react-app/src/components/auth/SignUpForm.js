@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
-import Splash from '../Splash/Splash';
 import './signUpForm.css'
 
 const SignUpForm = () => {
@@ -77,60 +76,57 @@ const SignUpForm = () => {
   }
 
   return (
-    <div>
-      <Splash />
-      <div className='signUpFormContainer'>
-        <form className='signUpForm' onSubmit={onSignUp}>
-          <div className='errorMessages'>
-            {errors.map((error, ind) => (
-              <div key={ind}>{error}</div>
-            ))}
-          </div>
-          <div className='usernameWrapper'>
-            <label>Username</label>
-            <input 
-              type='text'
-              name='username'
-              placeholder='username'
-              onChange={updateUsername}
-              value={username}
-            ></input>
-          </div>
-          <div className='emailWrapper'>
-            <label>Email</label>
-            <input 
-              type='text'
-              name='email'
-              placeholder='email'
-              onChange={updateEmail}
-              value={email}
-            ></input>
-          </div>
-          <div className='passwordWrapper'>
-            <label>Password</label>
-            <input 
-              type='password'
-              name='password'
-              placeholder='password'
-              onChange={updatePassword}
-              value={password}
-            ></input>
-          </div>
-          <div className='repeatedPasswordWrapper'>
-            <label>Repeat Password</label>
-            <input 
-              type='password'
-              name='repeat_password'
-              placeholder='password'
-              onChange={updateRepeatPassword}
-              value={repeatPassword}
-            ></input>
-          </div>
-          <div className='signUpButtonWrapper'>
-            <button className='signUpButton' type='submit'>Sign Up</button>
-          </div>
-        </form>
-      </div>
+    <div className='signUpFormContainer'>
+      <form className='signUpForm' onSubmit={onSignUp}>
+        <div className='errorMessages'>
+          {errors.map((error, ind) => (
+            <div key={ind}>{error}</div>
+          ))}
+        </div>
+        <div className='usernameWrapper'>
+          <label>Username</label>
+          <input className='usernameInput'
+            type='text'
+            name='username'
+            placeholder='username'
+            onChange={updateUsername}
+            value={username}
+          ></input>
+        </div>
+        <div className='emailWrapper'>
+          <label>Email</label>
+          <input className='signUpEmailInput'
+            type='text'
+            name='email'
+            placeholder='email'
+            onChange={updateEmail}
+            value={email}
+          ></input>
+        </div>
+        <div className='passwordWrapper'>
+          <label>Password</label>
+          <input className='signUpPasswordInput'
+            type='password'
+            name='password'
+            placeholder='password'
+            onChange={updatePassword}
+            value={password}
+          ></input>
+        </div>
+        <div className='repeatedPasswordWrapper'>
+          <label>Repeat Password</label>
+          <input className='signUpRepeatedPasswordInput'
+            type='password'
+            name='repeat_password'
+            placeholder='password'
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+          ></input>
+        </div>
+        <div className='signUpButtonWrapper'>
+          <button className='signUpButton' type='submit'>Sign Up</button>
+        </div>
+      </form>
     </div>
   );
 };
