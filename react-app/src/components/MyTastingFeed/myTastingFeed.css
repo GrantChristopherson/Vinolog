@@ -1,7 +1,6 @@
 .myTastingFeedOuterContainer {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   margin: 4% 5%;
   padding: 10px 10px 0 0;
 }
