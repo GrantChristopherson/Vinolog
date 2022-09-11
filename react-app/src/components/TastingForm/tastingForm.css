@@ -1,7 +1,9 @@
 .outerContainer {
   display: flex;
   flex-direction: row;
-
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 
@@ -10,13 +12,17 @@
   justify-content: center;
   align-items: row;
   margin: 0;
-  padding: 0 0 20 0;
+  padding: 0 0 10px 0;
+  height: 100%;
   width: 100%;
   background-color: #FFF3C4;
-  border-radius: 50px;
+ 
 }
 
 .createTastingForm {
+  /* display: flex;
+  justify-content: center; */
+  flex-direction: column;
   padding: 10%;
   max-width: 40%;
 }
@@ -24,13 +30,14 @@
 .newTastingHeader {
   color: #660d19;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .error {
   color: #c73649;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
+  width: 550px;
 }
 
 .inputContainer {
@@ -161,7 +168,7 @@
 
 .loveWrapperInput {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: 5px;
 }
 
@@ -178,7 +185,7 @@
 
 .submitTasting {
   right: 40px;
-  width: 300px;
+  width: 275px;
   margin-top: 10px;
   padding: 1% 1% 1% 1%;
   border-radius: 5px;
