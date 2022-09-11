@@ -11,7 +11,7 @@ const Sidebar = ({ user }) => {
 
   return (
     <div className='userSidebarContainer'>
-      {user && <h2 className='welcome' >Welcome back, {user.username}!</h2>}
+      {user && <h5 className='welcome' >Welcome back, {user.username}!</h5>}
         <div className='createbarWrapper'>
           <NavLink to='/tasting' className={'createbarNav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
             Create New Tasting
