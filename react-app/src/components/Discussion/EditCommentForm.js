@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { editCommentThunk, deleteCommentThunk, getCommentsThunk } from '../../store/discussion';
 import './editCommentForm.css';
 
@@ -8,7 +8,6 @@ import './editCommentForm.css';
 const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => {
   
   const dispatch = useDispatch();
-  // const comments = useSelector((state) => (state?.discussion))
   const [editedComment, setEditedComment] = useState(comment?.comment);
   const [errors, setErrors] = useState([]);
 
@@ -24,7 +23,7 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
     e.preventDefault()
 
     let validateErrors = [];
-    if (editedComment.length < 2 || editedComment.length > 75) validateErrors.push('* comment must be between 2 and 75 characters');
+    if (editedComment.length < 2 || editedComment.length > 50) validateErrors.push('* comment must be between 2 and 50 characters');
     if (editedComment.trim().length === 0) validateErrors.push('* spacebar exclusive input is not valid as comment');
 
     if (validateErrors.length > 0) {
