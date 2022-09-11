@@ -14,6 +14,11 @@
 
 .commentInput {
   width: 300px;
+  border-radius: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: #9c9c92;
 }
 
 .commentButton {
@@ -31,7 +36,7 @@
 
 .cancelCreateButton {
   margin: 1px 0;
-  padding: 0 2px;
+  padding: 0 1px;
   border-radius: 3px;
   font-weight: bold;
   background-color: #d7d6d0;

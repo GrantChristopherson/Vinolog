@@ -44,7 +44,7 @@ const LovedTastingCard = ({tasting}) => {
           {showInfo && <h4>Sight: {tasting?.sight}</h4>}
           {showInfo && <h4>Nose: {tasting?.nose}</h4>}
           {showInfo && <h4>Palate: {tasting?.palate}</h4>}
-          {showInfo && <h4>User Thoughts: {tasting?.thoughts}</h4>}
+          {showInfo && <h4>{tasting?.user?.username}'s  Thoughts: {tasting?.thoughts}</h4>}
         </div>
       </div>  
       {user.id === tasting?.user?.id && <div className="editContainer">

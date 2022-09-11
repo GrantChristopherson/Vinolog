@@ -1,18 +1,19 @@
 .errors {
   color: #c73649;
   font-weight: bold;
+  font-size: 10px;
 }
 
 .editCommentFormOuterContainer {
   display: flex;
-  /* flex-direction: row-reverse; */
 }
 
 .editedCommentInput {
   width: 200px;
-  border-radius: 2px;
+  border-radius: 5px;
   margin: 0;
   padding: 0;
+  border-color: #660d19;
 }
 
 .editedCommentButton {

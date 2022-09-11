@@ -23,7 +23,7 @@ const CreateCommentForm = ({ tasting }) => {
 
     let validateErrors = [];
    
-    if (comment.length < 2 || comment.length > 75) validateErrors.push('* comment must be between 2 and 75 characters');
+    if (comment.length < 2 || comment.length > 50) validateErrors.push('* comment must be between 2 and 50 characters');
     if (comment.trim().length === 0) validateErrors.push('* spacebar exclusive input is not valid as comment');
    
     if (validateErrors.length > 0) {
