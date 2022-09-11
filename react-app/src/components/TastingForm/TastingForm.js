@@ -32,52 +32,65 @@ const TastingForm = () => {
 
     let validateErrors = {};
     if (producer.length < 3 || producer.length > 50) {
-      validateErrors['producer'] = 'Producer must be between 3 and 50 characters';
+      validateErrors['producer'] = '* Producer must be between 3 and 50 characters';
     };
 
     if (region.length < 3 || region.length > 100) {
-      validateErrors['region'] = 'Region must be between 3 and 100 characters';
+      validateErrors['region'] = '* Region must be between 3 and 100 characters';
     };
 
     if (vineyard) {
       if (vineyard.length < 3 || region.length > 50) {
-        validateErrors['vineyard'] = 'Vineyard either can be null or between 3 and 50 characters';
+        validateErrors['vineyard'] = '* Vineyard either can be null or between 3 and 50 characters';
       };
     };
 
     if (varietal.length < 3 || varietal.length > 100) {
-      validateErrors['varietal'] = 'Varietal / type must be between 3 and 100 characters';
+      validateErrors['varietal'] = '* Varietal / type must be between 3 and 100 characters';
     };
 
     const today = new Date(); 
     if (vintage < 1900 || vintage > today.getFullYear()) {
-      validateErrors['vintage'] = `Vintage must be younger than 1900 but not past this year (${today.getFullYear()})`
+      validateErrors['vintage'] = `* Vintage required and must be younger than 1900 but not past this year (${today.getFullYear()})`
     };
     
     if (otherInfo) {
       if (otherInfo.length < 3 || otherInfo.length > 200) {
-        validateErrors['otherInfo'] = 'Additional information either can be null or between 3 and 200 characters';
+        validateErrors['otherInfo'] = '* Additional information either can be null or between 3 and 200 characters';
       };
     };
     
     if (sight.length < 3 || sight.length > 200) {
-      validateErrors['sight'] = 'Sight must be between 3 and 200 characters';
+      validateErrors['sight'] = '* Sight must be between 3 and 200 characters';
     };
 
     if (nose.length < 3 || nose.length > 200) {
-      validateErrors['nose'] = 'Nose must be between 3 and 200 characters';
+      validateErrors['nose'] = '* Nose must be between 3 and 200 characters';
     };
 
     if (palate.length < 3 || palate.length > 200) {
-      validateErrors['palate'] = 'Palate must be between 3 and 200 characters';
+      validateErrors['palate'] = '* Palate must be between 3 and 200 characters';
     };
 
     if (thoughts) {
       if (thoughts.length < 3 || thoughts.length > 200) {
-        validateErrors['thoughts'] = 'Thoughts either can be null or between 3 and 200 characters';
+        validateErrors['thoughts'] = '* Thoughts either can be null or between 3 and 200 characters';
       };
     };
+
+    if ((producer.length && producer.trim().length === 0) ||
+        (region.length && region.trim().length === 0) ||
+        (vineyard.length && vineyard.trim().length === 0) ||
+        (varietal.length && varietal.trim().length === 0) ||
+        (otherInfo.length && otherInfo.trim().length === 0) ||
+        (sight.length && sight.trim().length === 0) ||
+        (nose.length && nose.trim().length === 0) ||
+        (palate.length && palate.trim().length === 0) ||
+        (thoughts.length && thoughts.trim().length === 0)) {
+          validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
+        };
     
+
     setErrors(validateErrors)
     if (Object.keys(validateErrors).length) {
       return;
@@ -166,6 +179,10 @@ const TastingForm = () => {
           <h2 className='newTastingHeader'>NEW WINE TASTING</h2>
             <div className='inputContainer'>
               <div>
+                {errors?.spacing !== undefined && <div className='error'>
+                  <div className='errors'>{errors.spacing}</div>
+                </div>
+                }
                 {errors?.producer !== undefined && <div className='error'>
                   <div className='errors'>{errors.producer}</div>
                 </div>
