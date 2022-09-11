@@ -32,6 +32,11 @@ const AllLovedFeed = () => {
         </div>
         )}).reverse()}
       </div>
+      <footer>
+        <div className='footerLovedWineTastingsContainer'>
+          <h4 className='lovedWineTastingsFooterPhrase'>Loved Wine Feed</h4>
+        </div>
+      </footer>
     </div>
   );
 };

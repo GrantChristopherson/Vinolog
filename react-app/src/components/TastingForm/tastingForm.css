@@ -203,3 +203,17 @@
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 10px;
 }
+
+.footerCreateTastingContainer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #660d19;
+}
+
+.createTastingFooterPhrase {
+  color: #FFF3C4;
+}

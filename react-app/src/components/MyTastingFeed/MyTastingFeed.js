@@ -33,6 +33,11 @@ const MyTastingFeed = () => {
         </div>
         )}).reverse()}
       </div>
+      <footer>
+        <div className='footerMyWineTastingsContainer'>
+          <h4 className='myWineTastingsFooterPhrase'>My Wine Tastings</h4>
+        </div>
+      </footer>
     </div>
   );
 };
