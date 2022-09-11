@@ -52,7 +52,7 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
 
     const today = new Date(); 
     if (vintage < 1900 || vintage > today.getFullYear()) {
-      validateErrors['vintage'] = `* Vintage must be between 1900 and this year (${today.getFullYear()})`;
+      validateErrors['vintage'] = `* Vintage required and must be between 1900 and this year (${today.getFullYear()})`;
     };
     
     if (otherInfo) {
@@ -79,59 +79,19 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
       };
     };
 
-    if (producer.length) {
-      if (producer.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid Input for any field';
-      };
-    };
+    if ((producer.length && producer.trim().length === 0) ||
+        (region.length && region.trim().length === 0) ||
+        (vineyard.length && vineyard.trim().length === 0) ||
+        (varietal.length && varietal.trim().length === 0) ||
+        (otherInfo.length && otherInfo.trim().length === 0) ||
+        (sight.length && sight.trim().length === 0) ||
+        (nose.length && nose.trim().length === 0) ||
+        (palate.length && palate.trim().length === 0) ||
+        (thoughts.length && thoughts.trim().length === 0)) {
+          validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
+        };
 
-    if (region.length) {
-      if (region.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
-
-    if (vineyard.length) {
-      if (vineyard.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
-
-    if (varietal.length) {
-      if (varietal.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
-
-    if (otherInfo.length) {
-      if (otherInfo.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
-
-    if (sight.length) {
-      if (sight.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
-
-    if (nose.length) {
-      if (nose.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
-
-    if (palate.length) {
-      if (palate.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
-
-    if (thoughts.length) {
-      if (thoughts.trim().length === 0) {
-        validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-      };
-    };
+    
 
     setErrors(validateErrors)
     if (Object.keys(validateErrors).length) {
@@ -155,9 +115,15 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
     };
 
     let data = dispatch(editTastingThunk(taste));
-    if (data) {
+
+    if (taste.love === false && data) {
       setShowModal(false)
       history.push('/tastings')
+      return
+    } 
+
+    if (data) {
+      setShowModal(false)
     };
   };
     
@@ -218,11 +184,11 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
       <form className='editTastingForm' onSubmit={handleSubmit}>
         <div className='inputContainer'>
           <h2 className='updateHeader'>Update Tasting</h2>
-          {/* {errors?.spacing != undefined && <div className='error'>
-            <div className='errors'>{errors.spacing}</div>
-          </div>
-          } */}
           <div>
+            {errors?.spacing != undefined && <div className='error'>
+              <div className='errors'>{errors.spacing}</div>
+            </div>
+            }
             {errors?.producer !== undefined && <div className='error'>
               <div className='errors'>{errors.producer}</div>
             </div>

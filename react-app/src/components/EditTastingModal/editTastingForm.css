@@ -10,53 +10,43 @@
 }
 
 .producerInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .regionInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .vineyardInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .varietalInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .vintageInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .otherInfoInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .sightInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .noseInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .palateInput {
-  border-bottom-style: double;
-border-bottom-color: rgba(128, 128, 128, 0.01);
+border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 .thoughtsInput {
-  border-bottom-style: double;
-  border-bottom-color: rgba(128, 128, 128, 0.01);
+  border-bottom-color: rgba(128, 128, 128, 0.8);
 }
 
 
@@ -71,11 +61,6 @@ border-bottom-color: rgba(128, 128, 128, 0.01);
   justify-content: center;
   color: #660d19;
 }
-
-/* input:focus{
-  outline: none;
-  
-} */
 
 .editSubmitCloseWrapper {
   display: flex;
@@ -136,4 +121,10 @@ border-bottom-color: rgba(128, 128, 128, 0.01);
 .deleteIcon:hover{
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 10px;
+}
+
+.errors {
+  color: #c73649;
+  font-size: 8px;
+  font-weight: bold;
 }
