@@ -5,3 +5,16 @@
   padding: 10px 10px 0 0;
 }
 
+.footerMyWineTastingsContainer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #660d19;
+}
+
+.myWineTastingsFooterPhrase {
+  color: #FFF3C4;
+}

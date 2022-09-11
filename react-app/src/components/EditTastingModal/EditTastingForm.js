@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { editTastingThunk } from '../../store/tasting';
 import './editTastingForm.css';
 
@@ -9,7 +10,9 @@ import './editTastingForm.css';
 const EditTastingForm = ({ tasting, setShowModal }) => {
 
   const dispatch = useDispatch();
+  const history = useHistory();
   const user = useSelector(state => state?.session?.user)
+  
   
   const [errors, setErrors] = useState({});
   const [producer, setProducer] = useState(tasting?.producer);
@@ -154,6 +157,7 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
     let data = dispatch(editTastingThunk(taste));
     if (data) {
       setShowModal(false)
+      history.push('/tastings')
     };
   };
     
@@ -206,6 +210,7 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
   const updateThoughts = (e) => {
     setThoughts(e.target.value);
   };
+
 
 
   return (
