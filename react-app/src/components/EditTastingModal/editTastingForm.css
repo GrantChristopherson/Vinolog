@@ -72,10 +72,10 @@ border-bottom-color: rgba(128, 128, 128, 0.01);
   color: #660d19;
 }
 
-input:focus{
+/* input:focus{
   outline: none;
   
-}
+} */
 
 .editSubmitCloseWrapper {
   display: flex;

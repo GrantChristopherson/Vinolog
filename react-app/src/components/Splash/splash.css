@@ -1,37 +1,83 @@
-.splashOuterContainer {
+.outerSplash {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 1125px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.leftSplashBody {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  /* top: 100%;
-  bottom: 100%;
-  left: 100%;
-  right: 100%; */
-  margin: 100px 600px 100px 0px;
-  padding: 200px 200px 1000px  200px;
-};
-
-.slogan {
-  display: flex;
-  justify-content: center;
-  padding: 15% 15% 15%  15px;
-  font-size: 200px;
-  background-color: black;
-};
+  align-items: column;
+  margin: 50px 50px;
+}
 
 .personalJesus {
+  color: #660d19;
+};
+
+.journey {
+  color: #660d19;
+}
+
+.rightSplashBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #FFF3C4;
+  padding: 60px;
+  width: 40%;
+};
+
+.qouteCredit {
+  display: flex;
+  align-self: flex-end;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  background-color: #660d19;
+}
+
+.footeraboutMeContainer {
   display: flex;
   justify-content: center;
-  font-size: 150px;
-  color: black;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #660d19;
 }
 
-.splashQuote {
-  display: flex;
-  justify-content: flex-end;
-  
+.devBy {
+  color: #FFF3C4;
+  margin-right: 10px;
 }
 
-.documentTheJourney {
+.devName {
+  color: #FFF3C4;
+}
+
+.footerLinksContainer {
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+#git {
+  color: #FFF3C4;
+  padding-right: 40px;
+}
+
+#linked {
+  color: #FFF3C4;
 }
