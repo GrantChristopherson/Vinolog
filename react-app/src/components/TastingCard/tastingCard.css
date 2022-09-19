@@ -1,15 +1,20 @@
 .tastingCardOuterContainer {
   display: flex;
   flex-direction: column;
-  margin: 5px;
+  margin: 5px 0;
   padding: 20px 20px 30px 20px;
-  width: 500px;
+  width: 1000px;
+  min-width: 750px;
   background-color: #FFF3C4;
-  border-radius: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   border-bottom-color: black;
 }
 
 .tastingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 80 px;
   cursor: pointer;
 }
@@ -18,9 +23,14 @@
   color: #660d19;
 }
 
+.tastingHeader {
+ display: flex;
+ justify-content: flex-end;
+}
+
 .editContainer {
   display: flex;
-  flex-direction: row-reverse;
+  /* flex-direction: row; */
 }
 
 .deleteIcon {
