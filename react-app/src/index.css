@@ -5,7 +5,9 @@
 
 body  {
   /* background: url('../src/assets/Shutterstock_93817174.jpg') no-repeat center center fixed; */
-  background-color: #b5b2a8;
+  background-color: rgba(50, 50, 50, .94);
+  margin: 0;
+  padding: 0;
   background-size: cover;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
