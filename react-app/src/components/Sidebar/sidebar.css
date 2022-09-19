@@ -7,16 +7,14 @@
   top: 0;
   bottom: 0;
   left: 0;
-  padding: 15% 4% 30% 3%;
+  /* padding: 15% 4% 30% 3%; */
+  padding: 15% 0 30% 0;
   flex-direction: column;
   height:100%;
+  width: 25%;
   max-width: 30%;
   margin: 0;
-  background-color: #9c9c92;
-}
-
-.welcome {
-  padding: 0 0 20px 0;
+  background-color: rgb(39, 39, 38);
 }
 
 .createbarWrapper {
@@ -24,20 +22,20 @@
   justify-content: space-between;
 }
 
-.createbarNav {
-  padding: 15px 15px 15px 0;
-  color: #660d19;
-  font-size: 18px;
-  font-weight: bold;
-}
-
 .createbarWrapper:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  background-color:  rgba(78, 76, 76, 0.5);
 }
 
 .createbarWrapper:active {
   opacity: .7;
+}
+
+.createbarNav {
+  padding: 15px 15px 15px 0;
+  color: rgb(192, 192, 176);
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0 8%;
 }
 
 .myFeedLinkContainer {
@@ -45,20 +43,20 @@
   justify-content: space-between;
 }
 
+.myFeedLinkContainer:hover {
+  background-color:  rgba(78, 76, 76, 0.5);
+}
+
+.myFeedLinkContainer:active {
+  opacity: .7;
+}
+
 .mytastebarNav {
   padding: 15px 15px 15px 0;
-  color: #660d19;
+  color: rgb(192, 192, 176);
   font-size: 18px;
-  font-weight: bold;
-}
-
-.mytastebarNav:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
-}
-
-.mytastebarNav:active {
-  opacity: .7;
+  font-weight: 100;
+  margin: 0 8%;
 }
 
 .allLovedFeedLinkContainer {
@@ -66,54 +64,76 @@
   justify-content: space-between;
 }
 
+.allLovedFeedLinkContainer:hover {
+  background-color: rgba(78, 76, 76, 0.5);
+}
+
+.allLovedFeedLinkContainer:active {
+  opacity: .7;
+}
+
 .lovedbarNav {
   padding: 15px 15px 15px 0;
-  color: #660d19;
+  color: rgb(192, 192, 176);
   font-size: 18px;
-  font-weight: bold;
-}
-
-.lovedbarNav:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
-}
-
-.lovedbarNav:active {
-  opacity: .7;
+  font-weight: 100;
+  margin: 0 8%;
 }
 
 .aboutMeContainer {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-top: 50px;
 }
 
 .developer {
-  color: black;
-  margin-right: 5px;
-  /* padding: 0 2px 0 0; */
+  color: #FFF3C4;
+  font-weight: 100;
+  margin: 0 8%;
+  padding: 0 2px 0 0;
+}
+
+.nameAndLinksContainer {
+  display: flex;
+  flex-direction: row;
 }
 
 .developerName {
-  color: black;
-}
-
-.mylinksContainer {
-  display: flex;
-  justify-content: center;
+  color: #FFF3C4;
+  font-weight: 100;
+  margin: 0 5% 0 8%;
 }
 
 .fa-brands {
-  color: #660d19;
-  margin: 0 40px 0 0;
-  padding: 0 0 0 40px;
+  color: #FFF3C4;
   font-size: 20px;
   cursor: pointer;
 }
 
 .userLinkedInLink{
-  color: #660d19;
-  margin: 0 50px 0 50px;
+  color: #FFF3C4;
+  padding: 0 10px;
   cursor: pointer;
 }
 
+.userLinkedInLink:hover {
+  background-color: rgba(78, 76, 76, 0.5);
+  border-radius: 15px;
+}
+
+.userLinkedInLink:active {
+  opacity: .7;
+}
+
+.userGithubLink {
+  padding: 0 10px;
+}
+
+.userGithubLink:hover {
+  background-color: rgba(78, 76, 76, 0.5);
+  border-radius: 15px;
+}
+
+.userGithubLink:active {
+  opacity: .7;
+}
