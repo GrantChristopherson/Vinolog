@@ -185,7 +185,7 @@ const EditTastingForm = ({ tasting, setShowModal }) => {
         <div className='inputContainer'>
           <h2 className='updateHeader'>Update Tasting</h2>
           <div>
-            {errors?.spacing != undefined && <div className='error'>
+            {errors?.spacing !== undefined && <div className='error'>
               <div className='errors'>{errors.spacing}</div>
             </div>
             }
