@@ -10,10 +10,12 @@ const LoginPage = () => {
       <div className='outerSplash'>
         <div className='leftSplashBody'>
           <div className='slogan'>
-            <h1>Welcome to Vinolog!</h1>
+            <h1 className='welcome'>Welcome to Vinolog!</h1>
             <h3 className='personalJesus'>The Personal Wine Journal</h3>
           </div>
-          <LoginForm />
+          <div className="LoginWrapper">
+            <LoginForm />
+          </div>
           <h3 className='journey' >Document your journey...</h3>
         </div>
         <div className='rightSplashBody'>

@@ -13,7 +13,9 @@ const Splash = () => {
             <h1 className='welcome'>Welcome to Vinolog!</h1>
             <h3 className='personalJesus'>Personal Wine Journal</h3>
           </div>
-          <img src='https://modernfarmer.com/wp-content/uploads/2021/07/shutterstock_1558998758.jpg' alt='hanging-grapes' className='hanging-grapes'></img>
+          <div>
+            <img src='https://modernfarmer.com/wp-content/uploads/2021/07/shutterstock_1558998758.jpg' alt='hanging-grapes' className='hanging-grapes'></img>
+          </div>
           <h3 className='journey' >Document your journey...</h3>
         </div>
         <div className='rightSplashBody'>
