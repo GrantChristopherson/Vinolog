@@ -23,7 +23,7 @@ const Sidebar = ({ user }) => {
       </div>
       <div className='allLovedFeedLinkContainer'>
         <NavLink to='/lovedtastings' className={'lovedbarNav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-          The Loved Wine Feed
+          Loved Wines
         </NavLink>
       </div>
       <div className='aboutMeContainer'>
