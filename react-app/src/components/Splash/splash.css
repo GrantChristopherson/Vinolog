@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 1125px;
+  height: 1250px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -14,15 +14,25 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: column;
-  margin: 50px 50px;
+  margin: 50px 0;
 }
 
+.welcome {
+  color: rgb(192, 192, 176);
+  margin: 0 50px;
+}
 .personalJesus {
-  color: #660d19;
+  color:  #FFF3C4;
+  margin: 0 50px;
 };
 
+.hanging-grapes {
+  /* width: 100%; */
+}
+
 .journey {
-  color: #660d19;
+  color: rgb(192, 192, 176);
+  margin: 0 50px;
 }
 
 .rightSplashBody {
@@ -41,6 +51,7 @@
 }
 
 .footeraboutMeContainer {
+  position: fixed;
   display: flex;
   justify-content: center;
   right: 0;
@@ -71,4 +82,5 @@
 
 #linked {
   color: #FFF3C4;
+  padding: 0 10px;
 }
