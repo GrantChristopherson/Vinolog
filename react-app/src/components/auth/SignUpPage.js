@@ -11,7 +11,7 @@ const SignUpPage = () => {
         <div className='leftSplashBody'>
           <div className='slogan'>
             <h1>Welcome to Vinolog!</h1>
-            <h3 className='personalJesus'>The Personal Wine Journal</h3>
+            <h3 className='personalJesus'>Personal Wine Journal</h3>
           </div>
           <SignUpForm />
           <h3 className='journey' >Document your journey...</h3>
