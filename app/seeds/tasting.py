@@ -4,9 +4,9 @@ from app.models import db, User, Tasting, Discussion
 
 def seed_tasting():
 
-  user1 = User(username='Markie', email='mark@gmail.com', password='password', bio='I love all wine')
-  user2 = User(username='Gary', email='gary@gmail.com', password='password', bio='I like some wine')
-  user3 = User(username='Ronnie', email='ron@gmail.com', password='password', bio='Sommelier in training')
+  user1 = User(username='Markie', email='mark@gmail.com', password='password', bio='I love all wine', followers=[user2, user3], following=[])
+  user2 = User(username='Gary', email='gary@gmail.com', password='password', bio='I like some wine', followers=[], following=[user1])
+  user3 = User(username='Ronnie', email='ron@gmail.com', password='password', bio='Sommelier in training', followers=[], following=[user1])
 
 
   db.session.add(user1)
@@ -26,7 +26,8 @@ def seed_tasting():
     palate='Red berries, bright acid, very fine tannin',
     thoughts='Easy drink, sunny day "Park" wine',
     love=True,
-    user=user1
+    user=user1,
+    tasting_cheers=[user2, user3]
   )
 
   tasting2 = Tasting(
@@ -41,7 +42,8 @@ def seed_tasting():
     palate='Vegetal and a bit floral...  Screaming acid',
     thoughts='I wanna eat some Cacio Pepe with this',
     love=True,
-    user=user1
+    user=user1,
+    tasting_cheers=[user2]
   )
 
   tasting3 = Tasting(
@@ -56,7 +58,8 @@ def seed_tasting():
     palate='High acid, suprisingly firm tannin, fruit consisten with nose',
     thoughts='Would be great with pizza',
     love=False,
-    user=user2
+    user=user2,
+    tasting_cheers=[user1]
   )
 
 

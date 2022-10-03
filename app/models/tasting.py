@@ -2,6 +2,11 @@ from .db import db
 
 
 
+cheer = db.Table(
+    "cheers",
+    db.Column("tasting_id", db.Integer, db.ForeignKey("tastings.id")),
+    db.Column("user_id", db.Integer, db.ForeignKey("users.id"))
+)
 
 
 class Tasting(db.Model):
@@ -24,6 +29,11 @@ class Tasting(db.Model):
   user = db.relationship('User', back_populates='tastings')
   discussions = db.relationship('Discussion', back_populates='tastings',cascade='all, delete')
 
+  tasting_cheers = db.relationship(
+    "User",
+    secondary="cheers",
+    back_populates="user_cheers",
+  )
 
   def to_dict(self):
     return {
@@ -39,5 +49,6 @@ class Tasting(db.Model):
       'palate': self.palate,
       'thoughts': self.thoughts,
       'love': self.love,
-      'user': self.user.to_dict()
+      'user': self.user.to_dict(),
+      'cheers_by': [cheersingUser.to_dict()['id'] for cheersingUser in self.tasting_cheers]
     }
