@@ -78,3 +78,4 @@ class User(db.Model, UserMixin):
         return {
             'cheers': [tasting.to_dict() for tasting in self.user_cheers]
         }
+        
