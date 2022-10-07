@@ -1,6 +1,6 @@
 from flask import Blueprint, redirect, request
 from flask_login import login_required, current_user
-from app.models import db, Tasting
+from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 
 tasting_routes = Blueprint('tastings', __name__)
@@ -113,3 +113,43 @@ def delete_tasting_card(tasting_id):
   db.session.delete(tasting)
   db.session.commit()
   return {'message': 'Tasting Deleted'}
+
+
+
+# Create a cheers
+@tasting_routes.route('/<int:tasting_id>/cheers', methods=["PUT"])
+@login_required
+def cheers(tasting_id):
+  user = User.query.get(current_user.id)
+  tasting = Tasting.query.get(tasting_id)
+
+  isUserCheers = False
+  for cheeredUser in tasting.tasting_cheers:
+    if (cheeredUser.id == current_user.id ):
+      isUserCheers = True
+
+  if (not isUserCheers):
+    tasting.tasting_cheers.append(user)
+    db.session.commit()
+
+  return {"cheers": tasting.to_dict()}
+
+
+
+# Delete a cheers
+@tasting_routes.route('/<int:tasting_id>/cheers', methods=["DELETE"])
+@login_required
+def delete_cheers(tasting_id):
+  user = User.query.get(current_user.id)
+  tasting = Tasting.query.get(tasting_id)
+
+  isUserCheers = False
+  for cheeredUser in tasting.tasting_cheers:
+    if (cheeredUser.id == current_user.id ):
+      isUserCheers = True
+
+  if (isUserCheers):
+    tasting.tasting_cheers.remove(user)
+    db.session.commit()
+
+  return {"cheers": tasting.to_dict()}
