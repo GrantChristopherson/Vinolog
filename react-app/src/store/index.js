@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session'
 import tastings from './tasting';
 import discussion from './discussion';
+import cheers from './cheers';
 
 const rootReducer = combineReducers({
   session,
   tastings,
-  discussion
+  discussion,
+  cheers
 });
 
 
