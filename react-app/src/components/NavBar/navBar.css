@@ -1,4 +1,13 @@
-.navContainer {
+.navLoggedOutContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  /* background-color: #660d19; */
+}
+
+.navLoggedInContainer {
   position: fixed;
   top: 0;
   left: 0;
@@ -27,12 +36,17 @@
   padding: 2px 40px;
   border-radius: 30px;
   font-weight: bold;
-  background-color: #FFF3C4;
+  color: #FFF3C4;
+  background-color: #9c3127;
+  border: 0;
 }
 
 .signupButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color:  #FFF3C4;
+  color:  #9c3127;
   border-radius: 10px;
+  cursor: pointer;
+  transition-duration: 400ms;
 }
 
 .loginButton {
@@ -41,10 +55,15 @@
   border-radius: 30px;
   font-weight: bold;
   background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
 }
 
 .loginButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: #9c3127;
+  color: #FFF3C4;
   border-radius: 10px;
+  cursor: pointer;
+  transition-duration: 400ms;
 }
 

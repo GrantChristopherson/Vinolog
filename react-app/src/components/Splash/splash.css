@@ -36,7 +36,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  background-color: #FFF3C4;
+  /* background-color: #FFF3C4; */
+  color: rgb(192, 192, 176);
   padding: 60px;
   width: 40%;
 };
