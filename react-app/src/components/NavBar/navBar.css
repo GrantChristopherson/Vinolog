@@ -4,7 +4,9 @@
   left: 0;
   right: 0;
   z-index: 1;
-  /* background-color: #660d19; */
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  
 }
 
 .navLoggedInContainer {
@@ -33,7 +35,7 @@
 
 .signupButton {
   margin: 1px 20px;
-  padding: 2px 40px;
+  padding: 5px 40px;
   border-radius: 30px;
   font-weight: bold;
   color: #FFF3C4;
@@ -46,12 +48,12 @@
   color:  #9c3127;
   border-radius: 10px;
   cursor: pointer;
-  transition-duration: 400ms;
+  transition-duration: 300ms;
 }
 
 .loginButton {
   margin: 1px 20px;
-  padding: 2px 40px;
+  padding: 5px 40px;
   border-radius: 30px;
   font-weight: bold;
   background-color: #FFF3C4;
@@ -64,6 +66,6 @@
   color: #FFF3C4;
   border-radius: 10px;
   cursor: pointer;
-  transition-duration: 400ms;
+  transition-duration: 300ms;
 }
 
