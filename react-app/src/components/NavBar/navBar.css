@@ -21,10 +21,12 @@
 .ulNav {
   display: flex;
   justify-content: space-between;
+  margin: 10px 0;
 }
 
 .vinolog {
-  margin: 0 0 0 0;
+  margin: 5px 0 0 0;
+  padding: 0;
   color: #FFF3C4;
 }
 
@@ -34,8 +36,9 @@
 }
 
 .signupButton {
-  margin: 1px 20px;
+  margin: 0 20px;
   padding: 5px 40px;
+  height: 40px;
   border-radius: 30px;
   font-weight: bold;
   color: #FFF3C4;
@@ -46,14 +49,14 @@
 .signupButton:hover {
   background-color:  #FFF3C4;
   color:  #9c3127;
-  border-radius: 10px;
   cursor: pointer;
   transition-duration: 300ms;
 }
 
 .loginButton {
-  margin: 1px 20px;
+  margin: 0 20px;
   padding: 5px 40px;
+  height: 40px;
   border-radius: 30px;
   font-weight: bold;
   background-color: #FFF3C4;
@@ -64,7 +67,6 @@
 .loginButton:hover {
   background-color: #9c3127;
   color: #FFF3C4;
-  border-radius: 10px;
   cursor: pointer;
   transition-duration: 300ms;
 }
