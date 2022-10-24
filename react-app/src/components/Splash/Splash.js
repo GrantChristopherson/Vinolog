@@ -10,8 +10,8 @@ const Splash = () => {
       <div className='outerSplash'>
         <div className='leftSplashBody'>
           <div className='slogan'>
-            <h1 className='welcome'>Welcome to Vinolog!</h1>
-            <h3 className='personalJesus'>Personal Wine Journal</h3>
+            <h1 className='welcome'>Welcome wine lover...</h1>
+            <h3 className='personalJesus'>Track your wine using VINOLOG Wine Journal</h3>
           </div>
           <div>
             <img src='https://modernfarmer.com/wp-content/uploads/2021/07/shutterstock_1558998758.jpg' alt='hanging-grapes' className='hanging-grapes'></img>

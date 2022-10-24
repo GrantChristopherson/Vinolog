@@ -1,50 +1,74 @@
-.navContainer {
+.navLoggedOutContainer {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: #660d19;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  
+}
+
+.navLoggedInContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #9c3127;
+  
 }
 
 .ulNav {
   display: flex;
   justify-content: space-between;
+  margin: 10px 0;
 }
 
 .vinolog {
-  margin: 0 0 0 0;
+  margin: 5px 0 0 0;
+  padding: 0;
   color: #FFF3C4;
 }
 
 .vinolog:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  color: rgba(50, 50, 50, .94);
+  transition-duration: 300ms;
 }
 
 .signupButton {
-  margin: 1px 20px;
-  padding: 2px 40px;
+  margin: 0 20px;
+  padding: 5px 40px;
+  height: 40px;
   border-radius: 30px;
   font-weight: bold;
-  background-color: #FFF3C4;
+  color: #FFF3C4;
+  background-color: #9c3127;
+  border: 0;
 }
 
 .signupButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  background-color:  #FFF3C4;
+  color:  #9c3127;
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
 .loginButton {
-  margin: 1px 20px;
-  padding: 2px 40px;
+  margin: 0 20px;
+  padding: 5px 40px;
+  height: 40px;
   border-radius: 30px;
   font-weight: bold;
   background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
 }
 
 .loginButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  background-color: #9c3127;
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
