@@ -32,8 +32,8 @@
 }
 
 .vinolog:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  color: rgba(50, 50, 50, .94);
+  transition-duration: 300ms;
 }
 
 .signupButton {
