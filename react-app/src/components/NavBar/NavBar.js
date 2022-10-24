@@ -39,7 +39,7 @@ const NavBar = () => {
       <nav className='navLoggedInContainer'>
         <ul className='ulNav'>
           <NavLink to='/home' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-            <h2 className ='vinolog' style={{textDecoration: 'none'}}>V  I  N  O  L  O  G</h2>
+            <h2 className ='vinolog' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h2>
           </NavLink>
           <LogoutButton />
         </ul>
