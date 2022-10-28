@@ -1,53 +1,36 @@
-.outerContainer {
+
+.createTastingContainer {
   position: fixed;
-  display: flex;
   flex-direction: row;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-}
 
-/* .userSidebarContainer {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 15% 0 30% 0;
-  flex-direction: column;
-  height:100%;
-  width: 25%;
-  max-width: 30%;
-  margin: 0;
-  background-color: rgb(39, 39, 38);
-} */
-
-
-
-.createTastingContainer {
   display: flex;
   justify-content: center;
   align-items: row;
   margin: 0;
-  padding: 0 0 10px 0;
+  padding: 10% 20px 100px 0;
   height: 100%;
   width: 100%;
-  background-color: #FFF3C4;
+  background-color: rgba(156, 108, 39, 0.1);
 }
 
 .createTastingForm {
+  /* flex-direction: column;
+  padding: 15%;
+  max-width: 50%; */
+
   flex-direction: column;
-  padding: 10%;
-  max-width: 40%;
+  padding: 0 0 0 15%;
+  max-width: 73%;
 }
 
-.newTastingHeader {
-  color: #660d19;
-  font-weight: bold;
+/* .newTastingHeader {
+  color: rgb(192, 192, 176);
+  font-weight: bolder;
   font-size: 20px;
-}
+} */
 
 .errors {
   color: #c73649;
@@ -58,7 +41,7 @@
 
 .inputContainer {
   margin: 0;
-  padding-top: 60%;
+  padding-top: 50%;
   justify-content: space-evenly;
 }
 
@@ -70,8 +53,8 @@
   margin: 0;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .regionInput {
@@ -82,8 +65,8 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .vineyardInput {
@@ -94,8 +77,8 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .varietalInput {
@@ -106,8 +89,8 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .vintageInput {
@@ -118,8 +101,9 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .otherInfoInput {
@@ -130,8 +114,8 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .sightInput {
@@ -142,8 +126,8 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .noseInput {
@@ -154,8 +138,8 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .palateInput {
@@ -166,8 +150,8 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
 }
 
 .thoughtsInput {
@@ -178,8 +162,9 @@
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
   border: 0 0 0 0;
-  border-radius: 5px;
-  border-color: #9c9c92;
+  border-color: black;
+  background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .loveWrapperInput {
@@ -189,7 +174,7 @@
 }
 
 .loveLabel {
-  color: #660d19;
+  color: rgb(192, 192, 176);
   font-weight: bold;
 }
 
