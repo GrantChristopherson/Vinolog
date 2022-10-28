@@ -23,12 +23,6 @@
   max-width: 73%;
 }
 
-/* .newTastingHeader {
-  color: rgb(192, 192, 176);
-  font-weight: bolder;
-  font-size: 20px;
-} */
-
 .errors {
   color: #c73649;
   font-weight: bold;
@@ -38,7 +32,7 @@
 
 .inputContainer {
   margin: 0;
-  padding-top: 30%;
+  padding-top: 35%;
   justify-content: space-evenly;
 }
 
