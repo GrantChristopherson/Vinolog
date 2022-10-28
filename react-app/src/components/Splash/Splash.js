@@ -14,7 +14,8 @@ const Splash = () => {
             <h3 className='personalJesus'>Track your wine using VINOLOG Wine Journal</h3>
           </div>
           <div>
-            <img src='https://modernfarmer.com/wp-content/uploads/2021/07/shutterstock_1558998758.jpg' alt='hanging-grapes' className='hanging-grapes'></img>
+            {/* <img src='https://modernfarmer.com/wp-content/uploads/2021/07/shutterstock_1558998758.jpg' alt='hanging-grapes' className='hanging-grapes'></img> */}
+            <img src="https://st.depositphotos.com/2509405/4320/v/950/depositphotos_43202023-stock-illustration-engraving-grapes-on-the-branch.jpg" alt='grape-etching' className='etching'></img>
           </div>
           <h3 className='journey' >Document your journey...</h3>
         </div>

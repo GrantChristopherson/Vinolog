@@ -331,7 +331,7 @@ const TastingForm = () => {
             </div>
           </form>
         </div>
-        <footer>
+      <footer>
         <div className='footerCreateTastingContainer'>
           <h4 className='createTastingFooterPhrase'>Wine Tasting Creator</h4>
         </div>
