@@ -17,10 +17,6 @@
 }
 
 .createTastingForm {
-  /* flex-direction: column;
-  padding: 15%;
-  max-width: 50%; */
-
   flex-direction: column;
   padding: 0 0 0 15%;
   max-width: 73%;
@@ -52,7 +48,7 @@
   width: 550px;
   margin: 0;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -65,7 +61,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -78,7 +74,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -91,7 +87,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -104,7 +100,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -117,7 +113,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -130,7 +126,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -143,7 +139,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -156,7 +152,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
@@ -169,7 +165,7 @@
   width: 550px;
   margin-top: 5px;
   padding: 3% 3% 3% 3%;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 1px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
