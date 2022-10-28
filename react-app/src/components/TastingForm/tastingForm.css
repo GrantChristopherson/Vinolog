@@ -55,6 +55,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .regionInput {
@@ -67,6 +68,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .vineyardInput {
@@ -79,6 +81,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .varietalInput {
@@ -91,6 +94,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .vintageInput {
@@ -116,6 +120,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .sightInput {
@@ -128,6 +133,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .noseInput {
@@ -140,6 +146,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .palateInput {
@@ -152,6 +159,7 @@
   border-width: 0 0 2px 0;
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
+  color: rgb(192, 192, 176);
 }
 
 .thoughtsInput {
@@ -178,6 +186,10 @@
   font-weight: bold;
 }
 
+.loveInput:hover {
+  cursor: pointer;
+}
+
 .submitOrCancelWrapper {
  display: flex;
  flex-direction:column;
@@ -185,27 +197,43 @@
 }
 
 .submitTasting {
-  right: 40px;
+  /* right: 40px; */
   width: 275px;
   margin-top: 10px;
-  padding: 1% 1% 1% 1%;
-  border-radius: 5px;
+  /* padding: 1% 1% 1% 1%; */
+  /* border-radius: 5px; */
+  /* font-weight: bold; */
+
+  padding: 5px 40px;
+  height: 40px;
+  border-radius: 30px;
   font-weight: bold;
+  background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
 }
 
 .submitTasting:hover {
   background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  cursor: pointer;
+
+  background-color: rgba(50, 50, 50, .94);
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
 .myhome {
+  color: rgb(192, 192, 176);
   margin-top: 15px;
   border-bottom-color: #c73649;
 }
 
 .myhome:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  color: black;
+  transition-duration: 300ms;
+  cursor: pointer;
 }
 
 .footerCreateTastingContainer {
