@@ -1,10 +1,29 @@
 .outerContainer {
+  position: fixed;
   display: flex;
   flex-direction: row;
   top: 0;
   right: 0;
   bottom: 0;
+  left: 0;
 }
+
+/* .userSidebarContainer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15% 0 30% 0;
+  flex-direction: column;
+  height:100%;
+  width: 25%;
+  max-width: 30%;
+  margin: 0;
+  background-color: rgb(39, 39, 38);
+} */
+
 
 
 .createTastingContainer {
@@ -211,7 +230,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #660d19;
+  background-color: #9c3127;
 }
 
 .createTastingFooterPhrase {
