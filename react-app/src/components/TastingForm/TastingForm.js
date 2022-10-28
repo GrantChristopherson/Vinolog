@@ -186,15 +186,13 @@ const TastingForm = () => {
                 <div className='errors'>{errors.producer}</div>
               </div>
               }
-              <div className='inputWrappers'>
-                <input className='producerInput'
-                type='text'
-                name='producer'
-                onChange={updateProducer}
-                placeholder='Producer'
-                value={producer}
-                ></input>
-              </div>
+              <input className='producerInput'
+              type='text'
+              name='producer'
+              onChange={updateProducer}
+              placeholder='Producer'
+              value={producer}
+              ></input>
             </div>
             <div>
               {errors?.region !== undefined && <div className='error'>
