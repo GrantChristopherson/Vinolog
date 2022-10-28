@@ -192,7 +192,7 @@ const TastingForm = () => {
               onChange={updateProducer}
               placeholder='Producer'
               value={producer}
-              ></input> 
+              ></input>
             </div>
             <div>
               {errors?.region !== undefined && <div className='error'>
