@@ -9,7 +9,7 @@ const Splash = () => {
     <>
       <div className='outerSplash'>
         <div>
-          <img src="/seppia-grapes.png" alt='seppia-grapes' className='seppiaGrapes'></img>
+          <img src="seppia-grapes.png" alt='seppia-grapes' className='seppiaGrapes'></img>
         </div>
         {/* <div className='splashBody'>
           <div className='splashQuote'>
