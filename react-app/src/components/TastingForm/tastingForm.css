@@ -1,14 +1,12 @@
 
 .createTastingContainer {
-  position: fixed;
+  display: flex;
+  justify-content: center;
   flex-direction: row;
+  align-items: row;
   top: 0;
   right: 0;
   bottom: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: row;
   margin: 0;
   padding: 0 20px 200px 0;
   height: 100%;
@@ -240,3 +238,4 @@
 .createTastingFooterPhrase {
   color: #FFF3C4;
 }
+  
