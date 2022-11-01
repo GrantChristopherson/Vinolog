@@ -21,10 +21,7 @@
 
 .createbarWrapper:hover {
   background-color:  rgba(78, 76, 76, 0.5);
-}
-
-.createbarWrapper:active {
-  opacity: .7;
+  transition-duration: 300ms;
 }
 
 .createbarNav {
@@ -42,10 +39,7 @@
 
 .myFeedLinkContainer:hover {
   background-color:  rgba(78, 76, 76, 0.5);
-}
-
-.myFeedLinkContainer:active {
-  opacity: .7;
+  transition-duration: 300ms;
 }
 
 .mytastebarNav {
@@ -63,10 +57,7 @@
 
 .allLovedFeedLinkContainer:hover {
   background-color: rgba(78, 76, 76, 0.5);
-}
-
-.allLovedFeedLinkContainer:active {
-  opacity: .7;
+  transition-duration: 300ms;
 }
 
 .lovedbarNav {
