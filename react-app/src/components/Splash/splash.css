@@ -1,45 +1,36 @@
 .outerSplash {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  height: 1250px;
+  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   border: 0;
+  /* background: url('/seppiaGrapes.png') no-repeat center center fixed;
+  background-size: cover; */
+  /* background: url('https://www.thespruceeats.com/thmb/9Hs8J5W4z6gh04WUL7uTs__4rq0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/close-up-of-wine-bottles-over-white-background-609198963-5844948f5f9b5851e57ef400.jpg') no-repeat center center fixed;
+  background-size: cover; */
 }
 
-.leftSplashBody {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: column;
-  margin: 50px 0;
+/* .seppiaGrapes {
+  margin-top: 60px;
+  width: 100%;
+  min-width: 2000px;
+  min-height: 1060px;
+  position: fixed;
+  
+} */
+
+.wineBottles {
+  min-height: 1100px;
+  min-width: 100%;
+  overflow-x: none;
 }
 
-.welcome {
-  color: rgb(192, 192, 176);
-  margin: 0 50px;
-}
 .personalJesus {
   color:  #FFF3C4;
   margin: 0 50px;
-};
-
-.journey {
-  color: rgb(192, 192, 176);
-  margin: 0 50px;
-}
-
-.rightSplashBody {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  /* background-color: #FFF3C4; */
-  color: rgb(192, 192, 176);
-  padding: 60px;
-  width: 40%;
 };
 
 .qouteCredit {
@@ -54,7 +45,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #660d19;
+  background-color: #9c3127;
 }
 
 .devBy {
@@ -80,4 +71,14 @@
 #linked {
   color: #FFF3C4;
   padding: 0 10px;
+}
+
+#git:hover {
+  color: rgb(50, 50, 50);
+  transition-duration: 300ms;
+}
+
+#linked:hover {
+  color: rgb(50, 50, 50);
+  transition-duration: 300ms;
 }

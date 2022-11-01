@@ -6,7 +6,7 @@
   z-index: 1;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  
+  background-color: rgb(50, 50, 50);
 }
 
 .navLoggedInContainer {
@@ -32,7 +32,7 @@
 }
 
 .vinolog:hover {
-  color: rgba(50, 50, 50, .94);
+  color:  #9c3127;
   transition-duration: 300ms;
 }
 
