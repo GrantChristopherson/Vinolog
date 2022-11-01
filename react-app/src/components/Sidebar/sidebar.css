@@ -104,7 +104,7 @@
 }
 
 .fa-brands {
-  color: #FFF3C4;
+  /* color: #FFF3C4; */
   font-size: 20px;
   cursor: pointer;
 }
@@ -116,7 +116,7 @@
 }
 
 .userLinkedInLink:hover {
-  background-color: rgba(78, 76, 76, 0.5);
+  color: #9c3127;
   border-radius: 15px;
 }
 
@@ -125,11 +125,12 @@
 }
 
 .userGithubLink {
+  color: #FFF3C4;
   padding: 0 10px;
 }
 
 .userGithubLink:hover {
-  background-color: rgba(78, 76, 76, 0.5);
+  color: #9c3127;
   border-radius: 15px;
 }
 
