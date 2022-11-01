@@ -10,14 +10,19 @@
 }
 
 .editTastingButton {
-  margin: 1px 20px;
-  padding: 1px 30px;
+  margin: 0 20px;
+  padding: 5px 30px;
+  height: 30px;
   border-radius: 30px;
   font-weight: bold;
-  background-color: #d7d6d0;
+  background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
 }
 
 .editTastingButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  background-color: #9c3127;
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
 }

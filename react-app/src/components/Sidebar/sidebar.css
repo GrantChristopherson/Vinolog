@@ -9,8 +9,6 @@
   padding: 15% 0 30% 0;
   flex-direction: column;
   height:100%;
-  /* width: 27%; */
-  /* max-width: 27%; */
   min-width: 300px;
   margin: 0;
   background-color: rgb(39, 39, 38);
@@ -116,7 +114,7 @@
 
 .userLinkedInLink:hover {
   color: #9c3127;
-  border-radius: 15px;
+  transition-duration: 300ms;
 }
 
 .userGithubLink {
@@ -126,5 +124,5 @@
 
 .userGithubLink:hover {
   color: #9c3127;
-  border-radius: 15px;
+  transition-duration: 300ms;
 }
