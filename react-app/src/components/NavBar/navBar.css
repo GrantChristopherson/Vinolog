@@ -25,14 +25,25 @@
   margin: 10px 0;
 }
 
-.vinolog {
+.vinologLoggedOut {
   margin: 5px 0 0 0;
   padding: 0;
   color: #FFF3C4;
 }
 
-.vinolog:hover {
-  color:  #9c3127;
+.vinologLoggedOut:hover {
+  color: #9c3127;
+  transition-duration: 300ms;
+}
+
+.vinologLoggedIn {
+  margin: 5px 0 0 0;
+  padding: 0;
+  color: #FFF3C4;
+}
+
+.vinologLoggedIn:hover {
+  color: rgb(50, 50, 50);
   transition-duration: 300ms;
 }
 
