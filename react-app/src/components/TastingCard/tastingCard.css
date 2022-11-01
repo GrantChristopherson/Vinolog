@@ -3,9 +3,10 @@
   flex-direction: column;
   margin: 5px 0;
   padding: 20px 20px 30px 20px;
-  width: 900px;
-  min-width: 750px;
+  /* width: 900px; */
+  width: 750px;
   background-color: #FFF3C4;
+  /* background-color: rgba(50, 50, 50, .4); */
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-color: black;
@@ -30,7 +31,6 @@
 
 .editContainer {
   display: flex;
-  /* flex-direction: row; */
 }
 
 .deleteIcon {
