@@ -43,6 +43,7 @@
 }
 
 .deleteIcon:hover {
-  color: #9c3127;
+  background-color: #9c3127;
+  border-radius: 15px;
   transition-duration: 300ms;
 }

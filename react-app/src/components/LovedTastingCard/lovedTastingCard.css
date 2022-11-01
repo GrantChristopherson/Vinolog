@@ -24,15 +24,14 @@
   flex-direction: row-reverse;
 }
 
-.deleteIcon {
+/* .deleteIcon {
   background-color: transparent;
   border: none;
 }
 
 .deleteIcon:hover {
-  background-color: rgba(128, 128, 128, 0.181);
-  border-radius: 50%;
-}
+  
+} */
 
 .closeDiscussionButton {
   margin: 1px 20px 10px 7px;
