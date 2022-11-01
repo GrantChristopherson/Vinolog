@@ -1,8 +1,20 @@
 .myTastingFeedOuterContainer {
   display: flex;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 80px 0 300px 0;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0;
+  padding: 80px 0 300px 30%;
+  height: 1600px;
+  background-color: rgba(156, 108, 39, 0.1);
+}
+
+.tastingFeedInnerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 50px;
+  padding: 80 px;
+  cursor: pointer;
 }
 
 .footerMyWineTastingsContainer {

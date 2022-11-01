@@ -24,11 +24,11 @@ const MyTastingFeed = () => {
 
 
   return (
-    <div className="myTastingFeedOuterContainer">
+    <>
       <Sidebar user={user} />
-      <div className="myTastingFeedInnerContainer">
+      <div className="myTastingFeedOuterContainer">
         {userTastings?.map((tasting) => {return (
-        <div key={tasting.id} className="tastingContainer">
+        <div key={tasting.id} className="tastingFeedInnerContainer">
           <TastingCard tasting={tasting}/>
         </div>
         )}).reverse()}
@@ -38,7 +38,7 @@ const MyTastingFeed = () => {
           <h4 className='myWineTastingsFooterPhrase'>My Wine Tastings</h4>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 
