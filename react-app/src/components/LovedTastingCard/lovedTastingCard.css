@@ -1,22 +1,48 @@
+.lovedTastingCardOuterContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  padding: 20px 20px 30px 20px;
+  min-width: 700px;
+  background-color: rgba(39, 39, 38, 0.2);
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(39, 39, 38);
+  border-top: none;
+  border-bottom: none;
+}
+
+.lovedTastingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 80 px;
+  cursor: pointer;
+}
+
+
 .userInfoContainer {
   cursor: pointer;
 }
 
 .userHeader {
   margin-bottom: 2px;
+  color: #FFF3C4;
 }
 
 .bioSubtitle {
   margin-top: 2px;
+  color: rgb(192, 192, 176);
 }
 
 .lovedWineInfo {
-  color: #660d19;
+  color: #FFF3C4;
   cursor: pointer;
 }
 
 .lovedTastingNotesContainer {
-  color: black;
+  color: rgb(192, 192, 176);
 }
 
 .editContainer {
@@ -34,16 +60,28 @@
 } */
 
 .closeDiscussionButton {
-  margin: 1px 20px 10px 7px;
+  /* margin: 1px 20px 10px 7px;
   padding: 1px 30px;
   border-radius: 3px;
   font-weight: bold;
-  background-color: #d7d6d0;
+  background-color: #d7d6d0; */
+  margin: 1px 20px;
+  padding: 1px 20px;
+  height: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
 }
 
 .closeDiscussionButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  /* background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px; */
+  background-color: #9c3127;
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
 .discussionOuterContainer {

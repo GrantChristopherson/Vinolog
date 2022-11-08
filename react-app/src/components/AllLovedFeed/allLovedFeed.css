@@ -1,19 +1,29 @@
 .allLovedFeedOuterContainer {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end;
   margin: 4% 2%;
-  padding: 10px 10px 0 0;
+  padding: 10px 10px 0 0; */
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0;
+  padding: 80px 0 300px 30%;
+  height: 1600px;
+  background-color: rgba(156, 108, 39, 0.1);
 }
 
 .lovedtastingContainer {
   display: flex;
   flex-direction: column;
-  margin: 5px;
+  /* margin: 5px;
   padding: 10px 20px 30px 20px;
   width: 500px;
   background-color: #FFF3C4;
   border-radius: 10px;
-  border-bottom-color: black;
+  border-bottom-color: black; */
+  justify-content: space-between;
+  margin: 0 50px;
+  padding: 80 px;
+  cursor: pointer;
 }
 
 .footerLovedWineTastingsContainer {
@@ -23,7 +33,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #660d19;
+  background-color: #9c3127;
 }
 
 .lovedWineTastingsFooterPhrase {
