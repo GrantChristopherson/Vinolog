@@ -8,7 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
 import AllLovedFeed from './components/AllLovedFeed/AllLovedFeed';
 import TastingForm from './components/TastingForm/TastingForm';
-import NavBar from './components/NavBar/NavBar';
+// import NavBar from './components/NavBar/NavBar';
 import Splash from './components/Splash/Splash';
 import Home from './components/Home/Home';
 
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route path='/' exact={true}>
          <Splash />

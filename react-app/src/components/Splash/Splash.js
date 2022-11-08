@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../Navbar';
 import Footer from '../Footer';
 import './splash.css'
 
@@ -8,6 +9,7 @@ const Splash = () => {
 
   return (
     <>
+      <Navbar />
       <div className='outerSplash'>
         <div className='splashBody'>
           {/* <img src="/seppiaGrapes.png" alt='seppia-grapes' className='seppiaGrapes'></img> */}

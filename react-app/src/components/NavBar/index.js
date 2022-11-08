@@ -1,14 +1,13 @@
 
-import React from 'react';
+// import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
-
-import './navBar.css'
-
+import './navbar.css'
 
 
-const NavBar = () => {
+
+const Navbar = () => {
 
   const user = useSelector(state => state?.session?.user)
 
@@ -16,10 +15,10 @@ const NavBar = () => {
   if (!user) {
 
     return (
-      <nav className='navLoggedOutContainer'>
-        <ul className='ulNav'>
+      <nav className='nav_logged_out'>
+        <ul className='nav_links'>
           <NavLink to='/' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-            <h1 className ='vinologLoggedOut' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
+            <h1 className ='logo_logged_out' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
           </NavLink>
           <div className='loginSignUp'>
             <NavLink to='/login' exact={true} activeClassName='active'>
@@ -36,10 +35,10 @@ const NavBar = () => {
   } else {
 
     return (
-      <nav className='navLoggedInContainer'>
-        <ul className='ulNav'>
+      <nav className='nav_logged_in'>
+        <ul className='nav_links'>
           <NavLink to='/home' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-            <h2 className ='vinologLoggedIn' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h2>
+            <h2 className ='logo_logged_in' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h2>
           </NavLink>
           <LogoutButton />
         </ul>
@@ -50,5 +49,5 @@ const NavBar = () => {
 
     
         
-export default NavBar;
+export default Navbar;
 
