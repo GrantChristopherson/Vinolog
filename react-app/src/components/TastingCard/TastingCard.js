@@ -32,7 +32,7 @@ const TastingCard = ({tasting}) => {
           {tasting?.love && <h5>LOVED</h5>}
         </div>
         <div className='tastingNotesContainer'>
-          <h3 className='tastingHeader'>Tasting Notes</h3>
+          {/* <h3 className='tastingHeader'>Tasting Notes</h3> */}
           {showInfo && <h4>Sight: {tasting?.sight}</h4>}
           {showInfo && <h4>Nose: {tasting?.nose}</h4>}
           {showInfo && <h4>Palate: {tasting?.palate}</h4>}

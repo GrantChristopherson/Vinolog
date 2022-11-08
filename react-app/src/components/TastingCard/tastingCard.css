@@ -29,10 +29,10 @@
   color: rgb(192, 192, 176);
 }
 
-.tastingHeader {
+/* .tastingHeader {
  display: flex;
  justify-content: flex-end;
-}
+} */
 
 .editContainer {
   display: flex;
