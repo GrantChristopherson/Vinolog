@@ -7,6 +7,7 @@ import './signUpForm.css';
 
 const SignUpPage = () => {
 
+  
   return (
     <>
       <Navbar />
