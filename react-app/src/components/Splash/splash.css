@@ -38,7 +38,7 @@
   align-self: flex-end;
 }
 
-.footeraboutMeContainer {
+/* .footeraboutMeContainer {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -61,9 +61,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-#git {
+/* #git {
   color: #FFF3C4;
   padding-right: 40px;
 }
@@ -81,4 +81,4 @@
 #linked:hover {
   color: rgb(50, 50, 50);
   transition-duration: 300ms;
-}
+} */

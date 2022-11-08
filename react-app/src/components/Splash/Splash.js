@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '../Navbar';
+import Footer from '../Footer';
 import './splash.css'
 
 
@@ -7,6 +9,7 @@ const Splash = () => {
 
   return (
     <>
+      <Navbar />
       <div className='outerSplash'>
         <div className='splashBody'>
           {/* <img src="/seppiaGrapes.png" alt='seppia-grapes' className='seppiaGrapes'></img> */}
@@ -23,7 +26,8 @@ const Splash = () => {
           </div>
         </div> */}
       </div>
-      <footer>
+      <Footer />
+      {/* <footer>
         <div className='footeraboutMeContainer'>
           <h5 className='devBy'>Developed by: </h5>
           <h4 className='devName'>Grant Christopherson</h4>
@@ -35,7 +39,7 @@ const Splash = () => {
             </a>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };

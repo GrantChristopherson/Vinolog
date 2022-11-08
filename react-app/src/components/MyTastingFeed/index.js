@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
 import TastingCard from "../TastingCard/TastingCard";
+import Navbar from '../Navbar';
 import Sidebar from "../Sidebar/Sidebar";
+import Footer from '../Footer';
 import './myTastingFeed.css';
 
 
@@ -25,6 +27,7 @@ const MyTastingFeed = () => {
 
   return (
     <>
+      <Navbar />
       <Sidebar user={user} />
       <div className="myTastingFeedOuterContainer">
         {userTastings?.map((tasting) => {return (
@@ -33,11 +36,7 @@ const MyTastingFeed = () => {
         </div>
         )}).reverse()}
       </div>
-      <footer>
-        <div className='footerMyWineTastingsContainer'>
-          <h4 className='myWineTastingsFooterPhrase'>My Wine Tastings</h4>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

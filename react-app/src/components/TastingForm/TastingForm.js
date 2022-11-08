@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { createTastingThunk } from '../../store/tasting';
+import Navbar from '../Navbar';
 import Sidebar from '../Sidebar/Sidebar';
+import Footer from '../Footer';
 import './tastingForm.css';
 
 
@@ -172,6 +174,7 @@ const TastingForm = () => {
 
   return (
     <>
+      <Navbar />
       <Sidebar />
       <div className='createTastingContainer'>
         <form className='createTastingForm' onSubmit={handleSubmit}>
@@ -329,11 +332,7 @@ const TastingForm = () => {
           </div>
         </form>
       </div>
-    <footer>
-      <div className='footerCreateTastingContainer'>
-        <h4 className='createTastingFooterPhrase'>Wine Tasting Creator</h4>
-      </div>
-    </footer>
+    <Footer />
   </>
   );
 };
