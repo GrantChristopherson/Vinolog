@@ -10,6 +10,7 @@ function EditTastingModal({ tasting, lovedTasting }) {
 
   const [showModal, setShowModal] = useState(false);
 
+  
   return (
     <>
       <button className='editTastingButton' onClick={() => setShowModal(true)}>Edit</button>
