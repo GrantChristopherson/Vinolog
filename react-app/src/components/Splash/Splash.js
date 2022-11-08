@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer';
 import './splash.css'
 
 
@@ -23,7 +24,8 @@ const Splash = () => {
           </div>
         </div> */}
       </div>
-      <footer>
+      <Footer />
+      {/* <footer>
         <div className='footeraboutMeContainer'>
           <h5 className='devBy'>Developed by: </h5>
           <h4 className='devName'>Grant Christopherson</h4>
@@ -35,7 +37,7 @@ const Splash = () => {
             </a>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };
