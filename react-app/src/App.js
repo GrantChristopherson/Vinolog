@@ -5,10 +5,9 @@ import { authenticate } from './store/session';
 import LoginPage from './components/auth/LoginPage';
 import SignUpPage from './components/auth/SignUpPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
-import AllLovedFeed from './components/AllLovedFeed/AllLovedFeed';
+import MyTastingFeed from './components/MyTastingFeed';
+import AllLovedFeed from './components/LovedFeed';
 import TastingForm from './components/TastingForm/TastingForm';
-// import NavBar from './components/NavBar/NavBar';
 import Splash from './components/Splash/Splash';
 import Home from './components/Home/Home';
 

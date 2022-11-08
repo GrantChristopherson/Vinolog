@@ -216,7 +216,7 @@
   cursor: pointer;
 }
 
-.footerCreateTastingContainer {
+/* .footerCreateTastingContainer {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -228,5 +228,5 @@
 
 .createTastingFooterPhrase {
   color: #FFF3C4;
-}
+} */
   
