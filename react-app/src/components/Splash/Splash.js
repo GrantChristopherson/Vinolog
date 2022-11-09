@@ -8,6 +8,7 @@ import './splash.css'
 const Splash = () => {
 
   return (
+    
     <>
       <Navbar />
       <div className='outerSplash'>
