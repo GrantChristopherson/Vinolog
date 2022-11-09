@@ -29,7 +29,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <NavBar /> */}
       <Switch>
         <Route path='/' exact={true}>
          <Splash />
