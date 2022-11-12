@@ -1,8 +1,8 @@
 
-import Navbar from '../Navbar';
+import Navbar from '../NavBar/';
 import Sidebar from '../Sidebar/Sidebar';
-import HomeBody from '../HomeBody';
-import Footer from '../Footer';
+import HomeBody from '../HomeBody/';
+import Footer from '../Footer/';
 import './home.css'
 
 
