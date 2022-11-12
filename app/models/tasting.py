@@ -1,4 +1,4 @@
-from .db import db
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 
 
@@ -11,9 +11,11 @@ cheer = db.Table(
 
 class Tasting(db.Model):
   __tablename__ = 'tastings'
+  if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
   id = db.Column(db.Integer, primary_key=True)
-  user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
   producer = db.Column(db.String(50), nullable=False)
   region = db.Column(db.String(100), nullable=False)
   vineyard = db.Column(db.String(50))
