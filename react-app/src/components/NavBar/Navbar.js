@@ -3,7 +3,7 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
-import './navbar.css'
+import './navbar.css';
 
 
 

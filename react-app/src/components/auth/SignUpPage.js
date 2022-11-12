@@ -1,6 +1,6 @@
 import SignUpForm from "./SignUpForm";
-import Navbar from "../NavBar/";
-import Footer from "../Footer/";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import './signUpForm.css';
 
 
