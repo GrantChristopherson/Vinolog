@@ -6,7 +6,7 @@ import LoginPage from './components/auth/LoginPage';
 import SignUpPage from './components/auth/SignUpPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
-import AllLovedFeed from './components/LovedFeed/LovedFeed';
+import LovedFeed from './components/LovedFeed/LovedFeed';
 import TastingForm from './components/TastingForm/TastingForm';
 import Splash from './components/Splash/Splash';
 import Home from './components/Home/Home';
@@ -49,7 +49,7 @@ function App() {
           <MyTastingFeed />
         </ProtectedRoute>
         <ProtectedRoute path='/lovedtastings' exact={true} >
-          <AllLovedFeed />
+          <LovedFeed />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
