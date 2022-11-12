@@ -1,6 +1,6 @@
 import LoginForm from "./LoginForm";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar.js";
+import Footer from "../Footer/Footer.js";
 import './loginPage.css';
 
 
