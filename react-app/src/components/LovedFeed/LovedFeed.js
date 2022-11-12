@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllLovedTastingsThunk } from '../../store/tasting';
 import LovedTastingCard from "../LovedTastingCard/LovedTastingCard.js";

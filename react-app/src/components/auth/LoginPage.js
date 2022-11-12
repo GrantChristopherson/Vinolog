@@ -1,3 +1,4 @@
+import React from 'react';
 import LoginForm from "./LoginForm";
 import Navbar from "../Navbar/Navbar.js";
 import Footer from "../Footer/Footer.js";
