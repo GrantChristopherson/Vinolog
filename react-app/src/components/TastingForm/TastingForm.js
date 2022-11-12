@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { createTastingThunk } from '../../store/tasting';
-import Navbar from '../Navbar';
+import Navbar from '../NavBar/';
 import Sidebar from '../Sidebar/Sidebar';
-import Footer from '../Footer';
+import Footer from '../Footer/';
 import './tastingForm.css';
 
 

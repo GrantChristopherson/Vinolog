@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
 import TastingCard from "../TastingCard/TastingCard";
-import Navbar from '../Navbar';
+import Navbar from '../NavBar/';
 import Sidebar from "../Sidebar/Sidebar";
-import Footer from '../Footer';
+import Footer from '../Footer/';
 import './myTastingFeed.css';
 
 
