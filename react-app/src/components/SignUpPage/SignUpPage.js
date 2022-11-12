@@ -2,7 +2,7 @@ import React from 'react';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import Navbar from "../navbar/Navbar";
 import Footer from "../Footer/Footer";
-import './signUpForm.css';
+// import './signUpForm.css';
 
 
 
