@@ -1,24 +1,25 @@
 import React from 'react';
-import SignUpForm from "./SignUpForm.js";
+import LoginForm from "../LoginForm/LoginForm";
 import Navbar from "../navbar/Navbar.js";
 import Footer from "../Footer/Footer.js";
-import './signUpForm.css';
+import './loginPage.css';
 
 
 
-const SignUpPage = () => {
+const LoginPage = () => {
 
-  
   return (
     <>
       <Navbar />
       <div className='outerSplash'>
         <div className='leftSplashBody'>
           <div className='slogan'>
-            <h1>Welcome to Vinolog!</h1>
+            <h1 className='welcome'>Welcome to Vinolog!</h1>
             <h3 className='personalJesus'>Personal Wine Journal</h3>
           </div>
-          <SignUpForm />
+          <div className="LoginWrapper">
+            <LoginForm />
+          </div>
           <h3 className='journey' >Document your journey...</h3>
         </div>
         <div className='rightSplashBody'>
@@ -32,4 +33,4 @@ const SignUpPage = () => {
 };
 
 
-export default SignUpPage;
+export default LoginPage;
