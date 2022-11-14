@@ -1,5 +1,4 @@
 
-
 .userSidebarContainer {
   position: fixed;
   display: flex;
@@ -10,8 +9,7 @@
   padding: 15% 0 30% 0;
   flex-direction: column;
   height:100%;
-  width: 27%;
-  /* max-width: 30%; */
+  min-width: 300px;
   margin: 0;
   background-color: rgb(39, 39, 38);
 }
@@ -23,10 +21,7 @@
 
 .createbarWrapper:hover {
   background-color:  rgba(78, 76, 76, 0.5);
-}
-
-.createbarWrapper:active {
-  opacity: .7;
+  transition-duration: 300ms;
 }
 
 .createbarNav {
@@ -44,10 +39,7 @@
 
 .myFeedLinkContainer:hover {
   background-color:  rgba(78, 76, 76, 0.5);
-}
-
-.myFeedLinkContainer:active {
-  opacity: .7;
+  transition-duration: 300ms;
 }
 
 .mytastebarNav {
@@ -65,10 +57,7 @@
 
 .allLovedFeedLinkContainer:hover {
   background-color: rgba(78, 76, 76, 0.5);
-}
-
-.allLovedFeedLinkContainer:active {
-  opacity: .7;
+  transition-duration: 300ms;
 }
 
 .lovedbarNav {
@@ -104,7 +93,6 @@
 }
 
 .fa-brands {
-  color: #FFF3C4;
   font-size: 20px;
   cursor: pointer;
 }
@@ -116,23 +104,16 @@
 }
 
 .userLinkedInLink:hover {
-  background-color: rgba(78, 76, 76, 0.5);
-  border-radius: 15px;
-}
-
-.userLinkedInLink:active {
-  opacity: .7;
+  color: #9c3127;
+  transition-duration: 300ms;
 }
 
 .userGithubLink {
+  color: #FFF3C4;
   padding: 0 10px;
 }
 
 .userGithubLink:hover {
-  background-color: rgba(78, 76, 76, 0.5);
-  border-radius: 15px;
-}
-
-.userGithubLink:active {
-  opacity: .7;
+  color: #9c3127;
+  transition-duration: 300ms;
 }

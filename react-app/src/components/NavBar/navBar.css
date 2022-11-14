@@ -1,4 +1,4 @@
-.navLoggedOutContainer {
+.nav_logged_out {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   background-color: rgb(50, 50, 50);
 }
 
-.navLoggedInContainer {
+.nav_logged_in {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,20 +19,31 @@
   
 }
 
-.ulNav {
+.nav_links {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
 }
 
-.vinolog {
+.logo_logged_out {
   margin: 5px 0 0 0;
   padding: 0;
   color: #FFF3C4;
 }
 
-.vinolog:hover {
-  color:  #9c3127;
+.logo_logged_out:hover {
+  color: #9c3127;
+  transition-duration: 300ms;
+}
+
+.logo_logged_in {
+  margin: 5px 0 0 0;
+  padding: 0;
+  color: #FFF3C4;
+}
+
+.logo_logged_in:hover {
+  color: rgb(50, 50, 50);
   transition-duration: 300ms;
 }
 

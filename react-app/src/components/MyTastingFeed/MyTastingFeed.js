@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
-import TastingCard from "../TastingCard/TastingCard";
-import Sidebar from "../Sidebar/Sidebar";
+import TastingCard from "../TastingCard/TastingCard.js";
+import Navbar from '../navbar/Navbar.js';
+import Sidebar from "../Sidebar/Sidebar.js";
+import Footer from '../Footer/Footer.js';
 import './myTastingFeed.css';
 
 
@@ -24,21 +26,18 @@ const MyTastingFeed = () => {
 
 
   return (
-    <div className="myTastingFeedOuterContainer">
+    <>
+      <Navbar />
       <Sidebar user={user} />
-      <div className="myTastingFeedInnerContainer">
+      <div className="myTastingFeedOuterContainer">
         {userTastings?.map((tasting) => {return (
-        <div key={tasting.id} className="tastingContainer">
+        <div key={tasting.id} className="tastingFeedInnerContainer">
           <TastingCard tasting={tasting}/>
         </div>
         )}).reverse()}
       </div>
-      <footer>
-        <div className='footerMyWineTastingsContainer'>
-          <h4 className='myWineTastingsFooterPhrase'>My Wine Tastings</h4>
-        </div>
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
 };
 

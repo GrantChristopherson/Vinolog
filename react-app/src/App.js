@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authenticate } from './store/session';
-import LoginPage from './components/auth/LoginPage';
-import SignUpPage from './components/auth/SignUpPage';
-import ProtectedRoute from './components/auth/ProtectedRoute';
+import LoginPage from './components/LoginPage/LoginPage';
+import SignUpPage from './components/SignUpPage/SignUpPage';
+import ProtectedRoute from './components/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
-import AllLovedFeed from './components/AllLovedFeed/AllLovedFeed';
+import LovedFeed from './components/LovedFeed/LovedFeed';
 import TastingForm from './components/TastingForm/TastingForm';
-import NavBar from './components/NavBar/NavBar';
 import Splash from './components/Splash/Splash';
 import Home from './components/Home/Home';
 
@@ -30,7 +29,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Switch>
         <Route path='/' exact={true}>
          <Splash />
@@ -51,7 +49,7 @@ function App() {
           <MyTastingFeed />
         </ProtectedRoute>
         <ProtectedRoute path='/lovedtastings' exact={true} >
-          <AllLovedFeed />
+          <LovedFeed />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

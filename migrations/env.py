@@ -7,6 +7,8 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from flask import current_app
+from sqlalchemy import engine_from_config
+from sqlalchemy import pool
 
 from alembic import context
 
@@ -80,10 +82,10 @@ def run_migrations_online():
 
     # connectable = current_app.extensions['migrate'].db.get_engine()
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
-        prefix='sqlalchemy.',
-        poolclass=pool.NullPool,
-    )
+            config.get_section(config.config_ini_section),
+            prefix='sqlalchemy.',
+            poolclass=pool.NullPool,
+        )
 
     with connectable.connect() as connection:
         context.configure(
@@ -93,15 +95,9 @@ def run_migrations_online():
             **current_app.extensions['migrate'].configure_args
         )
 
-        # Create a schema (only in production)
         if environment == "production":
             connection.execute(f"CREATE SCHEMA IF NOT EXISTS {SCHEMA}")
 
-
-        # with context.begin_transaction():
-        #     context.run_migrations()
-        
-        # Set search path to your schema (only in production)
         with context.begin_transaction():
             if environment == "production":
                 context.execute(f"SET search_path TO {SCHEMA}")

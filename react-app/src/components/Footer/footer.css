@@ -1,0 +1,44 @@
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #9c3127;
+}
+
+.dev_by {
+  color: #FFF3C4;
+  margin-right: 10px;
+}
+
+.dev_name {
+  color: #FFF3C4;
+}
+
+.footer_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#git {
+  color: #FFF3C4;
+  padding-right: 40px;
+}
+
+#linked {
+  color: #FFF3C4;
+  padding: 0 10px;
+}
+
+#git:hover {
+  color: rgb(50, 50, 50);
+  transition-duration: 300ms;
+}
+
+#linked:hover {
+  color: rgb(50, 50, 50);
+  transition-duration: 300ms;
+}

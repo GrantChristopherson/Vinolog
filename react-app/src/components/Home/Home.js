@@ -1,5 +1,8 @@
 import React from 'react';
-import Sidebar from '../Sidebar/Sidebar';
+import Navbar from '../navbar/Navbar.js';
+import Sidebar from '../Sidebar/Sidebar.js';
+import HomeBody from '../HomeBody/HomeBody.js';
+import Footer from '../Footer/Footer.js';
 import './home.css'
 
 
@@ -7,17 +10,14 @@ import './home.css'
 const Home = () => {
 
   return (
+    
     <>
-      <div className='homeContainer'>
-        <div className='userContainer'>
-          <Sidebar />
-        </div>
+      <Navbar />
+      <div className='home_body'>
+        <Sidebar />
+        <HomeBody />
       </div>
-      <footer>
-        <div className='footerHomeContainer'>
-          <h4 className='homeFooterPhrase'>Personal Wine Journal</h4>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

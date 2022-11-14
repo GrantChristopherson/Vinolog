@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { createTastingThunk } from '../../store/tasting';
-import Sidebar from '../Sidebar/Sidebar';
+import Navbar from '../navbar/Navbar.js';
+import Sidebar from '../Sidebar/Sidebar.js';
+import Footer from '../Footer/Footer.js';
 import './tastingForm.css';
 
 
@@ -172,10 +174,10 @@ const TastingForm = () => {
 
   return (
     <>
+      <Navbar />
       <Sidebar />
       <div className='createTastingContainer'>
         <form className='createTastingForm' onSubmit={handleSubmit}>
-        {/* <h2 className='newTastingHeader'>NEW WINE TASTING</h2> */}
           <div className='inputContainer'>
             <div>
               {errors?.spacing !== undefined && <div className='error'>
@@ -312,7 +314,7 @@ const TastingForm = () => {
               ></input>
             </div>
             <div className='loveWrapperInput'>
-              <label className='loveLabel'>Love this wine?</label>
+              <label className='loveLabel'>Love the wine?</label>
               <input className='loveInput'
                 type="checkbox"
                 value={love}
@@ -330,11 +332,7 @@ const TastingForm = () => {
           </div>
         </form>
       </div>
-    <footer>
-      <div className='footerCreateTastingContainer'>
-        <h4 className='createTastingFooterPhrase'>Wine Tasting Creator</h4>
-      </div>
-    </footer>
+    <Footer />
   </>
   );
 };
