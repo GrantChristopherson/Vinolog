@@ -7,8 +7,6 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from flask import current_app
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
 
 from alembic import context
 
