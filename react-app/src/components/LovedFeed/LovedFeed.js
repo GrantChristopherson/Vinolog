@@ -25,18 +25,21 @@ const AllLovedFeed = () => {
 
 
   return (
-    <>
-      <Navbar />
+    <div className="allLovedFeedOuterContainer">
       <Sidebar />
-      <div className="allLovedFeedOuterContainer">
+      <div className="allLovedFeedInnerContainer">
         {lovedWineTastings?.map((tasting) => {return (
         <div key={tasting?.id} className="lovedtastingContainer">
           <LovedTastingCard tasting={tasting}/>
         </div>
         )}).reverse()}
       </div>
-      <Footer />
-    </>
+      <footer>
+        <div className='footerLovedWineTastingsContainer'>
+          <h4 className='lovedWineTastingsFooterPhrase'>Loved Wine Feed</h4>
+        </div>
+      </footer>
+    </div>
   );
 };
 
