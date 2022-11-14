@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from "../LoginForm/LoginForm";
-import Navbar from "../navbar/Navbar.js";
+import Navbar from "./../navbar/Navbar.js";
 import Footer from "../Footer/Footer.js";
 import './loginPage.css';
 
