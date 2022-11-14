@@ -4,9 +4,11 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 cheer = db.Table(
     "cheers",
-    db.Column("tasting_id", db.Integer, db.ForeignKey("tastings.id")),
-    db.Column("user_id", db.Integer, db.ForeignKey("users.id"))
+    db.Column("tasting_id", db.Integer, db.ForeignKey(add_prefix_for_prod("tastings.id"))),
+    db.Column("user_id", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
 )
+if environment == "production":
+    cheer.schema = SCHEMA
 
 
 class Tasting(db.Model):

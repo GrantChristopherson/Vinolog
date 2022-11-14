@@ -6,9 +6,11 @@ from flask_login import UserMixin
 
 friends = db.Table(
     "friends",
-    db.Column("follower_id", db.Integer, db.ForeignKey("users.id")),
-    db.Column("following_id", db.Integer, db.ForeignKey("users.id"))
+    db.Column("follower_id", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id"))),
+    db.Column("following_id", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
 )
+if environment == "production":
+    friends.schema = SCHEMA
 
 
 class User(db.Model, UserMixin):
