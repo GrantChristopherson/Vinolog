@@ -1,4 +1,4 @@
-from .db import db
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
@@ -6,13 +6,17 @@ from flask_login import UserMixin
 
 friends = db.Table(
     "friends",
-    db.Column("follower_id", db.Integer, db.ForeignKey("users.id")),
-    db.Column("following_id", db.Integer, db.ForeignKey("users.id"))
+    db.Column("follower_id", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id"))),
+    db.Column("following_id", db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
 )
+if environment == "production":
+    friends.schema = SCHEMA
 
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(40), nullable=False, unique=True)
