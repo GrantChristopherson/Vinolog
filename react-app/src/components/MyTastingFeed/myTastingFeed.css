@@ -1,10 +1,10 @@
 .my-feed-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 0 0;
-  padding: 80px 0 300px 30%;
-  height: 1600px;
+  padding: 100px 0 300px 30%;
+  min-height: 1200px;
   width: 100%;
   background-color: rgba(156, 108, 39, 0.1);
 }
