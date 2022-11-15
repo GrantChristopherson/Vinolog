@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../navbar/Navbar.js';
+// import Navbar from '../navbar/Navbar.js';
 import Sidebar from '../Sidebar/Sidebar.js';
 import HomeBody from '../HomeBody/HomeBody.js';
 import Footer from '../Footer/Footer.js';
@@ -12,7 +12,7 @@ const Home = () => {
   return (
     
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='home_body'>
         <Sidebar />
         <HomeBody />

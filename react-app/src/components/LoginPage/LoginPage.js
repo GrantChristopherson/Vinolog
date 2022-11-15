@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from "../LoginForm/LoginForm";
-import Navbar from "./../navbar/Navbar.js";
+// import Navbar from "./../navbar/Navbar.js";
 import Footer from "../Footer/Footer.js";
 import './loginPage.css';
 
@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='outerSplash'>
         <div className='leftSplashBody'>
           <div className='slogan'>
