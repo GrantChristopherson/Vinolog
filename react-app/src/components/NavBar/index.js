@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const user = useSelector(state => state?.session?.user)
 
-
+  // TODO fix this mess, make something work.
   if (!user) {
 
     return (
