@@ -1,6 +1,6 @@
 import React from 'react';
 import SignUpForm from '../SignUpForm';
-// import Navbar from "../navbar/Navbar.js";
+import Navbar from '../Navbar';
 import Footer from "../Footer";
 
 
@@ -11,7 +11,7 @@ const SignUpPage = () => {
   
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className='outerSplash'>
         <div className='leftSplashBody'>
           <div className='slogan'>

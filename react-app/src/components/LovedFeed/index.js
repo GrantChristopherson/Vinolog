@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllLovedTastingsThunk } from '../../store/tasting';
 import LovedTastingCard from "../LovedTastingCard";
-// import Navbar from "../navbar/Navbar.js";
+// import Navbar from "../Navbar";
 import Sidebar from '../Sidebar';
-import Footer from "../Footer";
+// import Footer from "../Footer";
 import './lovedFeed.css';
 
 
@@ -26,6 +26,7 @@ const AllLovedFeed = () => {
 
   return (
     <div className="allLovedFeedOuterContainer">
+      {/* <Navbar /> */}
       <Sidebar />
       <div className="allLovedFeedInnerContainer">
         {lovedWineTastings?.map((tasting) => {return (
