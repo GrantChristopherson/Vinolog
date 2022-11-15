@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { createTastingThunk } from '../../store/tasting';
-// import Navbar from '../navbar/Navbar.js';
+import Navbar from '../Navbar';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
 import './tastingForm.css';
@@ -174,7 +174,7 @@ const TastingForm = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Sidebar />
       <div className='createTastingContainer'>
         <form className='createTastingForm' onSubmit={handleSubmit}>

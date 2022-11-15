@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
 import TastingCard from "../TastingCard";
-// import Navbar from '../navbar/Navbar.js';
+import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import Footer from '../Footer';
 import './myTastingFeed.css';
@@ -27,7 +27,7 @@ const MyTastingFeed = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Sidebar user={user} />
       <div className="myTastingFeedOuterContainer">
         {userTastings?.map((tasting) => {return (
