@@ -1,32 +1,19 @@
-.myTastingFeedOuterContainer {
+.my-feed-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 0;
   padding: 80px 0 300px 30%;
   height: 1600px;
+  width: 100%;
   background-color: rgba(156, 108, 39, 0.1);
 }
 
-.tastingFeedInnerContainer {
+.my-tasting-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 50px;
   padding: 80 px;
   cursor: pointer;
 }
-
-/* .footerMyWineTastingsContainer {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #9c3127;
-}
-
-.myWineTastingsFooterPhrase {
-  color: #FFF3C4;
-} */
