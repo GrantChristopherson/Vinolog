@@ -176,9 +176,9 @@ const TastingForm = () => {
     <>
       {/* <Navbar /> */}
       <Sidebar />
-      <div className='createTastingContainer'>
-        <form className='createTastingForm' onSubmit={handleSubmit}>
-          <div className='inputContainer'>
+      <div className='create-tasting-container'>
+        <form className='create-form' onSubmit={handleSubmit}>
+          <div className='input-container'>
             <div>
               {errors?.spacing !== undefined && <div className='error'>
                 <div className='errors'>{errors.spacing}</div>
@@ -188,7 +188,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.producer}</div>
               </div>
               }
-              <input className='producerInput'
+              <input className='producer-input'
               type='text'
               name='producer'
               onChange={updateProducer}
@@ -201,7 +201,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.region}</div>
               </div>
               }
-              <input className='regionInput'
+              <input className='region-input'
               type='text'
               name='region'
               onChange={updateRegion}
@@ -214,7 +214,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.vineyard}</div>
               </div>
               }
-              <input className='vineyardInput'
+              <input className='vineyard-input'
               type='text'
               name='vineyard'
               onChange={updateVineyard}
@@ -227,7 +227,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.varietal}</div>
               </div>
               }
-              <input className='varietalInput'
+              <input className='varietal-input'
               type='text'
               name='varietal'
               onChange={updateVarietal}
@@ -240,7 +240,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.vintage}</div>
               </div>
               }
-              <input className='vintageInput'
+              <input className='vintage-input'
               type='number'
               name='vintage'
               onChange={updateVintage}
@@ -253,7 +253,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.otherInfo}</div>
               </div>
               }
-              <input className='otherInfoInput'
+              <input className='other-info-input'
               type='text'
               name='otherInfo'
               onChange={updateOtherInfo}
@@ -266,7 +266,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.sight}</div>
               </div>
               }
-              <input className='sightInput'
+              <input className='sight-input'
               type='text'
               name='sight'
               onChange={updateSight}
@@ -279,7 +279,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.nose}</div>
               </div>
               }
-              <input className='noseInput'
+              <input className='nose-input'
               type='text'
               name='nose'
               onChange={updateNose}
@@ -292,7 +292,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.palate}</div>
               </div>
               }
-              <input className='palateInput'
+              <input className='palate-input'
               type='text'
               name='palate'
               onChange={updatePalate}
@@ -305,7 +305,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.thoughts}</div>
               </div>
               }
-              <input className='thoughtsInput'
+              <input className='thoughts-input'
               type='text'
               name='thoughts'
               onChange={updateThoughts}
@@ -313,9 +313,9 @@ const TastingForm = () => {
               value={thoughts}
               ></input>
             </div>
-            <div className='loveWrapperInput'>
-              <label className='loveLabel'>Love the wine?</label>
-              <input className='loveInput'
+            <div className='love-container'>
+              <label className='love-label'>Love the wine?</label>
+              <input className='love-input'
                 type="checkbox"
                 value={love}
                 name='love'
@@ -323,9 +323,9 @@ const TastingForm = () => {
                 onChange={handleClick}
               />
             </div>
-            <div className='submitOrCancelWrapper'>
-              <button  className='submitTasting'>Submit</button>
-              <NavLink to='/home' className={'myhome'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+            <div className='submit-cancel-container'>
+              <button  className='submit-tasting'>Submit</button>
+              <NavLink to='/home' className={'my-home'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
                 Cancel
               </NavLink> 
             </div>
