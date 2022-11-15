@@ -11,20 +11,20 @@ const LoginPage = () => {
   return (
     <>
       {/* <Navbar /> */}
-      <div className='outerSplash'>
+      <div className='splash-body'>
         <div className='leftSplashBody'>
           <div className='slogan'>
             <h1 className='welcome'>Welcome to Vinolog!</h1>
             <h3 className='personalJesus'>Personal Wine Journal</h3>
           </div>
-          <div className="LoginWrapper">
+          <div className="Login-wrapper">
             <LoginForm />
           </div>
           <h3 className='journey' >Document your journey...</h3>
         </div>
-        <div className='rightSplashBody'>
+        <div className='splash-quote'>
           <h2>"Wine is a passport to the World."</h2>
-          <h5 className='qouteCredit'>- Thom Elkjer</h5>
+          <h5 className='qoute-credit'>- Thom Elkjer</h5>
         </div>
       </div>
       <Footer />

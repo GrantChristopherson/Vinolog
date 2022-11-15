@@ -1,5 +1,5 @@
 
-.userSidebarContainer {
+.user-sidebar {
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -14,17 +14,17 @@
   background-color: rgb(39, 39, 38);
 }
 
-.createbarWrapper {
+.create-container {
   display: flex;
   justify-content: space-between;
 }
 
-.createbarWrapper:hover {
+.create-container:hover {
   background-color:  rgba(78, 76, 76, 0.5);
   transition-duration: 300ms;
 }
 
-.createbarNav {
+.create-nav {
   padding: 15px 15px 15px 0;
   color: rgb(192, 192, 176);
   font-size: 18px;
@@ -32,17 +32,17 @@
   margin: 0 8%;
 }
 
-.myFeedLinkContainer {
+.my-tastings-container {
   display: flex;
   justify-content: space-between;
 }
 
-.myFeedLinkContainer:hover {
+.my-tastings-container:hover {
   background-color:  rgba(78, 76, 76, 0.5);
   transition-duration: 300ms;
 }
 
-.mytastebarNav {
+.my-feed-nav {
   padding: 15px 15px 15px 0;
   color: rgb(192, 192, 176);
   font-size: 18px;
@@ -50,17 +50,17 @@
   margin: 0 8%;
 }
 
-.allLovedFeedLinkContainer {
+.loved-feed-container {
   display: flex;
   justify-content: space-between;
 }
 
-.allLovedFeedLinkContainer:hover {
+.loved-feed-container:hover {
   background-color: rgba(78, 76, 76, 0.5);
   transition-duration: 300ms;
 }
 
-.lovedbarNav {
+.loved-feed-nav {
   padding: 15px 15px 15px 0;
   color: rgb(192, 192, 176);
   font-size: 18px;
@@ -68,7 +68,25 @@
   margin: 0 8%;
 }
 
-.aboutMeContainer {
+.friends-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.friends-container:hover {
+  background-color: rgba(78, 76, 76, 0.5);
+  transition-duration: 300ms;
+}
+
+.friends-nav {
+  padding: 15px 15px 15px 0;
+  color: rgb(192, 192, 176);
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0 8%;
+}
+
+/* .aboutMeContainer {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -116,4 +134,4 @@
 .userGithubLink:hover {
   color: #9c3127;
   transition-duration: 300ms;
-}
+} */

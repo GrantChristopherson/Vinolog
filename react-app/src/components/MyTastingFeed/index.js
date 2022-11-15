@@ -29,9 +29,9 @@ const MyTastingFeed = () => {
     <>
       {/* <Navbar /> */}
       <Sidebar user={user} />
-      <div className="myTastingFeedOuterContainer">
+      <div className="my-feed-container">
         {userTastings?.map((tasting) => {return (
-        <div key={tasting.id} className="tastingFeedInnerContainer">
+        <div key={tasting.id} className="my-tasting-container">
           <TastingCard tasting={tasting}/>
         </div>
         )}).reverse()}
