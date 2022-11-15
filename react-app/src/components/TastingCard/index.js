@@ -21,9 +21,9 @@ const TastingCard = ({tasting}) => {
 
 
   return (
-    <div className='tastingCardOuterContainer'>
-      <div className='tastingContainer' onClick={() => setShowInfo(!showInfo)}>
-        <div className='wineInfo'>
+    <div className='tasting-container'>
+      <div className='tasting-info-container' onClick={() => setShowInfo(!showInfo)}>
+        <div className='wine-info'>
           <h2>{tasting?.vintage} {tasting?.producer}</h2>
           <h3>{tasting?.varietal}</h3>
           {showInfo && <h4>{tasting?.region}</h4>}
@@ -31,17 +31,16 @@ const TastingCard = ({tasting}) => {
           {showInfo && <h4>{tasting?.other_info}</h4>}
           {tasting?.love && <h5>LOVED</h5>}
         </div>
-        <div className='tastingNotesContainer'>
-          {/* <h3 className='tastingHeader'>Tasting Notes</h3> */}
+        <div className='tasting-info'>
           {showInfo && <h4>Sight: {tasting?.sight}</h4>}
           {showInfo && <h4>Nose: {tasting?.nose}</h4>}
           {showInfo && <h4>Palate: {tasting?.palate}</h4>}
           {showInfo && <h4>My Thoughts: {tasting?.thoughts}</h4>}
         </div>
       </div>
-      <div className="editContainer">
+      <div className="edit-delete-container">
         <div>
-          {showInfo && <button className='deleteIcon'onClick={deleteHandler}>Delete</button>}
+          {showInfo && <button className='delete-button'onClick={deleteHandler}>Delete</button>}
         </div>
         <div>
           {!showModal && <EditTastingModal tasting={tasting} setShowModal={setShowModal}/>}
