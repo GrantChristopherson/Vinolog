@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllLovedTastingsThunk } from '../../store/tasting';
-import LovedTastingCard from "../LovedTastingCard/LovedTastingCard.js";
+import LovedTastingCard from "../LovedTastingCard";
 // import Navbar from "../navbar/Navbar.js";
-import Sidebar from '../Sidebar/Sidebar.js';
-import Footer from "../Footer/Footer.js";
+import Sidebar from '../Sidebar';
+import Footer from "../Footer";
 import './lovedFeed.css';
 
 

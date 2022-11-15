@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authenticate } from './store/session';
-import LoginPage from './components/LoginPage/LoginPage';
-import SignUpPage from './components/SignUpPage/SignUpPage';
+import LoginPage from './components/LoginPage';
+import SignUpPage from './components/SignUpPage';
 import ProtectedRoute from './components/ProtectedRoute';
-import MyTastingFeed from './components/MyTastingFeed/MyTastingFeed';
-import LovedFeed from './components/LovedFeed/LovedFeed';
-import TastingForm from './components/TastingForm/TastingForm';
-import Splash from './components/Splash/Splash';
-import Home from './components/Home/Home';
+import MyTastingFeed from './components/MyTastingFeed';
+import LovedFeed from './components/LovedFeed';
+import TastingForm from './components/TastingForm';
+import Splash from './components/Splash';
+import Home from './components/Home';
 
 
 function App() {

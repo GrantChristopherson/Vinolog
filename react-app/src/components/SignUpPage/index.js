@@ -1,8 +1,8 @@
 import React from 'react';
-import SignUpForm from '../SignUpForm/SignUpForm.js';
+import SignUpForm from '../SignUpForm';
 // import Navbar from "../navbar/Navbar.js";
-import Footer from "../Footer/Footer.js";
-// import './signUpForm.css';
+import Footer from "../Footer";
+
 
 
 
