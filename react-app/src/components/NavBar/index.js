@@ -7,7 +7,7 @@ import './navbar.css';
 
 
 
-const Navbar = () => {
+const Navigation = () => {
 
   const user = useSelector(state => state?.session?.user)
 
@@ -49,5 +49,5 @@ const Navbar = () => {
 
     
         
-export default Navbar;
+export default Navigation;
 
