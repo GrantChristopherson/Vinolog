@@ -1,4 +1,4 @@
-.outerSplash {
+.splash-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7,24 +7,14 @@
   margin: 0;
   padding: 0;
   border: 0;
-  /* background: url('/seppiaGrapes.png') no-repeat center center fixed;
+  /* background: url("https://www.thespruceeats.com/thmb/9Hs8J5W4z6gh04WUL7uTs__4rq0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/close-up-of-wine-bottles-over-white-background-609198963-5844948f5f9b5851e57ef400.jpg") no-repeat center center fixed;
   background-size: cover; */
-  /* background: url('https://www.thespruceeats.com/thmb/9Hs8J5W4z6gh04WUL7uTs__4rq0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/close-up-of-wine-bottles-over-white-background-609198963-5844948f5f9b5851e57ef400.jpg') no-repeat center center fixed;
-  background-size: cover; */
+ 
 }
 
-/* .seppiaGrapes {
-  margin-top: 60px;
-  width: 100%;
-  min-width: 2000px;
-  min-height: 1060px;
-  position: fixed;
-  
-} */
-
-.wineBottles {
-  min-height: 1100px;
-  min-width: 100%;
+.wine-bottles {
+  height: 1250px;
+  width: fit-content;
   overflow-x: none;
 }
 
@@ -33,52 +23,8 @@
   margin: 0 50px;
 };
 
-.qouteCredit {
+.qoute-credit {
   display: flex;
   align-self: flex-end;
 }
 
-/* .footeraboutMeContainer {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #9c3127;
-}
-
-.devBy {
-  color: #FFF3C4;
-  margin-right: 10px;
-}
-
-.devName {
-  color: #FFF3C4;
-}
-
-.footerLinksContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* #git {
-  color: #FFF3C4;
-  padding-right: 40px;
-}
-
-#linked {
-  color: #FFF3C4;
-  padding: 0 10px;
-}
-
-#git:hover {
-  color: rgb(50, 50, 50);
-  transition-duration: 300ms;
-}
-
-#linked:hover {
-  color: rgb(50, 50, 50);
-  transition-duration: 300ms;
-} */
