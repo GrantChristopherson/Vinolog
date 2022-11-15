@@ -1,7 +1,6 @@
 .my-feed-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   margin: 0 0;
   padding: 100px 0 300px 30%;
   min-height: 1200px;
