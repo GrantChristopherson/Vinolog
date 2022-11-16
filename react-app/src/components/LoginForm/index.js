@@ -45,16 +45,16 @@ const LoginForm = () => {
 
   return (
     <>
-      <div className='loginFormContainer'>
-        <form className='loginForm' onSubmit={onLogin}>
-          <div className='errorMessages'>
+      <div className='login-container'>
+        <form className='login-form' onSubmit={onLogin}>
+          <div className='error-messages'>
             {errors.map((error, ind) => (
               <div key={ind}>* {error}</div>
             ))}
           </div>
-          <div className='emailWrapper'>
-            <label htmlFor='email'>Email</label>
-            <input className='emailInput'
+          <div className='email-container'>
+            {/* <label htmlFor='email'>Email</label> */}
+            <input className='email-input'
               name='email'
               type='text'
               placeholder='Email'
@@ -62,18 +62,18 @@ const LoginForm = () => {
               onChange={updateEmail}
             />
           </div>
-          <div className='passwordWrapper'>
-            <label htmlFor='password'>Password</label>
-            <input className='passwordInput'
+          <div className='password-container'>
+            {/* <label htmlFor='password'>Password</label> */}
+            <input className='password-input'
               name='password'
               type='password'
               placeholder='Password'
               value={password}
               onChange={updatePassword}
             />
-            <div className='loginButtonWrapper'>
-              <button className='loginDemoButtons' onClick={demoUser} >Demo</button>
-              <button className='logButton' type='submit'>Login</button>
+            <div className='login-buttons-container'>
+              <button className='demo-button' onClick={demoUser} >Demo User</button>
+              <button className='login-button' type='submit'>Login</button>
             </div>
           </div>
         </form>

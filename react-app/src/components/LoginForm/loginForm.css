@@ -1,67 +1,92 @@
 
-.loginFormContainer {
+.login-container {
   display: flex;
   justify-content: column;
   height: 20%;
-  max-width: 50%;
+  max-width: 60%;
   margin: 0 50px;
   padding: 60px 0 0 0;
   background-color: rgba(255, 255, 255 0.2);
 }
 
-.loginForm {
+.login-form {
   justify-content: space-between;
+  flex-direction: row;
   align-items: vertical;
+  color: #9c3127;
+  font-weight: bolder;
 }
 
-.emailWrapper {
+.email-container {
+  display: flex;
   justify-content: space-between;
 }
 
-.emailInput {
-  margin: 4px;
+.email-input {
+  margin-bottom: 5px;
   padding: 8px;
-  border-radius: 6px;
-  min-width: 325px;
+  height: 40px;
+  min-width: 425px;
+  border: 0;
+  border-radius: 20px;
 }
 
-.passwordInput {
-  margin: 4px;
+.password-input {
+  margin-top: 5px;
   padding: 8px;
-  border-radius: 6px;
-  min-width: 325px;
+  height: 40px;
+  min-width: 425px;
+  border: 0;
+  border-radius: 20px;
 }
 
-.loginButtonWrapper {
+.login-buttons-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-direction: column-reverse;
 }
 
-.loginDemoButtons {
-  margin: 5px 10px;
-  padding: 1px 30px;
-  border-radius: 3px;
+.demo-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px 40px;
+  height: 40px;
   font-weight: bold;
+  font-size: 16px;
+  background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
+  border-radius: 20px;
 }
 
-.loginDemoButtons:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+.demo-button:hover {
+  background-color: rgba(50, 50, 50, .94);
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
-.logButton {
-  margin: 5px;
-  padding: 1px 30px;
-  border-radius: 3px;
+.login-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px 40px;
+  height: 40px;
   font-weight: bold;
+  font-size: 16px;
+  background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
+  border-radius: 20px;
 }
 
-.logButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+.login-button:hover {
+  background-color: rgba(50, 50, 50, .94);
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
-.errorMessages {
+.error-messages {
   margin: 10px 0;
   padding: 10px 0;
   color: #c73649;
