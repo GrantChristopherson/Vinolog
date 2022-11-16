@@ -1,32 +1,40 @@
 .splash-body {
   display: flex;
-  /* flex-direction: column;
-  justify-content: space-between; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   height: 1250px;
-  /* width: ; */
-  overflow: hidden;
-  /* overflow-y: none; */
   margin: 0;
   padding: 0;
   border: 0;
   background: url("../../images/bottles-bg.png") no-repeat center fixed;
   background-size: cover;
- 
+  overflow: hidden;
 }
 
-/* .wine-bottles {
-  height: 1250px;
-  width: fit-content;
-  overflow-x: none;
+.splash-quote {
+  color: #FFF3C4;
+  font-weight: bolder;
+  margin-bottom: 100px;
+  /* padding: 0; */
 }
 
-.personalJesus {
-  color:  #FFF3C4;
-  margin: 0 50px;
-};
+/* .quote {
+  font-size: ;
+} */
 
-.qoute-credit {
+.credit {
   display: flex;
   align-self: flex-end;
-} */
+} 
+
+.slogan {
+  margin: 0 0 250px 0;
+}
+
+.personal-jesus {
+  color:  #FFF3C4;
+  /* margin: 0 50px; */
+};
+
 
