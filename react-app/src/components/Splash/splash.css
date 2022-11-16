@@ -1,13 +1,15 @@
 .splash-body {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /* flex-direction: column;
+  justify-content: space-between; */
   height: 1250px;
-  width: 100%;
+  /* width: ; */
+  overflow: hidden;
+  /* overflow-y: none; */
   margin: 0;
   padding: 0;
   border: 0;
-  background: url("../../images/bottles-bg.png") no-repeat center center fixed;
+  background: url("../../images/bottles-bg.png") no-repeat center fixed;
   background-size: cover;
  
 }
