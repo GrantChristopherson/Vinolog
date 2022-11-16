@@ -16,9 +16,9 @@
   position: fixed;
   /* color: #FFF3C4; */
   /* color: rgba(78, 76, 76, 0.9); */
-  color: #376266;
+  color: #2A4B4E;
   font-weight: bolder;
-  margin-bottom: 150px;
+  margin-bottom: 250px;
 }
 
 .credit {
@@ -28,7 +28,6 @@
 
 .slogan {
   position: fixed;
-  margin-top: 100px;
 }
 
 .personal-jesus {
