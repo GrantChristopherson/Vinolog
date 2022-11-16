@@ -32,7 +32,7 @@ export default Splash;
     //         <h5 className='qoute-credit'>- Thom Elkjer</h5>
     //       </div>
     //       <div className='slogan'>
-    //         <h3 className='personal-jesus'>Keep track using VINOLOG Wine Journal</h3>
+    //         <h3 className='personal-jesus'>Document your travels with VINOLOG Wine Journal</h3>
     //       </div>
     //   </div>
     //   <Footer />
