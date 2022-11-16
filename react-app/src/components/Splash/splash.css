@@ -2,17 +2,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 1250px;
   width: 100%;
   margin: 0;
   padding: 0;
   border: 0;
-  /* background: url("https://www.thespruceeats.com/thmb/9Hs8J5W4z6gh04WUL7uTs__4rq0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/close-up-of-wine-bottles-over-white-background-609198963-5844948f5f9b5851e57ef400.jpg") no-repeat center center fixed;
-  background-size: cover; */
+  background: url("../../images/bottles-bg.png") no-repeat center center fixed;
+  background-size: cover;
  
 }
 
-.wine-bottles {
+/* .wine-bottles {
   height: 1250px;
   width: fit-content;
   overflow-x: none;
@@ -26,5 +26,5 @@
 .qoute-credit {
   display: flex;
   align-self: flex-end;
-}
+} */
 
