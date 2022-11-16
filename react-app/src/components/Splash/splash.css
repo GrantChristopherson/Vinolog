@@ -9,14 +9,14 @@
   border: 0;
   background: url("../../images/bottles-bg.png") no-repeat center fixed;
   background-size: cover;
-  overflow: hidden;
+  overflow: none;
 }
 
 .splash-quote {
+  position: fixed;
   color: #FFF3C4;
   font-weight: bolder;
-  margin-bottom: 100px;
-  /* padding: 0; */
+  margin-bottom: 450px;
 }
 
 /* .quote {
@@ -29,12 +29,12 @@
 } 
 
 .slogan {
+  position: fixed;
   margin: 0 0 250px 0;
 }
 
 .personal-jesus {
   color:  #FFF3C4;
-  /* margin: 0 50px; */
 };
 
 
