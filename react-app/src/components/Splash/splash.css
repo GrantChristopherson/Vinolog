@@ -14,7 +14,8 @@
 
 .splash-quote {
   position: fixed;
-  color: #FFF3C4;
+  /* color: #FFF3C4; */
+  color: rgba(78, 76, 76, 0.9);
   font-weight: bolder;
   margin-bottom: 150px;
 }
@@ -30,7 +31,8 @@
 }
 
 .personal-jesus {
-  color:  #FFF3C4;
+  /* color:  #FFF3C4; */
+  color: rgba(78, 76, 76, 0.9);
 };
 
 
