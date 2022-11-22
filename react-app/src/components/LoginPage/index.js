@@ -4,12 +4,14 @@ import LoginForm from "../LoginForm";
 import Footer from "../Footer";
 import './loginPage.css';
 
+import Navigation from '../Navigation';
 
 
 const LoginPage = () => {
 
   return (
     <>
+      <Navigation />
       {/* <Navbar /> */}
       <div className='splash-body'>
         <LoginForm />
