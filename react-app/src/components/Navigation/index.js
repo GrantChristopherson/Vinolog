@@ -6,9 +6,33 @@ import './navigation.css';
 
 
 const Navigation = () => {
-  return (
-    <><h1>NAVIGATION</h1></>
-  )
+
+  const user = useSelector(state => state?.session?.user);
+
+  if (!user) {
+    return (
+      <nav className='nav_logged_out'>
+        <ul className='nav_links'>
+          <NavLink to='/' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+            <h1 className ='logo_logged_out' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
+          </NavLink>
+          <div className='loginSignUp'>
+            <NavLink to='/login' exact={true} activeClassName='active'>
+              <button className='loginButton'>Login</button>
+            </NavLink>
+            <NavLink to='/sign-up' exact={true} activeClassName='active'>
+            <button className='signupButton'>Sign Up</button>
+            </NavLink>
+          </div>
+        </ul>
+      </nav>
+    )
+
+  } else {
+    return (
+      null
+    )
+  };
 };
 
 

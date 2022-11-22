@@ -1,0 +1,85 @@
+.nav_logged_out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  background-color: rgb(50, 50, 50);
+}
+
+.nav_logged_in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #9c3127;
+  
+}
+
+.nav_links {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.logo_logged_out {
+  margin: 5px 0 0 0;
+  padding: 0;
+  color: #FFF3C4;
+}
+
+.logo_logged_out:hover {
+  color: #9c3127;
+  transition-duration: 300ms;
+}
+
+.logo_logged_in {
+  margin: 5px 0 0 0;
+  padding: 0;
+  color: #FFF3C4;
+}
+
+.logo_logged_in:hover {
+  color: rgb(50, 50, 50);
+  transition-duration: 300ms;
+}
+
+.signupButton {
+  margin: 0 20px;
+  padding: 5px 40px;
+  height: 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #FFF3C4;
+  background-color: #9c3127;
+  border: 0;
+}
+
+.signupButton:hover {
+  background-color:  #FFF3C4;
+  color:  #9c3127;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.loginButton {
+  margin: 0 20px;
+  padding: 5px 40px;
+  height: 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
+}
+
+.loginButton:hover {
+  background-color: #9c3127;
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
