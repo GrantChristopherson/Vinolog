@@ -7,6 +7,8 @@ import Sidebar from '../Sidebar';
 import Footer from "../Footer";
 import './lovedFeed.css';
 
+import Navigation from "../Navigation";
+
 
 
 
@@ -26,6 +28,7 @@ const AllLovedFeed = () => {
 
   return (
     <div className="allLovedFeedOuterContainer">
+      <Navigation />
       {/* <Navbar /> */}
       <Sidebar />
       <div className="allLovedFeedInnerContainer">
