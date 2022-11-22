@@ -30,7 +30,14 @@ const Navigation = () => {
 
   } else {
     return (
-      null
+      <nav className='nav_logged_in'>
+        <ul className='nav_links'>
+          <NavLink to='/home' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+            <h2 className ='logo_logged_in' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h2>
+          </NavLink>
+          <LogoutButton />
+        </ul>
+      </nav>
     )
   };
 };
