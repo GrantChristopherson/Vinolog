@@ -3,6 +3,8 @@ import SignUpForm from '../SignUpForm';
 // import Navbar from '../Navbar';
 import Footer from "../Footer";
 
+import Navigation from '../Navigation';
+
 
 
 
@@ -11,6 +13,7 @@ const SignUpPage = () => {
   
   return (
     <>
+      <Navigation />
       {/* <Navbar /> */}
       <div className='outerSplash'>
         <div className='leftSplashBody'>
