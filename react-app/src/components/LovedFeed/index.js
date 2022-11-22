@@ -4,7 +4,7 @@ import { getAllLovedTastingsThunk } from '../../store/tasting';
 import LovedTastingCard from "../LovedTastingCard";
 // import Navbar from "../Navbar";
 import Sidebar from '../Sidebar';
-// import Footer from "../Footer";
+import Footer from "../Footer";
 import './lovedFeed.css';
 
 
@@ -35,11 +35,12 @@ const AllLovedFeed = () => {
         </div>
         )}).reverse()}
       </div>
-      <footer>
+      <Footer />
+      {/* <footer>
         <div className='footerLovedWineTastingsContainer'>
           <h4 className='lovedWineTastingsFooterPhrase'>Loved Wine Feed</h4>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };

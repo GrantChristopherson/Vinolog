@@ -3,6 +3,8 @@ import React from 'react';
 import Footer from '../Footer';
 import './splash.css'
 
+import Navigation from '../Navigation';
+
 
 
 const Splash = () => {
@@ -10,6 +12,7 @@ const Splash = () => {
   return (
     
     <>
+      <Navigation />
       {/* <Navbar /> */}
       <div className='splash-body'>
         <div className='splash-quote'>
