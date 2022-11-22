@@ -7,6 +7,8 @@ import Sidebar from '../Sidebar';
 import Footer from '../Footer';
 import './tastingForm.css';
 
+import Navigation from '../Navigation';
+
 
 
 
@@ -174,6 +176,7 @@ const TastingForm = () => {
 
   return (
     <>
+      <Navigation />
       {/* <Navbar /> */}
       <Sidebar />
       <div className='create-tasting-container'>
