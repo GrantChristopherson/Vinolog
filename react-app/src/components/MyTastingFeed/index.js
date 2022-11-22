@@ -7,6 +7,7 @@ import Sidebar from "../Sidebar";
 import Footer from '../Footer';
 import './myTastingFeed.css';
 
+import Navigation from "../Navigation";
 
 
 
@@ -27,6 +28,7 @@ const MyTastingFeed = () => {
 
   return (
     <>
+      <Navigation />
       {/* <Navbar /> */}
       <Sidebar user={user} />
       <div className="my-feed-container">
