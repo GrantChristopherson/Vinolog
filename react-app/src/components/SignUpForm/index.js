@@ -76,56 +76,62 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className='signUpFormContainer'>
-      <form className='signUpForm' onSubmit={onSignUp}>
+    <div className='signup_form'>
+      <span className='form_title'>Sign Up</span>
+      <form onSubmit={onSignUp} action=''>
         <div className='errorMessages'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
-        <div className='usernameWrapper'>
-          <label>Username</label>
-          <input className='usernameInput'
+        <div className='form_input'>
+          <i className='ri_username_line'></i>
+          <input 
             type='text'
             name='username'
-            placeholder='username'
+            placeholder='Username'
             onChange={updateUsername}
             value={username}
           ></input>
+          <span className='bar'></span>
         </div>
-        <div className='emailWrapper'>
-          <label>Email</label>
-          <input className='signUpEmailInput'
+        <div className='form_input'>
+          <i className='ri_email_line'></i>
+          <input 
             type='text'
             name='email'
-            placeholder='email'
+            placeholder='Email'
             onChange={updateEmail}
             value={email}
           ></input>
+          <span className='bar'></span>
         </div>
-        <div className='passwordWrapper'>
-          <label>Password</label>
+        <div className='form_input'>
+          <i className='ri_password_line'></i>
           <input className='signUpPasswordInput'
             type='password'
             name='password'
-            placeholder='password'
+            placeholder='Password'
             onChange={updatePassword}
             value={password}
           ></input>
+          <span className='bar'></span>
         </div>
-        <div className='repeatedPasswordWrapper'>
-          <label>Repeat Password</label>
+        <div className='form_input'>
+          <i className='ri_password_line'></i>
           <input className='signUpRepeatedPasswordInput'
             type='password'
             name='repeat_password'
-            placeholder='password'
+            placeholder='Confirm password'
             onChange={updateRepeatPassword}
             value={repeatPassword}
           ></input>
+          <span className='bar'></span>
         </div>
-        <div className='signUpButtonWrapper'>
-          <button className='signUpButton' type='submit'>Sign Up</button>
-        </div>
+        <button className='signup_button' type='submit'>Sign Up</button>
+        <span className='form_switch'>
+          Already have an account? <a href=''>Login</a>
+        </span>
       </form>
     </div>
   );
