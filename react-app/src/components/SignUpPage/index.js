@@ -12,7 +12,9 @@ const SignUpPage = () => {
   return (
     <>
       <Navigation />
-      <SignUpForm />
+      <div className='signup_form_container'>
+        <SignUpForm />
+      </div>
       <Footer />
     </>
   );
@@ -20,3 +22,4 @@ const SignUpPage = () => {
 
 
 export default SignUpPage;
+

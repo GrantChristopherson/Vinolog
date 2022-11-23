@@ -69,8 +69,7 @@
 } */
 
 
-.form {
-  position: relative;
+.signup_form {
   max-width: 40rem;
   padding: 10rem 0;
   color: #fff;
@@ -80,14 +79,14 @@
   isolation: isolate;
 }
 
-.form::before {
+.signup_form::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 10rem;
-  background: linear-gradient(to left, #fc6767, #ec008c);
+  background: linear-gradient(to left, #e6a39d, #9c3127);
   border-radius: 1rem, 1rem, 100%, 100%;
   z-index: -1;
 }
@@ -100,7 +99,7 @@
   font-size: 2.5rem;
 }
 
-.form>form {
+.signup_form>form {
   padding: 2.5rem;
   background-color: inherit;
 }
@@ -115,7 +114,7 @@
 .form_input>i {
   font-size: 2rem;
   margin-right: 1rem;
-  color: #fc6767;
+  color: #e6a39d;
 }
 
 .form_input input {
@@ -140,7 +139,7 @@
 .form_input .bar::before {
   content: '';
   position: absolute;
-  background-color: #fc6767;
+  background-color: #9c3127;
   width: 100%;
   height: 2px;
   transform: scaleX(0);
@@ -156,7 +155,7 @@
   display: block;
   margin: 2.5rem auto 3rem;
   padding: 1rem 5rem;
-  background: linear-gradient(to left, #fc6767, #ec008c);
+  background: linear-gradient(to left, #e6a39d, #9c3127);
   color: #fff;
   font: inherit;
   border: .5rem solid #fff;
@@ -165,8 +164,8 @@
   border-radius: 3rem;
 }
 
-.form_button:hover {
-  background: linear-gradient(to right, #fc6767, #ec008c);
+.signup_button:hover {
+  background: linear-gradient(to right, #e6a39d, #9c3127);
 }
 
 .form_switch {
@@ -178,7 +177,7 @@
 
 .form_switch a {
   text-decoration: none;
-  color: #fc6767;
+  color: #9c3127;
 }
 
 .form_switch a:hover {
@@ -186,16 +185,21 @@
 }
 
 @media screen and (min-width: 43.75em) {
-  .form::before {
+  .signup_form::before {
     height: 30rem;
   }
   .form_title {
     left: 10rem;
     transform: none;
   }
-  .form>form {
+  .signup_form>form {
     transform: translateX(10rem);
     border-radius: inherit;
     box-shadow: inherit;
   }
+}
+
+.errorMessages {
+  color: #c73649;
+  font-weight: bold;
 }
