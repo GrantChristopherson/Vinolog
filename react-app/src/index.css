@@ -3,10 +3,30 @@
   box-sizing: border-box;
 }
 
+/* $colors: (
+  white: #fefefe;
+  brown: #362100;
+) */
+
+
+
 body  {
   background-color: rgba(50, 50, 50, .94);
   margin: 0;
   padding: 0;
   background-size: cover;
   font-family: 'Montserrat', 'Roboto';
+  /* color: map-get(#fefefe, #362100, white); */
+  /* overflow-x: hidden;
+  width: 100%; */
 }
+
+/* .visually_hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+} */
