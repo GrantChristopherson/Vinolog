@@ -29,6 +29,7 @@
   margin: 5px 0 0 0;
   padding: 0;
   color: #FFF3C4;
+  letter-spacing: 8px;
 }
 
 .logo_logged_out:hover {
@@ -40,6 +41,7 @@
   margin: 5px 0 0 0;
   padding: 0;
   color: #FFF3C4;
+  letter-spacing: 8px;
 }
 
 .logo_logged_in:hover {
