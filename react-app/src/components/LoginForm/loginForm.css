@@ -64,16 +64,18 @@
 } */
 
 .login_form {
+  display: grid;
+  backdrop-filter: blur(12px);
+  position: fixed;
   width: 550px;
   padding: 50px;
+  margin-bottom: 300px;
   border-radius: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  display: grid;
-  backdrop-filter: blur(12px);
-  position: fixed;
+  
   
 }
 
