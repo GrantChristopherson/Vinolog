@@ -14,13 +14,13 @@ const Splash = () => {
     <>
       <Navigation />
       {/* <Navbar /> */}
-      <div className='splash-body'>
-        <div className='splash-quote'>
+      <div className='splash_body'>
+        <div className='splash_quote'>
           <h1 className='quote'>"Wine is a passport to the World."</h1>
           <h3 className='credit'>- Thom Elkjer</h3>
         </div>
         <div className='slogan'>
-          <h2 className='personal-jesus'>Document your travels with VINOLOG Wine Journal</h2>
+          <h2 className='personal_jesus'>Document your travels with VINOLOG Wine Journal</h2>
         </div>
       </div>
       <Footer />

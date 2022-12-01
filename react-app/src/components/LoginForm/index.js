@@ -45,14 +45,16 @@ const LoginForm = () => {
 
   return (
     <div className='login_form'>
-      <h1 className='log_in'>Log In</h1>
+      <div className='login_header_container'>
+        <h1 className='login_header'>Login</h1>
+      </div>
       <form className='card_form' onSubmit={onLogin}>
          <div className='error_messages'>
            {errors.map((error, ind) => (
             <div key={ind}>* {error}</div>
           ))}
         </div>
-        <div className='email_container'>
+        <div className='input_container'>
           <input className='card_input'
             name='email'
             type='text'
@@ -60,8 +62,9 @@ const LoginForm = () => {
             value={email}
             onChange={updateEmail}
           />
+          <span className='bar'></span>
         </div>
-        <div className='password_container'>
+        <div className='input_container'>
           <input className='card_input'
             name='password'
             type='password'
@@ -69,9 +72,10 @@ const LoginForm = () => {
             value={password}
             onChange={updatePassword}
           />
+          <span className='bar'></span>
           <div className='login_buttons'>
             <button className='login_demo' onClick={demoUser}>
-              <span>Demo User</span>
+              <span>Demo Login</span>
             </button>
             <button className='login_login' type='submit'>
               <span>Login</span>
