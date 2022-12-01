@@ -25,12 +25,11 @@
 
 #git {
   color: #FFF3C4;
-  padding-right: 40px;
+  padding: 0 40px;
 }
 
 #linked {
   color: #FFF3C4;
-  padding: 0 10px;
 }
 
 #git:hover {
