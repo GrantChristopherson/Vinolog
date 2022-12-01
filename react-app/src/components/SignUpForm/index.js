@@ -79,7 +79,7 @@ const SignUpForm = () => {
     <div className='signup_form'>
       <span className='form_title'>Sign Up</span>
       <form onSubmit={onSignUp} action=''>
-        <div className='errorMessages'>
+        <div className='error_messages'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
