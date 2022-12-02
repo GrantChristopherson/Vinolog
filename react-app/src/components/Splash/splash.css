@@ -1,6 +1,5 @@
 .splash_body {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 1250px;
@@ -12,26 +11,58 @@
   overflow: hidden;
 }
 
-.splash_quote {
+.splash_container {
+  display: grid;
   position: fixed;
-  /* color: #FFF3C4; */
-  /* color: rgba(78, 76, 76, 0.9); */
-  color: #2A4B4E;
+  backdrop-filter: blur(60px);
+  width: 40%;
+  min-width: 550px;
+  padding: 50px;
+  margin-bottom: 300px;
+  border-radius: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.splash_quote {
+  background-color: rgba(0, 0, 0, 0.025);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: bolder;
-  margin-bottom: 250px;
+  margin-bottom: 75px;
+}
+
+.quote {
+  
+  margin-bottom: 10px;
 }
 
 .credit {
-  display: flex;
-  align-self: flex-end;
+  margin-top: 0;
 } 
 
 .slogan {
-  position: fixed;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.025);
+  border-radius: 8px;
+  border-top: 1px solid rgba(0, 0,05, 0.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
 }
 
 .personal_jesus {
-  color: #376266;
+  color: rgba(255, 255, 255, 0.8);
 };
 
 
