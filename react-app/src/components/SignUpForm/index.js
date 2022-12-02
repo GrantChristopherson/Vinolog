@@ -77,16 +77,18 @@ const SignUpForm = () => {
 
   return (
     <div className='signup_form'>
-      <span className='form_title'>Sign Up</span>
+      <div className='signup_header_container'>
+        <h1 className='form_title'>Sign Up</h1>
+      </div>
       <form onSubmit={onSignUp} action=''>
         <div className='error_messages'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
         </div>
-        <div className='form_input'>
+        <div className='input_container'>
           <i className='ri_username_line'></i>
-          <input 
+          <input className='form_input'
             type='text'
             name='username'
             placeholder='Username'
@@ -95,9 +97,9 @@ const SignUpForm = () => {
           ></input>
           <span className='bar'></span>
         </div>
-        <div className='form_input'>
+        <div className='input_container'>
           <i className='ri_email_line'></i>
-          <input 
+          <input className='form_input'
             type='text'
             name='email'
             placeholder='Email'
@@ -106,9 +108,9 @@ const SignUpForm = () => {
           ></input>
           <span className='bar'></span>
         </div>
-        <div className='form_input'>
+        <div className='input_container'>
           <i className='ri_password_line'></i>
-          <input className='signUpPasswordInput'
+          <input className='form_input'
             type='password'
             name='password'
             placeholder='Password'
@@ -117,9 +119,9 @@ const SignUpForm = () => {
           ></input>
           <span className='bar'></span>
         </div>
-        <div className='form_input'>
+        <div className='input_container'>
           <i className='ri_password_line'></i>
-          <input className='signUpRepeatedPasswordInput'
+          <input className='form_input'
             type='password'
             name='repeat_password'
             placeholder='Confirm password'
@@ -128,10 +130,12 @@ const SignUpForm = () => {
           ></input>
           <span className='bar'></span>
         </div>
-        <button className='signup_button' type='submit'>Sign Up</button>
-        <span className='form_switch'>
-          Already have an account? <a href=''>Login</a>
-        </span>
+        <div className='signup_button_container'>
+          <button className='signup_button' type='submit'>Sign Up</button>
+          <span className='form_switch'>
+            Already have an account? <a href=''>Login</a>
+          </span>
+        </div>
       </form>
     </div>
   );
