@@ -1,19 +1,16 @@
 import React from 'react';
-// import Navbar from '../Navbar';
+import Navigation from '../Navigation';
 import Footer from '../Footer';
 import './splash.css'
 
-import Navigation from '../Navigation';
 
 
 
 const Splash = () => {
 
   return (
-    
     <>
       <Navigation />
-      {/* <Navbar /> */}
       <div className='splash_body'>
         <div className='splash_container'>
           <div className='splash_quote'>

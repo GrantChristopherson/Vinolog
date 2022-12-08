@@ -4,6 +4,9 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './signUpForm.css'
 
+
+
+
 const SignUpForm = () => {
 
   const [errors, setErrors] = useState([]);
@@ -45,7 +48,6 @@ const SignUpForm = () => {
       return
     };
 
-    
    
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
@@ -74,6 +76,7 @@ const SignUpForm = () => {
   if (user) {
     return <Redirect to='/home' />;
   }
+
 
   return (
     <div className='signup_form'>
@@ -140,5 +143,6 @@ const SignUpForm = () => {
     </div>
   );
 };
+
 
 export default SignUpForm;

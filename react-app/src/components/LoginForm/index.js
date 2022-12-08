@@ -4,6 +4,9 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import './loginForm.css'
 
+
+
+
 const LoginForm = () => {
 
   const dispatch = useDispatch();
@@ -43,6 +46,7 @@ const LoginForm = () => {
     return <Redirect to='/home' />;
   }
 
+  
   return (
     <div className='login_form'>
       <div className='login_header_container'>
@@ -88,43 +92,4 @@ const LoginForm = () => {
 };
 
 
-
 export default LoginForm;
-
-       
-
-// {/* <>
-//       <div className='login-container'>
-//         <form className='login-form' onSubmit={onLogin}>
-//           <div className='error-messages'>
-//             {errors.map((error, ind) => (
-//               <div key={ind}>* {error}</div>
-//             ))}
-//           </div>
-//           <div className='email-container'>
-//             {/* <label htmlFor='email'>Email</label> */}
-//             <input className='email-input'
-//               name='email'
-//               type='text'
-//               placeholder='Email'
-//               value={email}
-//               onChange={updateEmail}
-//             />
-//           </div>
-//           <div className='password-container'>
-//             {/* <label htmlFor='password'>Password</label> */}
-//             <input className='password-input'
-//               name='password'
-//               type='password'
-//               placeholder='Password'
-//               value={password}
-//               onChange={updatePassword}
-//             />
-//             <div className='login-buttons-container'>
-//               <button className='demo-button' onClick={demoUser} >Demo User</button>
-//               <button className='login-button' type='submit'>Login</button>
-//             </div>
-//           </div>
-//         </form>
-//       </div>
-//     </> */}
