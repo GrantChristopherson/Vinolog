@@ -2,10 +2,12 @@
   position: fixed;
   display: flex;
   justify-content: center;
+  align-items: center;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba(103, 10, 21, 1);
+  height: 4%;
 }
 
 .dev_by {
@@ -15,12 +17,6 @@
 
 .dev_name {
   color: rgb(198 192 163);;
-}
-
-.footer_links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #git {

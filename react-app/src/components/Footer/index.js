@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer className='footer'> 
-      <h5 className='dev_by'>Developed by: </h5>
+      <h5 className='dev_by'>Developed by : </h5>
       <h4 className='dev_name'>Grant Christopherson</h4>
       <div className='footer_links'>
         <a href={"https://github.com/GrantChristopherson"} target="_blank" rel="noopener noreferrer">
