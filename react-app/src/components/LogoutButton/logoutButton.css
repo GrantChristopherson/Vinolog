@@ -4,14 +4,14 @@
   height: 40px;
   border-radius: 30px;
   font-weight: bold;
-  background-color: #FFF3C4;
-  color: #9c3127;
+  background-color: rgb(243, 218, 201);
+  color: #a32632;
   border: 0;
 }
 
 .logoutButton:hover {
   background-color: rgba(50, 50, 50, .94);
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
   cursor: pointer;
   transition-duration: 300ms;
 }

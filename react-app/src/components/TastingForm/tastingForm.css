@@ -193,7 +193,7 @@
   height: 40px;
   font-weight: bold;
   font-size: 16px;
-  background-color: #FFF3C4;
+  background-color: rgb(243, 218, 201);
   color: #9c3127;
   border: 0;
   border-top-left-radius: 20px;
@@ -202,7 +202,7 @@
 
 .submit-tasting:hover {
   background-color: rgba(50, 50, 50, .94);
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
   cursor: pointer;
   transition-duration: 300ms;
 }
@@ -212,7 +212,7 @@
   padding: 5px 20px 0 30px;
   height: 40px;
   background-color: rgba(50, 50, 50, .94);
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
   border: 0;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -220,7 +220,7 @@
 
 .my-home:hover {
   background-color: #9c3127;
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
   transition-duration: 300ms;
   cursor: pointer;
 }

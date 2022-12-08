@@ -5,16 +5,16 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #9c3127;
+  background-color: #a32632;
 }
 
 .dev_by {
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
   margin-right: 10px;
 }
 
 .dev_name {
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
 }
 
 .footer_links {
@@ -24,12 +24,12 @@
 }
 
 #git {
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
   padding: 0 40px;
 }
 
 #linked {
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
 }
 
 #git:hover {
