@@ -92,13 +92,13 @@
   border-radius: 30px;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.075);
-  color: rgb(255, 243, 196);
+  color: rgb(198 192 163);
   border: 0;
 }
 
 .login_demo:hover {
-  background-color: rgb(255, 243, 196);
-  color: rgb(156, 49, 39);
+  background-color: rgb(198 192 163);
+  color: rgba(103, 10, 21, 1);
   cursor: pointer;
   transition-duration: 300ms;
 }
@@ -111,13 +111,13 @@
   border-radius: 30px;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.075);
-  color: rgb(255, 243, 196);
+  color: rgb(198 192 163);
   border: 0;
 }
 
 .login_login:hover {
-  background-color: rgb(255, 243, 196);
-  color: rgb(156, 49, 39);
+  background-color: rgb(198 192 163);
+  color: rgba(103, 10, 21, 1);
   cursor: pointer;
   transition-duration: 300ms;
 }

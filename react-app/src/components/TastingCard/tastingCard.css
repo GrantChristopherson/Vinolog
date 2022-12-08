@@ -22,7 +22,7 @@
 }
 
 .wine-info {
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
 }
 
 .tasting-info {
@@ -37,13 +37,13 @@
 .delete-button {
   /* margin-top: 5px; */
   background-color: transparent;
-  color: #FFF3C4;
+  color: rgb(243, 218, 201);
   border: 0;
 }
 
 .delete-button:hover {
-  background-color: #9c3127;
-  color: #FFF3C4;
+  background-color: #a32632;
+  color: rgb(243, 218, 201);
   border-radius: 15px;
   transition-duration: 300ms;
   cursor: pointer;
