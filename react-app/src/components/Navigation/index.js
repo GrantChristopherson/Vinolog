@@ -16,7 +16,7 @@ const Navigation = () => {
           <NavLink to='/' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
             <h1 className ='logo_logged_out' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
           </NavLink>
-          <div className='loginSignUp'>
+          <div className='login_sign_up'>
             <NavLink to='/login' exact={true} activeClassName='active'>
               <button className='loginButton'>Login</button>
             </NavLink>
