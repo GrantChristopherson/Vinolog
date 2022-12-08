@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './signUpForm.css'
 
@@ -82,7 +82,6 @@ const SignUpForm = () => {
     <div className='signup_form'>
       <div className='signup_header_container'>
         <h1 className='form_title'>Sign Up</h1>
-      </div>
       <form onSubmit={onSignUp} action=''>
         <div className='error_messages'>
           {errors.map((error, ind) => (
@@ -136,10 +135,14 @@ const SignUpForm = () => {
         <div className='signup_button_container'>
           <button className='signup_button' type='submit'>Sign Up</button>
           <span className='form_switch'>
-            Already have an account? <a href=''>Login</a>
+            Already have an account? 
+            <NavLink to='/login' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+              <h4 className ='switch_to_login' style={{textDecoration: 'none'}}>Login</h4>
+            </NavLink>
           </span>
         </div>
       </form>
+      </div>
     </div>
   );
 };

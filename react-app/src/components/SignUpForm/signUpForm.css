@@ -103,6 +103,7 @@
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
+  padding: 10px 20px;
 }
 
 .form_title {
@@ -210,18 +211,20 @@ transition-duration: 300ms;
 }
 
 .form_switch {
-  /* display: block;
-  text-align: center; */
+  display: flex;
+  align-items: center;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .form_switch a {
-  /* margin-top: 10px; */
   text-decoration: none;
   color: rgb(198 192 163);;
 }
 
+.switch_to_login {
+  margin-left: 20px;
+}
 
 /* .form_input>i {
   font-size: 2rem;
