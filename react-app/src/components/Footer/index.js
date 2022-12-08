@@ -6,7 +6,6 @@ import './footer.css';
 
 const Footer = () => {
 
-
   return (
     <footer className='footer'> 
       <h5 className='dev_by'>Developed by : </h5>

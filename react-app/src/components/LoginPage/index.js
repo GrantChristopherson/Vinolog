@@ -1,10 +1,10 @@
 import React from 'react';
+import Navigation from '../Navigation';
 import LoginForm from "../LoginForm";
-// import Navbar from '../Navbar';
 import Footer from "../Footer";
 import './loginPage.css';
 
-import Navigation from '../Navigation';
+
 
 
 const LoginPage = () => {

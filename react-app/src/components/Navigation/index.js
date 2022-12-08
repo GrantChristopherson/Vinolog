@@ -5,6 +5,7 @@ import './navigation.css';
 
 
 
+
 const Navigation = () => {
 
   const user = useSelector(state => state?.session?.user);
@@ -41,7 +42,6 @@ const Navigation = () => {
     )
   };
 };
-
 
 
 export default Navigation;
