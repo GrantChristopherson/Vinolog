@@ -34,9 +34,11 @@ const Navigation = () => {
       <nav className='nav_logged_in'>
         <ul className='nav_links'>
           <NavLink to='/home' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-            <h2 className ='logo_logged_in' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h2>
+            <h1 className ='logo_logged_in' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
           </NavLink>
-          <LogoutButton />
+          <div className='logout_container'>
+            <LogoutButton />
+          </div>
         </ul>
       </nav>
     )

@@ -96,3 +96,8 @@
   transition-duration: 300ms;
 }
 
+.logout_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
