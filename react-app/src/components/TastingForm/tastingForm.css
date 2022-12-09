@@ -1,29 +1,48 @@
+/* .tasting_body {
+  display: flex;
+
+} */
 
 .create-tasting-container {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  align-items: row;
+  align-items: center;
   top: 0;
   right: 0;
   bottom: 0;
   margin: 0;
-  padding: 0 20px 200px 0;
-  height: 1250px;
+  /* padding: 0 20px 200px 0; */
+  height: 1440px;
   width: 100%;
   background-color: rgba(156, 108, 39, 0.1);
 }
 
+/* .create-tasting-container {
+  display: grid;
+  backdrop-filter: blur(60px);
+  position: fixed;
+  width: 40%;
+  min-width: 550px;
+  padding: 50px;
+  margin-bottom: 525px;
+  border-radius: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} */
+
 .create-form {
-  flex-direction: column;
-  padding: 0 0 15% 15%;
+  /* flex-direction: column; */
+  /* padding: 0 0 15% 15%; */
   height: 100%;
-  max-width: 73%;
+  width: 50%;
 }
 
 .input-container {
   margin: 0;
-  padding-top: 35%;
+  padding-top: 25%;
   justify-content: space-evenly;
 }
 
@@ -31,14 +50,14 @@
   color: #c73649;
   font-weight: bold;
   font-size: 10px;
-  width: 550px;
+  width: 100%;
 }
 
 .producer-input {
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin: 0;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -51,7 +70,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -64,7 +83,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -77,7 +96,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -90,7 +109,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -103,7 +122,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -116,7 +135,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -129,7 +148,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -142,7 +161,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -155,7 +174,7 @@
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
-  width: 550px;
+  width: 100%;
   margin-top: 5px;
   padding: 1% 1% 1% 1%;
   border-width: 0 0 1px 0;
@@ -167,7 +186,8 @@
 .love-container {
   display: flex;
   justify-content: flex-start;
-  margin-top: 5px;
+  margin: 20px 0;
+  padding: 1%;
 }
 
 .love-label {
@@ -181,13 +201,21 @@
 
 .submit-cancel-container {
  display: flex;
- flex-direction:row;
+ flex-direction: column;
  align-items: center;
  /* border-radius: 30px; */
 }
 
 .submit-tasting {
-  width: 100%;
+  margin: 0 40px;
+  padding: 5px 50px;
+  height: 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: rgb(198 192 163);
+  color: rgb(103, 10, 21);
+  border: 0;
+  /* width: 100%;
   margin-top: 10px;
   padding: 5px 40px;
   height: 40px;
@@ -197,30 +225,35 @@
   color: #9c3127;
   border: 0;
   border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 20px; */
 }
 
 .submit-tasting:hover {
-  background-color: rgba(50, 50, 50, .94);
+  background-color: rgb(103, 10, 21);
   color: rgb(243, 218, 201);
   cursor: pointer;
   transition-duration: 300ms;
 }
 
 .my-home {
-  margin-top: 10px;
+  margin-top: 20px;
+  color: rgb(192, 192, 176);
+  padding: 5px 20px;
+  border-radius: 15px;
+
+  /* margin-top: 10px;
   padding: 5px 20px 0 30px;
   height: 40px;
   background-color: rgba(50, 50, 50, .94);
   color: rgb(243, 218, 201);
   border: 0;
   border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
 }
 
 .my-home:hover {
-  background-color: #9c3127;
-  color: rgb(243, 218, 201);
+  background-color: rgb(103, 10, 21);
+  font-weight: bold;
   transition-duration: 300ms;
   cursor: pointer;
 }
