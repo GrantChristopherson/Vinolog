@@ -47,6 +47,7 @@
 }
 
 .errors {
+  margin-top: 5px;
   color: #c73649;
   font-weight: bold;
   font-size: 10px;
