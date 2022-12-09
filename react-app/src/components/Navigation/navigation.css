@@ -34,12 +34,6 @@
   width: 100%;
 }
 
-.login_sign_up {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 .logo_logged_out {
   color: rgb(198 192 163);
   letter-spacing: 8px;
@@ -59,6 +53,12 @@
 .logo_logged_in:hover {
   color: rgb(50, 50, 50);
   transition-duration: 300ms;
+}
+
+.login_sign_up {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .signupButton {
