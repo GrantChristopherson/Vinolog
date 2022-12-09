@@ -1,9 +1,9 @@
 .logoutButton {
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: center; */
   margin: 0 40px;
-  padding: 5px 40px;
+  padding: 5px 30px;
   height: 40px;
   border-radius: 30px;
   font-weight: bold;
