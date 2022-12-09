@@ -9,9 +9,10 @@
   padding: 15% 0 30% 0;
   flex-direction: column;
   height:100%;
-  min-width: 300px;
+  min-width: 225px;
   margin: 0;
   background-color: rgb(39, 39, 38);
+  /* backdrop-filter: blur(60px); */
 }
 
 .create-container {
@@ -21,13 +22,14 @@
 
 .create-container:hover {
   background-color:  rgba(78, 76, 76, 0.5);
+  border-right: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 
 .create-nav {
   padding: 15px 15px 15px 0;
   color: rgb(192, 192, 176);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
   margin: 0 8%;
 }
@@ -39,15 +41,16 @@
 
 .my-tastings-container:hover {
   background-color:  rgba(78, 76, 76, 0.5);
+  border-right: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 
 .my-feed-nav {
   padding: 15px 15px 15px 0;
   color: rgb(192, 192, 176);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
-  margin: 0 8%;
+  margin: 10px 8%;
 }
 
 .loved-feed-container {
@@ -57,13 +60,14 @@
 
 .loved-feed-container:hover {
   background-color: rgba(78, 76, 76, 0.5);
+  border-right: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 
 .loved-feed-nav {
   padding: 15px 15px 15px 0;
   color: rgb(192, 192, 176);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
   margin: 0 8%;
 }
@@ -75,13 +79,14 @@
 
 .friends-container:hover {
   background-color: rgba(78, 76, 76, 0.5);
+  border-right: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 
 .friends-nav {
   padding: 15px 15px 15px 0;
   color: rgb(192, 192, 176);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
-  margin: 0 8%;
+  margin: 10px 8%;
 }
