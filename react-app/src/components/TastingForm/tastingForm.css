@@ -66,6 +66,10 @@
   color: rgb(192, 192, 176);
 }
 
+.producer-input:focus {
+  outline: none;
+}
+
 .region-input {
   border-top-style: none;
   border-right-style: none;
@@ -77,6 +81,10 @@
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
+}
+
+.region-input:focus {
+  outline: none;
 }
 
 .vineyard-input {
@@ -92,6 +100,10 @@
   color: rgb(192, 192, 176);
 }
 
+.vineyard-input:focus {
+  outline: none;
+}
+
 .varietal-input {
   border-top-style: none;
   border-right-style: none;
@@ -103,6 +115,10 @@
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
+}
+
+.varietal-input:focus {
+  outline: none;
 }
 
 .vintage-input {
@@ -118,6 +134,10 @@
   color: rgb(192, 192, 176);
 }
 
+.vintage-input:focus {
+  outline: none;
+}
+
 .other-info-input {
   border-top-style: none;
   border-right-style: none;
@@ -129,6 +149,10 @@
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
+}
+
+.other-info-input:focus {
+  outline: none;
 }
 
 .sight-input {
@@ -144,6 +168,10 @@
   color: rgb(192, 192, 176);
 }
 
+.sight-input:focus {
+  outline: none;
+}
+
 .nose-input {
   border-top-style: none;
   border-right-style: none;
@@ -155,6 +183,10 @@
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
+}
+
+.nose-input:focus {
+  outline: none;
 }
 
 .palate-input {
@@ -170,6 +202,10 @@
   color: rgb(192, 192, 176);
 }
 
+.palate-input:focus {
+  outline: none;
+}
+
 .thoughts-input {
   border-top-style: none;
   border-right-style: none;
@@ -181,6 +217,10 @@
   border-color: black;
   background-color: rgba(156, 108, 39, 0.0);
   color: rgb(192, 192, 176);
+}
+
+.thoughts-input:focus {
+  outline: none;
 }
 
 .love-container {
@@ -258,4 +298,3 @@
   cursor: pointer;
 }
 
-  
