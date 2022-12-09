@@ -226,6 +226,11 @@ transition-duration: 300ms;
   margin-left: 15px;
 }
 
+.switch_to_login:hover {
+  color: rgba(103, 10, 21, 1);
+  transition-duration: 300ms;
+}
+
 /* .form_input>i {
   font-size: 2rem;
   margin-right: 1rem;
