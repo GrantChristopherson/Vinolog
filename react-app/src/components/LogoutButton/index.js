@@ -28,7 +28,7 @@ const LogoutButton = () => {
 
   return (
     <NavLink to='/' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-      <h2 className ='logoutButton' style={{textDecoration: 'none'}} onClick={onLogout}>Logout</h2>
+      <button className ='logoutButton' style={{textDecoration: 'none'}} onClick={onLogout}>Logout</button>
     </NavLink>
   )
 };
