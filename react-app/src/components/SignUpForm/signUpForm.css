@@ -223,7 +223,12 @@ transition-duration: 300ms;
 }
 
 .switch_to_login {
-  margin-left: 20px;
+  margin-left: 15px;
+}
+
+.switch_to_login:hover {
+  color: rgba(103, 10, 21, 1);
+  transition-duration: 300ms;
 }
 
 /* .form_input>i {
