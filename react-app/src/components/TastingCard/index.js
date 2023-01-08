@@ -43,10 +43,7 @@ const TastingCard = ({tasting}) => {
         <div>
           {showInfo && <button className='delete-button'onClick={deleteHandler}>Delete</button>}
         </div>
-        {/* <div>
-          {!showModal && <EditTastingModal tasting={tasting} setShowModal={setShowModal}/>}
-        </div> */}
-        <NavLink to='/tasting/edit' className={'edit_tasting'} exact={true} tasting={tasting} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/tasting/edit' className={'edit_tasting'} exact={true} tasting={{tasting}} activeClassName='active' style={{textDecoration: 'none'}}>
           Edit
         </NavLink>
       </div>

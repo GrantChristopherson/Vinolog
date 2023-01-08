@@ -14,7 +14,7 @@ import './editTastingForm.css';
 
 function EditTastingForm({ tasting, lovedTasting }) {
 
-  // const [showModal, setShowModal] = useState(false);
+  
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector(state => state?.session?.user)
