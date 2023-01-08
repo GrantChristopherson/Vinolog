@@ -69,12 +69,12 @@
   background-color: #FFF3C4;
   font-size: 14px;
   font-weight: bold;
-  color: #9c3127;
+  color: rgb(103, 10, 21);
   border: 0;
 }
 
 .edit_tasting:hover {
-  background-color: #9c3127;
+  background-color: rgb(103, 10, 21);
   color: #FFF3C4;
   cursor: pointer;
   transition-duration: 300ms;

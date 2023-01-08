@@ -1,25 +1,66 @@
-.userInfoContainer {
+.loved_tasting_card {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  padding: 20px 20px 30px 20px;
+  min-width: 700px;
+  background-color: rgba(39, 39, 38, 0.2);
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(39, 39, 38);
+  border-top: none;
+  border-bottom: none;
+}
+
+.loved_tasting_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80 px;
   cursor: pointer;
 }
 
-.userHeader {
-  margin-bottom: 2px;
+.user_header {
+  margin: 50px 50px 10px 50px;
+  color: rgb(192, 192, 176);
 }
 
-.bioSubtitle {
-  margin-top: 2px;
+.bio_subtitle {
+  margin: 0 50px;
+  color: rgb(192, 192, 176);
 }
 
-.lovedWineInfo {
-  color: #660d19;
-  cursor: pointer;
+.loved_info_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80 px;
+  color: rgb(243, 218, 201);
 }
 
-.lovedTastingNotesContainer {
-  color: black;
+.loved_wine_info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 100px 0 100px;
+  color: rgb(243, 218, 201);
 }
 
-.editContainer {
+.loved_wine_extra_info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 100px;
+  color: rgb(243, 218, 201);
+}
+
+.loved_tasting_notes_container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 180px;
+  color: rgb(192, 192, 176);
+}
+
+.edit_container {
   display: flex;
   flex-direction: row-reverse;
 }

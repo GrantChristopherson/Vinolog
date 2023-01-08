@@ -2,12 +2,10 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllLovedTastingsThunk } from '../../store/tasting';
 import LovedTastingCard from "../LovedTastingCard";
-// import Navbar from "../Navbar";
+import Navigation from "../Navigation";
 import Sidebar from '../Sidebar';
 import Footer from "../Footer";
 import './lovedFeed.css';
-
-import Navigation from "../Navigation";
 
 
 
@@ -25,26 +23,19 @@ const AllLovedFeed = () => {
   }, [dispatch]);
 
 
-
   return (
-    <div className="allLovedFeedOuterContainer">
+    <>
       <Navigation />
-      {/* <Navbar /> */}
       <Sidebar />
-      <div className="allLovedFeedInnerContainer">
+      <div className="loved_feed_container">
         {lovedWineTastings?.map((tasting) => {return (
-        <div key={tasting?.id} className="lovedtastingContainer">
+        <div key={tasting?.id} className="loved_tasting_container">
           <LovedTastingCard tasting={tasting}/>
         </div>
         )}).reverse()}
       </div>
       <Footer />
-      {/* <footer>
-        <div className='footerLovedWineTastingsContainer'>
-          <h4 className='lovedWineTastingsFooterPhrase'>Loved Wine Feed</h4>
-        </div>
-      </footer> */}
-    </div>
+    </>
   );
 };
 

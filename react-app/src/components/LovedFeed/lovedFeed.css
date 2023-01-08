@@ -1,4 +1,4 @@
-.allLovedFeedOuterContainer {
+/* .allLovedFeedOuterContainer {
   display: flex;
   justify-content: flex-end;
   margin: 4% 2%;
@@ -14,7 +14,7 @@
   background-color: rgb(243, 218, 201);
   border-radius: 10px;
   border-bottom-color: black;
-}
+} */
 
 /* .footerLovedWineTastingsContainer {
   position: fixed;
@@ -29,4 +29,23 @@
 .lovedWineTastingsFooterPhrase {
   color: #FFF3C4;
 } */
+
+.loved_feed_container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0;
+  padding: 100px 0 300px 30%;
+  min-height: 1440px;
+  width: 100%;
+  background-color: rgba(156, 108, 39, 0.1);
+}
+
+.loved_tasting_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 50px;
+  padding: 80 px;
+  cursor: pointer;
+}
 
