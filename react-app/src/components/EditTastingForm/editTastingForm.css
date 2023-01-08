@@ -1,0 +1,176 @@
+.edit_tasting_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  /* padding: 0 20px 200px 0; */
+  height: 1440px;
+  width: 100%;
+  background-color: rgba(156, 108, 39, 0.1);
+}
+
+.edit_tasting_form {
+  height: 100%;
+  width: 50%;
+  background-color: rgba(39, 39, 38, 0.2);
+  padding: 2%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(39, 39, 38);
+  border-top: none;
+  border-bottom: none;
+}
+
+.input_container {
+  margin: 0;
+  padding-top: 25%;
+  justify-content: space-evenly;
+}
+
+.update_header {
+  display: flex;
+  justify-content: center;
+  color:  rgb(192, 192, 176);
+}
+
+.errors {
+  color: #c73649;
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.info_input {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.info_input:focus {
+  outline: none;
+}
+
+.edit_love_container {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 0;
+  padding: 1%;
+}
+
+.edit_love_label {
+  color: rgb(192, 192, 176);
+  font-weight: bold;
+}
+
+.edit_love_input:hover {
+  cursor: pointer;
+}
+
+/* .regionInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.vineyardInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.varietalInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.vintageInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.otherInfoInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.sightInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.noseInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.palateInput {
+border-bottom-color: rgba(128, 128, 128, 0.8);
+}
+
+.thoughtsInput {
+  border-bottom-color: rgba(128, 128, 128, 0.8);
+} */
+
+
+.edit_submit_close_container {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.update_tasting_button {
+  margin: 0 40px;
+  padding: 5px 50px;
+  height: 40px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: rgb(198 192 163);
+  color: rgb(103, 10, 21);
+  border: 0;
+}
+ 
+.update_tasting_button:hover {
+  background-color: rgb(103, 10, 21);
+  color: rgb(243, 218, 201);
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.close_edit_wine {
+  /* right: 40px;
+  width: 300px;
+  margin-top: 10px;
+  padding: 1% 1% 1% 1%;
+  border-radius: 5px;
+  font-weight: bold; */
+  margin-top: 20px;
+  color: rgb(192, 192, 176);
+  padding: 5px 20px;
+  border-radius: 15px;
+}
+
+.close_edit_wine:hover {
+  background-color: rgb(103, 10, 21);
+  font-weight: bold;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+/* .edit_love_container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.edit_love_label {
+  color: #660d19;
+  font-weight: bold;
+} */
+
+.deletePenIcon {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+
+.deleteIcon {
+  background-color: transparent;
+  border: none;
+}
+
+.deleteIcon:hover{
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 10px;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTastingThunk } from '../../store/tasting';
-import EditTastingModal from '../EditTastingModal';
+import EditTastingModal from '../EditTastingForm';
 import Discussion from '../Discussion/Discussion';
 import CreateCommentForm from '../Discussion/CreateCommentForm';
 import './lovedTastingCard.css';

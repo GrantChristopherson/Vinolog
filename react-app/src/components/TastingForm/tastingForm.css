@@ -3,7 +3,7 @@
 
 } */
 
-.create-tasting-container {
+.create_tasting_container {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -34,7 +34,7 @@
 } */
 
 
-.create-form {
+.create_form {
   height: 100%;
   width: 50%;
   background-color: rgba(39, 39, 38, 0.2);
@@ -46,10 +46,16 @@
   border-bottom: none;
 }
 
-.input-container {
+.input_container {
   margin: 0;
   padding-top: 25%;
   justify-content: space-evenly;
+}
+
+.tasting_header {
+  display: flex;
+  justify-content: center;
+  color:  rgb(192, 192, 176);
 }
 
 .errors {
@@ -60,7 +66,7 @@
   width: 100%;
 }
 
-.producer-input {
+.info_input {
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
@@ -73,11 +79,11 @@
   color: rgb(192, 192, 176);
 }
 
-.producer-input:focus {
+.info_input:focus {
   outline: none;
 }
 
-.region-input {
+/* .region-input {
   border-top-style: none;
   border-right-style: none;
   border-left-style: none;
@@ -228,32 +234,32 @@
 
 .thoughts-input:focus {
   outline: none;
-}
+} */
 
-.love-container {
+.love_container {
   display: flex;
   justify-content: flex-start;
   margin: 20px 0;
   padding: 1%;
 }
 
-.love-label {
+.love_label {
   color: rgb(192, 192, 176);
   font-weight: bold;
 }
 
-.love-input:hover {
+.love_input:hover {
   cursor: pointer;
 }
 
-.submit-cancel-container {
+.submit_cancel_container {
  display: flex;
  flex-direction: column;
  align-items: center;
  /* border-radius: 30px; */
 }
 
-.submit-tasting {
+.submit_tasting {
   margin: 0 40px;
   padding: 5px 50px;
   height: 40px;
@@ -275,14 +281,14 @@
   border-bottom-left-radius: 20px; */
 }
 
-.submit-tasting:hover {
+.submit_tasting:hover {
   background-color: rgb(103, 10, 21);
   color: rgb(243, 218, 201);
   cursor: pointer;
   transition-duration: 300ms;
 }
 
-.my-home {
+.my_home {
   margin-top: 20px;
   color: rgb(192, 192, 176);
   padding: 5px 20px;
@@ -298,7 +304,7 @@
   border-bottom-right-radius: 20px; */
 }
 
-.my-home:hover {
+.my_home:hover {
   background-color: rgb(103, 10, 21);
   font-weight: bold;
   transition-duration: 300ms;

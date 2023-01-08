@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteTastingThunk } from '../../store/tasting';
-import EditTastingModal from '../EditTastingModal';
+import EditTastingModal from '../EditTastingForm';
 import './tastingCard.css';
 
 
@@ -11,7 +12,7 @@ const TastingCard = ({tasting}) => {
   const dispatch = useDispatch()
   
   const [showInfo, setShowInfo] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
 
   const deleteHandler = async() => {
@@ -42,9 +43,12 @@ const TastingCard = ({tasting}) => {
         <div>
           {showInfo && <button className='delete-button'onClick={deleteHandler}>Delete</button>}
         </div>
-        <div>
+        {/* <div>
           {!showModal && <EditTastingModal tasting={tasting} setShowModal={setShowModal}/>}
-        </div>
+        </div> */}
+        <NavLink to='/tasting/edit' className={'edit_tasting'} exact={true} tasting={tasting} activeClassName='active' style={{textDecoration: 'none'}}>
+          Edit
+        </NavLink>
       </div>
     </div>
   );

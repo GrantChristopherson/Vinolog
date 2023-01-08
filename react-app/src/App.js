@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed';
 import LovedFeed from './components/LovedFeed';
 import TastingForm from './components/TastingForm';
+import EditTastingForm from './components/EditTastingForm';
 import Splash from './components/Splash';
 import Home from './components/Home';
 
@@ -44,6 +45,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/tasting' exact={true} >
           <TastingForm />
+        </ProtectedRoute>
+        <ProtectedRoute path='/tasting/edit' exact={true} >
+          <EditTastingForm />
         </ProtectedRoute>
         <ProtectedRoute path='/tastings' exact={true} >
           <MyTastingFeed />

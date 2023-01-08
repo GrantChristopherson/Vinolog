@@ -48,3 +48,21 @@
   transition-duration: 300ms;
   cursor: pointer;
 }
+
+.edit_tasting {
+  margin: 1px 20px;
+  padding: 1px 20px;
+  height: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #FFF3C4;
+  color: #9c3127;
+  border: 0;
+}
+
+.edit_tasting:hover {
+  background-color: #9c3127;
+  color: #FFF3C4;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
