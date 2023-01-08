@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
 import TastingCard from "../TastingCard";
-// import Navbar from "../Navbar";
+import Navigation from "../Navigation";
 import Sidebar from "../Sidebar";
 import Footer from '../Footer';
 import './myTastingFeed.css';
 
-import Navigation from "../Navigation";
 
 
 
@@ -21,7 +20,6 @@ const MyTastingFeed = () => {
   useEffect(() => {
     (async()=>{
       await dispatch(getMyTastingsThunk());
-
     })();
   }, [dispatch])
 
