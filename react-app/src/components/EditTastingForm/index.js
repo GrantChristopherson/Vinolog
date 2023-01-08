@@ -1,34 +1,38 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
-import { createTastingThunk } from '../../store/tasting';
-import Navigation from '../Navigation';
-import Sidebar from '../Sidebar';
-import Footer from '../Footer';
-import './tastingForm.css';
+import React, { useState } from "react";
+// import { Modal } from '../../context/Modal';
+// import EditTastingForm from "./EditTastingForm";
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, NavLink } from 'react-router-dom';
+import { editTastingThunk } from '../../store/tasting';
+import Navigation from "../Navigation";
+import Sidebar from "../Sidebar";
+import Footer from "../Footer";
+import './editTastingForm.css';
 
 
 
 
+function EditTastingForm({ tasting, lovedTasting }) {
 
-const TastingForm = () => {
-
+  // const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
-
+  const user = useSelector(state => state?.session?.user)
+  
+  
   const [errors, setErrors] = useState({});
-  const [producer, setProducer] = useState('');
-  const [region, setRegion] = useState('');
-  const [vineyard, setVineyard] = useState('');
-  const [varietal, setVarietal] = useState('');
-  const [vintage, setVintage] = useState(new Date().getFullYear());
-  const [otherInfo, setOtherInfo] = useState('');
-  const [sight, setSight] = useState('');
-  const [nose, setNose] = useState('');
-  const [palate, setPalate] = useState('');
-  const [thoughts, setThoughts] = useState('');
-  const [love, setLove] = useState(false);
-
+  const [producer, setProducer] = useState(tasting?.producer);
+  const [region, setRegion] = useState(tasting?.region);
+  const [vineyard, setVineyard] = useState(tasting?.vineyard);
+  const [varietal, setVarietal] = useState(tasting?.varietal);
+  const [vintage, setVintage] = useState(tasting?.vintage);
+  const [otherInfo, setOtherInfo] = useState(tasting?.other_info);
+  const [sight, setSight] = useState(tasting?.sight);
+  const [nose, setNose] = useState(tasting?.nose);
+  const [palate, setPalate] = useState(tasting?.palate);
+  const [thoughts, setThoughts] = useState(tasting?.thoughts);
+  const [love, setLove] = useState(tasting?.love);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,7 +58,7 @@ const TastingForm = () => {
 
     const today = new Date(); 
     if (vintage < 1900 || vintage > today.getFullYear()) {
-      validateErrors['vintage'] = `* Vintage required and must be younger than 1900 but not past this year (${today.getFullYear()})`
+      validateErrors['vintage'] = `* Vintage required and must be between 1900 and this year (${today.getFullYear()})`;
     };
     
     if (otherInfo) {
@@ -92,37 +96,53 @@ const TastingForm = () => {
         (thoughts.length && thoughts.trim().length === 0)) {
           validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
         };
+
     
 
     setErrors(validateErrors)
     if (Object.keys(validateErrors).length) {
       return;
     }
-    
-    const tasting = {
+
+    const taste = {
+      id: tasting.id,
       producer,
       region,
       vineyard,
       varietal,
       vintage,
-      otherInfo,
+      other_info: otherInfo,
       sight,
       nose,
       palate,
       thoughts,
-      love
+      love,
+      user: user
     };
 
-    let data = dispatch(createTastingThunk(tasting));
-    if (data) {
+    let data = dispatch(editTastingThunk(taste));
+
+    if (taste.love === false && data) {
+      // setShowModal(false)
       history.push('/tastings')
+      return
+    } 
+
+    if (taste.love === true && data) {
+      history.push('/lovedtastings')
+      return
     };
   };
     
-      
-  
+   
+  const handleClick = (e) => {
+    if (love === false) {
+      setLove(true)
+    } else {
+      setLove(false)
+    };
+  };
     
-
 
   const updateProducer = (e) => {
     setProducer(e.target.value);
@@ -164,24 +184,26 @@ const TastingForm = () => {
     setThoughts(e.target.value);
   };
 
-  const handleClick = (e) => {
-    if (love === false) {
-      setLove(true)
-    } else {
-      setLove(false)
-    }
-  }
-
-
+  
+  // return (
+  //   <>
+  //     <button className='editTastingButton' onClick={() => setShowModal(true)}>Edit</button>
+  //     {showModal && (
+  //       <Modal className={"editTastingModal"} onClose={() => setShowModal(false)}>
+  //          <EditTastingForm tasting={tasting} lovedTasting={lovedTasting} setShowModal={setShowModal}/>
+  //       </Modal>
+  //     )}
+  //   </>
+  // );
   return (
     <>
       <Navigation />
-      <div className='tasting_body'>
+      <div className='edit_tasting_body'>
         <Sidebar />
-        <div className='create_tasting_container'>
-          <form className='create_form' onSubmit={handleSubmit}>
+        <div className='edit_tasting_container'>
+          <form className='edit_tasting_form' onSubmit={handleSubmit}>
             <div className='input_container'>
-            <h2 className='tasting_header'>Tasting Notes</h2>
+              <h2 className='update_header'>Update Tasting Notes</h2>
               <div>
                 {errors?.spacing !== undefined && <div className='error'>
                   <div className='errors'>{errors.spacing}</div>
@@ -190,7 +212,7 @@ const TastingForm = () => {
                 {errors?.producer !== undefined && <div className='error'>
                   <div className='errors'>{errors.producer}</div>
                 </div>
-                }
+                } 
                 <input className='info_input'
                 type='text'
                 name='producer'
@@ -210,7 +232,7 @@ const TastingForm = () => {
                 onChange={updateRegion}
                 placeholder='Region'
                 value={region}
-                ></input> 
+                ></input>
               </div>
               <div>
                 {errors?.vineyard !== undefined && <div className='error'>
@@ -236,20 +258,20 @@ const TastingForm = () => {
                 onChange={updateVarietal}
                 placeholder='Varietal / Type'
                 value={varietal}
-                ></input>
+                ></input> 
               </div>
               <div>
                 {errors?.vintage !== undefined && <div className='error'>
                   <div className='errors'>{errors.vintage}</div>
                 </div>
-                }
+                } 
                 <input className='info_input'
                 type='number'
                 name='vintage'
                 onChange={updateVintage}
                 placeholder='Vintage'
                 value={vintage}
-                ></input> 
+                ></input>
               </div>
               <div>
                 {errors?.otherInfo !== undefined && <div className='error'>
@@ -275,7 +297,7 @@ const TastingForm = () => {
                 onChange={updateSight}
                 placeholder='Sight'
                 value={sight}
-                ></input>
+                ></input> 
               </div>
               <div>
                 {errors?.nose !== undefined && <div className='error'>
@@ -314,11 +336,11 @@ const TastingForm = () => {
                 onChange={updateThoughts}
                 placeholder='Additional thoughts...'
                 value={thoughts}
-                ></input>
+                ></input> 
               </div>
-              <div className='love_container'>
-                <label className='love_label'>Love the wine?</label>
-                <input className='love_input'
+              <div className='edit_love_container'>
+                <label className='edit_love_label'>Love the wine?</label>
+                <input className='edit_love_input'
                   type="checkbox"
                   value={love}
                   name='love'
@@ -326,20 +348,27 @@ const TastingForm = () => {
                   onChange={handleClick}
                 />
               </div>
-              <div className='submit_cancel_container'>
-                <button  className='submit_tasting'>Submit</button>
-                <NavLink to='/home' className={'my_home'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+              <div className='edit_submit_close_container'>
+                <button className='update_tasting_button' type='submitEditWine'>Update</button>
+                {/* <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button> */}
+                <NavLink to='/tastings' className={'close_edit_wine'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
                   Cancel
-                </NavLink> 
+                </NavLink>
               </div>
             </div>
           </form>
         </div>
       </div>
-    <Footer />
-  </>
+      <Footer />
+    </>
   );
 };
 
 
-export default TastingForm;
+
+export default EditTastingForm;
+
+
+
+
+
