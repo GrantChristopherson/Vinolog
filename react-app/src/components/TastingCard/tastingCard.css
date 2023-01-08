@@ -24,7 +24,14 @@
 .wine-info {
   display: flex;
   justify-content: space-between;
-  margin: 20px 100px;
+  margin: 20px 100px 0 100px;
+  color: rgb(243, 218, 201);
+}
+
+.extra-wine-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 100px;
   color: rgb(243, 218, 201);
 }
 
@@ -32,7 +39,6 @@
   display: flex;
   flex-direction: column;
   margin: 20px 180px;
-  /* justify-content: space-between; */
   color: rgb(192, 192, 176);
 }
 
@@ -42,7 +48,6 @@
 }
 
 .delete-button {
-  /* margin-top: 5px; */
   background-color: transparent;
   color: rgb(243, 218, 201);
   border: 0;
@@ -61,8 +66,9 @@
   padding: 1px 20px;
   height: 20px;
   border-radius: 20px;
-  font-weight: bold;
   background-color: #FFF3C4;
+  font-size: 14px;
+  font-weight: bold;
   color: #9c3127;
   border: 0;
 }
