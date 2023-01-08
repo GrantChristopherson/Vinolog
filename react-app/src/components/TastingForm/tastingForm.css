@@ -34,10 +34,15 @@
 } */
 
 .create-form {
-  /* flex-direction: column; */
-  /* padding: 0 0 15% 15%; */
   height: 100%;
   width: 50%;
+  background-color: rgba(39, 39, 38, 0.2);
+  padding: 2%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(39, 39, 38);
+  border-top: none;
+  border-bottom: none;
 }
 
 .input-container {
