@@ -22,6 +22,7 @@
 .create-container:hover {
   background-color:  rgba(78, 76, 76, 0.5);
   border-right: 1px solid rgba(103, 10, 21, 1);
+  border-left: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 
@@ -41,6 +42,7 @@
 .my-tastings-container:hover {
   background-color:  rgba(78, 76, 76, 0.5);
   border-right: 1px solid rgba(103, 10, 21, 1);
+  border-left: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 
@@ -60,6 +62,7 @@
 .loved-feed-container:hover {
   background-color: rgba(78, 76, 76, 0.5);
   border-right: 1px solid rgba(103, 10, 21, 1);
+  border-left: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 
@@ -79,6 +82,7 @@
 .friends-container:hover {
   background-color: rgba(78, 76, 76, 0.5);
   border-right: 1px solid rgba(103, 10, 21, 1);
+  border-left: 1px solid rgba(103, 10, 21, 1);
   transition-duration: 300ms;
 }
 

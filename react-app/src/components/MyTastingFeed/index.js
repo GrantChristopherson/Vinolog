@@ -29,7 +29,6 @@ const MyTastingFeed = () => {
   return (
     <>
       <Navigation />
-      {/* <Navbar /> */}
       <Sidebar user={user} />
       <div className="my-feed-container">
         {userTastings?.map((tasting) => {return (

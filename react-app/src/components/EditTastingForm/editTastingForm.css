@@ -159,7 +159,7 @@ border-bottom-color: rgba(128, 128, 128, 0.8);
   font-weight: bold;
 } */
 
-.deletePenIcon {
+/* .deletePenIcon {
   font-size: 1.2rem;
   padding: 1rem;
 }
@@ -173,4 +173,4 @@ border-bottom-color: rgba(128, 128, 128, 0.8);
 .deleteIcon:hover{
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 10px;
-}
+} */
