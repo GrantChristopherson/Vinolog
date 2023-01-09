@@ -2,9 +2,9 @@
 .loved_feed_container {
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 10%;
-  padding: 100px 0 300px 10%;
-  min-height: 1440px;
+  margin: 0 0 0 9%;
+  padding: 150px 0 300px 10%;
+  min-height: 1500px;
   width: 100%;
   background-color: rgba(156, 108, 39, 0.1);
 }
@@ -14,8 +14,8 @@
   flex-direction: column;
   justify-content: center;
   width: 85%;
-  margin: 0 50px;
-  padding: 80 px;
+  margin: 0 60px;
+  padding: 0 80px;
   cursor: pointer;
 }
 
