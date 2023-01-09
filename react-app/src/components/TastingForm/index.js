@@ -180,7 +180,7 @@ const TastingForm = () => {
         <Sidebar />
         <div className='create_tasting_container'>
           <form className='create_form' onSubmit={handleSubmit}>
-            <div className='input_container'>
+            <div className='tasting_input_container'>
             <h2 className='tasting_header'>Tasting Notes</h2>
               <div>
                 {errors?.spacing !== undefined && <div className='error'>
