@@ -202,7 +202,7 @@ function EditTastingForm({ tasting, lovedTasting }) {
         <Sidebar />
         <div className='edit_tasting_container'>
           <form className='edit_tasting_form' onSubmit={handleSubmit}>
-            <div className='input_container'>
+            <div className='edit_tasting_input_container'>
               <h2 className='update_header'>Update Tasting Notes</h2>
               <div>
                 {errors?.spacing !== undefined && <div className='error'>
