@@ -21,8 +21,13 @@
   cursor: pointer;
 }
 
+.my_header {
+  margin: 50px 50px 10px 25px;
+  color: rgb(192, 192, 176);
+}
+
 .user_header {
-  margin: 50px 50px 10px 50px;
+  margin: 50px 50px 10px 25px;
   color: rgb(192, 192, 176);
 }
 
