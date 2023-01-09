@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteTastingThunk } from '../../store/tasting';
-import EditTastingModal from '../EditTastingForm';
 import './tastingCard.css';
 
 
