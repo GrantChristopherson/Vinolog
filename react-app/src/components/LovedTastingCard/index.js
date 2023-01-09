@@ -30,7 +30,8 @@ const LovedTastingCard = ({tasting}) => {
     <div className='loved_tasting_card'>
       <div className='loved_tasting_info'>
         <div className='user_info_container' onClick={() => setShowBio(!showBio)}>
-          <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>
+          {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
+          <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
           {showBio && <h6 className='bio_subtitle'>{tasting?.user?.bio}</h6>}
         </div>
         <div className='loved_info_container' onClick={() => setShowInfo(!showInfo)}>
