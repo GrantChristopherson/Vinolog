@@ -66,16 +66,16 @@
   padding: 1px 20px;
   height: 20px;
   border-radius: 20px;
-  background-color: #FFF3C4;
+  background-color: rgb(103, 10, 21);
   font-size: 14px;
   font-weight: bold;
-  color: rgb(103, 10, 21);
+  color: #FFF3C4;
   border: 0;
 }
 
 .edit_tasting:hover {
-  background-color: rgb(103, 10, 21);
-  color: #FFF3C4;
+  background-color: #FFF3C4;
+  color: rgb(103, 10, 21);
   cursor: pointer;
   transition-duration: 300ms;
 }

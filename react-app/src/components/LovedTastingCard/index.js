@@ -15,7 +15,7 @@ const LovedTastingCard = ({tasting}) => {
   const user = useSelector(state => state?.session?.user);
   
   const [showInfo, setShowInfo] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [showBio, setShowBio] = useState(false);
 
@@ -51,21 +51,21 @@ const LovedTastingCard = ({tasting}) => {
           </div>
         </div>
       </div> 
-      {user.id === tasting?.user?.id && <div className="edit_container">
-        <div>
-          {showInfo && <button className='delete-button'onClick={deleteHandler}>Delete</button>}
+      <div className='loved_user_input_container'>
+        <div className='discussion_wrapper'>
+          <button className='discussion_toggle' onClick={() => setShowDiscussion(!showDiscussion)}>Discussion</button> 
+          {showDiscussion &&<CreateCommentForm tasting={tasting}/>}
+            {showDiscussion && <div className='discussion_outer_container'>
+              <div className='discussion_inner_container'>
+                <Discussion tasting={tasting} setShowDiscussion={setShowDiscussion}/>
+              </div>
+            </div>}
         </div>
-        <NavLink to='/tasting/edit' className={'edit_tasting'} exact={true} tasting={{tasting}} activeClassName='active' style={{textDecoration: 'none'}}>
-          Edit
-        </NavLink>
-      </div>}
-      <div className='discussionWrapper'>
-      <button className='closeDiscussionButton' onClick={() => setShowDiscussion(!showDiscussion)}>Discussion</button> 
-      {showDiscussion &&<CreateCommentForm tasting={tasting}/>}
-        {showDiscussion && <div className='discussionOuterContainer'>
-          <div className='discussionInnerContainer'>
-            <Discussion tasting={tasting} setShowDiscussion={setShowDiscussion}/>
-          </div>
+        {user.id === tasting?.user?.id && <div className="edit_container">
+          {showInfo && <button className='delete-button'onClick={deleteHandler}>Delete</button>}
+          <NavLink to='/tasting/edit' className={'edit_tasting'} exact={true} tasting={{tasting}} activeClassName='active' style={{textDecoration: 'none'}}>
+            Edit
+          </NavLink>
         </div>}
       </div>
     </div>
