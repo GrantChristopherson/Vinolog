@@ -26,15 +26,13 @@ const AllLovedFeed = () => {
   return (
     <>
       <Navigation />
-      <div className="body_wrapper">
-        <Sidebar />
-        <div className="loved_feed_container">
-          {lovedWineTastings?.map((tasting) => {return (
-          <div key={tasting?.id} className="loved_tasting_container">
-            <LovedTastingCard tasting={tasting}/>
-          </div>
-          )}).reverse()}
+      <Sidebar />
+      <div className="loved_feed_container">
+        {lovedWineTastings?.map((tasting) => {return (
+        <div key={tasting?.id} className="loved_tasting_container">
+          <LovedTastingCard tasting={tasting}/>
         </div>
+        )}).reverse()}
       </div>
       <Footer />
     </>
