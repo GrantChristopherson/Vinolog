@@ -1,40 +1,13 @@
-/* .allLovedFeedOuterContainer {
+.body_wrapper {
   display: flex;
-  justify-content: flex-end;
-  margin: 4% 2%;
-  padding: 10px 10px 0 0;
+  flex-direction: row;
 }
-
-.lovedtastingContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  padding: 10px 20px 30px 20px;
-  width: 500px;
-  background-color: rgb(243, 218, 201);
-  border-radius: 10px;
-  border-bottom-color: black;
-} */
-
-/* .footerLovedWineTastingsContainer {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #660d19;
-}
-
-.lovedWineTastingsFooterPhrase {
-  color: #FFF3C4;
-} */
 
 .loved_feed_container {
   display: flex;
   flex-direction: column;
   margin: 0 0;
-  padding: 100px 0 300px 30%;
+  padding: 100px 0 300px 10%;
   min-height: 1440px;
   width: 100%;
   background-color: rgba(156, 108, 39, 0.1);
@@ -44,6 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 90%;
   margin: 0 50px;
   padding: 80 px;
   cursor: pointer;

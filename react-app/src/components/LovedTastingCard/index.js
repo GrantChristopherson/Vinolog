@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTastingThunk } from '../../store/tasting';
-import EditTastingModal from '../EditTastingForm';
+// import EditTastingModal from '../EditTastingForm';
 import Discussion from '../Discussion/Discussion';
 import CreateCommentForm from '../Discussion/CreateCommentForm';
 import './lovedTastingCard.css';
@@ -52,11 +53,11 @@ const LovedTastingCard = ({tasting}) => {
       </div> 
       {user.id === tasting?.user?.id && <div className="edit_container">
         <div>
-          {showInfo && <button className='deleteIcon'onClick={deleteHandler}>Delete</button>}
+          {showInfo && <button className='delete-button'onClick={deleteHandler}>Delete</button>}
         </div>
-        <div>
-          {!showModal && <EditTastingModal tasting={tasting} setShowModal={setShowModal}/>}
-        </div>
+        <NavLink to='/tasting/edit' className={'edit_tasting'} exact={true} tasting={{tasting}} activeClassName='active' style={{textDecoration: 'none'}}>
+          Edit
+        </NavLink>
       </div>}
       <div className='discussionWrapper'>
       <button className='closeDiscussionButton' onClick={() => setShowDiscussion(!showDiscussion)}>Discussion</button> 
