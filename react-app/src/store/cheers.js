@@ -1,7 +1,7 @@
 
 const GET_CHEERED_TASTINGS = 'cheered/GET_CHEERED_TASTINGS';
-const CREATE_CHEERS = 'cheers/CREATE_CHEERS'
-const DELETE_CHEERS = 'cheers/DELETE_CHEERS'
+const CREATE_CHEERS = 'cheers/CREATE_CHEERS';
+const DELETE_CHEERS = 'cheers/DELETE_CHEERS';
 
 
 //----------------------action creator-------------------------------------------
@@ -104,5 +104,5 @@ export default function reducer(state = initialState, action) {
     }
     default:
       return state;
-  }
-}
+  };
+};
