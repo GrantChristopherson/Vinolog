@@ -33,6 +33,16 @@ def user_following(id):
 
 
 
+# Get user Friends in the Field followers
+@user_routes.route('/<int:id>/followers')
+@login_required
+def user_follower(id):
+    followers = User.query.get(id)
+    
+    return  followers.to_dict_get_followers()
+    
+
+
 # User follows another user as Friend in the Field
 @user_routes.route('<int:id>/following/<int:newFollowingId>', methods=['PUT'])
 @login_required
@@ -59,16 +69,6 @@ def remove_following(id, deleteUserId):
         db.session.commit()
     return {'followings': [x.to_dict() for x in user_current_following_list]}
             
-
-
-# Get user Friends in the Field followers
-@user_routes.route('/<int:id>/followers')
-@login_required
-def user_follower(id):
-    followers = User.query.get(id)
-    
-    return  followers.to_dict_get_followers()
-    
 
 
 # Get user cheers

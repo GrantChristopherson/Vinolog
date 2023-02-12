@@ -1,11 +1,10 @@
 import React from 'react';
-// import Navbar from '../Navbar';
+import Navigation from '../Navigation';
 import Sidebar from '../Sidebar';
 import HomeBody from '../HomeBody';
 import Footer from '../Footer';
 import './home.css';
 
-import Navigation from '../Navigation';
 
 
 

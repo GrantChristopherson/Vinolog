@@ -28,7 +28,7 @@ const Sidebar = ({ user }) => {
         </NavLink>
       </div>
       <div className='friends-container'>
-        <NavLink to='/friends-in-the-field' className={'friends-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/friendsinthefield' className={'friends-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
           Friends In The Field
         </NavLink>
       </div>

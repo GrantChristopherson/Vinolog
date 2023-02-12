@@ -1,0 +1,36 @@
+.listed_friend_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: row;
+  width: 500px;
+  font-size: 20px;
+  color: rgb(192, 192, 176);
+}
+
+.friend_tastings {
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  font-size: 20px;
+  color: rgb(192, 192, 176);
+}
+
+.unfriend_button {
+  margin: 1px 20px;
+  padding: 1px 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgb(103, 10, 21);
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFF3C4;
+  border: 0;
+}
+
+.unfriend_button:hover {
+  background-color: #FFF3C4;
+  color: rgb(103, 10, 21);
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
