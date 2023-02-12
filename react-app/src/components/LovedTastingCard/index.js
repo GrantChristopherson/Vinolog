@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTastingThunk } from '../../store/tasting';
-// import EditTastingModal from '../EditTastingForm';
+import { createFriendThunk } from '../../store/friends';
 import Discussion from '../Discussion/Discussion';
 import CreateCommentForm from '../Discussion/CreateCommentForm';
 import './lovedTastingCard.css';
@@ -15,13 +15,18 @@ const LovedTastingCard = ({tasting}) => {
   const user = useSelector(state => state?.session?.user);
   
   const [showInfo, setShowInfo] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [showBio, setShowBio] = useState(false);
 
 
+  const friendHandler = async(e) => {
+    e.preventDefault();
+    console.log('friendHandler======', user.id, tasting.user.id)
+    dispatch(createFriendThunk(user?.id, tasting?.user?.id))
+  };
+
   const deleteHandler = async() => {
-    await dispatch(deleteTastingThunk(tasting?.id))
+    dispatch(deleteTastingThunk(tasting?.id))
   };
 
 
@@ -30,8 +35,9 @@ const LovedTastingCard = ({tasting}) => {
     <div className='loved_tasting_card'>
       <div className='loved_tasting_info'>
         <div className='user_info_container' onClick={() => setShowBio(!showBio)}>
-          {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
-          <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
+          {tasting?.user?.username === user?.username ? <h5 className='my_header'>My tasting</h5> :
+          <h5 className='user_header'>{tasting?.user?.username}'s tasting</h5>}
+          {tasting?.user?.id !== user?.id ? <button className='friend_button' onClick={friendHandler}>Add Friend</button> : <></> }
           {showBio && <h6 className='bio_subtitle'>{tasting?.user?.bio}</h6>}
         </div>
         <div className='loved_info_container' onClick={() => setShowInfo(!showInfo)}>
