@@ -4,6 +4,7 @@ import { getMyFieldThunk } from '../../store/friends';
 import Navigation from '../Navigation';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
+import Friends from '../Friends';
 import './friendsField.css';
 
 
@@ -15,7 +16,7 @@ const FriendsField = () => {
   const user = useSelector((state) => state?.session?.user);
   const friends = useSelector((state) => Object.values(state.fields.friends))
   const [haveFriends, setHaveFriends] = useState(false);
-
+ 
   
   useEffect(() => {
     dispatch(getMyFieldThunk(user.id)).then(() => setHaveFriends(true));
@@ -26,16 +27,14 @@ const FriendsField = () => {
     <>
       <Navigation />
       <Sidebar />
-      <div className='my_field_container'>
-        <div className='field_list_container'>
-          <div className='field_title'>{friends?.length} Friends In Your Field</div>
-          <div className='field_list'>
-            {haveFriends && friends?.map((friend) => {return (
-              <div key={user?.id}>
-                
-              </div>
-            )})}
-          </div>
+      <div className='field_list_container'>
+        <div className='field_title'>{friends?.length} Friends In Your Field</div>
+        <div className='field_list'>
+          {haveFriends && friends?.map((friend) => {return (
+            <div key={friend?.id}>
+              <Friends friend={friend} />
+            </div>
+          )})}
         </div>
       </div>
       <Footer />

@@ -7,6 +7,7 @@ import SignUpPage from './components/SignUpPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed';
 import LovedFeed from './components/LovedFeed';
+import FriendsField from './components/FriendsField';
 import TastingForm from './components/TastingForm';
 import EditTastingForm from './components/EditTastingForm';
 import Splash from './components/Splash';
@@ -54,6 +55,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/lovedtastings' exact={true} >
           <LovedFeed />
+        </ProtectedRoute>
+        <ProtectedRoute path='/friendsinthefield' exact={true} >
+          <FriendsField />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

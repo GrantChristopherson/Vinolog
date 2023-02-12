@@ -46,7 +46,7 @@ export const getMyFieldThunk = (id) => async(dispatch) => {
   });
   if (response.ok) {
     const data = await response.json();
-    dispatch(getMyField(data.friends));
+    dispatch(getMyField(data));
   };
 };
 
@@ -94,8 +94,8 @@ export default function reducer(state = initialState, action) {
   let newState;
   switch (action.type) {
     case GET_MY_FIELD: {
-      newState = {...state, friends:[...action?.friends], friendeds:[...state?.friendeds]}
-      action?.friends?.forEach((friend) => {
+      newState = {...state, friends:[...action?.friends?.followed], friendeds:[...state?.friendeds]}
+      action?.friends?.followed?.forEach((friend) => {
         newState[friend?.id] = friend
       });
       return newState;
