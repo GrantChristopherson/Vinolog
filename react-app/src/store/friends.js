@@ -79,7 +79,6 @@ export const deleteFriendThunk = (id, deleteId) => async(dispatch) => {
   });
   if (response.ok) {
     const data = await response.json();
-    console.log('thunk data=====', data)
     dispatch(deleteFriend(data));
   };
 };
@@ -116,7 +115,6 @@ export default function reducer(state = initialState, action) {
       return newState;
     };
     case DELETE_FRIEND: {
-      console.log('reducer=====', action.friends)
       newState = {...state, friends:[...action?.friends?.followings], friendeds:[...state?.friendeds]}
       action?.friends?.followings?.forEach((friend) => {
         newState[friend.id] = friend

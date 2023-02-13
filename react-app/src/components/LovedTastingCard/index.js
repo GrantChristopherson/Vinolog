@@ -21,7 +21,6 @@ const LovedTastingCard = ({tasting}) => {
 
   const friendHandler = async(e) => {
     e.preventDefault();
-    console.log('friendHandler======', user.id, tasting.user.id)
     dispatch(createFriendThunk(user?.id, tasting?.user?.id))
   };
 
@@ -37,8 +36,8 @@ const LovedTastingCard = ({tasting}) => {
         <div className='user_info_container' onClick={() => setShowBio(!showBio)}>
           {tasting?.user?.username === user?.username ? <h5 className='my_header'>My tasting</h5> :
           <h5 className='user_header'>{tasting?.user?.username}'s tasting</h5>}
-          {tasting?.user?.id !== user?.id ? <button className='friend_button' onClick={friendHandler}>Add Friend</button> : <></> }
           {showBio && <h6 className='bio_subtitle'>{tasting?.user?.bio}</h6>}
+          {tasting?.user?.id !== user?.id ? <h6 className='friend_button' onClick={friendHandler}>Add Friend</h6> : <></> }
         </div>
         <div className='loved_info_container' onClick={() => setShowInfo(!showInfo)}>
           <div className='loved_wine_info'>
