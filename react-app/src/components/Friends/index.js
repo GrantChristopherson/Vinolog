@@ -12,7 +12,6 @@ const Friends = (friend) => {
 
   const unFriendHandler = async(e) => {
     e.preventDefault();
-    console.log('unfriendhandler=====', friend.friend.id)
     dispatch(deleteFriendThunk(currentUser.id, friend.friend.id))
   };
 
