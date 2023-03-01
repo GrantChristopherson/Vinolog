@@ -45,7 +45,17 @@
 .friend_button:hover {
   margin: 0 50px;
   color: rgb(192, 192, 176);
+  transition-duration: 300ms;
+}
+
+.current_friend {
+  margin: 10px 50px;
+  color: rgb(243, 218, 201);
   text-decoration: underline;
+}
+
+.current_friend:hover {
+  color: rgb(192, 192, 176);
   transition-duration: 300ms;
 }
 
