@@ -5,7 +5,7 @@ import Footer from "../Footer";
 import './loginPage.css';
 
 
-
+// todo: find and mimic more clean login
 
 const LoginPage = () => {
 

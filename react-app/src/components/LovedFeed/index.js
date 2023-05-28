@@ -10,20 +10,18 @@ import './lovedFeed.css';
 import { getMyFieldThunk } from '../../store/friends';
 
 
-
+// move loved wines to home page as a landing to remove emptiness of site.
 
 const AllLovedFeed = () => {
 
   const dispatch = useDispatch();
   const lovedWineTastings = useSelector(state => state?.tastings.lovedTastings);
-  // 
+
   const user = useSelector((state) => state?.session?.user);
   const friendList = useSelector(state => state.fields.friends)
-  // console.log('friendList========', friendList)
 
   let friendIdList = friendList.map(user => user.id)
-  // console.log('friendIdList========', friendIdList)
-  //
+ 
 
   useEffect(() => {
     (async()=>{
