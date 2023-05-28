@@ -8,7 +8,8 @@ import Footer from '../Footer';
 import './myTastingFeed.css';
 
 
-
+// tasting card feeds styling and components modified to be more dynamic, tiled and with images
+// modify user seed data to include images and ability to add images url, aws later
 
 const MyTastingFeed = () => {
 
