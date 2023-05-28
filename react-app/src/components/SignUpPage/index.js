@@ -4,7 +4,7 @@ import Navigation from '../Navigation';
 import Footer from "../Footer";
 
 
-
+// todo: find and mimic more clean signup
 
 const SignUpPage = () => {
 
