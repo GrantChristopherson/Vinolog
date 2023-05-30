@@ -6,6 +6,7 @@ import './loginForm.css'
 
 
 // todo: find and mimic more clean login with messages listed where specifically necessary
+// need to switch error array to object and associate specified messages to either email or password
 
 const LoginForm = () => {
 
