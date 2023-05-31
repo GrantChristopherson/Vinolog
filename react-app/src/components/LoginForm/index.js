@@ -19,7 +19,7 @@ const LoginForm = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
+    const data = await dispatch(login(email, password)); // removed await from in front of this dispatch but throws error locally?
     if (data) {
       setErrors(data);
     }
@@ -37,14 +37,14 @@ const LoginForm = () => {
     e.preventDefault();
     const email = 'demo@demo.io';
     const password = 'password';
-    const data = await dispatch(login( email, password));
+    const data = await dispatch(login( email, password)); // removed await from in front of this dispatch but throws error locally?
     if (data) {
       setErrors(data);
     };
   };
 
   if (user) {
-    return <Redirect to='/home' />;
+    return <Redirect to='/home/lovedtastings' />;
   }
 
   
@@ -55,7 +55,7 @@ const LoginForm = () => {
       </div>
       <form className='card_form' onSubmit={onLogin}>
          <div className='error_messages'>
-           {errors.map((error, ind) => (
+          {errors.map((error, ind) => (
             <div key={ind}>* {error}</div>
           ))}
         </div>

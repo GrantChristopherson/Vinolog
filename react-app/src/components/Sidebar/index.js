@@ -12,9 +12,9 @@ const Sidebar = ({ user }) => {
 
   return (
     <div className='user-sidebar'>
-      <div className='create-container'>
-        <NavLink to='/tasting' className={'create-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-          Create New Tasting
+      <div className='loved-feed-container'>
+        <NavLink to='/lovedtastings' className={'loved-feed-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+          Loved Wines
         </NavLink>
       </div>
       <div className='my-tastings-container'>
@@ -22,9 +22,9 @@ const Sidebar = ({ user }) => {
           My Tasting Notes
         </NavLink>
       </div>
-      <div className='loved-feed-container'>
-        <NavLink to='/lovedtastings' className={'loved-feed-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-          Loved Wines
+      <div className='create-container'>
+        <NavLink to='/tasting' className={'create-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+          Create New Tasting
         </NavLink>
       </div>
       <div className='friends-container'>

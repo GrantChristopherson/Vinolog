@@ -41,9 +41,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpPage />
         </Route>
-        <ProtectedRoute path='/home' exact={true} >
+        {/* <ProtectedRoute path='/home' exact={true} >
           <Home />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path='/tasting' exact={true} >
           <TastingForm />
         </ProtectedRoute>
@@ -53,7 +53,7 @@ function App() {
         <ProtectedRoute path='/tastings' exact={true} >
           <MyTastingFeed />
         </ProtectedRoute>
-        <ProtectedRoute path='/lovedtastings' exact={true} >
+        <ProtectedRoute path='/home/lovedtastings' exact={true} >
           <LovedFeed />
         </ProtectedRoute>
         <ProtectedRoute path='/friendsinthefield' exact={true} >
