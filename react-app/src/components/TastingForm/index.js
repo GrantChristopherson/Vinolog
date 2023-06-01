@@ -97,7 +97,7 @@ const TastingForm = () => {
     setErrors(validateErrors)
     if (Object.keys(validateErrors).length) {
       return;
-    }
+    };
     
     const tasting = {
       producer,
