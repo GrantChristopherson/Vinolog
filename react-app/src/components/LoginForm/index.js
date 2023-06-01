@@ -13,35 +13,65 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
 
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState({});
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const onLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password)); // removed await from in front of this dispatch but throws error locally?
-    if (data) {
-      setErrors(data);
-    }
+    // if (data) {
+    //   setErrors(data);
+    // }
+    let validateErrors = {};
+    if (!email.includes('@') && !email.endsWith('.com')) {
+      validateErrors['emailError'] = '* Valid email required';
+    };
+
+    if (!password) {
+      validateErrors['passwordError'] = '* Valid password required';
+    };
+
+    setErrors(validateErrors)
+    if (Object.keys(validateErrors).length) {
+      return;
+    };
   };
+
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
 
+
   const updatePassword = (e) => {
     setPassword(e.target.value);
   };
+
 
   const demoUser = async (e) => {
     e.preventDefault();
     const email = 'demo@demo.io';
     const password = 'password';
     const data = await dispatch(login( email, password)); // removed await from in front of this dispatch but throws error locally?
-    if (data) {
-      setErrors(data);
+    // if (data) {
+    //   setErrors(data);
+    // };
+    let validateErrors = {};
+    if (!email.includes('@') && !email.endsWith('.com')) {
+      validateErrors['emailError'] = '* Valid email required';
+    };
+
+    if (!password) {
+      validateErrors['passwordError'] = '* Valid password required';
+    };
+
+    setErrors(validateErrors)
+    if (Object.keys(validateErrors).length) {
+      return;
     };
   };
+
 
   if (user) {
     return <Redirect to='/home/lovedtastings' />;
@@ -54,12 +84,16 @@ const LoginForm = () => {
         <h1 className='login_header'>Login</h1>
       </div>
       <form className='card_form' onSubmit={onLogin}>
-         <div className='error_messages'>
+         {/* <div className='error_messages'>
           {errors.map((error, ind) => (
             <div key={ind}>* {error}</div>
           ))}
-        </div>
+        </div> */}
         <div className='input_container'>
+          {errors?.emailError !== undefined && <div className='error_messages'>
+                    <div className='errors'>{errors.emailError}</div>
+                  </div>
+                  }
           <input className='card_input'
             name='email'
             type='text'
@@ -70,6 +104,10 @@ const LoginForm = () => {
           <span className='bar'></span>
         </div>
         <div className='input_container'>
+          {errors?.passwordError !== undefined && <div className='error_messages'>
+                      <div className='errors'>{errors.passwordError}</div>
+                    </div>
+                    }
           <input className='card_input'
             name='password'
             type='password'
