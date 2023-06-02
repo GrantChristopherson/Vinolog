@@ -10,7 +10,7 @@ import './signUpForm.css'
 
 const SignUpForm = () => {
 
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState({});
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,31 +22,35 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
 
-    let validateErrors = [];
+    let validateErrors = {};
 
     if (username.length < 6 || username.length > 15) {
-      validateErrors.push('* User Name must be between 6 and 15 characters')
+      validateErrors['userNameError'] = '* User Name must be between 6 and 15 characters';
     };
-    if (username.trim().length === 0) validateErrors.push('* Spacebar exclusive input is not a valid username');
+    if (username.trim().length === 0) validateErrors['userNameError'] = '* Spacebar exclusive input is not a valid username';
 
     if (!email.includes('@' && '.')) {
-      validateErrors.push('* Must use a valid email')
+      validateErrors['emailError'] = '* Must use a valid email';
     };
-    if (email.length < 12 || email.length > 30) validateErrors.push('* Email must be between 12 and 30 characters');
-    if (email.trim().length === 0) validateErrors.push('* Spacebar exclusive input is not a valid email');
+    if (email.length < 12 || email.length > 30) validateErrors['emailError'] = '* Email must be between 12 and 30 characters';
+    if (email.trim().length === 0) validateErrors['emailError'] = '* Spacebar exclusive input is not a valid email';
 
     if (password !== repeatPassword) {
-      validateErrors.push('* Passwords must match')
+      validateErrors['passwordError'] = '* Passwords must match';
     };
 
     if (password.length < 7 || password.length > 15) {
-      validateErrors.push('* Password must be between 7 and 15 characters')
+      validateErrors['passwordError'] = '* Password must be between 7 and 15 characters';
     }
-    if (password.trim().length === 0) validateErrors.push('* Spacebar exclusive input is not a valid password');
+    if (password.trim().length === 0) validateErrors['passwordError'] = '* Spacebar exclusive input is not a valid password';
     
-    if (validateErrors.length > 0) {
-      setErrors(validateErrors);
-      return
+    // if (validateErrors.length > 0) {
+    //   setErrors(validateErrors);
+    //   return
+    // };
+    setErrors(validateErrors)
+    if (Object.keys(validateErrors).length) {
+      return;
     };
 
    
@@ -84,12 +88,16 @@ const SignUpForm = () => {
       <div className='signup_header_container'>
         <h1 className='form_title'>Sign Up</h1>
       <form onSubmit={onSignUp} action=''>
-        <div className='error_messages'>
+        {/* <div className='error_messages'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
-        </div>
+        </div> */}
         <div className='input_container'>
+          {errors?.userNameError !== undefined && <div className='error_messages'>
+                      <div className='errors'>{errors.userNameError}</div>
+                    </div>
+                    }
           <i className='ri_username_line'></i>
           <input className='form_input'
             type='text'
@@ -101,6 +109,10 @@ const SignUpForm = () => {
           <span className='bar'></span>
         </div>
         <div className='input_container'>
+          {errors?.emailError !== undefined && <div className='error_messages'>
+                      <div className='errors'>{errors.emailError}</div>
+                    </div>
+                    }
           <i className='ri_email_line'></i>
           <input className='form_input'
             type='text'
@@ -112,6 +124,10 @@ const SignUpForm = () => {
           <span className='bar'></span>
         </div>
         <div className='input_container'>
+          {errors?.passwordError !== undefined && <div className='error_messages'>
+                        <div className='errors'>{errors.passwordError}</div>
+                      </div>
+                      }
           <i className='ri_password_line'></i>
           <input className='form_input'
             type='password'
