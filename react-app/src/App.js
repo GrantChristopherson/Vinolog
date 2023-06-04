@@ -53,7 +53,7 @@ function App() {
         <ProtectedRoute path='/tastings' exact={true} >
           <MyTastingFeed />
         </ProtectedRoute>
-        <ProtectedRoute path='/home/lovedtastings' exact={true} >
+        <ProtectedRoute path='/lovedtastings' exact={true} >
           <LovedFeed />
         </ProtectedRoute>
         <ProtectedRoute path='/friendsinthefield' exact={true} >

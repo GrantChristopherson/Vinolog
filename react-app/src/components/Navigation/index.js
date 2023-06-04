@@ -33,7 +33,7 @@ const Navigation = () => {
     return (
       <nav className='nav_logged_in'>
         <ul className='nav_links'>
-          <NavLink to='/home' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+          <NavLink to='/lovedtastings' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
             <h1 className ='logo_logged_in' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
           </NavLink>
           <div className='logout_container'>
