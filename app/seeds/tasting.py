@@ -4,9 +4,9 @@ from app.models import db, User, Tasting, Discussion
 
 def seed_tasting():
 
-  user1 = User(username='Markie', email='mark@gmail.com', password='password', bio='I love all wine', followers=[], following=[])
-  user2 = User(username='Gary', email='gary@gmail.com', password='password', bio='I like some wine', followers=[], following=[user1])
-  user3 = User(username='Ronnie', email='ron@gmail.com', password='password', bio='Sommelier in training', followers=[user1, user2], following=[user1])
+  user1 = User(username='Markie', email='mark@gmail.com', password='password', profile_image='https://images.pexels.com/photos/15865898/pexels-photo-15865898/free-photo-of-man-with-cigarette-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[], following=[])
+  user2 = User(username='Gary', email='gary@gmail.com', password='password', profile_image='https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[], following=[user1])
+  user3 = User(username='Ronnie', email='ron@gmail.com', password='password', profile_image='https://images.pexels.com/photos/1975342/pexels-photo-1975342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[user1, user2], following=[user1])
 
 
   db.session.add(user1)
