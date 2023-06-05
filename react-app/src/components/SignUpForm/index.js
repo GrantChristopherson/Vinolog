@@ -5,8 +5,7 @@ import { signUp } from '../../store/session';
 import './signUpForm.css'
 
 
-// todo: find and mimic more clean signup with messages listed where specifically necessary
-// need to switch error array to object and associate specified messages to each form input
+// todo: find and mimic more clean signup and add form input for profile url pic
 
 const SignUpForm = () => {
 

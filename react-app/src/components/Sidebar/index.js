@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './sidebar.css';
 
 
-// modify placement of loved wines within the sidebar to the top of this component, highlight whichever is on active page??
+// highlight whichever is on active page
 
 
 const Sidebar = ({ user }) => {
