@@ -5,13 +5,15 @@ import { signUp } from '../../store/session';
 import './signUpForm.css'
 
 
-// todo: find and mimic more clean signup and add form input for profile url pic
+// todo: find and mimic more clean signup
+// any validation checks on profile image url input??
 
 const SignUpForm = () => {
 
   const [errors, setErrors] = useState({});
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
+  const [profileImage, setProfileImage] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
@@ -43,10 +45,7 @@ const SignUpForm = () => {
     }
     if (password.trim().length === 0) validateErrors['passwordError'] = '* Spacebar exclusive input is not a valid password';
     
-    // if (validateErrors.length > 0) {
-    //   setErrors(validateErrors);
-    //   return
-    // };
+    
     setErrors(validateErrors)
     if (Object.keys(validateErrors).length) {
       return;
@@ -54,7 +53,7 @@ const SignUpForm = () => {
 
    
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, email, profileImage, password));
       if (data) {
         setErrors(data)
       };
@@ -68,6 +67,10 @@ const SignUpForm = () => {
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
+
+  const updateProfileImage = (e) => {
+    setProfileImage(e.target.value);
+  }
 
   const updatePassword = (e) => {
     setPassword(e.target.value);
@@ -87,11 +90,6 @@ const SignUpForm = () => {
       <div className='signup_header_container'>
         <h1 className='form_title'>Sign Up</h1>
       <form onSubmit={onSignUp} action=''>
-        {/* <div className='error_messages'>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div> */}
         <div className='input_container'>
           {errors?.userNameError !== undefined && <div className='error_messages'>
                       <div className='errors'>{errors.userNameError}</div>
@@ -119,6 +117,21 @@ const SignUpForm = () => {
             placeholder='Email'
             onChange={updateEmail}
             value={email}
+          ></input>
+          <span className='bar'></span>
+        </div>
+        <div className='input_container'>
+          {/* {errors?.userNameError !== undefined && <div className='error_messages'>
+                      <div className='errors'>{errors.userNameError}</div>
+                    </div>
+                    } */}
+          <i className='ri_profile_image_line'></i>
+          <input className='form_input'
+            type='text'
+            name='profileImage'
+            placeholder='Profile Image URL'
+            onChange={updateProfileImage}
+            value={profileImage}
           ></input>
           <span className='bar'></span>
         </div>
