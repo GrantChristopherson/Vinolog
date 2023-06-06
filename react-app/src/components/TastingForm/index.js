@@ -54,7 +54,7 @@ const TastingForm = () => {
 
     const today = new Date(); 
     if (vintage < 1900 || vintage > today.getFullYear()) {
-      validateErrors['vintage'] = `* Vintage required and must be younger than 1900 but not past this year (${today.getFullYear()})`
+      validateErrors['vintage'] = `* Vintage required and must be between 1900 and current year (${today.getFullYear()})`
     };
     
     if (otherInfo) {

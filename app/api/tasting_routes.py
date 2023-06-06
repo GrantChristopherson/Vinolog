@@ -54,6 +54,8 @@ def post_tasting():
       vineyard = form.data['vineyard'],
       varietal = form.data['varietal'],
       vintage = form.data['vintage'],
+      color = form.data['color'],
+      label_image = form.data['label_image'],
       other_info = form.data['other_info'],
       sight = form.data['sight'],
       nose = form.data['nose'],
