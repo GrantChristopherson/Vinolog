@@ -20,6 +20,8 @@ class Tasting(db.Model):
   vineyard = db.Column(db.String(50))
   varietal = db.Column(db.String(100), nullable=False)
   vintage = db.Column(db.Integer)
+  color = db.Column(db.String(30), nullable=False)
+  label_image = db.Column(db.String(1000))
   other_info = db.Column(db.String(200))
   sight = db.Column(db.String(200), nullable=False)
   nose = db.Column(db.String(200), nullable=False)
@@ -44,6 +46,8 @@ class Tasting(db.Model):
       'vineyard': self.vineyard,
       'varietal': self.varietal,
       'vintage': self.vintage,
+      'color': self.color,
+      'labelImage': self.label_image,
       'other_info': self.other_info,
       'sight': self.sight,
       'nose': self.nose,

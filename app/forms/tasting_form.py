@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, BooleanField, SubmitField
+from wtforms import StringField, IntegerField, SelectField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 
 
@@ -11,6 +11,8 @@ class TastingForm(FlaskForm):
   vineyard = StringField('Vineyard')
   varietal = StringField('Varietal/Type', validators=[DataRequired(message='Varietal or type is required')])
   vintage = IntegerField('Vintage')
+  color = SelectField('Color of Wine', choices=['Red', 'White', 'Rose', 'Sparkling', 'Orange', 'Dessert', 'Other'], validators=[DataRequired(message='Color of Wine is required')])
+  label_image = StringField('Label Image')
   other_info = StringField('Additional Information')
   sight = StringField('Sight', validators=[DataRequired(message='Description of how the wine looks is required')])
   nose = StringField('Nose', validators=[DataRequired(message='Description of wine aromatics is required')])
