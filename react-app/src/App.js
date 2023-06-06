@@ -11,7 +11,7 @@ import FriendsField from './components/FriendsField';
 import TastingForm from './components/TastingForm';
 import EditTastingForm from './components/EditTastingForm';
 import Splash from './components/Splash';
-import Home from './components/Home';
+// import Home from './components/Home';
 
 
 function App() {
