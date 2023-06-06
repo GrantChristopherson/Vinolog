@@ -5,7 +5,6 @@ import './sidebar.css';
 
 // highlight whichever is on active page
 
-
 const Sidebar = ({ user }) => {
 
 
