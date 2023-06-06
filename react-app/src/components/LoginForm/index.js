@@ -117,7 +117,7 @@ const LoginForm = () => {
           <span className='bar'></span>
           <div className='login_buttons'>
             <button className='login_demo' onClick={demoUser}>
-              <span>Demo Login</span>
+              <span>Demo Vinolog</span>
             </button>
             <button className='login_login' type='submit'>
               <span>Login</span>
