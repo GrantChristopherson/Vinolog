@@ -8,13 +8,27 @@ import Footer from '../Footer';
 import './tastingForm.css';
 
 
-
+// do I need any validations for wine label url input field?
 
 
 const TastingForm = () => {
 
+
   const dispatch = useDispatch();
   const history = useHistory();
+
+
+  const options = [
+    { value: 'Select Color...', label: 'Select Color...' },
+    { value: 'Red', label: 'Red' },
+    { value: 'White', label: 'White' },
+    { value: 'Rose', label: 'Rosé' },
+    { value: 'Sparkling', label: 'Sparkling' },
+    { value: 'Orange', label: 'Orange' },
+    { value: 'Dessert', label: 'Dessert' },
+    { value: 'Other', label: 'Other' }
+  ];
+
 
   const [errors, setErrors] = useState({});
   const [producer, setProducer] = useState('');
@@ -22,12 +36,19 @@ const TastingForm = () => {
   const [vineyard, setVineyard] = useState('');
   const [varietal, setVarietal] = useState('');
   const [vintage, setVintage] = useState(new Date().getFullYear());
+  const [color, setColor] = useState(options[0]);
+  const [labelImage, setLabelImage] = useState('');
   const [otherInfo, setOtherInfo] = useState('');
   const [sight, setSight] = useState('');
   const [nose, setNose] = useState('');
   const [palate, setPalate] = useState('');
   const [thoughts, setThoughts] = useState('');
   const [love, setLove] = useState(false);
+
+
+
+  const today = new Date();
+  const currentYear = today.getFullYear()
 
 
   const handleSubmit = async (e) => {
@@ -56,6 +77,10 @@ const TastingForm = () => {
     if (vintage < 1900 || vintage > today.getFullYear()) {
       validateErrors['vintage'] = `* Vintage required and must be between 1900 and current year (${today.getFullYear()})`
     };
+
+    if (color === options[0]) {
+      validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
+    }
     
     if (otherInfo) {
       if (otherInfo.length < 3 || otherInfo.length > 200) {
@@ -85,6 +110,8 @@ const TastingForm = () => {
         (region.length && region.trim().length === 0) ||
         (vineyard.length && vineyard.trim().length === 0) ||
         (varietal.length && varietal.trim().length === 0) ||
+        (color.length && color.trim().length === 0) ||
+        (labelImage.length && labelImage.trim().length === 0) ||
         (otherInfo.length && otherInfo.trim().length === 0) ||
         (sight.length && sight.trim().length === 0) ||
         (nose.length && nose.trim().length === 0) ||
@@ -105,6 +132,8 @@ const TastingForm = () => {
       vineyard,
       varietal,
       vintage,
+      color,
+      labelImage,
       otherInfo,
       sight,
       nose,
@@ -142,6 +171,14 @@ const TastingForm = () => {
 
   const updateVintage = (e) => {
     setVintage(e.target.value);
+  };
+
+  const updateColor = (e) => {
+    setColor(e.target.value);
+  };
+
+  const updateLabelImage = (e) => {
+    setLabelImage(e.target.value);
   };
 
   const updateOtherInfo = (e) => {
@@ -248,7 +285,33 @@ const TastingForm = () => {
                 name='vintage'
                 onChange={updateVintage}
                 placeholder='Vintage'
+                min='1900'
+                max={currentYear}
                 value={vintage}
+                ></input> 
+              </div>
+              <div>
+                  {errors?.colors !== undefined && <div className='error'>
+                    <div className='errors'>{errors.colors}</div>
+                  </div>
+                  }
+                <select className='selection_info_input' onChange={updateColor} value={color}>
+                  {options.map(option =>
+                    <option key={option.value}>{option.value}</option>
+                    )}
+                </select>
+              </div>
+              <div>
+                {errors?.labelImage !== undefined && <div className='error'>
+                  <div className='errors'>{errors.labelImage}</div>
+                </div>
+                }
+                <input className='info_input'
+                type='text'
+                name='labelImage'
+                onChange={updateLabelImage}
+                placeholder='URL Of Wine Label Image'
+                value={labelImage}
                 ></input> 
               </div>
               <div>
