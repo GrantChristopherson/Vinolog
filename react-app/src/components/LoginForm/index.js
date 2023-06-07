@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import { login } from '../../store/session';
 import './loginForm.css'
 
@@ -80,7 +80,7 @@ const LoginForm = () => {
   return (
     <div className='login_form'>
       <div className='login_header_container'>
-        <h1 className='login_header'>Login</h1>
+        <h1 className='login_header'>Login to Vinolog</h1>
       </div>
       <form className='card_form' onSubmit={onLogin}>
          {/* <div className='error_messages'>
@@ -115,13 +115,24 @@ const LoginForm = () => {
             onChange={updatePassword}
           />
           <span className='bar'></span>
-          <div className='login_buttons'>
-            <button className='login_demo' onClick={demoUser}>
-              <span>Demo Vinolog</span>
-            </button>
+          <div className='login_inputs'>
             <button className='login_login' type='submit'>
               <span>Login</span>
             </button>
+            <div className='signup_demo'>
+              <span className='switch'>
+                Don't have an account? 
+              </span>
+              <div className='links_wrapper'>
+                <NavLink to='/sign-up' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+                  <h4 className ='switch_to_signup' >Sign Up</h4>
+                </NavLink>
+                <h6 className='or' >or</h6>
+                <button className='login_demo' onClick={demoUser}>
+                  <h4 className='demo_site'>Demo Site</h4>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </form>
@@ -131,3 +142,4 @@ const LoginForm = () => {
 
 
 export default LoginForm;
+

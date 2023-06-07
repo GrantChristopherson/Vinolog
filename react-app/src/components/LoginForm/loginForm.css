@@ -38,7 +38,7 @@
   margin-top: 20px;
 }
 
-.input_container .bar {
+/* .input_container .bar {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -60,7 +60,7 @@
 
 .input_container>input:focus+.bar::before {
   transform: scaleX(1);
-}
+} */
 
 .card_input {
   display: block;
@@ -85,43 +85,15 @@
   outline: none;
 }
 
-.login_buttons {
+.login_inputs {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 60px;
-}
-
-.login_demo {
-  margin: 0 20px;
-  padding: 5px 0px;
   height: 40px;
-  width: 160px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.075);
-  color: rgb(103, 10, 21);
-  border: 0;
-}
-
-.login_demo:hover {
-  background-color: rgb(198 192 163);
-  color: rgba(103, 10, 21, 1);
-  cursor: pointer;
-  transition-duration: 300ms;
 }
 
 .login_login {
-  /* margin: 0 20px;
-  padding: 5px 40px;
-  height: 40px;
-  width: 160px;
-  border-radius: 30px;
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.075);
-  color: rgb(198 192 163); */
-  /* border: 0; */
-  margin: 0 20px;
+  margin: 0;
   padding: 5px 40px;
   height: 40px;
   width: 160px;
@@ -139,7 +111,67 @@
   cursor: pointer;
   transition-duration: 300ms;
 }
-/* background-color: rgb(103, 10, 21);
-  color: rgb(198 192 163);
+
+.signup_demo {
+  /* display: flex;
+  justify-content: right;
+  align-items: column; */
+}
+
+.switch {
+  display: flex;
+  justify-content: right;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
+  padding-right: 0;
+  margin-bottom: 5px;
+}
+
+.links_wrapper {
+  display: flex;
+  align-items: row;
+  justify-content: space-between;
+  margin-top: 0;
+  padding: 0;
+}
+
+.switch_to_signup {
+  margin: 0 2px 0 0;
+  padding: 0;
+  font-size: 16px;
+  color: rgba(103, 10, 21, 1);
+  font-weight: bold;
+}
+
+.switch_to_signup:hover {
+  color: rgba(103, 10, 21, .7);
+  text-decoration: underline;
+  transition-duration: 300ms;
+}
+
+.or {
+  margin: 2px 0 0 2px; 
+  padding: 0 5px;
+}
+
+.login_demo {
+  margin: 0;
+  font-size: 16px;
+  /* font-weight: bold; */
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(103, 10, 21);
+  border: 0;
+  padding-right: 0;
+}
+
+.login_demo:hover {
+  color: rgba(103, 10, 21, .7);
+  text-decoration: underline;
   cursor: pointer;
-  transition-duration: 300ms; */
+  transition-duration: 300ms;
+}
+
+.demo_site {
+  font-weight: 300;
+  margin: 0;
+}
