@@ -12,7 +12,7 @@ const SignUpPage = () => {
   return (
     <>
       <Navigation />
-      <div className='splash_body'>
+      <div className='splash_body_login'>
         <SignUpForm />
       </div>
       <Footer />
