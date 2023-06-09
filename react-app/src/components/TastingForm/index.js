@@ -391,7 +391,7 @@ const TastingForm = () => {
               </div>
               <div className='submit_cancel_container'>
                 <button  className='submit_tasting'>Submit</button>
-                <NavLink to='/home' className={'my_home'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+                <NavLink to='/lovedtastings' className={'my_home'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
                   Cancel
                 </NavLink> 
               </div>
