@@ -32,6 +32,7 @@ const MyTastingFeed = () => {
       <div className="my-feed-container">
         {userTastings?.map((tasting) => {return (
         <div key={tasting.id} className="my-tasting-container">
+          <img className="tasting-image-label" src={tasting.labelImage}/>
           <TastingCard tasting={tasting}/>
         </div>
         )}).reverse()}
