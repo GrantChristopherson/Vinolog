@@ -38,6 +38,7 @@ const AllLovedFeed = () => {
       <div className="loved_feed_container">
         {lovedWineTastings?.map((tasting) => {return (
         <div key={tasting?.id} className="loved_tasting_container">
+          <img className="loved-tasting-image-label" src={tasting.labelImage}/>
           <LovedTastingCard tasting={tasting} friendIdList={friendIdList}/>
         </div>
         )}).reverse()}
