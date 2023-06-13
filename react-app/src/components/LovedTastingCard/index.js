@@ -36,6 +36,7 @@ const LovedTastingCard = ({tasting, friendIdList}) => {
   return (
     <div className='loved_tasting_card'>
       <div className='loved_tasting_info'>
+        {/* <img className="loved-tasting-image-label" src={tasting.labelImage}/> */}
         <div className='user_info_container' onClick={() => setShowBio(!showBio)}>
           {tasting?.user?.username === user?.username ? <h5 className='my_header'>My tasting</h5> :
           <h5 className='user_header'>{tasting?.user?.username}'s tasting</h5>}

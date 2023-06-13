@@ -3,7 +3,7 @@
 
 } */
 
-.create_tasting_container {
+/* .create_tasting_container {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -12,29 +12,30 @@
   right: 0;
   bottom: 0;
   margin: 0;
-  /* padding: 0 20px 200px 0; */
+  
   height: 1440px;
   width: 100%;
   background-color: rgba(156, 108, 39, 0.1);
-}
+} */
 
-/* .create-tasting-container {
+.create_tasting_container {
   display: grid;
-  backdrop-filter: blur(60px);
+  background-color: white;
   position: fixed;
   width: 40%;
   min-width: 550px;
   padding: 50px;
-  margin-bottom: 525px;
-  border-radius: 8px;
+  margin: 100px 600px;
+  border-radius: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-} */
+  z-index: 1;
+}
 
 
-.create_form {
+/* .create_form {
   height: 100%;
   width: 50%;
   background-color: rgba(39, 39, 38, 0.2);
@@ -44,7 +45,7 @@
   border-color: rgb(39, 39, 38);
   border-top: none;
   border-bottom: none;
-}
+} */
 
 .tasting_input_container {
   margin: 0;
