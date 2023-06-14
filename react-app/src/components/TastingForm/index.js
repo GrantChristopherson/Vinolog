@@ -19,7 +19,7 @@ const TastingForm = () => {
 
 
   const options = [
-    { value: 'Select Color...', label: 'Select Color...' },
+    { value: 'Select The Style Of Wine...', label: 'Select The Style Of Wine...' },
     { value: 'Red', label: 'Red' },
     { value: 'White', label: 'White' },
     { value: 'Rose', label: 'Rosé' },
