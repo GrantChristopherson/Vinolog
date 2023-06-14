@@ -217,184 +217,182 @@ const TastingForm = () => {
         <Sidebar />
         <div className='create_tasting_container'>
           <form className='create_form' onSubmit={handleSubmit}>
-            <div className='tasting_input_container'>
             <h2 className='tasting_header'>Tasting Notes</h2>
-              <div>
-                {errors?.spacing !== undefined && <div className='error'>
-                  <div className='errors'>{errors.spacing}</div>
+            <div className='tasting_input_container'>
+              {errors?.spacing !== undefined && <div className='error'>
+                <div className='errors'>{errors.spacing}</div>
+              </div>
+              }
+              {errors?.producer !== undefined && <div className='error'>
+                <div className='errors'>{errors.producer}</div>
+              </div>
+              }
+              <input className='info_input'
+              type='text'
+              name='producer'
+              onChange={updateProducer}
+              placeholder='Producer'
+              value={producer}
+              ></input>
+            </div >
+            <div className='tasting_input_container'>
+              {errors?.region !== undefined && <div className='error'>
+                <div className='errors'>{errors.region}</div>
+              </div>
+              }
+              <input className='info_input'
+              type='text'
+              name='region'
+              onChange={updateRegion}
+              placeholder='Region'
+              value={region}
+              ></input> 
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.vineyard !== undefined && <div className='error'>
+                <div className='errors'>{errors.vineyard}</div>
+              </div>
+              }
+              <input className='info_input'
+              type='text'
+              name='vineyard'
+              onChange={updateVineyard}
+              placeholder='Vineyard'
+              value={vineyard}
+              ></input> 
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.varietal !== undefined && <div className='error'>
+                <div className='errors'>{errors.varietal}</div>
+              </div>
+              }
+              <input className='info_input'
+              type='text'
+              name='varietal'
+              onChange={updateVarietal}
+              placeholder='Varietal / Type'
+              value={varietal}
+              ></input>
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.vintage !== undefined && <div className='error'>
+                <div className='errors'>{errors.vintage}</div>
+              </div>
+              }
+              <input className='info_input'
+              type='number'
+              name='vintage'
+              onChange={updateVintage}
+              placeholder='Vintage'
+              min='1900'
+              max={currentYear}
+              value={vintage}
+              ></input> 
+            </div>
+            <div className='tasting_input_container'>
+                {errors?.colors !== undefined && <div className='error'>
+                  <div className='errors'>{errors.colors}</div>
                 </div>
                 }
-                {errors?.producer !== undefined && <div className='error'>
-                  <div className='errors'>{errors.producer}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='producer'
-                onChange={updateProducer}
-                placeholder='Producer'
-                value={producer}
-                ></input>
+              <select className='selection_info_input' onChange={updateColor} value={color}>
+                {options.map(option =>
+                  <option key={option.value}>{option.value}</option>
+                  )}
+              </select>
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.labelImage !== undefined && <div className='error'>
+                <div className='errors'>{errors.labelImage}</div>
               </div>
-              <div>
-                {errors?.region !== undefined && <div className='error'>
-                  <div className='errors'>{errors.region}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='region'
-                onChange={updateRegion}
-                placeholder='Region'
-                value={region}
-                ></input> 
+              }
+              <input className='info_input'
+              type='text'
+              name='labelImage'
+              onChange={updateLabelImage}
+              placeholder='URL Of Wine Label Image'
+              value={labelImage}
+              ></input> 
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.otherInfo !== undefined && <div className='error'>
+                <div className='errors'>{errors.otherInfo}</div>
               </div>
-              <div>
-                {errors?.vineyard !== undefined && <div className='error'>
-                  <div className='errors'>{errors.vineyard}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='vineyard'
-                onChange={updateVineyard}
-                placeholder='Vineyard'
-                value={vineyard}
-                ></input> 
+              }
+              <input className='info_input'
+              type='text'
+              name='otherInfo'
+              onChange={updateOtherInfo}
+              placeholder='Additional Information...'
+              value={otherInfo}
+              ></input> 
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.sight !== undefined && <div className='error'>
+                <div className='errors'>{errors.sight}</div>
               </div>
-              <div>
-                {errors?.varietal !== undefined && <div className='error'>
-                  <div className='errors'>{errors.varietal}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='varietal'
-                onChange={updateVarietal}
-                placeholder='Varietal / Type'
-                value={varietal}
-                ></input>
+              }
+              <input className='info_input'
+              type='text'
+              name='sight'
+              onChange={updateSight}
+              placeholder='Sight'
+              value={sight}
+              ></input>
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.nose !== undefined && <div className='error'>
+                <div className='errors'>{errors.nose}</div>
               </div>
-              <div>
-                {errors?.vintage !== undefined && <div className='error'>
-                  <div className='errors'>{errors.vintage}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='number'
-                name='vintage'
-                onChange={updateVintage}
-                placeholder='Vintage'
-                min='1900'
-                max={currentYear}
-                value={vintage}
-                ></input> 
+              }
+              <input className='info_input'
+              type='text'
+              name='nose'
+              onChange={updateNose}
+              placeholder='Nose'
+              value={nose}
+              ></input> 
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.palate !== undefined && <div className='error'>
+                <div className='errors'>{errors.palate}</div>
               </div>
-              <div>
-                  {errors?.colors !== undefined && <div className='error'>
-                    <div className='errors'>{errors.colors}</div>
-                  </div>
-                  }
-                <select className='selection_info_input' onChange={updateColor} value={color}>
-                  {options.map(option =>
-                    <option key={option.value}>{option.value}</option>
-                    )}
-                </select>
+              }
+              <input className='info_input'
+              type='text'
+              name='palate'
+              onChange={updatePalate}
+              placeholder='Palate'
+              value={palate}
+              ></input> 
+            </div>
+            <div className='tasting_input_container'>
+              {errors?.thoughts !== undefined && <div className='error'>
+                <div className='errors'>{errors.thoughts}</div>
               </div>
-              <div>
-                {errors?.labelImage !== undefined && <div className='error'>
-                  <div className='errors'>{errors.labelImage}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='labelImage'
-                onChange={updateLabelImage}
-                placeholder='URL Of Wine Label Image'
-                value={labelImage}
-                ></input> 
-              </div>
-              <div>
-                {errors?.otherInfo !== undefined && <div className='error'>
-                  <div className='errors'>{errors.otherInfo}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='otherInfo'
-                onChange={updateOtherInfo}
-                placeholder='Additional Information...'
-                value={otherInfo}
-                ></input> 
-              </div>
-              <div>
-                {errors?.sight !== undefined && <div className='error'>
-                  <div className='errors'>{errors.sight}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='sight'
-                onChange={updateSight}
-                placeholder='Sight'
-                value={sight}
-                ></input>
-              </div>
-              <div>
-                {errors?.nose !== undefined && <div className='error'>
-                  <div className='errors'>{errors.nose}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='nose'
-                onChange={updateNose}
-                placeholder='Nose'
-                value={nose}
-                ></input> 
-              </div>
-              <div>
-                {errors?.palate !== undefined && <div className='error'>
-                  <div className='errors'>{errors.palate}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='palate'
-                onChange={updatePalate}
-                placeholder='Palate'
-                value={palate}
-                ></input> 
-              </div>
-              <div>
-                {errors?.thoughts !== undefined && <div className='error'>
-                  <div className='errors'>{errors.thoughts}</div>
-                </div>
-                }
-                <input className='info_input'
-                type='text'
-                name='thoughts'
-                onChange={updateThoughts}
-                placeholder='Additional thoughts...'
-                value={thoughts}
-                ></input>
-              </div>
-              <div className='love_container'>
-                <label className='love_label'>Love the wine?</label>
-                <input className='love_input'
-                  type="checkbox"
-                  value={love}
-                  name='love'
-                  checked={love === true}
-                  onChange={handleClick}
-                />
-              </div>
-              <div className='submit_cancel_container'>
-                <button  className='submit_tasting'>Submit</button>
-                <NavLink to='/lovedtastings' className={'my_home'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-                  Cancel
-                </NavLink> 
-              </div>
+              }
+              <input className='info_input'
+              type='text'
+              name='thoughts'
+              onChange={updateThoughts}
+              placeholder='Additional thoughts...'
+              value={thoughts}
+              ></input>
+            </div>
+            <div className='love_container'>
+              <label className='love_label'>Love the wine?</label>
+              <input className='love_input'
+                type="checkbox"
+                value={love}
+                name='love'
+                checked={love === true}
+                onChange={handleClick}
+              />
+            </div>
+            <div className='submit_cancel_container'>
+              <button  className='submit_tasting'>Submit</button>
+              <NavLink to='/lovedtastings' className={'my_home'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+                Cancel
+              </NavLink> 
             </div>
           </form>
         </div>
