@@ -279,7 +279,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.vintage}</div>
               </div>
               }
-              <input className='info_input'
+              <input className='selection_info_input'
               type='number'
               name='vintage'
               onChange={updateVintage}
@@ -390,8 +390,8 @@ const TastingForm = () => {
             </div>
             <div className='submit_cancel_container'>
               <button  className='submit_tasting'>Submit</button>
-              <NavLink to='/lovedtastings' className={'my_home'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-                Cancel
+              <NavLink to='/lovedtastings' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+                <h4 className ='cancel_tasting' >Cancel</h4>
               </NavLink> 
             </div>
           </form>
