@@ -19,7 +19,7 @@ const TastingForm = () => {
 
 
   const options = [
-    { value: 'Select The Style Of Wine...', label: 'Select The Style Of Wine...' },
+    { value: 'Select the Style of Wine...', label: 'Select the Style of Wine...' },
     { value: 'Red', label: 'Red' },
     { value: 'White', label: 'White' },
     { value: 'Rose', label: 'Rosé' },
@@ -309,7 +309,7 @@ const TastingForm = () => {
               type='text'
               name='labelImage'
               onChange={updateLabelImage}
-              placeholder='URL Of Wine Label Image'
+              placeholder='URL of Wine Label Image'
               value={labelImage}
               ></input> 
             </div>
@@ -374,7 +374,7 @@ const TastingForm = () => {
               type='text'
               name='thoughts'
               onChange={updateThoughts}
-              placeholder='Additional thoughts...'
+              placeholder='Additional Thoughts...'
               value={thoughts}
               ></input>
             </div>
