@@ -38,12 +38,12 @@ const TastingCard = ({tasting}) => {
         </div>
       </div>
       <div className="edit-delete-container">
+        <NavLink to='/tasting/edit' exact={true} tasting={{tasting}} activeClassName='active' >
+          <button className='edit_tasting' >Edit</button>
+        </NavLink>
         <div>
           {showInfo && <button className='delete-button'onClick={deleteHandler}>Delete</button>}
         </div>
-        <NavLink to='/tasting/edit' className={'edit_tasting'} exact={true} tasting={{tasting}} activeClassName='active' style={{textDecoration: 'none'}}>
-          Edit
-        </NavLink>
       </div>
     </div>
   );
