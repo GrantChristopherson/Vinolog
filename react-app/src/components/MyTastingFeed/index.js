@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import TastingCard from "../TastingCard";
 import Navigation from "../Navigation";
 import Sidebar from "../Sidebar";
@@ -32,7 +34,8 @@ const MyTastingFeed = () => {
       <div className="my-feed-container">
         {userTastings?.map((tasting) => {return (
         <div key={tasting.id} className="my-tasting-container">
-          <img className="tasting-image-label" src={tasting.labelImage}/>
+          {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage}/> 
+          : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image faWineGlassEmpty' /></div>}
           <TastingCard tasting={tasting}/>
         </div>
         )}).reverse()}

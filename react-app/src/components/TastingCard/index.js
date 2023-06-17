@@ -20,9 +20,6 @@ const TastingCard = ({tasting}) => {
   return (
     <div className='tasting-container'>
       <div className='tasting-info-container' onClick={() => setShowInfo(!showInfo)}>
-        <div className='wine-label-image'>
-          {/* {tasting.labelImage} */}
-        </div>
         <div className='wine-info'>
           <h2>{tasting?.vintage} {tasting?.producer}</h2>
           <h3>{tasting?.varietal}</h3>
