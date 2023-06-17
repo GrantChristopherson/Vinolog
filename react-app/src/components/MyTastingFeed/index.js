@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import TastingCard from "../TastingCard";
 import Navigation from "../Navigation";
 import Sidebar from "../Sidebar";
@@ -11,7 +9,7 @@ import './myTastingFeed.css';
 
 
 // tasting card feeds styling and components modified to be more dynamic, tiled and with images
-// modify user seed data to include images and ability to add images url, aws later
+// aws later
 
 const MyTastingFeed = () => {
 
@@ -33,10 +31,10 @@ const MyTastingFeed = () => {
       <Sidebar user={user} />
       <div className="my-feed-container">
         {userTastings?.map((tasting) => {return (
-        <div key={tasting.id} className="my-tasting-container">
+        <div key={tasting.id} className="my-tasting-container" >
           {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage}/> 
           : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image faWineGlassEmpty' /></div>}
-          <TastingCard tasting={tasting}/>
+          <TastingCard tasting={tasting} />
         </div>
         )}).reverse()}
       </div>
