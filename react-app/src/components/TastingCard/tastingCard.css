@@ -1,8 +1,10 @@
 .tasting-container {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   margin: 0;
   padding: 20px 20px 30px 20px;
+  min-height: 300px;
   background-color: rgba(39, 39, 38, 0.2);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -12,13 +14,28 @@
 }
 
 .wine-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   color: rgb(192, 192, 176);
 }
 
+.tasting-card-header {
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 0;
+}
+
+.loved-wine-heart {
+  color: #DF6A72;
+}
+
+.tasting-info-container {
+background-color: rgba(0 0 0 0);
+}
+
 .extra-wine-info {
-  /* display: flex;
-  justify-content: space-between;
-  margin: 0 100px; */
   color: rgba(192, 192, 176, .6);
 }
 
@@ -30,6 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: bcenter;
   flex-direction: column;
   margin: 10px 0;
 }
@@ -67,75 +85,3 @@
   cursor: pointer;
   transition-duration: 300ms;
 }
-
-/* .wine-label-image {
-  height: 300px;
-  border-bottom: 1px black;
-} */
-
-/* .tasting-info-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 80 px;
-  cursor: pointer;
-}
-
-.wine-info {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 100px 0 100px;
-  color: rgb(243, 218, 201);
-}
-
-.extra-wine-info {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 100px;
-  color: rgb(243, 218, 201);
-}
-
-.tasting-info {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 180px;
-  color: rgb(192, 192, 176);
-}
-
-.edit-delete-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.delete-button {
-  background-color: transparent;
-  color: rgb(243, 218, 201);
-  border: 0;
-}
-
-.delete-button:hover {
-  background-color: #a32632;
-  color: rgb(243, 218, 201);
-  border-radius: 15px;
-  transition-duration: 300ms;
-  cursor: pointer;
-}
-
-.edit_tasting {
-  margin: 1px 20px;
-  padding: 1px 20px;
-  height: 20px;
-  border-radius: 20px;
-  background-color: rgb(103, 10, 21);
-  font-size: 14px;
-  font-weight: bold;
-  color: #FFF3C4;
-  border: 0;
-}
-
-.edit_tasting:hover {
-  background-color: #FFF3C4;
-  color: rgb(103, 10, 21);
-  cursor: pointer;
-  transition-duration: 300ms;
-} */
