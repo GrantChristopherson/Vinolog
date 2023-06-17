@@ -79,6 +79,8 @@ export const createTastingThunk = (tasting) => async(dispatch) => {
       vineyard: tasting.vineyard,
       varietal: tasting.varietal,
       vintage: tasting.vintage,
+      color: tasting.color,
+      label_image: tasting.labelImage,
       other_info: tasting.otherInfo,
       sight: tasting.sight,
       nose: tasting.nose,

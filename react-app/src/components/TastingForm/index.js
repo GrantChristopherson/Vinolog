@@ -44,6 +44,7 @@ const TastingForm = () => {
   const [palate, setPalate] = useState('');
   const [thoughts, setThoughts] = useState('');
   const [love, setLove] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
 
 
@@ -125,6 +126,7 @@ const TastingForm = () => {
     if (Object.keys(validateErrors).length) {
       return;
     };
+
     
     const tasting = {
       producer,
@@ -141,6 +143,8 @@ const TastingForm = () => {
       thoughts,
       love
     };
+    
+    setIsSubmitting(!isSubmitting)
 
     let data = dispatch(createTastingThunk(tasting));
     if (data) {
@@ -150,9 +154,6 @@ const TastingForm = () => {
     
       
   
-    
-
-
   const updateProducer = (e) => {
     setProducer(e.target.value);
   };
@@ -216,7 +217,7 @@ const TastingForm = () => {
       <div className='tasting_body'>
         <Sidebar />
         <div className='create_tasting_container'>
-          <form className='create_form' onSubmit={handleSubmit}>
+          <form className='create_form' onSubmit={handleSubmit} >
             <h2 className='tasting_header'>Tasting Notes</h2>
             <div className='tasting_input_container'>
               {errors?.spacing !== undefined && <div className='error'>
@@ -389,7 +390,7 @@ const TastingForm = () => {
               />
             </div>
             <div className='submit_cancel_container'>
-              <button  className='submit_tasting'>Submit</button>
+              {!isSubmitting && <button  className='submit_tasting' >Submit</button>}
               <NavLink to='/lovedtastings' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
                 <h4 className ='cancel_tasting' >Cancel</h4>
               </NavLink> 
