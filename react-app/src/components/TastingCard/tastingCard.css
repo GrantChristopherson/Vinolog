@@ -11,6 +11,26 @@
   border-color: rgb(39, 39, 38);
 }
 
+.wine-info {
+  color: rgb(192, 192, 176);
+}
+
+.extra-wine-info {
+  /* display: flex;
+  justify-content: space-between;
+  margin: 0 100px; */
+  color: rgba(192, 192, 176, .6);
+}
+
+.tasting-info {
+  color: rgba(192, 192, 176, .6);
+}
+
+.edit-delete-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* .wine-label-image {
   height: 300px;
   border-bottom: 1px black;

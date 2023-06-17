@@ -1,14 +1,13 @@
 .my-feed-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-gap: 75px;
-  margin: 0 9% 0 10%;
+  grid-gap: 100px;
+  margin: 0 12%;
   padding: 150px 0 300px 200px;
 }
 
 .my-tasting-container {
   background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   cursor: pointer;
 }
@@ -18,4 +17,19 @@
   max-width: 100%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+}
+
+.default-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  max-width: 100%;
+}
+
+.default-wine-image {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: rgb(103, 10, 21);
+  font-size: 250px;
 }
