@@ -43,9 +43,9 @@ const LovedTastingCard = ({tasting, friendIdList}) => {
           <div className='profile_image_container'>
             {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile image'/>
             : <i className='fa-solid fa-user default-profile-image' />}
+            {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
+            <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
           </div>
-          {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
-          <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
           <div className='friending_container'>
             {tasting?.user?.id !== user?.id  && !isInFriend ? <h6 className='friend_button' onClick={friendHandler}>+</h6> : <></> }
             {isInFriend && tasting?.user?.id !== user?.id ? <h6 className='current_friend'>Friend In Your Field</h6> : <></>}
