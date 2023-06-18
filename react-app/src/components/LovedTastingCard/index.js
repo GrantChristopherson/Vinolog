@@ -46,8 +46,6 @@ const LovedTastingCard = ({tasting, friendIdList}) => {
           </div>
           {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
           <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
-          {/* {tasting?.user?.id !== user?.id  && !isInFriend ? <h6 className='friend_button' onClick={friendHandler}>Add Friend</h6> : <></> }
-          {isInFriend && tasting?.user?.id !== user?.id ? <h6 className='current_friend'>Friend In Your Field</h6> : <></>} */}
           <div className='friending_container'>
             {tasting?.user?.id !== user?.id  && !isInFriend ? <h6 className='friend_button' onClick={friendHandler}>+</h6> : <></> }
             {isInFriend && tasting?.user?.id !== user?.id ? <h6 className='current_friend'>Friend In Your Field</h6> : <></>}
