@@ -1,6 +1,6 @@
 .my-feed-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 375px));
   grid-gap: 100px;
   margin: 0 12%;
   padding: 150px 0 300px 200px;

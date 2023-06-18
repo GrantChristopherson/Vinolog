@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllLovedTastingsThunk } from '../../store/tasting';
+import { getMyFieldThunk } from '../../store/friends';
 import LovedTastingCard from "../LovedTastingCard";
 import Navigation from "../Navigation";
 import Sidebar from '../Sidebar';
 import Footer from "../Footer";
 import './lovedFeed.css';
 
-import { getMyFieldThunk } from '../../store/friends';
 
 
-// move loved wines to home page as a landing to remove emptiness of site.
 
 const AllLovedFeed = () => {
 
@@ -28,7 +27,7 @@ const AllLovedFeed = () => {
       await dispatch(getAllLovedTastingsThunk());
       await dispatch(getMyFieldThunk(user.id));
     })();
-  }, [dispatch]);
+  }, [dispatch, user.id]);
 
 
   return (
@@ -38,7 +37,8 @@ const AllLovedFeed = () => {
       <div className="loved_feed_container">
         {lovedWineTastings?.map((tasting) => {return (
         <div key={tasting?.id} className="loved_tasting_container">
-          <img className="loved-tasting-image-label" src={tasting.labelImage}/>
+          {tasting.labelImage ? <img className="loved-tasting-image-label" src={tasting.labelImage} alt='wine label'/>
+          : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
           <LovedTastingCard tasting={tasting} friendIdList={friendIdList}/>
         </div>
         )}).reverse()}
