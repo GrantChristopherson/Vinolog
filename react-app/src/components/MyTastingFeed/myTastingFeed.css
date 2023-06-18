@@ -7,14 +7,15 @@
 }
 
 .my-tasting-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   cursor: pointer;
 }
 
 .tasting-image-label {
-  display: flex;
-  justify-self: center;
   height: 300px;
   max-width: 100%;
   border-top-left-radius: 30px;
