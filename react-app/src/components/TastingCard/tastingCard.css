@@ -5,12 +5,16 @@
   margin: 0;
   padding: 20px 20px 30px 20px;
   min-height: 300px;
-  background-color: rgba(39, 39, 38, 0.2);
+  background-color: rgba(39, 39, 38, 0.35);
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   border-top-style: solid;
   border-width: 1px;
   border-color: rgb(39, 39, 38);
+}
+
+.tasting-info-container {
+  cursor: pointer;
 }
 
 .wine-info {
@@ -37,6 +41,10 @@ background-color: rgba(0 0 0 0);
 
 .extra-wine-info {
   color: rgba(192, 192, 176, .6);
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 .tasting-info {

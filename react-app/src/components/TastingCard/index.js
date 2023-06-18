@@ -27,17 +27,17 @@ const TastingCard = ({tasting}) => {
           <h4 >{tasting?.varietal}</h4>
           {tasting?.love && <i className='fa-solid fa-heart loved-wine-heart' />}
         </div>
-        <div className='extra-wine-info'>
-          {showInfo && <h4>{tasting?.region}</h4>}
-          {showInfo && <h4>{tasting?.vineyard}</h4>}
-          {showInfo && <h4>{tasting?.other_info}</h4>}
-        </div>
-        <div className='tasting-info'>
-          {showInfo && <h4>Sight :   {tasting?.sight}</h4>}
-          {showInfo && <h4>Nose :   {tasting?.nose}</h4>}
-          {showInfo && <h4>Palate :   {tasting?.palate}</h4>}
-          {showInfo && <h4>My Thoughts :   {tasting?.thoughts}</h4>}
-        </div>
+        {showInfo && <div className='extra-wine-info'>
+          <h4>{tasting?.region}</h4>
+          <h4>{tasting?.vineyard}</h4>
+          <h4>{tasting?.other_info}</h4>
+        </div>}
+        {showInfo && <div className='tasting-info'>
+          <h5>SIGHT  :   {tasting?.sight}</h5>
+          <h5>NOSE  :   {tasting?.nose}</h5>
+          <h5>PALATE  :   {tasting?.palate}</h5>
+          <h5>MY THOUGHTS  :  {tasting?.thoughts}</h5>
+        </div>}
       </div>
       <div className="edit-delete-container">
         <NavLink to='/tasting/edit' exact={true} tasting={{tasting}} activeClassName='active' >

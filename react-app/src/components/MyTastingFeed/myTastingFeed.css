@@ -9,17 +9,17 @@
 .my-tasting-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 30px;
-  cursor: pointer;
 }
 
 .tasting-image-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 300px;
   max-width: 100%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .default-image-container {
@@ -28,6 +28,9 @@
   align-items: center;
   height: 300px;
   max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .default-wine-image {
