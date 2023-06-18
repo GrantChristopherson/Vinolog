@@ -35,16 +35,12 @@
   color: #DF6A72;
 }
 
-.tasting-info-container {
-background-color: rgba(0 0 0 0);
-}
-
 .extra-wine-info {
-  color: rgba(192, 192, 176, .6);
   border-top-style: solid;
   border-bottom-style: solid;
   border-color: black;
   border-width: 1px;
+  color: rgba(192, 192, 176, .6);
 }
 
 .tasting-info {
@@ -55,7 +51,6 @@ background-color: rgba(0 0 0 0);
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: bcenter;
   flex-direction: column;
   margin: 10px 0;
 }
