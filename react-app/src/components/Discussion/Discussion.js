@@ -38,7 +38,7 @@ const Discussion = ({ discussionTasting, setShowDiscussion }) => {
       {lovedTastingComments?.map((comment) => {  
         return (
           <div key={comment?.id} className="commentcontainer">
-            <div className="comment">
+            <div key={comment?.id} className="comment">
               {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
                 <Comment key={filteredUser.id} comment={comment} filteredUser={filteredUser} discussionTasting={discussionTasting} user={user} />
               ))}

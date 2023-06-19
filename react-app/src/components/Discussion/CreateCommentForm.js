@@ -30,12 +30,12 @@ const CreateCommentForm = ({ discussionTasting }) => {
       setErrors(validateErrors);
       return;
     }
+    
     const data = {
       comment
     };
     
-
-    await dispatch(createCommentThunk(data, discussionTasting.id))
+    await dispatch(createCommentThunk(data, discussionTasting[0].id))
     await dispatch(getCommentsThunk());
     
    

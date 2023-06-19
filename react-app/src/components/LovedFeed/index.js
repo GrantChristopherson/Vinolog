@@ -18,17 +18,13 @@ const AllLovedFeed = () => {
   const dispatch = useDispatch();
   const lovedWineTastings = useSelector(state => state?.tastings.lovedTastings);
   const user = useSelector((state) => state?.session?.user);
-  // const friendList = useSelector(state => state.fields.friends)
 
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [tastingId, setTastingId] = useState()
-  // let friendIdList = friendList.map(user => user.id)
+  
   let discussionTasting = lovedWineTastings.filter((tasting) => {
     return tasting.id === tastingId;
   })
-
-  console.log('discussionTasting=======', discussionTasting)
- 
 
   useEffect(() => {
     (async()=>{

@@ -17,10 +17,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
   const friendList = useSelector(state => state.fields.friends)
 
   const [showInfo, setShowInfo] = useState(false);
-  // const [showDiscussion, setShowDiscussion] = useState(false);
-  // const [showBio, setShowBio] = useState(false);
-  // const [isFriend, setIsFriend] = useState(false)
-
+  
   let friendIdList = friendList.map(user => user.id);
   let isInFriend = friendIdList.includes(tasting.user.id);
   
@@ -44,7 +41,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
       <div className='loved_tasting_info' onClick={() => setShowInfo(!showInfo)}>
         <div className='user_info_container' >
           <div className='profile_image_container'>
-            {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile image'/>
+            {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
             : <i className='fa-solid fa-user default-profile-image' />}
             {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
             <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}

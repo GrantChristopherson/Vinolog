@@ -11,7 +11,7 @@ const Comment = ({ comment, filteredUser, discussionTasting, user }) => {
 
   return (
     <div className='commentWrapper' key={filteredUser?.id}>
-      {comment?.user_id === user?.id && comment?.tasting_id === discussionTasting.id ?
+      {comment?.user_id === user?.id && comment?.tasting_id === discussionTasting[0].id ?
       <button className='editCommentButton' onClick={() => setShowEditCommentForm(!showEditCommentForm)}>Edit</button>: null}
       {showEditCommentForm && 
       comment?.user_id === user?.id && 
