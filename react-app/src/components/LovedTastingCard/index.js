@@ -10,7 +10,7 @@ import './lovedTastingCard.css';
 // tasting card feeds styling and components modified to be more dynamic, tiled and with images
 // modify user seed data to include images and ability to add images url, aws later
 
-const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion}) => {
+const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastingId}) => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
@@ -73,7 +73,10 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion}) => {
         </div>
       </div> 
       <div className='loved_user_input_container'>
-        <button className='discussion_toggle' onClick={() => setShowDiscussion(!showDiscussion)}>Discussion</button> 
+        <button className='discussion_toggle' onClick={() => {
+          setShowDiscussion(!showDiscussion)
+          setTastingId(tasting.id)
+          }}>Discussion</button> 
       </div>
     </div>
   );
