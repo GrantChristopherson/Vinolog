@@ -71,7 +71,7 @@ const EditCommentForm = ({ comment, user, discussionTasting, setShowEditCommentF
           ></input>
           <div className='editDeleteButtonWrapper'>
             <button className='editedCommentButton' type="submit" >Submit</button>
-            {comment?.user_id === user?.id && comment?.tasting_id === discussionTasting.id ?
+            {comment?.user_id === user?.id && comment?.tasting_id === discussionTasting[0].id ?
             <button className="deleteComment" onClick={commentDeleter(comment.id)}>Delete</button>  : null}
           </div>
         </div>
