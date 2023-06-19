@@ -13,7 +13,7 @@ const Discussion = ({ discussionTasting, setShowDiscussion }) => {
   const comments = useSelector((state) => (state?.discussion?.comments))
   const [users, setUsers] = useState([]);
 
-  const lovedTastingComments = comments.filter((comment) => comment.tasting_id === discussionTasting.id)
+  const lovedTastingComments = comments.filter((comment) => comment.tasting_id === discussionTasting[0].id)
 
   useEffect(() => {
     async function fetchData() {
@@ -34,15 +34,13 @@ const Discussion = ({ discussionTasting, setShowDiscussion }) => {
 
 
   return (
-    <div className='commentsOuterContainer'>
+    <div className='comment-outer-container'>
       {lovedTastingComments?.map((comment) => {  
         return (
-          <div key={comment?.id} className="commentcontainer">
-            <div key={comment?.id} className="comment">
-              {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
-                <Comment key={filteredUser.id} comment={comment} filteredUser={filteredUser} discussionTasting={discussionTasting} user={user} />
-              ))}
-            </div>     
+          <div key={comment?.id} >
+            {users?.filter(user => user?.id === comment?.user_id)?.map(filteredUser => (
+              <Comment key={filteredUser.id} comment={comment} filteredUser={filteredUser} discussionTasting={discussionTasting} user={user} />
+            ))}    
           </div>
         )
       }).reverse()} 
