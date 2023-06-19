@@ -6,7 +6,7 @@ flex-direction: row;
 .loved_feed_container {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(3, minmax(300px, 375px));
+  grid-template-columns: repeat(3, minmax(300px, 300px));
   grid-gap: 100px;
   margin: 0 0 0 12%;
   padding: 150px 0 300px 100px;
