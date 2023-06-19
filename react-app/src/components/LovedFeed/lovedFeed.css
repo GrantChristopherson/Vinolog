@@ -1,10 +1,15 @@
+.loved_feed_wrapper {
+display: flex;
+flex-direction: row;
+}
 
 .loved_feed_container {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(3, minmax(300px, 375px));
   grid-gap: 100px;
-  margin: 0 12%;
-  padding: 150px 0 300px 200px;
+  margin: 0 0 0 12%;
+  padding: 150px 0 300px 100px;
 }
 
 .loved_tasting_container {
@@ -39,4 +44,20 @@
   border-top-right-radius: 30px;
   color: rgb(103, 10, 21);
   font-size: 250px;
+}
+
+.discussion_wrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0, 1%, 0, 0;
+  padding: 5% 0 3% 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  width: 20%;
+  height: 100%;
 }

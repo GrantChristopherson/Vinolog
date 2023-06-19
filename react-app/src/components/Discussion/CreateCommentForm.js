@@ -5,7 +5,7 @@ import './createCommentForm.css';
 
 
 
-const CreateCommentForm = ({ tasting }) => {
+const CreateCommentForm = ({ discussionTasting }) => {
 
   const dispatch = useDispatch();
   const comments = useSelector((state) => (state?.discussion?.comments))
@@ -35,7 +35,7 @@ const CreateCommentForm = ({ tasting }) => {
     };
     
 
-    await dispatch(createCommentThunk(data, tasting.id))
+    await dispatch(createCommentThunk(data, discussionTasting.id))
     await dispatch(getCommentsThunk());
     
    
@@ -61,10 +61,12 @@ const CreateCommentForm = ({ tasting }) => {
             placeholder='Comment...'
             value={comment}
           ></input>
-          <button className='commentButton' type="submit" >Submit</button>
+          <div className='comment_buttons_container'>
+            <button className='commentButton' type="submit" >Submit</button>
+            <button className='cancelCreateButton' onClick={() => handleCancel()}>Clear</button>
+          </div>
         </div>
       </form>
-      <button className='cancelCreateButton' onClick={() => handleCancel()}>Clear</button>
     </div>
   );
 };
