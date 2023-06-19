@@ -1,6 +1,7 @@
 .loved_feed_wrapper {
 display: flex;
 flex-direction: row;
+min-width: 1350px;
 }
 
 .loved_feed_container {
@@ -11,6 +12,21 @@ flex-direction: row;
   margin: 0 12% 0 12%;
   padding: 150px 100px 300px 100px;
 }
+
+@media only screen and (max-width: 1900px)  {
+
+  .loved_feed_container {
+    grid-gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 1750px)  {
+  
+  .loved_feed_container {
+    grid-template-columns: repeat(2, minmax(300px, 300px));
+  }
+}
+  
 
 .loved_tasting_container {
   display: flex;
@@ -59,6 +75,7 @@ flex-direction: row;
   right: 0;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
   width: 20%;
+  min-width: 400px;
   height: 100%;
   border-left-style: solid;
   border-color: rgba(192, 192, 176, .8);
