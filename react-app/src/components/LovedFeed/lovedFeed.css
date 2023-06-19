@@ -8,8 +8,8 @@ flex-direction: row;
   align-items: center;
   grid-template-columns: repeat(3, minmax(300px, 300px));
   grid-gap: 100px;
-  margin: 0 0 0 12%;
-  padding: 150px 0 300px 100px;
+  margin: 0 12% 0 12%;
+  padding: 150px 100px 300px 100px;
 }
 
 .loved_tasting_container {
