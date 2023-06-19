@@ -24,7 +24,7 @@ const AllLovedFeed = () => {
   const [tastingId, setTastingId] = useState()
   // let friendIdList = friendList.map(user => user.id)
   let discussionTasting = lovedWineTastings.filter((tasting) => {
-    if (tasting.id === tastingId) return;
+    return tasting.id === tastingId;
   })
 
   console.log('discussionTasting=======', discussionTasting)
@@ -48,7 +48,7 @@ const AllLovedFeed = () => {
           <div key={tasting?.id} className="loved_tasting_container">
             {tasting.labelImage ? <img className="loved-tasting-image-label" src={tasting.labelImage} alt='wine label'/>
             : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
-            <LovedTastingCard tasting={tasting} showDiscussion={showDiscussion} setShowDiscussion={setShowDiscussion}/>
+            <LovedTastingCard tasting={tasting} showDiscussion={showDiscussion} setShowDiscussion={setShowDiscussion} setTastingId={setTastingId} />
           </div>
           )}).reverse()}
         </div>

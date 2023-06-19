@@ -51,6 +51,7 @@ const CreateCommentForm = ({ discussionTasting }) => {
 
   return (
     <div className='commentFormOuterContainer'>
+      <div className='discussion_wine_title'><h4>{discussionTasting[0].vintage} {discussionTasting[0].producer}</h4></div>
       <form onSubmit={handleSubmit} className='createCommentForm'>
         {errors.map((error, i) => (<div className="errors" key={i}>{error}</div>))}
         <div className='commentContainer'>
