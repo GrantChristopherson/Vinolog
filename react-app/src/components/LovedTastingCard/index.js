@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 // import { deleteTastingThunk } from '../../store/tasting';
 import { createFriendThunk } from '../../store/friends';
-import Discussion from '../Discussion/Discussion';
-import CreateCommentForm from '../Discussion/CreateCommentForm';
+// import Discussion from '../Discussion/Discussion';
+// import CreateCommentForm from '../Discussion/CreateCommentForm';
 import './lovedTastingCard.css';
 
 // tasting card feeds styling and components modified to be more dynamic, tiled and with images
 // modify user seed data to include images and ability to add images url, aws later
 
-const LovedTastingCard = ({tasting, friendIdList}) => {
+const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion}) => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
+  const friendList = useSelector(state => state.fields.friends)
+
   const [showInfo, setShowInfo] = useState(false);
-  const [showDiscussion, setShowDiscussion] = useState(false);
+  // const [showDiscussion, setShowDiscussion] = useState(false);
   // const [showBio, setShowBio] = useState(false);
   // const [isFriend, setIsFriend] = useState(false)
 
-  let isInFriend = friendIdList.includes(tasting.user.id)
+  let friendIdList = friendList.map(user => user.id);
+  let isInFriend = friendIdList.includes(tasting.user.id);
   
   const upperCasedName = (userName) => {
     return userName.toUpperCase();
@@ -71,12 +74,6 @@ const LovedTastingCard = ({tasting, friendIdList}) => {
       </div> 
       <div className='loved_user_input_container'>
         <button className='discussion_toggle' onClick={() => setShowDiscussion(!showDiscussion)}>Discussion</button> 
-        {showDiscussion &&<CreateCommentForm tasting={tasting}/>}
-          {showDiscussion && <div className='discussion_outer_container'>
-            <div className='discussion_inner_container'>
-              <Discussion tasting={tasting} setShowDiscussion={setShowDiscussion}/>
-            </div>
-          </div>}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import './editCommentForm.css';
 
 
 
-const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => {
+const EditCommentForm = ({ comment, user, discussionTasting, setShowEditCommentForm }) => {
   
   const dispatch = useDispatch();
   const [editedComment, setEditedComment] = useState(comment?.comment);
@@ -71,7 +71,7 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
           ></input>
           <div className='editDeleteButtonWrapper'>
             <button className='editedCommentButton' type="submit" >Submit</button>
-            {comment?.user_id === user?.id && comment?.tasting_id === tasting.id ?
+            {comment?.user_id === user?.id && comment?.tasting_id === discussionTasting.id ?
             <button className="deleteComment" onClick={commentDeleter(comment.id)}>Delete</button>  : null}
           </div>
         </div>
