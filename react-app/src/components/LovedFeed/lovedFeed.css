@@ -11,9 +11,10 @@ min-width: 1350px;
 
 .loved_feed_container {
   display: grid;
-  justify-content: center;
+  justify-content: space-between;
+  
   grid-template-columns: repeat(3, minmax(300px, 300px));
-  grid-gap: 100px;
+  /* grid-gap: 100px; */
   margin: 0 12% 0 12%;
   padding: 150px 100px 300px 125px;
 }
@@ -25,7 +26,7 @@ min-width: 1350px;
   }
 }
 
-@media only screen and (max-width: 1750px)  {
+@media only screen and (max-width: 1900px)  {
   
   .loved_feed_container {
     grid-template-columns: repeat(2, minmax(300px, 300px));
