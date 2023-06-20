@@ -35,7 +35,7 @@ const AllLovedFeed = () => {
 
 
   return (
-    <>
+    <div className="loved_wine_page">
       <Navigation />
       <Sidebar />
       <div className="loved_feed_wrapper">
@@ -49,14 +49,14 @@ const AllLovedFeed = () => {
           )}).reverse()}
         </div>
         {showDiscussion && <div className='discussion_wrapper'>
-          <CreateCommentForm discussionTasting={discussionTasting}/>
-          <div className='discussion_outer_container'>
+          <div className="discussion_container">
+            <CreateCommentForm discussionTasting={discussionTasting}/>
             <Discussion discussionTasting={discussionTasting} setShowDiscussion={setShowDiscussion}/>
-          </div>
+            </div>
         </div>}
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

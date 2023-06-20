@@ -1,3 +1,8 @@
+.loved_wine_page {
+  min-width: 1350px;
+  
+}
+
 .loved_feed_wrapper {
 display: flex;
 flex-direction: row;
@@ -6,11 +11,11 @@ min-width: 1350px;
 
 .loved_feed_container {
   display: grid;
-  align-items: center;
+  justify-content: center;
   grid-template-columns: repeat(3, minmax(300px, 300px));
   grid-gap: 100px;
   margin: 0 12% 0 12%;
-  padding: 150px 100px 300px 100px;
+  padding: 150px 100px 300px 125px;
 }
 
 @media only screen and (max-width: 1900px)  {
@@ -24,6 +29,13 @@ min-width: 1350px;
   
   .loved_feed_container {
     grid-template-columns: repeat(2, minmax(300px, 300px));
+  }
+}
+
+@media only screen and (min-width: 2200px)  {
+
+  .loved_feed_container {
+    grid-gap: 200px;
   }
 }
   
@@ -66,18 +78,23 @@ min-width: 1350px;
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0, 0, 0, 1%;
+  justify-content: flex-start;
+  margin: 50px, 0, 0, 1%;
   padding: 5% 0 3% 25px;
   top: 0;
   bottom: 0;
   right: 0;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  height: 100%;
   width: 20%;
   min-width: 400px;
-  height: 100%;
   border-left-style: solid;
   border-color: rgba(192, 192, 176, .8);
   border-width: 1px;
+}
+
+.discussion_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
