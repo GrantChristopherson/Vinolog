@@ -116,20 +116,21 @@
 }
 
 .discussion_toggle {
-  margin: 0px 0;
-  padding: 1px 20px;
-  height: 20px;
-  border-radius: 20px;
-  background-color: #FFF3C4;
-  font-size: 14px;
+  margin: 0;
+  padding: 0px 20px;
+  height: 30px;
+  width: 110px;
+  border-radius: 30px;
+  font-size: 12px;
   font-weight: bold;
+  background-color: rgb(198 192 163);
   color: rgb(103, 10, 21);
   border: 0;
 }
 
 .discussion_toggle:hover {
-  background-color: rgb(103, 10, 21);
-  color: #FFF3C4;
+  background-color: rgba(103, 10, 21, .8);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition-duration: 300ms;
 }

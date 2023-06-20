@@ -82,7 +82,7 @@
 }
 
 .commentButton:hover {
-  background-color: rgb(103, 10, 21);
+  background-color: rgba(103, 10, 21, .8);
   color: rgb(198 192 163);
   cursor: pointer;
   transition-duration: 300ms;
@@ -94,7 +94,7 @@
   width: 25%;
   border: 0;
   font-weight: bold;
-  background-color: rgb(103, 10, 21);
+  background-color: rgba(103, 10, 21, .8);
   color: rgb(198 192 163);
 }
 
