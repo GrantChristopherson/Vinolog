@@ -48,6 +48,13 @@
   z-index: 1;
 }
 
+@media only screen and (max-width: 1600px)  {
+
+  .splash_quote {
+    margin: 70px 125px 50px 75px;
+  }
+}
+
 .quote {
   margin-bottom: 10px;
   color: rgba(0, 0, 0, 0.9);
@@ -66,6 +73,15 @@
   color: rgba(0, 0, 0, 0.9);
   z-index: 1;
 }
+
+@media only screen and (max-width: 1600px)  {
+
+  .slogan {
+    margin: 50px 125px 70px 75px;
+  }
+}
+
+
 
 
 
