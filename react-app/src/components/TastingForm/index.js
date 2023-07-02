@@ -47,7 +47,6 @@ const TastingForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
 
-
   const today = new Date();
   const currentYear = today.getFullYear()
 
@@ -81,7 +80,7 @@ const TastingForm = () => {
 
     if (color === options[0]) {
       validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
-    }
+    };
     
     if (otherInfo) {
       if (otherInfo.length < 3 || otherInfo.length > 200) {
