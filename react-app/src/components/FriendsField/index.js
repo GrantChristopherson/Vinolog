@@ -17,7 +17,17 @@ const FriendsField = () => {
   const friends = useSelector((state) => Object.values(state.fields.friends))
   const [haveFriends, setHaveFriends] = useState(false);
  
-  
+  const friendAmountlogic = (friends) => {
+    if (friends.length === 0) {
+      return 'Meet other vinophiles in the Loved Wine Feed...  Add them to your Field of Friends!';
+    } else if (friends.length === 1) {
+      return '1 Friend in your Field';
+    } else {
+      return `${friends.length} Friends in your Field`
+    };
+  };
+
+
   useEffect(() => {
     dispatch(getMyFieldThunk(user.id)).then(() => setHaveFriends(true));
   }, [dispatch, user.id])
@@ -28,7 +38,7 @@ const FriendsField = () => {
       <Navigation />
       <Sidebar />
       <div className='field_list_container'>
-        <div className='field_title'>{friends?.length} Friends In Your Field</div>
+        <div className='field_title'>{friendAmountlogic(friends)}</div>
         <div className='field_list'>
           {haveFriends && friends?.map((friend) => {return (
             <div key={friend?.id}>
