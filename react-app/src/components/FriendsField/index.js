@@ -4,7 +4,7 @@ import { getMyFieldThunk } from '../../store/friends';
 import Navigation from '../Navigation';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
-import Friends from '../Friends';
+import Friend from '../Friend';
 import './friendsField.css';
 
 
@@ -42,7 +42,7 @@ const FriendsField = () => {
         <div className='field_list'>
           {haveFriends && friends?.map((friend) => {return (
             <div key={friend?.id}>
-              <Friends friend={friend} />
+              <Friend friend={friend} />
             </div>
           )})}
         </div>
