@@ -8,15 +8,19 @@ import ProtectedRoute from './components/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed';
 import LovedFeed from './components/LovedFeed';
 import FriendsField from './components/FriendsField';
+import FriendTastings from './components/FriendTastings';
 import TastingForm from './components/TastingForm';
 import EditTastingForm from './components/EditTastingForm';
 import Splash from './components/Splash';
-// import Home from './components/Home';
+
+
 
 
 function App() {
+
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
     (async() => {
@@ -41,9 +45,6 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpPage />
         </Route>
-        {/* <ProtectedRoute path='/home' exact={true} >
-          <Home />
-        </ProtectedRoute> */}
         <ProtectedRoute path='/tasting' exact={true} >
           <TastingForm />
         </ProtectedRoute>
@@ -58,6 +59,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/friendsinthefield' exact={true} >
           <FriendsField />
+        </ProtectedRoute>
+        <ProtectedRoute path={`/friends/`} >
+          <FriendTastings />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
