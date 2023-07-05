@@ -398,8 +398,8 @@ function EditTastingForm({ tasting, lovedTasting }) {
             <div className='edit_submit_close_container'>
               <button className='update_tasting_button' type='submitEditWine'>Update</button>
               {/* <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button> */}
-              <NavLink to='/tastings' className={'close_edit_wine'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-                Cancel
+              <NavLink to='/tastings' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+              <h4 className='close_edit_wine' >Cancel</h4>
               </NavLink>
             </div>
           </form>
