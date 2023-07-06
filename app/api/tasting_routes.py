@@ -41,6 +41,16 @@ def all_loved_tastings():
 
 
 
+# Get a friends tasting cards 
+@tasting_routes.route('/friends/<int:id>')
+@login_required
+def get_friends_tastings(id):
+  tastings = Tasting.query.filter(Tasting.user_id == id).all()
+
+  return {'tastings': [tasting.to_dict() for tasting in tastings]}
+
+
+
 # Create a new tasting card           #tested successfully
 @tasting_routes.route('/user/post', methods=['POST'])
 @login_required

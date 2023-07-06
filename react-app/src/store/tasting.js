@@ -1,5 +1,6 @@
 const GET_MY_TASTINGS = 'tastings/GET_MY_TASTINGS';
 const GET_ALL_LOVED_TASTINGS = 'tastings/GET_ALL_LOVED_TASTINGS';
+const GET_FRIENDS_TASTINGS = 'tastings/GET_FRIENDS_TASTINGS';
 const CREATE_TASTING = 'tastings/CREATE_TASTING';
 const EDIT_TASTING = 'tasting/EDIT_TASTING';
 const DELETE_TASTING = 'tasting/DELETE_TASTING';
@@ -19,6 +20,14 @@ const getAllLovedTastings = (lovedTastings) => {
   return {
     type: GET_ALL_LOVED_TASTINGS,
     lovedTastings
+  };
+};
+
+
+const getFriendsTastings = (friendsTastings) => {
+  return {
+    type: GET_FRIENDS_TASTINGS,
+    friendsTastings
   };
 };
 
@@ -64,6 +73,15 @@ export const getAllLovedTastingsThunk = () => async(dispatch) => {
   });
   const tastings = await response.json();
   dispatch(getAllLovedTastings(tastings?.tastings));
+};
+
+
+export const getFriendsTastingsThunk = (friendId) => async(dispatch) => {
+  const response = await fetch(`/api/tastings/friends/${friendId}`, {
+    headers: {}
+  });
+  const tastings = await response.json();
+  dispatch(getFriendsTastings(tastings.tastings));
 };
 
 
@@ -157,21 +175,28 @@ export const deleteTastingThunk = (tastingId) => async(dispatch) => {
 // ----------------------------------------reducer----------------------------------------------------
 
 
-const initialState = { userTastings: [], lovedTastings: [] };
+const initialState = { userTastings: [], lovedTastings: [], friendTastings: [] };
 export default function reducer(state = initialState, action) {
   let newState;
   switch (action.type) {
     case GET_MY_TASTINGS: {
-      newState = {...state, userTastings:[...action?.tastings], lovedTastings:[...state?.lovedTastings]}
+      newState = {...state, userTastings:[...action?.tastings], lovedTastings:[], friendTastings:[]}
       action?.userTastings?.forEach((tasting) => {
         newState[tasting?.id] = tasting
       });
       return newState;
     };
     case GET_ALL_LOVED_TASTINGS: {
-      newState = {...state, userTastings:[...state?.userTastings], lovedTastings:[...action?.lovedTastings]}
+      newState = {...state, userTastings:[], lovedTastings:[...action?.lovedTastings], friendTastings:[]}
       action?.lovedTastings?.forEach((lovedTasting) => {
         newState[lovedTasting?.id] = lovedTasting
+      });
+      return newState;
+    };
+    case GET_FRIENDS_TASTINGS: {
+      newState = {...state, userTastings:[], lovedTastings:[], friendTastings:[...action?.friendsTastings]}
+      action?.friendsTastings?.forEach((friendTasting) => {
+        newState[friendTasting?.id] = friendTasting
       });
       return newState;
     };

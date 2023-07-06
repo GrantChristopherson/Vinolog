@@ -60,7 +60,7 @@ function App() {
         <ProtectedRoute path='/friendsinthefield' exact={true} >
           <FriendsField />
         </ProtectedRoute>
-        <ProtectedRoute path={`/friends/`} >
+        <ProtectedRoute path='/friends/:id/tastings' exact={true} >
           <FriendTastings />
         </ProtectedRoute>
       </Switch>
