@@ -15,15 +15,15 @@ const Friend = (friend) => {
 
   const unFriendHandler = async(e) => {
     e.preventDefault();
-    dispatch(deleteFriendThunk(currentUser.id, friend.friend.id))
+    dispatch(deleteFriendThunk(currentUser.id, friendId))
   };
 
 
   return (
     <div className="listed_friend_container">
       <NavLink to={`/friends/${friendId}/tastings`} className={'friend_tastings'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-        {/* {friend.friend.username} */}
-        <FriendTastings friendId={friendId} />
+        {friend.friend.username}
+        {/* <FriendTastings friendId={friendId} /> */}
       </NavLink>
       <div className="unfriend_container">
         <button className='unfriend_button' onClick={unFriendHandler}>Remove</button>
