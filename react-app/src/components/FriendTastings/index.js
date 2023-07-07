@@ -33,14 +33,16 @@ const FriendTastings = () => {
     <>
       <Navigation />
       <Sidebar />
-        {/* <div className="friends_tastings_feed">{tastings.friendTastings[0].user.username}</div> */}
-        <div className="friends_tasting_feed_container">
-          {tastings?.map((tasting) => {return (
-            <div key={tasting?.id} className="friends_tasting_container">
-              <FriendsTastingCard key={tasting?.id} tasting={tasting} />
-            </div>
-          )}).reverse()}
-        </div>
+      <div className="friends_tastings_feed">
+        {/* <div className="friends_feed_header">{tastings[0].user.username}</div> */}
+        {tastings?.map((tasting) => {return (
+          <div key={tasting?.id} className="friends_tasting_container">
+            {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
+            : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
+            <FriendsTastingCard key={tasting?.id} tasting={tasting} />
+          </div>
+        )}).reverse()}
+      </div>
       <Footer />
     </>
   );
