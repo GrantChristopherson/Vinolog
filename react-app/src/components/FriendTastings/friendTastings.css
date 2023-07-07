@@ -1,12 +1,62 @@
-.friends_tasting_feed_container {
+.friends_feed_page {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+
+
+
+.friends_feed_header {
+
+  display: flex;
+  margin-top: 120px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(192, 192, 176);
+  border-bottom-style: solid;
+  border-width: 1px;
+}
+
+.friends_tastings_feed {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 375px));
   grid-gap: 100px;
   margin: 0 12%;
-  padding: 150px 0 300px 200px;
+  padding: 100px 0 300px 200px;
 }
 
-/* .friends_tasting_container {
+.friends_tasting_container {
   display: flex;
   flex-direction: column;
+}
+
+/* .tasting-image-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  max-width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.default-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.default-wine-image {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: rgb(103, 10, 21);
+  font-size: 250px;
 } */
