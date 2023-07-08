@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  height: 7%;
+  height: 5%;
   display: flex;
   align-items: center;
   border-bottom-style: solid;
@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  height: 7%;
+  height: 5%;
   display: flex;
   align-items: center;
   /* border-bottom-style: solid;
