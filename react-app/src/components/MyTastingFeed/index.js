@@ -26,7 +26,7 @@ const MyTastingFeed = () => {
 
 
   return (
-    <>
+    <div className="my_feed_page">
       <Navigation />
       <Sidebar user={user} />
       <div className="my-feed-container">
@@ -39,7 +39,7 @@ const MyTastingFeed = () => {
         )}).reverse()}
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
