@@ -1,3 +1,7 @@
+.my_feed_page {
+  min-width: 1350px;
+}
+
 .my-feed-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 375px));
@@ -6,7 +10,7 @@
   padding: 150px 0 300px 200px;
 }
 
-@media only screen and (max-width: 1200px)  {
+@media only screen and (max-width: 1500px)  {
 
   .my-feed-container {
     grid-template-columns: repeat(2, minmax(300px, 300px));
