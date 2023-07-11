@@ -6,6 +6,14 @@
   padding: 150px 0 300px 200px;
 }
 
+@media only screen and (max-width: 1200px)  {
+
+  .my-feed-container {
+    grid-template-columns: repeat(2, minmax(300px, 300px));
+    grid-gap: 50px;
+  }
+}
+
 .my-tasting-container {
   display: flex;
   flex-direction: column;
