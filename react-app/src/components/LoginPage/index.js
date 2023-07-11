@@ -12,7 +12,7 @@ const LoginPage = () => {
   return (
     <>
       <Navigation />
-      <div className='splash_body_login'>
+      <div className='splash_body'>
         <LoginForm />
       </div>
       <Footer />
