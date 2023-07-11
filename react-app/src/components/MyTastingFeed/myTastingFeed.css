@@ -13,8 +13,8 @@
 @media only screen and (max-width: 1500px)  {
 
   .my-feed-container {
-    grid-template-columns: repeat(2, minmax(300px, 300px));
-    grid-gap: 50px;
+    grid-template-columns: repeat(2, minmax(300px, 375px));
+
   }
 }
 
