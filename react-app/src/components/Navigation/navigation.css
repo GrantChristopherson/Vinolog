@@ -38,7 +38,7 @@
 }
 
 .logo_logged_out:hover {
-  color: rgb(103, 10, 21);
+  color: rgb(102, 105, 27);
   transition-duration: 300ms;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .signupButton {
-  margin: 0 40px;
+  margin: 10px 40px;
   padding: 5px 40px;
   height: 40px;
   border-radius: 30px;
@@ -77,6 +77,13 @@
   transition-duration: 300ms;
 }
 
+@media only screen and (max-height: 1000px)  {
+
+  .signupButton {
+    height: 30px;
+  }
+}
+
 .loginButton {
   padding: 5px 45px;
   height: 40px;
@@ -88,10 +95,17 @@
 }
 
 .loginButton:hover {
-  background-color: rgb(103, 10, 21);
+  background-color: rgb(102, 105, 27);
   color: rgb(198 192 163);
   cursor: pointer;
   transition-duration: 300ms;
+}
+
+@media only screen and (max-height: 1000px)  {
+
+  .loginButton {
+    height: 30px;
+  }
 }
 
 .logout_container {
