@@ -7,6 +7,7 @@
   background-size: cover;
   opacity: .7;
   height: 1800px;
+  overflow: hidden;
 }
 
 .splash_container {
