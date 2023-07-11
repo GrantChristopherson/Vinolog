@@ -1,9 +1,6 @@
 .logoutButton {
-  /* display: flex;
-  justify-content: flex-end;
-  align-items: center; */
-  margin: 0 40px;
-  padding: 5px 30px;
+  margin: 10px 40px;
+  padding: 5px 40px;
   height: 40px;
   border-radius: 30px;
   font-weight: bold;
@@ -17,4 +14,11 @@
   color: rgb(198 192 163);
   cursor: pointer;
   transition-duration: 300ms;
+}
+
+@media only screen and (max-height: 1000px)  {
+
+  .logoutButton {
+    height: 30px;
+  }
 }

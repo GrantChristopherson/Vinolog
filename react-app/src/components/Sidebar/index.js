@@ -10,24 +10,18 @@ const Sidebar = ({ user }) => {
 
 
   return (
-    <div className='user-sidebar'>
-      <div className='loved-feed-container'>
-        <NavLink to='/lovedtastings' className={'loved-feed-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+    <div className='user_sidebar'>
+      <div className='sidebar_links_container'>
+        <NavLink to='/lovedtastings' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
           Loved Wines
         </NavLink>
-      </div>
-      <div className='my-tastings-container'>
-        <NavLink to='/tastings' className={'my-feed-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/tastings' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
           My Tasting Notes
         </NavLink>
-      </div>
-      <div className='create-container'>
-        <NavLink to='/tasting' className={'create-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/tasting' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
           Create New Tasting
         </NavLink>
-      </div>
-      <div className='friends-container'>
-        <NavLink to='/friendsinthefield' className={'friends-nav'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/friendsinthefield' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
           Friends In The Field
         </NavLink>
       </div>
