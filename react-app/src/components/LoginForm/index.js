@@ -5,7 +5,7 @@ import { login } from '../../store/session';
 import './loginForm.css'
 
 
-// todo: find and mimic more clean login
+
 
 const LoginForm = () => {
 
