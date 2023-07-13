@@ -10,7 +10,6 @@ import './myTastingFeed.css';
 
 // tasting card feeds with image aws
 
-
 const MyTastingFeed = () => {
 
   const dispatch = useDispatch();
