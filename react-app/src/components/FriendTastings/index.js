@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { getFriendsTastingsThunk } from "../../store/tasting";
@@ -17,8 +17,6 @@ const FriendTastings = () => {
   const { id } = useParams();
   const tastings = useSelector((state => state.tastings.friendTastings))
  
-  console.log('tastings======', tastings)
-  console.log('friendId======', id)
 
   useEffect(() => {
     if (!id) {
