@@ -1,11 +1,13 @@
 .listed_friend_container {
   display: flex;
   justify-content: space-between;
-  align-items: row;
-  width: 500px;
+  align-items: center;
+  width: 700px;
   margin-bottom: 5%;
+  padding: 10px 0;
   font-size: 20px;
   color: rgb(192, 192, 176);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .friend_tastings {
@@ -14,6 +16,29 @@
   align-items: row;
   font-size: 20px;
   color: rgb(192, 192, 176);
+}
+
+.friend_image_name_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend_profile_image {
+  width:50px;
+  height:50px;
+  background-color: none;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.default-friend-profile-image {
+  width:50px;
+  height:50px;
+  background-color: none;
+  border-radius: 50%;
+  margin-right: 20px;
+  font-size: 50px;
 }
 
 .unfriend_button {
