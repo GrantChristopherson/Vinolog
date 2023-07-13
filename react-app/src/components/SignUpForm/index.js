@@ -5,7 +5,6 @@ import { signUp } from '../../store/session';
 import './signUpForm.css'
 
 
-// todo: find and mimic more clean signup
 // any validation checks on profile image url input??
 
 const SignUpForm = () => {
