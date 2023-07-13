@@ -3,8 +3,8 @@
   position: fixed;
   width: 40%;
   min-width: 550px;
+  top: 100px;
   padding: 50px;
-  margin-bottom: 560px;
   border-radius: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
