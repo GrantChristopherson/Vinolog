@@ -3,7 +3,7 @@
   justify-content: center;
   flex-direction: column;
   margin: 0 350px;
-  padding: 150px 150px 300px 150px;
+  padding: 100px 350px 300px 350px;
 }
 
 .my_title {
@@ -20,15 +20,14 @@
   grid-template-columns: repeat(3, minmax(300px, 375px));
   grid-gap: 100px;
   justify-content: center;
-  padding: 150px 0;
+  padding: 100px 0;
 }
 
-@media only screen and (max-width: 1500px)  {
+@media only screen and (max-width: 2000px)  {
 
   .my-feed-container {
     grid-template-columns: repeat(2, minmax(300px, 300px));
-    /* margin: 0 300px; */
-    padding: 150px 150px;
+    /* padding: 100px 150px; */
   }
 }
 
