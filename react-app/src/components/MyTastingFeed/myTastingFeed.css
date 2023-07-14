@@ -28,11 +28,7 @@
   .my_feed_page {
     padding: 100px 0px 300px 0px;
   }
-
-  .my_title {
-    margin: 0 250px;
-  }
-
+  
   .my-feed-container {
     grid-template-columns: repeat(2, minmax(300px, 300px));
     padding: 100px 350px;
