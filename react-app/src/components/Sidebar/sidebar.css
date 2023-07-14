@@ -2,30 +2,40 @@
 .user_sidebar {
   position: fixed;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   top: 0;
   bottom: 0;
   left: 0;
-  padding: 15% 0 30% 0;
-  flex-direction: column;
+  margin: 0;
+  padding: 140px 0 30% 0;
   height:100%;
   width: 350px;
-  margin: 0;
   background-color: rgba(39, 39, 38, .5);
+}
+
+@media only screen and (max-width: 2000px)  {
+
+  .user_sidebar {
+    width: 250px;
+  }
+  
+  .sidebar_links_container {
+    width: 250px;
+    padding-left: 50px;
+  }
 }
 
 .sidebar_links_container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
+  justify-content: space-around;
+  padding-top: 0;
+  width: 350px;
 }
 
 .sidebar_links {
-  margin: 20px 0;
-  padding: 30px 120px 30px 50px;
-  width: 350px;
+  margin: 0;
+  padding: 40px 50px 40px 50px;
   color: rgb(192, 192, 176);
   font-size: 16px;
   font-weight: 100;
