@@ -38,7 +38,7 @@ const FriendsField = () => {
       <Navigation />
       <Sidebar />
       <div className='field_list_container'>
-        <div className='field_title'>{friendAmountlogic(friends)}</div>
+        <span className='field_title'>{friendAmountlogic(friends)}</span>
         <div className='field_list'>
           {haveFriends && friends?.map((friend) => {return (
             <div key={friend?.id}>
