@@ -217,7 +217,7 @@ const TastingForm = () => {
         <Sidebar />
         <div className='create_tasting_container'>
           <form className='create_form' onSubmit={handleSubmit} >
-            <h2 className='tasting_header'>Tasting Notes</h2>
+            <h2 className='tasting_header'>New Tasting Notes</h2>
             <div className='tasting_input_container'>
               {errors?.spacing !== undefined && <div className='error'>
                 <div className='errors'>{errors.spacing}</div>

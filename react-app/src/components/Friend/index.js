@@ -21,11 +21,11 @@ const Friend = (friend) => {
   return (
     <div className="listed_friend_container">
       <NavLink to={`/friends/${friendId}/tastings`} className={'friend_tastings'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-        <div className="friend_image_name_container">
+        <span className="friend_image_name_container">
           {friend.friend.profileImage ? <img className='friend_profile_image' src={friend.friend.profileImage} alt='profile'/>
           : <i className='fa-solid fa-user default-friend-profile-image' />} 
           {friend.friend.username}
-        </div>
+        </span>
       </NavLink>
       <div className="unfriend_container">
         <button className='unfriend_button' onClick={unFriendHandler}>Remove</button>
