@@ -35,10 +35,11 @@ const AllLovedFeed = () => {
 
 
   return (
-    <div className="loved_wine_page">
+    <>
       <Navigation />
       <Sidebar />
-      <div className="loved_feed_wrapper">
+      <div className="loved_feed_page">
+        <span className='loved_title'>Loved Wine Tastings</span>
         <div className="loved_feed_container">
           {lovedWineTastings?.map((tasting) => {return (
           <div key={tasting?.id} className="loved_tasting_container">
@@ -56,7 +57,7 @@ const AllLovedFeed = () => {
         </div>}
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
