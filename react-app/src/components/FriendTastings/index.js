@@ -35,7 +35,7 @@ const FriendTastings = () => {
       <Navigation />
       <Sidebar />
       <div className="friends_feed_page">
-        <span className="friends_feed_header">{tastings[0]?.user?.username}'s Wine Tasting Notes</span>
+        <span className="friends_feed_header">{tastings[0]?.user?.username}'s Wine Tastings</span>
         <div className="friends_tastings_feed">
         {tastings?.map((tasting) => {return (
           <div key={tasting?.id} className="friends_tasting_container">
