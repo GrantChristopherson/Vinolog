@@ -34,11 +34,11 @@ const MyTastingFeed = () => {
         <span className='my_title'>My Tasting Notes</span>
         <div className="my-feed-container">
         {userTastings?.map((tasting) => {return (
-        <div key={tasting.id} className="my-tasting-container" >
-          {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
-          : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
-          <TastingCard tasting={tasting} />
-        </div>
+          <div key={tasting.id} className="my-tasting-container" >
+            {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
+            : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
+            <TastingCard tasting={tasting} />
+          </div>
         )}).reverse()}
         </div>
       </div>
