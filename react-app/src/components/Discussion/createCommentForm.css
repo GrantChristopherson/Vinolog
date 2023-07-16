@@ -56,6 +56,14 @@
   outline: none;
 }
 
+.commentInput:-webkit-autofill,
+.commentInput:-webkit-autofill:hover,
+.commentInput:-webkit-autofill:focus,
+.commentInput:-webkit-autofill:active {
+  transition: background-color 5000000s ease-in-out 0s;
+  -webkit-text-fill-color: rgb(192, 192, 176);
+}
+
 .commentInput::placeholder {
   color: rgba(192, 192, 176, .8)
 }
