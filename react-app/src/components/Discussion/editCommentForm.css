@@ -6,14 +6,17 @@
 
 .editCommentFormOuterContainer {
   display: flex;
+  flex-direction: column;
 }
 
 .editedCommentInput {
-  width: 200px;
-  border-radius: 5px;
+  min-width: 700px;
   margin: 0;
   padding: 0;
-  border-color: #660d19;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(192, 192, 176, .8);
+  color: rgba(255, 255, 255, .6);
 }
 
 .editedCommentButton {
