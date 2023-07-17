@@ -56,6 +56,14 @@
   outline: none;
 }
 
+.info_input:-webkit-autofill,
+.info_input:-webkit-autofill:hover,
+.info_input:-webkit-autofill:focus,
+.info_input:-webkit-autofill:active {
+  transition: background-color 5000000s ease-in-out 0s;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.8);
+}
+
 .selection_info_input {
   border-top-style: none;
   border-right-style: none;

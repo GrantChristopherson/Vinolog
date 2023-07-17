@@ -33,10 +33,6 @@
     grid-template-columns: repeat(2, minmax(300px, 300px));
     padding: 100px 350px;
   }
-
-  .discussion_wrapper {
-
-  }
 }
 
 .loved_tasting_container {
