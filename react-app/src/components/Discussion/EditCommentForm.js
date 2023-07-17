@@ -65,9 +65,8 @@ const EditCommentForm = ({ comment, user, discussionTasting, setShowEditCommentF
             type="text"
             name='comment'
             onChange={(e) => setEditedComment(e.target.value)}
-            placeholder='Comment...'
+            placeholder='Edit of Comment...'
             value={editedComment}
-
           ></input>
           <div className='editDeleteButtonWrapper'>
             <button className='editedCommentButton' type="submit" >Submit</button>

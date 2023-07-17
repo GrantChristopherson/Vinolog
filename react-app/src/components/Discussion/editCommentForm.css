@@ -6,38 +6,70 @@
 
 .editCommentFormOuterContainer {
   display: flex;
+  flex-direction: column;
 }
 
 .editedCommentInput {
-  width: 200px;
-  border-radius: 5px;
-  margin: 0;
+  min-width: 700px;
+  margin: 0 0 0 0;
   padding: 0;
-  border-color: #660d19;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(192, 192, 176, .8);
+  color: rgba(255, 255, 255, .6);
+}
+
+.editedCommentInput:focus {
+  outline: none;
+}
+
+.editedCommentInput:-webkit-autofill,
+.editedCommentInput:-webkit-autofill:hover,
+.editedCommentInput:-webkit-autofill:focus,
+.editedCommentInput:-webkit-autofill:active {
+  transition: background-color 5000000s ease-in-out 0s;
+  -webkit-text-fill-color: rgb(192, 192, 176);
+}
+
+.editDeleteButtonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .editedCommentButton {
-  margin: 1px 0;
-  padding: 0 2px;
-  border-radius: 3px;
-  font-weight: bold;
-  background-color: #d7d6d0;
+  margin: 10px 0 0 0;
+  padding: 5px 50px;
+  height: 30px;
+  width: 75%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: 0;
+  background-color: rgb(198 192 163);
+  color: rgb(103, 10, 21);
 }
 
 .editedCommentButton:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  background-color: rgba(103, 10, 21, .8);
+  color: rgb(198 192 163);
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
 .deleteComment {
-  margin: 1px 0;
-  padding: 0 2px;
-  border-radius: 2px;
-  background-color: #d7d6d0;
+  margin: 10px 0 0 0;
+  padding: 0 1px;
+  width: 25%;
+  border: 0;
+  background-color: rgba(103, 10, 21, .8);
+  color: rgb(198 192 163);
 }
 
 .deleteComment:hover {
-  background-color: rgba(128, 128, 128, 0.5);
-  border-radius: 10px;
+  background-color: rgb(198 192 163);
+  color: rgb(103, 10, 21);
+  cursor: pointer;
+  transition-duration: 300ms;
 }
 
