@@ -18,7 +18,7 @@ const TastingForm = () => {
   const history = useHistory();
 
 
-  const options = [
+  const colorOptions = [
     { value: 'Select the Style of Wine...', label: 'Select the Style of Wine...' },
     { value: 'Red', label: 'Red' },
     { value: 'White', label: 'White' },
@@ -36,7 +36,7 @@ const TastingForm = () => {
   const [vineyard, setVineyard] = useState('');
   const [varietal, setVarietal] = useState('');
   const [vintage, setVintage] = useState(new Date().getFullYear());
-  const [color, setColor] = useState(options[0]);
+  const [color, setColor] = useState(colorOptions[0]);
   const [labelImage, setLabelImage] = useState('');
   const [otherInfo, setOtherInfo] = useState('');
   const [sight, setSight] = useState('');
@@ -78,7 +78,7 @@ const TastingForm = () => {
       validateErrors['vintage'] = `* Vintage required and must be between 1900 and current year (${today.getFullYear()})`
     };
 
-    if (color === options[0]) {
+    if (color === colorOptions[0]) {
       validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
     };
     
@@ -288,6 +288,11 @@ const TastingForm = () => {
               max={currentYear}
               value={vintage}
               ></input> 
+              {/* <select className='selection_info_input' onChange={updateVintage} value={vintage}>
+                {vintageOptions.map(option =>
+                  <option key={option.value}>{option.value}</option>
+                  )}
+              </select> */}
             </div>
             <div className='tasting_input_container'>
                 {errors?.colors !== undefined && <div className='error'>
@@ -295,7 +300,7 @@ const TastingForm = () => {
                 </div>
                 }
               <select className='selection_info_input' onChange={updateColor} value={color}>
-                {options.map(option =>
+                {colorOptions.map(option =>
                   <option key={option.value}>{option.value}</option>
                   )}
               </select>
