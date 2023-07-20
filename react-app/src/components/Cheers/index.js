@@ -11,32 +11,43 @@ const Cheers = ({ tasting }) => {
 
   const dispatch = useDispatch()
   const user = useSelector(state => state?.session?.user)
-
   const[isCheered, setIsCheered] = useState(tasting?.cheers_by?.includes(user?.id));
 
+  console.log('earlycheers=====', tasting.cheers_by.length)
 
   useEffect(() => {
     setIsCheered(tasting?.cheers_by?.includes(user?.id));
-   }, [dispatch, isCheered]);
+    
+  }, [dispatch, tasting?.cheers_by]);
+
+  useEffect(() => {
+    if (tasting && tasting.cheers_by) {
+      setIsCheered(tasting.cheers_by.includes(user?.id));
+    }
+  }, [tasting.cheers_by, user?.id]);
 
 
   const cheersHandler = async() =>{
-
+    console.log('earlycheershandler=====', tasting.cheers_by.length)
     if (!isCheered) {
       await dispatch(createCheersThunk(tasting?.id, user?.id));
-        setIsCheered(true)
+      console.log('cheersCreatehandler=====', tasting.cheers_by.length)
     } else {
       await dispatch(deleteCheersThunk(tasting?.id, user?.id));
-        setIsCheered(false)
+      console.log('cheersDeletehandler=====', tasting.cheers_by.length)
     };
+    setIsCheered(prevIsCheered => !prevIsCheered);
   };
+
+
+
 
   return (
     <div className="cheers_counter_container">
       <div >
           <button className="cheers_button"  onClick={cheersHandler}>
-            {isCheered ? <i className="fa-solid fa-heart likedIcon"></i> :
-            <i className="fa-regular fa-heart uncheers_button"></i>}
+            {isCheered ? <i className="fa-solid fa-wine-glass likedIcon"></i> :
+            <i className="fa-solid fa-wine-glass-empty uncheers_button"></i>}
           </button>
       </div>
       <div className="cheers_container">
