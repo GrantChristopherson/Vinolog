@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 // import { deleteTastingThunk } from '../../store/tasting';
 import { createFriendThunk } from '../../store/friends';
-// import Discussion from '../Discussion/Discussion';
-// import CreateCommentForm from '../Discussion/CreateCommentForm';
+import Cheers from '../Cheers';
 import './lovedTastingCard.css';
 
 // tasting card feeds styling and components modified to be more dynamic, tiled and with images
@@ -75,6 +73,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
           setTastingId(tasting.id)
           }}>Discussion</button> 
       </div>
+      <Cheers tasting={tasting} />
     </div>
   );
 };
