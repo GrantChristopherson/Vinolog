@@ -12,22 +12,22 @@ const Cheers = ({ tasting }) => {
   const dispatch = useDispatch()
   const user = useSelector(state => state?.session?.user)
 
-  const[isCheered, setIsCheered] = useState();
+  const[isCheered, setIsCheered] = useState(tasting?.cheers_by?.includes(user?.id));
 
 
   useEffect(() => {
     setIsCheered(tasting?.cheers_by?.includes(user?.id));
-   }, [isCheered]);
+   }, [dispatch, isCheered]);
 
 
   const cheersHandler = async() =>{
 
     if (!isCheered) {
       await dispatch(createCheersThunk(tasting?.id, user?.id));
-      setIsCheered(true)
+        setIsCheered(true)
     } else {
       await dispatch(deleteCheersThunk(tasting?.id, user?.id));
-      setIsCheered(false)
+        setIsCheered(false)
     };
   };
 
