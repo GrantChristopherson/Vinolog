@@ -1,0 +1,26 @@
+.cheers_counter_container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.cheers_button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+.cheered_icon {
+  color: rgb(103, 10, 21);
+}
+
+.uncheered_icon {
+  color: rgb(192, 192, 176);
+  margin: 28px 0 0 10px;
+}
+
+.cheers {
+  color: rgb(192, 192, 176);
+  font-size: 10px;
+  margin: 37px 0 0 0;
+  
+}

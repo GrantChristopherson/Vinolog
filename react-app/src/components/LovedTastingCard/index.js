@@ -38,11 +38,14 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
     <div className='loved_tasting_card'>
       <div className='loved_tasting_info' onClick={() => setShowInfo(!showInfo)}>
         <div className='user_info_container' >
-          <div className='profile_image_container'>
-            {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
-            : <i className='fa-solid fa-user default-profile-image' />}
-            {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
-            <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
+          <div className='profile_cheers_container'>
+            <div className='profile_image_container' >
+              {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
+              : <i className='fa-solid fa-user default-profile-image' />}
+              {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
+              <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
+            </div>
+            <Cheers tasting={tasting} />
           </div>
           <div className='friending_container'>
             {tasting?.user?.id !== user?.id  && !isInFriend ? <h6 className='friend_button' onClick={friendHandler}>+</h6> : <></> }
@@ -73,7 +76,6 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
           setTastingId(tasting.id)
           }}>Discussion</button> 
       </div>
-      <Cheers tasting={tasting} />
     </div>
   );
 };
