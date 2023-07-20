@@ -43,12 +43,12 @@ const Cheers = ({ tasting }) => {
 
 
   return (
-    <div className="cheers_counter_container">
-        <button className="cheers_button"  onClick={cheersHandler}>
-          {isCheered ? <i className="fa-solid fa-wine-glass cheered_icon"></i> :
-          <i className="fa-solid fa-wine-glass-empty uncheered_icon"></i>}
-        </button>
-        <p className="cheers">{tasting?.cheers_by?.length}</p>
+    <div className="cheers_container">
+      <p className="cheers_counter">{tasting?.cheers_by?.length}</p>
+      <button className="cheers_button"  onClick={cheersHandler}>
+        {isCheered ? <i className="fa-solid fa-wine-glass cheered_icon"></i> :
+        <i className="fa-solid fa-wine-glass-empty uncheered_icon"></i>}
+      </button>
     </div>
   );
 };
