@@ -48,7 +48,7 @@ function App() {
         <ProtectedRoute path='/tasting' exact={true} >
           <TastingForm />
         </ProtectedRoute>
-        <ProtectedRoute path='/tasting/edit' exact={true} >
+        <ProtectedRoute path='/tasting/:id/edit' exact={true} >
           <EditTastingForm />
         </ProtectedRoute>
         <ProtectedRoute path='/tastings' exact={true} >

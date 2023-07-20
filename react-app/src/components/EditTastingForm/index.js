@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, NavLink } from 'react-router-dom';
+import { useParams, useHistory, NavLink } from 'react-router-dom';
 import { editTastingThunk } from '../../store/tasting';
 import Navigation from "../Navigation";
 import Sidebar from "../Sidebar";
@@ -10,13 +10,15 @@ import './editTastingForm.css';
 
 
 
-function EditTastingForm({ tasting, lovedTasting }) {
+function EditTastingForm() {
 
   
   const dispatch = useDispatch();
   const history = useHistory();
+  const { id } = useParams();
+  const tasting = useSelector(state => state.tastings[id]);
   const user = useSelector(state => state?.session?.user)
-
+  
 
   const options = [
     { value: 'Select the Style of Wine...', label: 'Select the Style of Wine...' },
@@ -31,19 +33,19 @@ function EditTastingForm({ tasting, lovedTasting }) {
   
   
   const [errors, setErrors] = useState({});
-  const [producer, setProducer] = useState(tasting?.producer);
-  const [region, setRegion] = useState(tasting?.region);
-  const [vineyard, setVineyard] = useState(tasting?.vineyard);
-  const [varietal, setVarietal] = useState(tasting?.varietal);
-  const [vintage, setVintage] = useState(tasting?.vintage);
-  const [color, setColor] = useState(tasting?.color);
-  const [labelImage, setLabelImage] = useState(tasting?.labelImage);
-  const [otherInfo, setOtherInfo] = useState(tasting?.other_info);
-  const [sight, setSight] = useState(tasting?.sight);
-  const [nose, setNose] = useState(tasting?.nose);
-  const [palate, setPalate] = useState(tasting?.palate);
-  const [thoughts, setThoughts] = useState(tasting?.thoughts);
-  const [love, setLove] = useState(tasting?.love);
+  const [producer, setProducer] = useState(tasting?.producer || '');
+  const [region, setRegion] = useState(tasting?.region || '');
+  const [vineyard, setVineyard] = useState(tasting?.vineyard || '');
+  const [varietal, setVarietal] = useState(tasting?.varietal || '');
+  const [vintage, setVintage] = useState(tasting?.vintage || '');
+  const [color, setColor] = useState(tasting?.color || '');
+  const [labelImage, setLabelImage] = useState(tasting?.labelImage || '');
+  const [otherInfo, setOtherInfo] = useState(tasting?.other_info || '');
+  const [sight, setSight] = useState(tasting?.sight || '');
+  const [nose, setNose] = useState(tasting?.nose || '');
+  const [palate, setPalate] = useState(tasting?.palate || '');
+  const [thoughts, setThoughts] = useState(tasting?.thoughts || '');
+  const [love, setLove] = useState(tasting?.love || '');
 
 
   const today = new Date();
