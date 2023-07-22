@@ -25,7 +25,7 @@ const AllLovedFeed = () => {
   const discussionTasting = lovedTastings.filter(tasting => tasting.id === tastingId)
   
   useEffect(() => {
-    (()=>{
+    (() => {
       dispatch(getAllLovedTastingsThunk());
       dispatch(getMyFieldThunk(user.id));
     })();
