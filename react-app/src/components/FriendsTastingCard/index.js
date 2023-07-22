@@ -8,12 +8,11 @@ const FriendsTastingCard = ({ tasting }) => {
 
   const [showInfo, setShowInfo] = useState(false);
 
-  const friend = tasting.user
-  const upperCaser = (friend) => {
-    return friend.toUpperCase();
-  };
+  const friend = tasting.user;
+  const upperCaser = (friend => friend.toUpperCase());
 
-  console.log(friend)
+  
+
 
   return (
     <div className="friend_tasting_outer">

@@ -47,24 +47,24 @@ const editTasting = (tasting) => {
   return {
     type: EDIT_TASTING,
     tasting
-  }
-}
+  };
+};
 
 
 const deleteTasting = (tastingId) => {
   return {
     type: DELETE_TASTING,
     tastingId
-  }
-}
+  };
+};
 
 
 const getAllUsersCheers = (cheeredTastings) => {
   return {
     type: GET_CHEERED_TASTINGS,
     cheeredTastings
-  }
-}
+  };
+};
 
 
 const createCheers = (cheeringTasting, userId) => {
@@ -72,8 +72,8 @@ const createCheers = (cheeringTasting, userId) => {
     type: CREATE_CHEERS,
     cheeringTasting,
     userId
-  }
-}
+  };
+};
 
 
 const deleteCheers = (cheeredTasting, userId) => {
@@ -81,8 +81,8 @@ const deleteCheers = (cheeredTasting, userId) => {
     type: DELETE_CHEERS,
     cheeredTasting,
     userId
-  }
-}
+  };
+};
 
 
 // --------------------------------------------thunk action creators---------------------------------
@@ -235,125 +235,9 @@ export const deleteCheersThunk = (tastingId, userId) => async(dispatch) => {
 
 
 // ----------------------------------------reducer----------------------------------------------------
-
-
-// const initialState = { userTastings: [], lovedTastings: [], friendTastings: [], tastingCheers: [] };
-// export default function reducer(state = initialState, action) {
-//   let newState;
-//   switch (action.type) {
-//     case GET_MY_TASTINGS: {
-//       newState = {...state, userTastings:[...action?.tastings], lovedTastings:[], friendTastings:[]}
-//       action?.userTastings?.forEach((tasting) => {
-//         newState[tasting?.id] = tasting
-//       });
-//       return newState;
-//     };
-//     case GET_ALL_LOVED_TASTINGS: {
-//       newState = {...state, userTastings:[], lovedTastings:[...action?.lovedTastings], friendTastings:[]}
-//       action?.lovedTastings?.forEach((lovedTasting) => {
-//         newState[lovedTasting?.id] = lovedTasting
-//       });
-//       return newState;
-//     };
-//     case GET_FRIENDS_TASTINGS: {
-//       newState = {...state, userTastings:[], lovedTastings:[], friendTastings:[...action?.friendsTastings]}
-//       action?.friendsTastings?.forEach((friendTasting) => {
-//         newState[friendTasting?.id] = friendTasting
-//       });
-//       return newState;
-//     };
-//     case CREATE_TASTING: {
-//       if (action?.tasting.love === false) {
-//         newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings]}
-//         newState[action?.tasting.id] = action?.tasting
-//         return newState;
-//       } else {
-//         newState = {...state, userTastings:[...state?.userTastings, action?.tasting], lovedTastings:[...state?.lovedTastings, action?.tasting]}
-//         newState[action?.tasting.id] = action?.tasting
-//         return newState;
-//       };
-//     };
-//     case EDIT_TASTING: {
-//       state?.userTastings?.forEach((tasting, i) => {
-//         if (tasting?.id === action?.tasting?.id) {
-//           state?.userTastings.splice(i, 1, action?.tasting)
-//         };
-//       });
-//       state?.lovedTastings?.forEach((tasting, i) => {
-//         if (tasting?.id === action?.tasting?.id) {
-//           state?.lovedTastings.splice(i, 1, action?.tasting)
-//         };
-//       });
-//       state[action?.tasting?.id] = action?.tasting
-//       newState = {...state, userTastings:[...state?.userTastings], lovedTastings:[...state?.lovedTastings]}
-//       return newState;
-//     };
-//     case DELETE_TASTING: {
-//       delete state?.action?.tastingId
-//       let newUserTastings = state?.userTastings?.filter((tasting) => tasting?.id !== action?.tastingId)
-//       let newLovedTastings = state?.lovedTastings?.filter((lovedTasting) => lovedTasting?.id !== action?.tastingId)
-
-//       newState = {...state, userTastings:[...newUserTastings], lovedTastings:[...newLovedTastings]}
-//       return newState
-//     };
-//     case GET_CHEERED_TASTINGS: {
-//       return {
-//         ...state,
-//         tastingCheers: [...action.tastingCheers],
-//       };
-//     };
-//     case CREATE_CHEERS: {
-//       const { cheeringTasting, userId } = action;
-//       console.log('action', action)
-//       const updatedTastings = state.lovedTastings?.map((tasting) => {
-      
-//         if (tasting.user.id === userId) {
-//           if (!tasting.cheers_by.includes(userId)) {
-//             return {
-//               ...tasting,
-//               cheers_by: [...tasting.cheers_by, userId],
-//             };
-//           }
-//         }
-//         console.log('reducer tasting', tasting)
-//         return tasting;
-//       });
-//       console.log('updatedTastings', updatedTastings)
-//       return {
-//         ...state,
-//         userTastings: updatedTastings,
-//       };
-//     }
-//     case DELETE_CHEERS: {
-//       const updatedUserTastings = state.userTastings.map((tasting) => {
-//         if (tasting.id === action.cheeredTasting.id) {
-//           const cheersIndex = tasting.cheers_by.indexOf(action.userId);
-//           if (cheersIndex !== -1) {
-//             tasting.cheers_by.splice(cheersIndex, 1);
-//           }
-//         }
-//         return tasting;
-//       });
-
-//       const updatedTastingCheers = state.tastingCheers.filter(
-//         (tasting) => tasting.id !== action.cheeredTasting.id
-//       );
-
-//       return {
-//         ...state,
-//         userTastings: updatedUserTastings,
-//         tastingCheers: updatedTastingCheers,
-//       };
-//     }
-//     default: {
-//       return state;
-//     };
-//   };
-// };
       
 const initialState = { tastings: {} };
 export default function reducer(state = initialState, action) {
-  let newState;
   switch (action.type) {
     case GET_MY_TASTINGS: {
       const myTastings = action.tastings.reduce((acc, tasting) => {
@@ -419,55 +303,46 @@ export default function reducer(state = initialState, action) {
         tastings: updatedTastings,
       };
     };
-    case GET_CHEERED_TASTINGS: {
-      return {
-        ...state,
-        tastingCheers: [...action.tastingCheers],
-      };
-    };
     case CREATE_CHEERS: {
       const { cheeringTasting, userId } = action;
-      console.log('action', action)
-      const updatedTastings = state.lovedTastings?.map((tasting) => {
+      const tasting = state.tastings[cheeringTasting.id];
       
-        if (tasting.user.id === userId) {
-          if (!tasting.cheers_by.includes(userId)) {
-            return {
-              ...tasting,
-              cheers_by: [...tasting.cheers_by, userId],
-            };
-          }
-        }
-        console.log('reducer tasting', tasting)
-        return tasting;
-      });
-      console.log('updatedTastings', updatedTastings)
-      return {
-        ...state,
-        userTastings: updatedTastings,
+      if (tasting) {
+        const updatedTasting = {
+          ...tasting,
+          cheers_by: tasting.cheers_by.includes(userId) ? tasting.cheers_by : [...tasting.cheers_by, userId],
+        };
+
+        return {
+          ...state,
+          tastings: {
+            ...state.tastings,
+            [cheeringTasting.id]: updatedTasting,
+          },
+        };
       };
-    }
+      return state;
+    };
     case DELETE_CHEERS: {
-      const updatedUserTastings = state.userTastings.map((tasting) => {
-        if (tasting.id === action.cheeredTasting.id) {
-          const cheersIndex = tasting.cheers_by.indexOf(action.userId);
-          if (cheersIndex !== -1) {
-            tasting.cheers_by.splice(cheersIndex, 1);
-          }
-        }
-        return tasting;
-      });
+      const { cheeredTasting, userId } = action;
+      const tasting = state.tastings[cheeredTasting.id];
+      
+      if (tasting) {
+        const updatedTasting = {
+          ...tasting,
+          cheers_by: tasting.cheers_by.filter((cheerUserId) => cheerUserId !== userId),
+        };
 
-      const updatedTastingCheers = state.tastingCheers.filter(
-        (tasting) => tasting.id !== action.cheeredTasting.id
-      );
-
-      return {
-        ...state,
-        userTastings: updatedUserTastings,
-        tastingCheers: updatedTastingCheers,
+        return {
+          ...state,
+          tastings: {
+            ...state.tastings,
+            [cheeredTasting.id]: updatedTasting,
+          },
+        };
       };
-    }
+      return state;
+    };
     default: {
       return state;
     };

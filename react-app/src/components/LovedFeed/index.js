@@ -17,24 +17,23 @@ const AllLovedFeed = () => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
-  const tastings = useSelector(state => state?.tastings.tastings);
-  const lovedTastings = Object.values(tastings);
-
+  const allTastings = useSelector(state =>  Object.values(state?.tastings.tastings));
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [tastingId, setTastingId] = useState()
   
-  let discussionTasting = lovedTastings.filter((tasting) => {
-    return tasting.id === tastingId;
-  })
-
+  const lovedTastings = allTastings.filter(tasting => tasting.love)
+  const discussionTasting = lovedTastings.filter(tasting => tasting.id === tastingId)
+  
   useEffect(() => {
-    (async()=>{
-      await dispatch(getAllLovedTastingsThunk());
-      await dispatch(getMyFieldThunk(user.id));
+    (()=>{
+      dispatch(getAllLovedTastingsThunk());
+      dispatch(getMyFieldThunk(user.id));
     })();
   }, [dispatch, user.id]);
 
 
+
+  
   return (
     <>
       <Navigation />
