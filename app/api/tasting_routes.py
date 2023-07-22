@@ -143,7 +143,7 @@ def cheers(tasting_id):
   if (not isUserCheers):
     tasting.tasting_cheers.append(user)
     db.session.commit()
-
+  print('api return===', {"cheers": tasting.to_dict()})
   return {"cheers": tasting.to_dict()}
 
 

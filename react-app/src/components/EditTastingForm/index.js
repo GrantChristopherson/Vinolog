@@ -16,9 +16,9 @@ function EditTastingForm() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const tasting = useSelector(state => state.tastings[id]);
+  const tasting = useSelector(state => state.tastings.tastings[id]);
   const user = useSelector(state => state?.session?.user)
-  
+  console.log('edit', tasting)
 
   const options = [
     { value: 'Select the Style of Wine...', label: 'Select the Style of Wine...' },
