@@ -15,18 +15,15 @@ const FriendTastings = () => {
 
   const dispatch = useDispatch();
   const { id } = useParams();
-  const tastings = useSelector((state => state.tastings.tastings));
-  const friendsTastings = Object.values(tastings);
+  const tastings = useSelector(state => Object.values(state.tastings.tastings));
+  const friendsTastings = tastings.filter(tasting => tasting?.user.id === parseInt(id));
   const friendsUsername = friendsTastings[0]?.user.username;
   
 
   useEffect(() => {
-    if (!id) {
-      return;
-    };
-    (async()=>{
-      dispatch(getFriendsTastingsThunk(id));
-    })();
+    if (!id) return;
+    
+    (() => dispatch(getFriendsTastingsThunk(id)))();
   }, [dispatch, id]);
 
 

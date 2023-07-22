@@ -88,38 +88,56 @@ export const deleteFriendThunk = (id, deleteId) => async(dispatch) => {
 
 // ----------------------------------------reducer----------------------------------------------------
 
-
-const initialState = { friends: [], friendeds: [] };
+const initialState = { friends: {}, friendeds: {} };
 export default function reducer(state = initialState, action) {
-  let newState;
   switch (action.type) {
     case GET_MY_FIELD: {
-      newState = {...state, friends:[...action?.friends?.followed], friendeds:[...state?.friendeds]}
-      action?.friends?.followed?.forEach((friend) => {
-        newState[friend?.id] = friend
-      });
-      return newState;
+      const { friends } = action;
+      const updatedFriends = friends.followed.reduce((acc, friend) => {
+        acc[friend.id] = friend;
+        return acc;
+      }, {});
+
+      return {
+        ...state,
+        friends: updatedFriends,
+      };
     };
     case GET_FRIENDEDS: {
-      newState = {...state, friends:[...state?.friends], friendeds:[...action?.friendeds]}
-      action?.friendeds?.forEach((friended) => {
-        newState[friended?.id] = friended
-      });
-      return newState;
+      const { friendeds } = action;
+      const updatedFriendeds = friendeds.reduce((acc, friended) => {
+        acc[friended.id] = friended;
+        return acc;
+      }, {});
+
+      return {
+        ...state,
+        friendeds: updatedFriendeds,
+      };
     };
     case CREATE_FRIEND: {
-      newState = {...state, friends:[...action?.friends?.followings], friendeds:[...state?.friendeds]}
-      action?.friends?.followings?.forEach((friend) => {
-        newState[friend.id] = friend
-      });
-      return newState;
+      const { friends } = action;
+      const updatedFriends = friends.followings.reduce((acc, friend) => {
+        acc[friend.id] = friend;
+        return acc;
+      }, {});
+
+      return {
+        ...state,
+        friends: updatedFriends,
+      };
     };
     case DELETE_FRIEND: {
-      newState = {...state, friends:[...action?.friends?.followings], friendeds:[...state?.friendeds]}
-      action?.friends?.followings?.forEach((friend) => {
-        newState[friend.id] = friend
-      });
-      return newState;
+      const { friends } = action;
+      const updatedFriends = friends.followings.reduce((acc, friend) => {
+        acc[friend.id] = friend;
+        return acc;
+      }, {});
+
+      return {
+        ...state,
+        friends: updatedFriends,
+      };
     };
     default: {
       return state;

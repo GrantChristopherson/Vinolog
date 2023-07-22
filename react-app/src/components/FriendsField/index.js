@@ -14,7 +14,7 @@ const FriendsField = () => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
-  const friends = useSelector((state) => Object.values(state.fields.friends))
+  const friends = useSelector((state) => Object.values(state.fields.friends));
   const [haveFriends, setHaveFriends] = useState(false);
  
   const friendAmountlogic = (friends) => {
@@ -23,14 +23,15 @@ const FriendsField = () => {
     } else if (friends.length === 1) {
       return '1 Friend in your Field';
     } else {
-      return `${friends.length} Friends in your Field`
+      return `${friends.length} Friends in your Field`;
     };
   };
 
-
   useEffect(() => {
     dispatch(getMyFieldThunk(user.id)).then(() => setHaveFriends(true));
-  }, [dispatch, user.id])
+  }, [dispatch, user.id]);
+
+
 
 
   return (

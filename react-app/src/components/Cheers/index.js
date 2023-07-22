@@ -9,27 +9,23 @@ import './cheers.css';
 const Cheers = ({ tasting }) => {
 
 
-  const dispatch = useDispatch()
-  const user = useSelector(state => state?.session?.user)
+  const dispatch = useDispatch();
+  const user = useSelector(state => state?.session?.user);
   const[isCheered, setIsCheered] = useState(tasting?.cheers_by?.includes(user?.id));
 
-  console.log('Initial isCheered:', isCheered);
-  console.log('tasting.cheers_by:', tasting?.cheers_by);
-  console.log('user?.id:', user?.id);
 
   useEffect(() => {
     if (tasting && tasting.cheers_by) {
       setIsCheered(tasting.cheers_by.includes(user?.id));
     }
-  }, [tasting, user?.id]);
+  }, [tasting.cheers_by, user?.id]);
 
 
-  const cheersHandler = async(e) =>{
-    e.preventDefault();
+  const cheersHandler = () =>{
     if (!isCheered) {
-      await dispatch(createCheersThunk(tasting?.id, user?.id));
+      dispatch(createCheersThunk(tasting?.id, user?.id));
     } else {
-      await dispatch(deleteCheersThunk(tasting?.id, user?.id));
+      dispatch(deleteCheersThunk(tasting?.id, user?.id));
     };
     setIsCheered(prevIsCheered => !prevIsCheered);
   };

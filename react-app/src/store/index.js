@@ -4,14 +4,13 @@ import session from './session'
 import tastings from './tasting';
 import discussion from './discussion';
 import fields from './friends';
-import cheers from './cheers';
+
 
 const rootReducer = combineReducers({
   session,
   tastings,
   discussion,
   fields,
-  cheers
 });
 
 

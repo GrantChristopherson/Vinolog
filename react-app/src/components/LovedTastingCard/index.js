@@ -11,7 +11,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
-  const friendList = useSelector(state => state.fields.friends)
+  const friendList = useSelector(state => Object.values(state.fields.friends));
   const [showInfo, setShowInfo] = useState(false);
   
   let friendIdList = friendList.map(user => user.id);

@@ -14,13 +14,12 @@ const MyTastingFeed = () => {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
-  const tastings = useSelector(state => (state.tastings.tastings));
-  const userTastings = Object.values(tastings)
+  const tastings = useSelector(state => Object.values(state.tastings.tastings));
 
+  const userTastings = tastings.filter(tasting => tasting.user.id === user.id)
+  
   useEffect(() => {
-    (async()=>{
-      await dispatch(getMyTastingsThunk());
-    })();
+    (()=> dispatch(getMyTastingsThunk()))();
   }, [dispatch])
 
 
