@@ -15,8 +15,10 @@ const FriendTastings = () => {
 
   const dispatch = useDispatch();
   const { id } = useParams();
-  const tastings = useSelector((state => state.tastings.friendTastings))
- 
+  const tastings = useSelector((state => state.tastings.tastings));
+  const friendsTastings = Object.values(tastings);
+  const friendsUsername = friendsTastings[0]?.user.username;
+  
 
   useEffect(() => {
     if (!id) {
@@ -35,9 +37,9 @@ const FriendTastings = () => {
       <Navigation />
       <Sidebar />
       <div className="friends_feed_page">
-        <span className="friends_feed_header">{tastings[0]?.user?.username}'s Wine Tastings</span>
+        <span className="friends_feed_header">{friendsUsername}'s Wine Tastings</span>
         <div className="friends_tastings_feed">
-        {tastings?.map((tasting) => {return (
+        {friendsTastings?.map((tasting) => {return (
           <div key={tasting?.id} className="friends_tasting_container">
             {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
             : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}

@@ -16,13 +16,14 @@ import './lovedFeed.css';
 const AllLovedFeed = () => {
 
   const dispatch = useDispatch();
-  const lovedWineTastings = useSelector(state => state?.tastings.lovedTastings);
   const user = useSelector((state) => state?.session?.user);
+  const tastings = useSelector(state => state?.tastings.tastings);
+  const lovedTastings = Object.values(tastings);
 
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [tastingId, setTastingId] = useState()
   
-  let discussionTasting = lovedWineTastings.filter((tasting) => {
+  let discussionTasting = lovedTastings.filter((tasting) => {
     return tasting.id === tastingId;
   })
 
@@ -41,7 +42,7 @@ const AllLovedFeed = () => {
       <div className="loved_feed_page">
         <span className='loved_title'>Loved Wine Tastings</span>
         <div className="loved_feed_container">
-          {lovedWineTastings?.map((tasting) => {return (
+          {lovedTastings?.map((tasting) => {return (
           <div key={tasting?.id} className="loved_tasting_container">
             {tasting.labelImage ? <img className="loved-tasting-image-label" src={tasting.labelImage} alt='wine label'/>
             : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
