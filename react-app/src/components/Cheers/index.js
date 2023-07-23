@@ -39,12 +39,14 @@ const Cheers = ({ tasting }) => {
 
 
   return (
-    <div className="cheers_container">
+    <>
+    {usersIconCountCheck && <div className="cheers_container">
       {cheersCounterCheck && <p className="cheers_counter">{tasting?.cheers_by?.length}</p>}
-      {usersIconCountCheck && <button className={cheersButtonClass}  onClick={cheersHandler}>
+      <button className={cheersButtonClass}  onClick={cheersHandler}>
         {isCheered ? <i className={cheeredIconClass}></i> : <i className={uncheeredIconClass}></i>}
-      </button>}
-    </div>
+      </button>
+    </div>}
+    </>
   );
 };
 
