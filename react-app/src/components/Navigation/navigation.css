@@ -38,6 +38,7 @@
 }
 
 .logo_logged_out:hover {
+  cursor: pointer;
   color: rgb(102, 105, 27);
   transition-duration: 300ms;
 }
@@ -49,6 +50,7 @@
 }
 
 .logo_logged_in:hover {
+  cursor: pointer;
   color: rgb(50, 50, 50);
   transition-duration: 300ms;
 }

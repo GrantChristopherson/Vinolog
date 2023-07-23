@@ -13,15 +13,20 @@ const Cheers = ({ tasting }) => {
   const user = useSelector(state => state?.session?.user);
   const[isCheered, setIsCheered] = useState(tasting?.cheers_by?.includes(user?.id));
 
-
   useEffect(() => {
     if (tasting && tasting.cheers_by) {
       setIsCheered(tasting.cheers_by.includes(user?.id));
     }
   }, [tasting, user?.id]);
 
+  const cheersCounterCheck = tasting.cheers_by.length === 0 ? false : true;
+  const usersIconCountCheck = user.id === tasting.user.id && tasting.cheers_by.length === 0 ? false : true;
+  const cheersButtonClass = user.id === tasting.user.id ? "user_cheers_button" : "cheers_button";
+  const cheeredIconClass = user.id === tasting.user.id ? "fa-solid fa-wine-glass user_cheered_icon" : "fa-solid fa-wine-glass cheered_icon";
+  const uncheeredIconClass = user.id === tasting.user.id ? "fa-solid fa-wine-glass user_uncheered_icon" : "fa-solid fa-wine-glass-empty uncheered_icon";
 
   const cheersHandler = () =>{
+    if (user.id === tasting.user.id) return;
     if (!isCheered) {
       dispatch(createCheersThunk(tasting?.id, user?.id));
     } else {
@@ -35,11 +40,10 @@ const Cheers = ({ tasting }) => {
 
   return (
     <div className="cheers_container">
-      <p className="cheers_counter">{tasting?.cheers_by?.length}</p>
-      <button className="cheers_button"  onClick={cheersHandler}>
-        {isCheered ? <i className="fa-solid fa-wine-glass cheered_icon"></i> :
-        <i className="fa-solid fa-wine-glass-empty uncheered_icon"></i>}
-      </button>
+      {cheersCounterCheck && <p className="cheers_counter">{tasting?.cheers_by?.length}</p>}
+      {usersIconCountCheck && <button className={cheersButtonClass}  onClick={cheersHandler}>
+        {isCheered ? <i className={cheeredIconClass}></i> : <i className={uncheeredIconClass}></i>}
+      </button>}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cheers from '../Cheers';
 import './friendsTastingCard.css';
 
 
@@ -20,7 +21,10 @@ const FriendsTastingCard = ({ tasting }) => {
         <div className='wine-info'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
           <h4 >{tasting?.varietal}</h4>
-          {tasting?.love && <i className='fa-solid fa-heart loved-wine-heart' />}
+          <div className="love_and_cheers_container">
+            {tasting?.love && <i className='fa-solid fa-heart loved-wine-heart' />}
+            <Cheers tasting={tasting} />
+          </div>
         </div>
         {showInfo && <div className='extra-wine-info'>
           <h4>{tasting?.region}</h4>
