@@ -18,7 +18,7 @@ const LoginForm = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password)); // removed await from in front of this dispatch but throws error locally?
+    await dispatch(login(email, password)); // removed await from in front of this dispatch but throws error locally?
     // if (data) {
     //   setErrors(data);
     // }
@@ -52,7 +52,7 @@ const LoginForm = () => {
     e.preventDefault();
     const email = 'demo@demo.io';
     const password = 'password';
-    const data = await dispatch(login( email, password)); // removed await from in front of this dispatch but throws error locally?
+    await dispatch(login( email, password)); // removed await from in front of this dispatch but throws error locally?
     // if (data) {
     //   setErrors(data);
     // };

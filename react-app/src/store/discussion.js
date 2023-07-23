@@ -101,9 +101,16 @@ export const deleteCommentThunk = (commentId) => async(dispatch) => {
   })
 
   if (response.ok) {
-    const res = await response.json();
+    await response.json();
     dispatch(deleteComment(commentId));
-    return response;
+    return;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    };
+  } else {
+    return ['An error occurred. Please try again.']
   };
 };
 
@@ -112,40 +119,53 @@ export const deleteCommentThunk = (commentId) => async(dispatch) => {
 
 // ----------------------------------------reducer----------------------------------------------------
 
-
-const initialState = { comments: [] };
+const initialState = { comments: {} };
 export default function reducer(state = initialState, action) {
-  let newState;
   switch (action.type) {
-    case  GET_COMMENTS: {
-      newState = {...state, comments:[...action?.comments]};
-      action?.comments?.forEach((comment) => {
-        newState[comment?.id] = comment
-      });
-      return newState;
+    case GET_COMMENTS: {
+      const { comments } = action;
+      const updatedComments = comments.reduce((acc, comment) => {
+        acc[comment.id] = comment;
+        return acc;
+      }, {});
+
+      return {
+        ...state,
+        comments: updatedComments,
+      };
     };
     case CREATE_COMMENT: {
-      newState = {...state, comments:[...state?.comments, action?.comment]};
-      newState[action?.comment?.id] = action?.comment
-      return newState;
+      const { comment } = action;
+
+      return {
+        ...state,
+        comments: {
+          ...state.comments,
+          [comment.id]: comment,
+        },
+      };
     };
     case EDIT_COMMENT: {
-      state?.comments?.forEach((comment, i) => {
-        if (comment?.id === action?.comment?.id) {
-          state?.comments?.splice(i, 1, action?.comment)
-        };
-      });
-      newState = {...state, comments:[...state?.comments]}
-      newState[action?.comment?.id] = action?.comment
-      return newState
+      const { comment } = action;
+
+      return {
+        ...state,
+        comments: {
+          ...state.comments,
+          [comment.id]: comment,
+        },
+      };
     };
     case DELETE_COMMENT: {
-      let newComments = state?.comments?.filter(comment => { return comment?.id !== action?.commentId})
-      newState = {...state, comments:[...newComments]}
-      return newState
+      const { commentId } = action;
+      const { [commentId]: deletedComment, ...updatedComments } = state.comments;
+
+      return {
+        ...state,
+        comments: updatedComments,
+      };
     };
-    default: {
+    default: 
       return state;
-    };
   };
 };

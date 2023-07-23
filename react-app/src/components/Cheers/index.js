@@ -18,7 +18,7 @@ const Cheers = ({ tasting }) => {
     if (tasting && tasting.cheers_by) {
       setIsCheered(tasting.cheers_by.includes(user?.id));
     }
-  }, [tasting.cheers_by, user?.id]);
+  }, [tasting, user?.id]);
 
 
   const cheersHandler = () =>{

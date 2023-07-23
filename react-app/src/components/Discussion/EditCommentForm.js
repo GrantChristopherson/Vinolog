@@ -8,15 +8,22 @@ import './editCommentForm.css';
 const EditCommentForm = ({ comment, user, discussionTasting, setShowEditCommentForm }) => {
   
   const dispatch = useDispatch();
+  const [isMounted, setIsMounted] = useState(true);
   const [editedComment, setEditedComment] = useState(comment?.comment);
   const [errors, setErrors] = useState([]);
 
   useEffect(() => {
-    (async () => {
-    dispatch(getCommentsThunk())
+    return () => {
+      setIsMounted(false);
+    };
+  }, []);
 
-    })();
-  },[dispatch]);
+  useEffect(() => {
+    if (isMounted) {
+      dispatch(getCommentsThunk());
+    }
+  },[dispatch, isMounted]);
+
   
 
   const handleSubmit = async (e) => {
@@ -45,11 +52,11 @@ const EditCommentForm = ({ comment, user, discussionTasting, setShowEditCommentF
   };
 
 
-  const commentDeleter = (commentId) => async (e) => {
+  const commentDeleter = (commentId) => (e) => {
     e.preventDefault()
    
-    let data = await dispatch(deleteCommentThunk(commentId));
-    if (data) {
+    let data = dispatch(deleteCommentThunk(commentId));
+    if (data && isMounted) {
       setShowEditCommentForm(false);
     };
   };
