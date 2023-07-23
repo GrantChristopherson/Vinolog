@@ -22,6 +22,8 @@ const Cheers = ({ tasting }) => {
 
 
   const cheersHandler = () =>{
+    if (user.id === tasting.user.id) return;
+
     if (!isCheered) {
       dispatch(createCheersThunk(tasting?.id, user?.id));
     } else {
