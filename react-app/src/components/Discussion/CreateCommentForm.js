@@ -12,20 +12,15 @@ const CreateCommentForm = ({ discussionTasting }) => {
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState([]);
   
-
   useEffect(()=> {
-
   },[comments.comment])
-
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     let validateErrors = [];
-   
     if (comment.length < 2 || comment.length > 50) validateErrors.push('* comment must be between 2 and 50 characters');
     if (comment.trim().length === 0) validateErrors.push('* spacebar exclusive input is not valid as comment');
-   
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
       return;

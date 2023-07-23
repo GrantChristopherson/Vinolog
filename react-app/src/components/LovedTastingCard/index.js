@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createFriendThunk, deleteFriendThunk } from '../../store/friends';
+import { createFriendThunk } from '../../store/friends';
 import Cheers from '../Cheers';
 import './lovedTastingCard.css';
 

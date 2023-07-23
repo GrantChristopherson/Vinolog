@@ -216,7 +216,6 @@ export const createCheersThunk = (tastingId, userId) => async(dispatch) => {
   });
 
   const cheers = await response.json()
-  console.log('thunk====', cheers)
   dispatch(createCheers(cheers.cheers, userId))
 };
 
@@ -229,7 +228,6 @@ export const deleteCheersThunk = (tastingId, userId) => async(dispatch) => {
   const cheers = await response.json()
   dispatch(deleteCheers(cheers.cheers, userId))
 };
-
 
 
 
@@ -343,9 +341,8 @@ export default function reducer(state = initialState, action) {
       };
       return state;
     };
-    default: {
+    default: 
       return state;
-    };
   };
 };
       
