@@ -28,7 +28,7 @@ const Friend = (friend) => {
         </span>
       </NavLink>
       <div className="unfriend_container">
-        <button className='unfriend_button' onClick={unFriendHandler}>Remove</button>
+        <button className='unfriend_button' onClick={unFriendHandler}>Remove...</button>
       </div>
     </div>
   );
