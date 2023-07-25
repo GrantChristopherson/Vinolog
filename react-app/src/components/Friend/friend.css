@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: row;
   font-size: 16px;
-  color: rgb(192, 192, 176);
+  color: #FFF3C4;
 }
 
 .friend_image_name_container {
@@ -22,7 +22,8 @@
 }
 
 .friend_image_name_container:hover {
-  color: #FFF3C4;
+  color: rgb(192, 192, 176);
+  text-decoration: underline;
   cursor: pointer;
   transition-duration: 300ms;
 }
@@ -45,19 +46,15 @@
 }
 
 .unfriend_button {
-  height: 20px;
-  margin: 1px 20px;
-  padding: 1px 12px;
-  border-radius: 10px;
-  background-color: rgb(103, 10, 21);
+  background-color: transparent;
   font-size: 10px;
   color: #FFF3C4;
   border: 0;
 }
 
 .unfriend_button:hover {
-  background-color: #FFF3C4;
-  color: rgb(103, 10, 21);
+  color: rgb(102, 105, 27);
+  text-decoration: underline;
   cursor: pointer;
   transition-duration: 300ms;
 }
