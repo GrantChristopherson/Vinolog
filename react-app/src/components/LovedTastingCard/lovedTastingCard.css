@@ -66,7 +66,11 @@
   margin: 35px 0 0 20px;
   color: rgba(192, 192, 176, .9);
   padding-bottom: 0;
-  font-size: 12px;
+  font-size: 14px;
+}
+
+.cheers_wrapper {
+  margin: 25px 0 0 0;
 }
 
 .friending_container {
@@ -75,9 +79,15 @@
 }
 
 .friend_button {
-  margin: 35px 0 0 10px;
-  color: white;
-  font-size: 16px;
+  margin: 10px 0 0 10px;
+  color: rgb(198 192 163);
+  font-size: 10px;
+}
+
+.friend_button:hover {
+  color: rgb(102, 105, 27);
+  text-decoration: underline;
+  transition-duration: 300ms;
 }
 
 .current_friend {

@@ -40,18 +40,20 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
       <div className='loved_tasting_card'>
         <div className='loved_tasting_info' onClick={() => setShowInfo(!showInfo)}>
           <div className='user_info_container' >
-            <div className='profile_cheers_container'>
+            <span className='profile_cheers_container'>
               <div className='profile_image_container' >
                 {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
                 : <i className='fa-solid fa-user default-profile-image' />}
                 {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
                 <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
               </div>
-            </div>
+              <div  className='cheers_wrapper'>
+                <Cheers tasting={tasting} />
+              </div>
+            </span>
             <div className='friending_container'>
-              {tasting?.user?.id !== user?.id  && !isInFriend ? <h6 className='friend_button' onClick={friendHandler}>+</h6> : <></> }
-              {isInFriend && tasting?.user?.id !== user?.id ? <h6 className='current_friend'>Friend In Your Field</h6> : <></>}
-              <Cheers tasting={tasting} />
+              {tasting?.user?.id !== user?.id  && !isInFriend ? <span className='friend_button' onClick={friendHandler}>+ Add {tasting?.user?.username} to your Field</span> : <></> }
+              {isInFriend && tasting?.user?.id !== user?.id ? <span className='current_friend'>Friend In Your Field</span> : <></>}
             </div>
           </div>
           <div className='loved_info_container'>
