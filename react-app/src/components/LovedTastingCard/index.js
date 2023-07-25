@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createFriendThunk } from '../../store/friends';
+import { createFriendThunk, deleteFriendThunk } from '../../store/friends';
 import Cheers from '../Cheers';
 import './lovedTastingCard.css';
 
@@ -28,10 +28,10 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
   };
 
 
-  // const unFriendHandler = async(e) => {
-  //   e.preventDefault();
-  //   dispatch(deleteFriendThunk(user.id, tasting?.user?.id))
-  // };
+  const unFriendHandler = async(e) => {
+    e.preventDefault();
+    dispatch(deleteFriendThunk(user.id, tasting?.user?.id))
+  };
 
 
 
@@ -53,7 +53,10 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </span>
             <div className='friending_container'>
               {tasting?.user?.id !== user?.id  && !isInFriend ? <span className='friend_button' onClick={friendHandler}>+ Add {tasting?.user?.username} to your Field</span> : <></> }
-              {isInFriend && tasting?.user?.id !== user?.id ? <span className='current_friend'>Friend In Your Field</span> : <></>}
+              {isInFriend && tasting?.user?.id !== user?.id ? <span className='friend_options_container'>
+                <i className='unfriending_button' onClick={unFriendHandler}>- Remove {tasting?.user?.username}?</i>
+                <i className='current_friend'>Friend In Your Field</i>
+              </span> : <></>}
             </div>
           </div>
           <div className='loved_info_container'>
