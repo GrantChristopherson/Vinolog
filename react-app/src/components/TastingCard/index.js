@@ -12,7 +12,7 @@ const TastingCard = ({tasting}) => {
   const dispatch = useDispatch()
   const [showInfo, setShowInfo] = useState(false);
 
-  const tastingTransformer = showInfo ? 'tasting_container_transformer' : 'tasting_container';
+  const tastingTransformer = showInfo ? 'tasting_transformer' : '';
 
   const deleteHandler = async() => {
     await dispatch(deleteTastingThunk(tasting?.id))
@@ -22,7 +22,7 @@ const TastingCard = ({tasting}) => {
 
 
   return (
-    <div className={tastingTransformer} >
+    <div className={`tasting_container ${tastingTransformer}`} >
       <div className='tasting-info-container' onClick={() => setShowInfo(!showInfo)}>
         <div className='wine-info'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>

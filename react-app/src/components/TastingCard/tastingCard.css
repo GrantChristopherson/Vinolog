@@ -11,9 +11,10 @@
   border-top-style: solid;
   border-width: 1px;
   border-color: rgb(39, 39, 38);
+  transition: transform 1s ease;
 }
 
-.tasting_container_transformer {
+.tasting_transformer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
