@@ -1,4 +1,4 @@
-.tasting-container {
+.tasting_container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -11,6 +11,21 @@
   border-top-style: solid;
   border-width: 1px;
   border-color: rgb(39, 39, 38);
+}
+
+.tasting_container_transformer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px 20px 30px 20px;
+  min-height: 200px;
+  background-color: rgba(39, 39, 38, 0.85);
+  border-radius: 30px;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: rgb(39, 39, 38);
+  transform: translate(0, -300px);
 }
 
 .tasting-info-container {
