@@ -3,7 +3,7 @@
   justify-content: space-between;
   flex-direction: column;
   margin: 0;
-  padding: 20px 20px 30px 20px;
+  padding: 20px 20px 0px 20px;
   min-height: 200px;
   background-color: rgba(39, 39, 38, 0.35);
   border-bottom-left-radius: 30px;
@@ -19,8 +19,9 @@
   justify-content: space-between;
   flex-direction: column;
   margin: 0;
-  padding: 20px 20px 30px 20px;
-  min-height: 200px;
+  padding: 20px 20px 0px 20px;
+  /* min-height: 200px; */
+  height: 600px;
   background-color: rgba(39, 39, 38, 0.85);
   border-radius: 30px;
   border-top-style: solid;
@@ -49,7 +50,7 @@
 }
 
 .loved-wine-heart {
-  color: #DF6A72;
+  color: rgb(223, 106, 114);
 }
 
 .extra-wine-info {
@@ -66,41 +67,36 @@
 
 .edit-delete-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 10px 0;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 25px 15px;
 }
 
-.edit_tasting {
-  margin-bottom: 10px;
-  padding: 5px 30px;
-  border-radius: 30px;
+.edit_my_tasting {
   font-size: 12px;
   text-decoration: none;
-  background-color: rgb(198 192 163);
-  color: rgb(103, 10, 21);
+  background-color: transparent;
+  color: rgb(192, 192, 176);
   border: 0;
 }
 
-.edit_tasting:hover {
-  font-weight: bold;
+.edit_my_tasting:hover {
+  color: rgb(102, 105, 27);
   text-decoration: underline;
   cursor: pointer;
   transition-duration: 300ms;
 }
 
 .delete-button {
-  padding: 5px 20px;
-  border-radius: 30px;
-  font-size: 10px;
-  background-color: rgb(103, 10, 21);
-  color: rgb(198 192 163);
+  font-size: 12px;
+  background-color: transparent;
+  color: rgba(223, 106, 114, .8);
   border: 0;
 }
 
 .delete-button:hover {
   font-weight: bold;
+  color: rgb(103, 10, 21);
   text-decoration: underline;
   cursor: pointer;
   transition-duration: 300ms;
