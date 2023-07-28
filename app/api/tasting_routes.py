@@ -41,7 +41,7 @@ def all_loved_tastings():
 
 
 
-# Get a friends tasting cards 
+# Get a friends tasting cards          #tested successfully
 @tasting_routes.route('/friends/<int:id>')
 @login_required
 def get_friends_tastings(id):
@@ -82,7 +82,7 @@ def post_tasting():
 
 
 
-# Update a tasting card  
+# Update a tasting card                #tested successfully
 @tasting_routes.route('/edit/<int:id>', methods=['PUT'])
 @login_required
 def edit_tasting_card(id):
@@ -115,7 +115,7 @@ def edit_tasting_card(id):
 
 
 
-# Delete a tasting card
+# Delete a tasting card                  #tested successfully
 @tasting_routes.route('/<int:tasting_id>', methods=['DELETE'])
 @login_required
 def delete_tasting_card(tasting_id):
@@ -130,7 +130,7 @@ def delete_tasting_card(tasting_id):
 
 
 
-# Create a cheers
+# Create a cheers                          #tested successfully
 @tasting_routes.route('/<int:tasting_id>/cheers', methods=["PUT"])
 @login_required
 def cheers(tasting_id):
@@ -150,7 +150,7 @@ def cheers(tasting_id):
 
 
 
-# Delete a cheers
+# Delete a cheers                            #tested successfully
 @tasting_routes.route('/<int:tasting_id>/cheers', methods=["DELETE"])
 @login_required
 def delete_cheers(tasting_id):
