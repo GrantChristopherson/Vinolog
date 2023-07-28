@@ -78,7 +78,7 @@ const TastingForm = () => {
       validateErrors['vintage'] = `* Vintage required and must be between 1900 and current year (${today.getFullYear()})`
     };
 
-    if (color === colorOptions[0]) {
+    if (color === colorOptions[0].value) {
       validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
     };
     
@@ -145,10 +145,13 @@ const TastingForm = () => {
     
     setIsSubmitting(!isSubmitting)
 
-    let data = dispatch(createTastingThunk(tasting));
-    if (data) {
-      history.push('/tastings')
-    };
+    // let data = await dispatch(createTastingThunk(tasting));
+    // console.log('post return data', data)
+    // if (data) {
+    //   history.push('/tastings')
+    // };
+    dispatch(createTastingThunk(tasting));
+    history.push('/tastings')
   };
     
       
@@ -201,15 +204,13 @@ const TastingForm = () => {
     setThoughts(e.target.value);
   };
 
-  const handleClick = (e) => {
-    if (love === false) {
-      setLove(true)
-    } else {
-      setLove(false)
-    }
-  }
+  const updateLove = (e) => {
+    setLove(e.target.checked);
+  };
 
 
+
+  
   return (
     <>
       <Navigation />
@@ -387,10 +388,9 @@ const TastingForm = () => {
               <label className='love_label'>Love the wine?</label>
               <input className='love_input'
                 type="checkbox"
-                value={love}
                 name='love'
-                checked={love === true}
-                onChange={handleClick}
+                checked={love}
+                onChange={updateLove}
               />
             </div>
             <div className='submit_cancel_container'>

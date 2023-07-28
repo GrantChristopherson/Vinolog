@@ -72,7 +72,7 @@ def post_tasting():
       palate = form.data['palate'],
       thoughts = form.data['thoughts'],
       love = form.data['love'],
-      user = current_user
+      user_id = current_user.id
     )
     db.session.add(tasting)
     db.session.commit()
@@ -87,7 +87,8 @@ def post_tasting():
 @login_required
 def edit_tasting_card(id):
   tasting = Tasting.query.get(id)
-  if tasting.user_id != current_user.id:
+
+  if tasting.user.id != current_user.id:
     redirect('api/auth/unauthorized')
 
   form = TastingForm()
@@ -98,13 +99,14 @@ def edit_tasting_card(id):
     tasting.vineyard = form.data['vineyard']
     tasting.varietal = form.data['varietal']
     tasting.vintage = form.data['vintage']
+    tasting.color = form.data['color']
+    tasting.label_image = form.data['label_image']
     tasting.other_info = form.data['other_info']
     tasting.sight = form.data['sight']
     tasting.nose = form.data['nose']
     tasting.palate = form.data['palate']
     tasting.thoughts = form.data['thoughts']
     tasting.love = form.data['love']
-    
 
     db.session.commit()
     return tasting.to_dict()
@@ -143,7 +145,7 @@ def cheers(tasting_id):
   if (not isUserCheers):
     tasting.tasting_cheers.append(user)
     db.session.commit()
-  print('api return===', {"cheers": tasting.to_dict()})
+
   return {"cheers": tasting.to_dict()}
 
 
