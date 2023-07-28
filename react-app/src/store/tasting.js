@@ -164,12 +164,14 @@ export const editTastingThunk = (tasting) => async(dispatch) => {
       vineyard: tasting.vineyard,
       varietal: tasting.varietal,
       vintage: tasting.vintage,
-      other_info: tasting.other_info,
+      color: tasting.color,
+      label_image: tasting.labelImage,
+      other_info: tasting.otherInfo,
       sight: tasting.sight,
       nose: tasting.nose,
       palate: tasting.palate,
       thoughts: tasting.thoughts,
-      love: tasting.love
+      love: tasting.love,
     }),
   });
 

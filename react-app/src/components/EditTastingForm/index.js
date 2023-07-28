@@ -17,9 +17,8 @@ function EditTastingForm() {
   const history = useHistory();
   const { id } = useParams();
   const tasting = useSelector(state => state.tastings.tastings[id]);
-  const user = useSelector(state => state?.session?.user)
-  console.log('edit', tasting)
-
+  // const user = useSelector(state => state?.session?.user)
+  
   const options = [
     { value: 'Select the Style of Wine...', label: 'Select the Style of Wine...' },
     { value: 'Red', label: 'Red' },
@@ -79,7 +78,7 @@ function EditTastingForm() {
       validateErrors['vintage'] = `* Vintage required and must be between 1900 and this year (${today.getFullYear()})`;
     };
 
-    if (color === options[0]) {
+    if (color === options[0].value) {
       validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
     };
     
@@ -143,18 +142,17 @@ function EditTastingForm() {
       palate,
       thoughts,
       love,
-      user: user
+    };
+    
+    dispatch(editTastingThunk(taste));
+    
+    if (taste.love === false) {
+      history.push('/tastings');
+      return
     };
 
-    let data = dispatch(editTastingThunk(taste));
-
-    if (taste.love === false && data) {
-      history.push('/tastings')
-      return
-    } 
-
-    if (taste.love === true && data) {
-      history.push('/lovedtastings')
+    if (taste.love === true) {
+      history.push('/lovedtastings');
       return
     };
   };
@@ -209,13 +207,10 @@ function EditTastingForm() {
     setThoughts(e.target.value);
   };
   
-  const handleClick = (e) => {
-    if (love === false) {
-      setLove(true)
-    } else {
-      setLove(false)
-    };
+  const updateLove = (e) => {
+  setLove(e.target.checked);
   };
+  
   
   
   
@@ -391,15 +386,13 @@ function EditTastingForm() {
               <label className='edit_love_label'>Love the wine?</label>
               <input className='edit_love_input'
                 type="checkbox"
-                value={love}
                 name='love'
-                checked={love === true}
-                onChange={handleClick}
+                checked={love}
+                onChange={updateLove}
               />
             </div>
             <div className='edit_submit_close_container'>
               <button className='update_tasting_button' type='submitEditWine'>Update</button>
-              {/* <button className="closeEditWine" onClick={()=>setShowModal(false)}>Close</button> */}
               <NavLink to='/tastings' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
               <h4 className='close_edit_wine' >Cancel</h4>
               </NavLink>
