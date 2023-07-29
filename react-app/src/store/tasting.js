@@ -1,4 +1,4 @@
-const GET_MY_TASTINGS = 'tastings/GET_My_TASTINGS';
+const GET_MY_TASTINGS = 'tastings/GET_MY_TASTINGS';
 const GET_ALL_LOVED_TASTINGS = 'tastings/GET_ALL_LOVED_TASTINGS';
 const GET_FRIENDS_TASTINGS = 'tastings/GET_FRIENDS_TASTINGS';
 const CREATE_TASTING = 'tastings/CREATE_TASTING';
@@ -7,6 +7,7 @@ const DELETE_TASTING = 'tasting/DELETE_TASTING';
 const GET_CHEERED_TASTINGS = 'cheered/GET_CHEERED_TASTINGS';
 const CREATE_CHEERS = 'cheers/CREATE_CHEERS';
 const DELETE_CHEERS = 'cheers/DELETE_CHEERS';
+const GET_TASTINGS_SEARCH = 'search/GET_TASTINGS_SEARCH';
 
 
 // ---------------------------------------------action creators-----------------------------------
@@ -81,6 +82,13 @@ const deleteCheers = (cheeredTasting, userId) => {
     type: DELETE_CHEERS,
     cheeredTasting,
     userId
+  };
+};
+
+const getTastingsSearch = (tastings) => {
+  return {
+    type: GET_TASTINGS_SEARCH,
+    tastings
   };
 };
 
@@ -232,6 +240,20 @@ export const deleteCheersThunk = (tastingId, userId) => async(dispatch) => {
 };
 
 
+export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
+  const response = await fetch(`/api/tastings/search/${searchWord}`, {
+    headers: {}
+  });
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const tastings = await response.json();
+    dispatch(getTastingsSearch(tastings));
+  }
+};
+
+
 
 
 // ----------------------------------------reducer----------------------------------------------------
@@ -342,6 +364,16 @@ export default function reducer(state = initialState, action) {
         };
       };
       return state;
+    };
+    case GET_TASTINGS_SEARCH: {
+      const tastings = {};
+      action.tastings.search.forEach(tasting => {
+        tastings[tasting.id] = tasting;
+      })
+      return {
+        ...state,
+        tastings: tastings
+      };
     };
     default: 
       return state;

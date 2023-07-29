@@ -2,6 +2,7 @@ from flask import Blueprint, redirect, request
 from flask_login import login_required, current_user
 from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
+from sqlalchemy import or_
 
 tasting_routes = Blueprint('tastings', __name__)
 
@@ -167,3 +168,25 @@ def delete_cheers(tasting_id):
     db.session.commit()
 
   return {"cheers": tasting.to_dict()}
+
+
+
+# Get tastings via search_word
+@tasting_routes.route('/search/<string:search_word>')
+@login_required
+def get_tastings_search(search_word):
+  tastings = Tasting.query.filter(or_(
+    Tasting.producer.ilike(f'%{search_word}%'),
+    Tasting.region.ilike(f'%{search_word}%'),
+    Tasting.vineyard.ilike(f'%{search_word}%'),
+    Tasting.varietal.ilike(f'%{search_word}%'),
+    Tasting.vintage.ilike(f'%{search_word}%'),
+    Tasting.color.ilike(f'%{search_word}%'),
+    Tasting.other_info.ilike(f'%{search_word}%'),
+    Tasting.sight.ilike(f'%{search_word}%'),
+    Tasting.nose.ilike(f'%{search_word}%'),
+    Tasting.palate.ilike(f'%{search_word}%'),
+    Tasting.thoughts.ilike(f'%{search_word}%'),
+  )).all()
+
+  return {'search': [tasting.to_dict() for tasting in tastings]}
