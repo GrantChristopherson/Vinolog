@@ -1,10 +1,6 @@
-.search_form_container {
-  /* display: flex; */
-  /* justify-content: flex-end; */
-  /* margin: 10px 0; */
-  /* padding: 5px 40px; */
-  /* width: 100%; */
-}
+/* .search_form_container {
+  
+} */
 
 /* .search_form {
 
@@ -48,5 +44,6 @@
 
 .search_submit_button:hover {
   cursor: pointer;
+  color: rgba(192, 192, 176, .9);
   transition-duration: 300ms;
 }
