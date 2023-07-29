@@ -11,6 +11,7 @@ import FriendsField from './components/FriendsField';
 import FriendTastings from './components/FriendTastings';
 import TastingForm from './components/TastingForm';
 import EditTastingForm from './components/EditTastingForm';
+import SearchPage from './components/SearchPage';
 import Splash from './components/Splash';
 
 
@@ -62,6 +63,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/friends/:id/tastings' exact={true} >
           <FriendTastings />
+        </ProtectedRoute>
+        <ProtectedRoute path='/search/:searchWord/' exact={true} >
+          <SearchPage />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

@@ -2,6 +2,7 @@ from flask import Blueprint, redirect, request
 from flask_login import login_required, current_user
 from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
+from sqlalchemy import or_
 
 tasting_routes = Blueprint('tastings', __name__)
 
@@ -188,4 +189,4 @@ def get_tastings_search(search_word):
     Tasting.thoughts.ilike(f'%{search_word}%'),
   )).all()
 
-  return {'tastings': [tasting.to_dict() for tasting in tastings]}
+  return {'search': [tasting.to_dict() for tasting in tastings]}

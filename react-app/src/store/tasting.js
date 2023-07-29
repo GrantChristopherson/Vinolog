@@ -85,11 +85,10 @@ const deleteCheers = (cheeredTasting, userId) => {
   };
 };
 
-const getTastingsSearch = (tastings, searchWord) => {
+const getTastingsSearch = (tastings) => {
   return {
     type: GET_TASTINGS_SEARCH,
-    tastings,
-    searchWord
+    tastings
   };
 };
 
@@ -245,8 +244,13 @@ export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
   const response = await fetch(`/api/tastings/search/${searchWord}`, {
     headers: {}
   });
-  const tastings = await response.json();
-  dispatch(getTastingsSearch(tastings));
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const tastings = await response.json();
+    dispatch(getTastingsSearch(tastings));
+  }
 };
 
 
@@ -362,14 +366,13 @@ export default function reducer(state = initialState, action) {
       return state;
     };
     case GET_TASTINGS_SEARCH: {
-      const tastings = action.tastings.reduce((acc, tasting) => {
-        acc[tasting.id] = tasting;
-        return acc;
-      });
-
+      const tastings = {};
+      action.tastings.search.forEach(tasting => {
+        tastings[tasting.id] = tasting;
+      })
       return {
         ...state,
-        tastings: {...state.tastings, ...tastings },
+        tastings: tastings
       };
     };
     default: 

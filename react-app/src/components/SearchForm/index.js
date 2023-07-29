@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './searchForm.css';
 
 
@@ -8,11 +7,13 @@ import './searchForm.css';
 
 const SearchForm = () => {
 
-  const dispatch = useDispatch();
+  const history = useHistory();
   const [searchWord, setSearchWord] = useState('');
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    history.push(`/search/${searchWord}`);
   };
 
   const updateSearch = (e) => {
@@ -29,7 +30,7 @@ const SearchForm = () => {
             value={searchWord}
             onChange={updateSearch}
           />
-          <button className='search_submit_button'>
+          <button className='search_submit_button' type='submit'>
             <i className='fa-solid fa-magnifying-glass fa-rotate-90' />
           </button>
         </form>
