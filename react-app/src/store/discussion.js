@@ -44,8 +44,13 @@ export const getCommentsThunk = () => async(dispatch) => {
   const response = await fetch('/api/discussion/comments/all', {
     header: {}
   });
-  const comments = await response.json();
-  dispatch(getComments(comments.comment))
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const comments = await response.json();
+    dispatch(getComments(comments.comment));
+  };
 };
 
 
@@ -56,17 +61,11 @@ export const createCommentThunk = (discussion, tastingId) => async(dispatch) => 
     body: JSON.stringify(discussion)
   });
   
-  if (response.ok) {
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
     dispatch(createComment(data));
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    };
-  } else {
-    return ['An error occurred. Please try again.']
   };
 };
 
@@ -80,17 +79,11 @@ export const editCommentThunk = (discussion, commentId) => async(dispatch) => {
     }),
   });
 
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(editComment(data))
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    };
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   } else {
-    return ['An error occurred. Please try again.']
+    const data = await response.json();
+    dispatch(editComment(data));
   };
 };
 
@@ -100,17 +93,11 @@ export const deleteCommentThunk = (commentId) => async(dispatch) => {
     method: 'DELETE',
   })
 
-  if (response.ok) {
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     await response.json();
     dispatch(deleteComment(commentId));
-    return;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    };
-  } else {
-    return ['An error occurred. Please try again.']
   };
 };
 

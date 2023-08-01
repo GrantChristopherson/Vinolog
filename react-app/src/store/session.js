@@ -32,15 +32,18 @@ export const authenticate = () => async (dispatch) => {
       'Content-Type': 'application/json'
     }
   });
-  if (response.ok) {
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
     if (data.errors) {
       return;
-    }
+    };
   
     dispatch(setUser(data));
-  }
-}
+  };
+};
 
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
@@ -54,21 +57,13 @@ export const login = (email, password) => async (dispatch) => {
     })
   });
   
-  
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(setUser(data))
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    }
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   } else {
-    return ['An error occurred. Please try again.']
-  }
-
-}
+    const data = await response.json();
+    dispatch(setUser(data));
+  };
+};
 
 export const logout = () => async (dispatch) => {
   const response = await fetch('/api/auth/logout', {
@@ -77,7 +72,9 @@ export const logout = () => async (dispatch) => {
     }
   });
 
-  if (response.ok) {
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     dispatch(removeUser());
   };
 };
@@ -97,17 +94,11 @@ export const signUp = (username, email, profile_image, password) => async (dispa
     }),
   });
   
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(setUser(data))
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    };
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   } else {
-    return ['An error occurred. Please try again.']
+    const data = await response.json();
+    dispatch(setUser(data));
   };
 };
 
@@ -116,9 +107,12 @@ export const getAllUsersThunk = () => async(dispatch) => {
   const response = await fetch('/api/users/', {
     headers: {}
   });
-  if (response.ok) {
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
-    dispatch(getAllUsers(data.users))
+    dispatch(getAllUsers(data.users));
   };
 };
 
