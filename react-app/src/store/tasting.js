@@ -99,8 +99,13 @@ export const getMyTastingsThunk = () => async(dispatch) => {
   const response = await fetch('/api/tastings/', {
     headers: {}
   });
-  const tastings = await response.json();
-  dispatch(getMyTastings(tastings?.tastings));
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const tastings = await response.json();
+    dispatch(getMyTastings(tastings.tastings));
+  };
 };
 
 
@@ -108,8 +113,13 @@ export const getAllLovedTastingsThunk = () => async(dispatch) => {
   const response = await fetch('/api/tastings/loved', {
     headers: {}
   });
-  const tastings = await response.json();
-  dispatch(getAllLovedTastings(tastings?.tastings));
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const tastings = await response.json();
+    dispatch(getAllLovedTastings(tastings.tastings));
+  };
 };
 
 
@@ -117,8 +127,13 @@ export const getFriendsTastingsThunk = (friendId) => async(dispatch) => {
   const response = await fetch(`/api/tastings/friends/${friendId}`, {
     headers: {}
   });
-  const tastings = await response.json();
-  dispatch(getFriendsTastings(tastings.tastings));
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const tastings = await response.json();
+    dispatch(getFriendsTastings(tastings.tastings));
+  };
 };
 
 
@@ -145,17 +160,11 @@ export const createTastingThunk = (tasting) => async(dispatch) => {
     }),
   });
 
-  if (response.ok) {
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
     dispatch(createTasting(data));
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    };
-  } else {
-    return ['An error occurred. Please try again.']
   };
 };
 
@@ -183,17 +192,11 @@ export const editTastingThunk = (tasting) => async(dispatch) => {
     }),
   });
 
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(editTasting(data))
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    };
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   } else {
-    return ['An error occurred. Please try again.']
+    const data = await response.json();
+    dispatch(editTasting(data));
   };
 };
 
@@ -203,9 +206,12 @@ export const deleteTastingThunk = (tastingId) => async(dispatch) => {
     method: 'DELETE',
   })
 
-  await response.json();
-  dispatch(deleteTasting(tastingId));
-  return response
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    await response.json();
+    dispatch(deleteTasting(tastingId));
+  };
 };
 
 
@@ -214,8 +220,12 @@ export const getUserCheersThunk = (id) => async (dispatch) => {
     headers: {}
   });
 
-  const tastings = await response.json()
-  dispatch(getAllUsersCheers(tastings.cheers))
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const tastings = await response.json();
+    dispatch(getAllUsersCheers(tastings.cheers));
+  };
 };
 
 
@@ -225,8 +235,12 @@ export const createCheersThunk = (tastingId, userId) => async(dispatch) => {
     headers: {}
   });
 
-  const cheers = await response.json()
-  dispatch(createCheers(cheers.cheers, userId))
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const cheers = await response.json();
+    dispatch(createCheers(cheers.cheers, userId));
+  };
 };
 
 
@@ -235,8 +249,12 @@ export const deleteCheersThunk = (tastingId, userId) => async(dispatch) => {
     method: 'DELETE',
   });
 
-  const cheers = await response.json()
-  dispatch(deleteCheers(cheers.cheers, userId))
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const cheers = await response.json();
+    dispatch(deleteCheers(cheers.cheers, userId));
+  };
 };
 
 
@@ -250,7 +268,7 @@ export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
   } else {
     const tastings = await response.json();
     dispatch(getTastingsSearch(tastings));
-  }
+  };
 };
 
 

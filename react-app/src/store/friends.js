@@ -44,7 +44,10 @@ export const getMyFieldThunk = (id) => async(dispatch) => {
   const response = await fetch(`/api/users/${id}/following`, {
     headers: {}
   });
-  if (response.ok) {
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
     dispatch(getMyField(data));
   };
@@ -55,7 +58,10 @@ export const getFriendedsThunk = (id) => async(dispatch) => {
   const response = await fetch(`/api/users/${id}/followers`, {
     headers: {}
   });
-  if (response.ok) {
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
     dispatch(getFriendeds(data.friendeds));
   };
@@ -66,7 +72,10 @@ export const createFriendThunk = (id, newfriendId) => async(dispatch) => {
   const response = await fetch(`/api/users/${id}/following/${newfriendId}`, {
     method: 'PUT'
   });
-  if (response.ok) {
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
     dispatch(createFriend(data));
   };
@@ -77,7 +86,10 @@ export const deleteFriendThunk = (id, deleteId) => async(dispatch) => {
   const response = await fetch(`/api/users/${id}/following/${deleteId}`, {
     method: 'DELETE'
   });
-  if (response.ok) {
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
     const data = await response.json();
     dispatch(deleteFriend(data));
   };
