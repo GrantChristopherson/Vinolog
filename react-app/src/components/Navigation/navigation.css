@@ -115,5 +115,11 @@
   justify-content: flex-end;
   align-items: center;
   width: 35%;
-  /* margin-right: 0; */
+}
+
+@media only screen and (max-width: 1700px)  {
+
+  .logout_container {
+   width: 600px;
+  }
 }
