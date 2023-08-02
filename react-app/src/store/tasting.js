@@ -384,13 +384,13 @@ export default function reducer(state = initialState, action) {
       return state;
     };
     case GET_TASTINGS_SEARCH: {
-      const tastings = {};
+      const searchedTastings = {};
       action.tastings.search.forEach(tasting => {
-        tastings[tasting.id] = tasting;
+        searchedTastings[tasting.id] = tasting;
       })
       return {
         ...state,
-        tastings: tastings
+        tastings: searchedTastings
       };
     };
     default: 

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
+// import { getTastingsSearchThunk } from '../../store/tasting';
 import './searchForm.css';
 
 
@@ -12,6 +14,7 @@ const SearchForm = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    if (searchWord === '') return
 
     history.push(`/search/${searchWord}`);
   };
@@ -20,6 +23,9 @@ const SearchForm = () => {
     setSearchWord(e.target.value);
   };
 
+
+
+  
   return (
     <>
       <div className='search_form_container'>
