@@ -175,18 +175,21 @@ def delete_cheers(tasting_id):
 @tasting_routes.route('/search/<string:search_word>')
 @login_required
 def get_tastings_search(search_word):
-  tastings = Tasting.query.filter(or_(
-    Tasting.producer.ilike(f'%{search_word}%'),
-    Tasting.region.ilike(f'%{search_word}%'),
-    Tasting.vineyard.ilike(f'%{search_word}%'),
-    Tasting.varietal.ilike(f'%{search_word}%'),
-    Tasting.vintage.ilike(f'%{search_word}%'),
-    Tasting.color.ilike(f'%{search_word}%'),
-    Tasting.other_info.ilike(f'%{search_word}%'),
-    Tasting.sight.ilike(f'%{search_word}%'),
-    Tasting.nose.ilike(f'%{search_word}%'),
-    Tasting.palate.ilike(f'%{search_word}%'),
-    Tasting.thoughts.ilike(f'%{search_word}%'),
-  )).all()
+  try: 
+    tastings = Tasting.query.filter(or_(
+      Tasting.producer.ilike(f'%{search_word}%'),
+      Tasting.region.ilike(f'%{search_word}%'),
+      Tasting.vineyard.ilike(f'%{search_word}%'),
+      Tasting.varietal.ilike(f'%{search_word}%'),
+      Tasting.vintage.ilike(f'%{search_word}%'),
+      Tasting.color.ilike(f'%{search_word}%'),
+      Tasting.other_info.ilike(f'%{search_word}%'),
+      Tasting.sight.ilike(f'%{search_word}%'),
+      Tasting.nose.ilike(f'%{search_word}%'),
+      Tasting.palate.ilike(f'%{search_word}%'),
+      Tasting.thoughts.ilike(f'%{search_word}%'),
+    )).all()
 
-  return {'search': [tasting.to_dict() for tasting in tastings]}
+    return {'search': [tasting.to_dict() for tasting in tastings]}
+  except Exception as e:
+    return {"error": str(e)}, 500
