@@ -52,3 +52,13 @@
   transition-duration: 300ms;
 }
 
+@media only screen and (max-height: 1000px)  {
+
+  .search_input {
+    height: 30px;
+  }
+
+  .search_submit_button {
+    height: 30px;
+  }
+}
