@@ -15,7 +15,7 @@ const SearchPage = () => {
   const dispatch = useDispatch();
   const { searchWord } = useParams();
   const tastings = useSelector(state => Object.values(state.tastings.tastings));
-  console.log('tastings search====', tastings)
+  // console.log('tastings search====', tastings)
 
   useEffect(() => {
     if (!searchWord) return;
