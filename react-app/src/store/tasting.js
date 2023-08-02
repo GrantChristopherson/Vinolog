@@ -268,6 +268,8 @@ export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
   } else {
     const tastings = await response.json();
     dispatch(getTastingsSearch(tastings));
+    
+    return Promise.resolve(tastings);
   };
 };
 
