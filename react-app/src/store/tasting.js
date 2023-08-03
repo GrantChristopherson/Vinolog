@@ -263,14 +263,16 @@ export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
     headers: {}
   });
   
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const tastings = await response.json();
-    dispatch(getTastingsSearch(tastings));
+  // if (!response.ok) {
+  //   throw new Error(`HTTP error! status: ${response.status}`);
+  // } else {
+  //   const tastings = await response.json();
+  //   dispatch(getTastingsSearch(tastings));
     
-    return Promise.resolve(tastings);
-  };
+  //   return Promise.resolve(tastings);
+  // };
+  const tastings = await response.json();
+  dispatch(getTastingsSearch(tastings));
 };
 
 
