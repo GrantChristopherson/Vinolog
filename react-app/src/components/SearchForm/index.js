@@ -16,14 +16,14 @@ const SearchForm = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (searchWord === '') return
-    
+
     await dispatch(getTastingsSearchThunk(searchWord)).then(() => {
       history.push(`/search/${searchWord}`);
     });
   };
 
   const updateSearch = (e) => {
-    setSearchWord(e.target.value);
+    setSearchWord(e.target.value)
   };
 
 
