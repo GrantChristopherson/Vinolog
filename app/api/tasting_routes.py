@@ -3,8 +3,8 @@ from flask_login import login_required, current_user
 from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
-import logging
-logging.basicConfig(level=logging.DEBUG)
+# import logging
+# logging.basicConfig(level=logging.DEBUG)
 
 tasting_routes = Blueprint('tastings', __name__)
 
@@ -232,7 +232,7 @@ def search():
 
     else:
       # search both tables
-      logging.debug('before the query debuggin======')
+      # logging.debug('before the query debuggin======')
       tastings = Tasting.query.filter(or_(
         Tasting.producer.ilike(f'%{search_word}%'),
         Tasting.region.ilike(f'%{search_word}%'),
@@ -246,13 +246,13 @@ def search():
         Tasting.palate.ilike(f'%{search_word}%'),
         Tasting.thoughts.ilike(f'%{search_word}%'),
       )).all()
-      logging.debug('between the two queries debuggin======')
+      # logging.debug('between the two queries debuggin======')
       users = User.query.filter(User.username.ilike(f'%{search_word}%')).all()
-      logging.debug('after both queries debuggin============')
+      # logging.debug('after both queries debuggin============')
       print('api both return========', {'tastings': [tasting.to_dict() for tasting in tastings], 'users': [user.to_dict() for user in users]})
       return {'tastings': [tasting.to_dict() for tasting in tastings],
               'users': [user.to_dict() for user in users]}
 
   except Exception as e:
-    logging.error("Exception occurred: " + str(e))
-    # return {"error": str(e)}, 500
+    # logging.error("Exception occurred: " + str(e))
+    return {"error": str(e)}, 500
