@@ -220,12 +220,13 @@ def search():
         Tasting.palate.ilike(f'%{search_word}%'),
         Tasting.thoughts.ilike(f'%{search_word}%'),
       )).all()
-
-      return {'search': [tasting.to_dict() for tasting in tastings]}
+      print('api tastings return======', {'tastings': [tasting.to_dict() for tasting in tastings]})
+      return {'tastings': [tasting.to_dict() for tasting in tastings], 'users': []}
 
     elif search_option == "users":
       users = User.query.filter(User.username.ilike(f'%{search_word}%')).all()
-      return {'search': [user.to_dict() for user in users]}
+      print('api users return======', {'users': [user.to_dict() for user in users]})
+      return {'users': [user.to_dict() for user in users], 'tastings': []}
 
     else:
       # search both tables
@@ -244,7 +245,7 @@ def search():
       )).all()
 
       users = User.query.filter(User.username.ilike(f'%{search_word}%')).all()
-
+      print('api both return========', {'tastings': [tasting.to_dict() for tasting in tastings], 'users': [user.to_dict() for user in users]})
       return {'tastings': [tasting.to_dict() for tasting in tastings],
               'users': [user.to_dict() for user in users]}
 
