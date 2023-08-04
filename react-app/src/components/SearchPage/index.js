@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
-// import { getTastingsSearchThunk } from '../../store/tasting';
+import SearchedUser from "../SearchedUser";
 import TastingCard from "../TastingCard";
 import Navigation from "../Navigation";
 import Sidebar from "../Sidebar";
@@ -12,16 +11,11 @@ import './searchPage.css';
 
 const SearchPage = () => {
 
-  // const dispatch = useDispatch();
   const { searchWord } = useParams();
-  const tastings = useSelector(state => Object.values(state.tastings.tastings));
-  // console.log('tastings search====', tastings)
-
-  // useEffect(() => {
-  //   if (!searchWord) return;
-    
-  //   (() => dispatch(getTastingsSearchThunk(searchWord)))();
-  // }, [dispatch, searchWord]);
+  const tastings = useSelector(state => Object.values(state.search.tastings));
+  const users = useSelector(state => Object.values(state.search.users))
+  console.log('tastings search====', tastings)
+  console.log('users search====', users)
 
 
   return (
@@ -31,13 +25,18 @@ const SearchPage = () => {
       <div className="search_feed_page">
         <span className="search_title">Search Results of "{searchWord}"</span>
         <div className="search_results_container">
-          {tastings.map((tasting) => {return (
-            <div key={tasting.id} className="search_tasting_container" >
-            {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
-            : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
-            <TastingCard tasting={tasting} />
+        {tastings.map((tasting) => {return (
+          <div key={tasting.id} className="search_page_tasting_container" >
+          {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
+          : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
+          <TastingCard tasting={tasting} />
           </div>
         )}).reverse()}
+        {users.map((user) => {return (
+          <div key={user.id} className="search_page_user_container" >
+            <SearchedUser user={user}/>
+          </div>
+        )})}
         </div>
       </div>
       <Footer />

@@ -4,6 +4,7 @@ import session from './session'
 import tastings from './tasting';
 import discussion from './discussion';
 import fields from './friends';
+import search from './search';
 
 
 const rootReducer = combineReducers({
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   tastings,
   discussion,
   fields,
+  search,
 });
 
 

@@ -258,22 +258,36 @@ export const deleteCheersThunk = (tastingId, userId) => async(dispatch) => {
 };
 
 
-export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/search/${searchWord}`, {
-    headers: {}
-  });
+// export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
+//   const response = await fetch(`/api/tastings/search/${searchWord}`, {
+//     headers: {}
+//   });
   
-  // if (!response.ok) {
-  //   throw new Error(`HTTP error! status: ${response.status}`);
-  // } else {
-  //   const tastings = await response.json();
-  //   dispatch(getTastingsSearch(tastings));
+//   if (!response.ok) {
+//     throw new Error(`HTTP error! status: ${response.status}`);
+//   } else {
+//     const tastings = await response.json();
+//     dispatch(getTastingsSearch(tastings));
     
-  //   return Promise.resolve(tastings);
-  // };
-  const tastings = await response.json();
-  dispatch(getTastingsSearch(tastings));
-};
+//     return Promise.resolve(tastings); 
+//   };
+// };
+
+
+// export const getTastingsSearchThunk = (searchWord, option) => async(dispatch) => {
+//   const response = await fetch(`/api/tastings/search?search_word=${searchWord}&option=${option}`, {
+//     headers: {}
+//   });
+  
+//   if (!response.ok) {
+//     throw new Error(`HTTP error! status: ${response.status}`);
+//   } else {
+//     const tastings = await response.json();
+//     dispatch(getTastingsSearch(tastings));
+    
+//     return Promise.resolve(tastings);
+//   };
+// };
 
 
 
