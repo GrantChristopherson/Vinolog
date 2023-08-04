@@ -3,8 +3,8 @@ from flask_login import login_required, current_user
 from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
-import logging
-logging.basicConfig(filename='app.log', level=logging.DEBUG)
+# import logging
+# logging.basicConfig(filename='app.log', level=logging.DEBUG)
 
 tasting_routes = Blueprint('tastings', __name__)
 
@@ -252,5 +252,5 @@ def search():
               'users': [user.to_dict() for user in users]}
 
   except Exception as e:
-    logging.error("Exception occurred", exc_info=True)
-    # return {"error": str(e)}, 500
+    # logging.error("Exception occurred", exc_info=True)
+    return {"error": str(e)}, 500

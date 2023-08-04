@@ -8,7 +8,6 @@ import Footer from '../Footer';
 import './tastingForm.css';
 
 
-// do I need any validations for wine label url input field?
 
 
 const TastingForm = () => {
@@ -18,8 +17,13 @@ const TastingForm = () => {
   const history = useHistory();
 
 
+  const getVintage = () => {
+    const year = new Date().getFullYear();
+    return ['NV', ...Array.from({length: year - 1899}, (_, i) => String(year - i))];
+  };
+
+
   const colorOptions = [
-    { value: 'Select the Style of Wine...', label: 'Select the Style of Wine...' },
     { value: 'Red', label: 'Red' },
     { value: 'White', label: 'White' },
     { value: 'Rose', label: 'Rosé' },
@@ -35,8 +39,8 @@ const TastingForm = () => {
   const [region, setRegion] = useState('');
   const [vineyard, setVineyard] = useState('');
   const [varietal, setVarietal] = useState('');
-  const [vintage, setVintage] = useState(new Date().getFullYear());
-  const [color, setColor] = useState(colorOptions[0]);
+  const [vintage, setVintage] = useState('');
+  const [color, setColor] = useState('');
   const [labelImage, setLabelImage] = useState('');
   const [otherInfo, setOtherInfo] = useState('');
   const [sight, setSight] = useState('');
@@ -45,11 +49,7 @@ const TastingForm = () => {
   const [thoughts, setThoughts] = useState('');
   const [love, setLove] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-
-  const today = new Date();
-  const currentYear = today.getFullYear()
-
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,13 +73,17 @@ const TastingForm = () => {
       validateErrors['varietal'] = '* Varietal / type must be between 3 and 100 characters';
     };
 
-    const today = new Date(); 
-    if (vintage < 1900 || vintage > today.getFullYear()) {
-      validateErrors['vintage'] = `* Vintage required and must be between 1900 and current year (${today.getFullYear()})`
+    // const today = new Date(); 
+    // if (vintage !== '' || vintage !== 'NV' && vintage < 1900 || vintage > today.getFullYear()) {
+    //   validateErrors['vintage'] = `* Vintage must be between 1900 and this year (${today.getFullYear()}), or NV`
+    // };
+
+    if (color === '') {
+      validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
     };
 
-    if (color === colorOptions[0].value) {
-      validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
+    if (labelImage !== '' && !/^https?:\/\/.*/.test(labelImage)) {
+      validateErrors['labelImage'] = '* Label image must be a valid URL';
     };
     
     if (otherInfo) {
@@ -120,13 +124,11 @@ const TastingForm = () => {
           validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
         };
     
-
     setErrors(validateErrors)
     if (Object.keys(validateErrors).length) {
       return;
     };
 
-    
     const tasting = {
       producer,
       region,
@@ -145,17 +147,11 @@ const TastingForm = () => {
     
     setIsSubmitting(!isSubmitting)
 
-    // let data = await dispatch(createTastingThunk(tasting));
-    // console.log('post return data', data)
-    // if (data) {
-    //   history.push('/tastings')
-    // };
     dispatch(createTastingThunk(tasting));
     history.push('/tastings')
   };
     
       
-  
   const updateProducer = (e) => {
     setProducer(e.target.value);
   };
@@ -280,27 +276,20 @@ const TastingForm = () => {
                 <div className='errors'>{errors.vintage}</div>
               </div>
               }
-              <input className='selection_info_input'
-              type='number'
-              name='vintage'
-              onChange={updateVintage}
-              placeholder='Vintage'
-              min='1900'
-              max={currentYear}
-              value={vintage}
-              ></input> 
-              {/* <select className='selection_info_input' onChange={updateVintage} value={vintage}>
-                {vintageOptions.map(option =>
-                  <option key={option.value}>{option.value}</option>
+              <select className='selection_info_input' onChange={updateVintage} value={vintage || ''}>
+                <option value="" disabled>Select a Vintage...</option>
+                {getVintage().map(option =>
+                  <option key={option} value={option}>{option}</option>
                   )}
-              </select> */}
+              </select>
             </div>
             <div className='tasting_input_container'>
                 {errors?.colors !== undefined && <div className='error'>
                   <div className='errors'>{errors.colors}</div>
                 </div>
                 }
-              <select className='selection_info_input' onChange={updateColor} value={color}>
+              <select className='selection_info_input' onChange={updateColor} value={color || ''}>
+                <option value="" disabled>Select the Style of Wine...</option>
                 {colorOptions.map(option =>
                   <option key={option.value}>{option.value}</option>
                   )}

@@ -17,10 +17,15 @@ function EditTastingForm() {
   const history = useHistory();
   const { id } = useParams();
   const tasting = useSelector(state => state.tastings.tastings[id]);
-  // const user = useSelector(state => state?.session?.user)
   
+
+  const getVintage = () => {
+    const year = new Date().getFullYear();
+    return ['NV', ...Array.from({length: year - 1899}, (_, i) => String(year - i))];
+  };
+  
+
   const options = [
-    { value: 'Select the Style of Wine...', label: 'Select the Style of Wine...' },
     { value: 'Red', label: 'Red' },
     { value: 'White', label: 'White' },
     { value: 'Rose', label: 'Rosé' },
@@ -45,10 +50,6 @@ function EditTastingForm() {
   const [palate, setPalate] = useState(tasting?.palate || '');
   const [thoughts, setThoughts] = useState(tasting?.thoughts || '');
   const [love, setLove] = useState(tasting?.love || '');
-
-
-  const today = new Date();
-  const currentYear = today.getFullYear()
   
 
   const handleSubmit = async (e) => {
@@ -73,13 +74,17 @@ function EditTastingForm() {
       validateErrors['varietal'] = '* Varietal / type must be between 3 and 100 characters';
     };
 
-    const today = new Date(); 
-    if (vintage < 1900 || vintage > today.getFullYear()) {
-      validateErrors['vintage'] = `* Vintage required and must be between 1900 and this year (${today.getFullYear()})`;
+    // const today = new Date(); 
+    // if (vintage !== '' || vintage !== 'NV' && vintage < 1900 || vintage > today.getFullYear()) {
+    //   validateErrors['vintage'] = `* Vintage must be between 1900 and this year (${today.getFullYear()}), or NV`;
+    // };
+
+    if (color === '') {
+      validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
     };
 
-    if (color === options[0].value) {
-      validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
+    if (labelImage !== '' && !/^https?:\/\/.*/.test(labelImage)) {
+      validateErrors['labelImage'] = '* Label image must be a valid URL';
     };
     
     if (otherInfo) {
@@ -145,20 +150,10 @@ function EditTastingForm() {
     };
     
     dispatch(editTastingThunk(taste));
-    
-    if (taste.love === false) {
-      history.push('/tastings');
-      return
-    };
-
-    if (taste.love === true) {
-      history.push('/lovedtastings');
-      return
-    };
+    history.push('/tastings');
   };
     
    
-  
   const updateProducer = (e) => {
     setProducer(e.target.value);
   };
@@ -283,7 +278,7 @@ function EditTastingForm() {
                 <div className='errors'>{errors.vintage}</div>
               </div>
               } 
-              <input className='selection_info_input'
+              {/* <input className='selection_info_input'
               type='number'
               name='vintage'
               onChange={updateVintage}
@@ -291,14 +286,21 @@ function EditTastingForm() {
               min='1900'
               max={currentYear}
               value={vintage}
-              ></input>
+              ></input> */}
+              <select className='selection_info_input' onChange={updateVintage} value={vintage || ''}>
+                <option value="" disabled>Select a Vintage...</option>
+                {getVintage().map(option =>
+                  <option key={option} value={option}>{option}</option>
+                  )}
+              </select>
             </div>
             <div className='edit_tasting_input_container'>
                 {errors?.colors !== undefined && <div className='error'>
                   <div className='errors'>{errors.colors}</div>
                 </div>
                 }
-              <select className='selection_info_input' onChange={updateColor} value={color}>
+              <select className='selection_info_input' onChange={updateColor} value={color || ''}>
+                <option value="" disabled>Select the Style of Wine...</option>
                 {options.map(option =>
                   <option key={option.value}>{option.value}</option>
                   )}

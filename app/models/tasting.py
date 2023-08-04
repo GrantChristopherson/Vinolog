@@ -19,7 +19,7 @@ class Tasting(db.Model):
   region = db.Column(db.String(100), nullable=False)
   vineyard = db.Column(db.String(50))
   varietal = db.Column(db.String(100), nullable=False)
-  vintage = db.Column(db.Integer)
+  vintage = db.Column(db.String(4))
   color = db.Column(db.String(30), nullable=False)
   label_image = db.Column(db.String(1000))
   other_info = db.Column(db.String(200))
