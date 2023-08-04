@@ -22,30 +22,20 @@ const SearchForm = () => {
   };
   
   const toggleSearchUsers = () => {
-    if (searchTastings) {
-      setSearchUsers(false);
-      setSearchTastings(false);
-    } else {
-      setSearchUsers(!searchUsers);
-      setSearchTastings(false);
-      setSearchOption('users');
-    };
+    setSearchUsers(!searchUsers);
+    setSearchTastings(false);
+    setSearchOption(!searchUsers ? 'users' : ''); 
   };
   
   const toggleSearchTastings = () => {
-    if (searchUsers) {
-      setSearchUsers(false);
-      setSearchTastings(false);
-    } else {
-      setSearchTastings(!searchTastings);
-      setSearchUsers(false);
-      setSearchOption('tastings');
-    };
+    setSearchTastings(!searchTastings);
+    setSearchUsers(false);
+    setSearchOption(!searchTastings ? 'tastings' : ''); 
   };
   
   const getPlaceholder = () => {
-    if (searchUsers) return "Search for Users...";
-    if (searchTastings) return "Search for Tastings...";
+    if (searchUsers) return "Search Users...";
+    if (searchTastings) return "Search Wine Tastings...";
     return "Search Users and Tastings...";
   };
   
