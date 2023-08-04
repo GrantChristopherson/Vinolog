@@ -7,7 +7,6 @@ const DELETE_TASTING = 'tasting/DELETE_TASTING';
 const GET_CHEERED_TASTINGS = 'cheered/GET_CHEERED_TASTINGS';
 const CREATE_CHEERS = 'cheers/CREATE_CHEERS';
 const DELETE_CHEERS = 'cheers/DELETE_CHEERS';
-const GET_TASTINGS_SEARCH = 'search/GET_TASTINGS_SEARCH';
 
 
 // ---------------------------------------------action creators-----------------------------------
@@ -85,12 +84,6 @@ const deleteCheers = (cheeredTasting, userId) => {
   };
 };
 
-const getTastingsSearch = (tastings) => {
-  return {
-    type: GET_TASTINGS_SEARCH,
-    tastings
-  };
-};
 
 
 // --------------------------------------------thunk action creators---------------------------------
@@ -258,38 +251,6 @@ export const deleteCheersThunk = (tastingId, userId) => async(dispatch) => {
 };
 
 
-// export const getTastingsSearchThunk = (searchWord) => async(dispatch) => {
-//   const response = await fetch(`/api/tastings/search/${searchWord}`, {
-//     headers: {}
-//   });
-  
-//   if (!response.ok) {
-//     throw new Error(`HTTP error! status: ${response.status}`);
-//   } else {
-//     const tastings = await response.json();
-//     dispatch(getTastingsSearch(tastings));
-    
-//     return Promise.resolve(tastings); 
-//   };
-// };
-
-
-// export const getTastingsSearchThunk = (searchWord, option) => async(dispatch) => {
-//   const response = await fetch(`/api/tastings/search?search_word=${searchWord}&option=${option}`, {
-//     headers: {}
-//   });
-  
-//   if (!response.ok) {
-//     throw new Error(`HTTP error! status: ${response.status}`);
-//   } else {
-//     const tastings = await response.json();
-//     dispatch(getTastingsSearch(tastings));
-    
-//     return Promise.resolve(tastings);
-//   };
-// };
-
-
 
 
 // ----------------------------------------reducer----------------------------------------------------
@@ -400,16 +361,6 @@ export default function reducer(state = initialState, action) {
         };
       };
       return state;
-    };
-    case GET_TASTINGS_SEARCH: {
-      const searchedTastings = {};
-      action.tastings.search.forEach(tasting => {
-        searchedTastings[tasting.id] = tasting;
-      })
-      return {
-        ...state,
-        tastings: searchedTastings
-      };
     };
     default: 
       return state;
