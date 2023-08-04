@@ -6,6 +6,7 @@ from sqlalchemy import or_
 # import logging
 # logging.basicConfig(level=logging.DEBUG)
 
+
 tasting_routes = Blueprint('tastings', __name__)
 
 
@@ -254,5 +255,4 @@ def search():
               'users': [user.to_dict() for user in users]}
 
   except Exception as e:
-    # logging.error("Exception occurred: " + str(e))
     return {"error": str(e)}, 500
