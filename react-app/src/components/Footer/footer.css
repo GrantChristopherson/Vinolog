@@ -6,34 +6,34 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(103, 10, 21, 1);
+  background-color: #753932;
   height: 5%;
 }
 
 .dev_by {
-  color: rgb(198 192 163);;
+  color: #fcedd6;
   margin-right: 10px;
 }
 
 .dev_name {
-  color: rgb(198 192 163);;
+  color: #fcedd6;
 }
 
 #git {
-  color: rgb(198 192 163);;
+  color: #fcedd6;
   padding: 0 40px;
 }
 
 #linked {
-  color: rgb(198 192 163);;
+  color: #fcedd6;
 }
 
 #git:hover {
-  color: rgb(50, 50, 50);
-  transition-duration: 300ms;
+  color: #e4c494;
+  transition-duration: 500ms;
 }
 
 #linked:hover {
-  color: rgb(50, 50, 50);
-  transition-duration: 300ms;
+  color: #e4c494;
+  transition-duration: 500ms;
 }

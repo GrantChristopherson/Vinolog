@@ -5,7 +5,7 @@ import LogoutButton from '../LogoutButton';
 import './navigation.css';
 
 
-// change nav vinolog link hover effects from yellow to green instead of yellow to red
+
 
 const Navigation = () => {
 

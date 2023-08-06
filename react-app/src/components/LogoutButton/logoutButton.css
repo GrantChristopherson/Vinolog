@@ -4,16 +4,16 @@
   height: 40px;
   border-radius: 20px;
   font-weight: bold;
-  background-color: rgb(198 192 163);
-  color: rgb(103, 10, 21);
+  background-color: #fcedd6;
+  color: #753932;
   border: 0;
 }
 
 .logoutButton:hover {
-  background-color: rgba(50, 50, 50, .94);
-  color: rgb(198 192 163);
+  background-color: rgba(50, 50, 50, .5);
+  color: #fcedd6;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 @media only screen and (max-height: 1000px)  {

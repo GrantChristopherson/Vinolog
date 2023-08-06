@@ -83,11 +83,6 @@ const LoginForm = () => {
         <h1 className='login_header'>Login to Vinolog</h1>
       </div>
       <form className='card_form' onSubmit={onLogin}>
-         {/* <div className='error_messages'>
-          {errors.map((error, ind) => (
-            <div key={ind}>* {error}</div>
-          ))}
-        </div> */}
         <div className='input_container'>
           {errors?.emailError !== undefined && <div className='error_messages'>
                     <div className='errors'>{errors.emailError}</div>
