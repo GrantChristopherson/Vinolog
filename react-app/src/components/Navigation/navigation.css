@@ -22,8 +22,8 @@
   height: 5%;
   display: flex;
   align-items: center;
-  box-shadow: 0 13px 21px rgba(0, 0, 0, 0.1);
-  background-color: rgb(103, 10, 21);
+  box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05);
+  background-color: #753932;
 }
 
 .nav_links {
@@ -33,26 +33,26 @@
 }
 
 .logo_logged_out {
-  color: rgb(198 192 163);
+  color: #fcedd6;
   letter-spacing: 8px;
 }
 
 .logo_logged_out:hover {
   cursor: pointer;
   color: rgb(102, 105, 27);
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .logo_logged_in {
   padding: 0;
-  color: rgb(198 192 163);
+  color: #fcedd6;
   letter-spacing: 8px;
 }
 
 .logo_logged_in:hover {
   cursor: pointer;
-  color: rgb(50, 50, 50);
-  transition-duration: 300ms;
+  color: rgba(50, 50, 50, .9);
+  transition-duration: 500ms;
 }
 
 .login_sign_up {
@@ -67,16 +67,16 @@
   height: 40px;
   border-radius: 30px;
   font-weight: bold;
-  color: rgb(198 192 163);
-  background-color: rgb(103, 10, 21);
+  color: #fcedd6;
+  background-color: #903227;
   border: 0;
 }
 
 .signupButton:hover {
-  background-color:  rgb(198 192 163);
-  color:  rgb(103, 10, 21);
+  background-color:  #fcedd6;
+  color:  #903227;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 @media only screen and (max-height: 1000px)  {
@@ -91,16 +91,16 @@
   height: 40px;
   border-radius: 30px;
   font-weight: bold;
-  background-color: rgb(198 192 163);
-  color: rgb(103, 10, 21);
+  background-color: #fcedd6;
+  color: #903227;
   border: 0;
 }
 
 .loginButton:hover {
-  background-color: rgb(102, 105, 27);
-  color: rgb(198 192 163);
+  background-color: #66691b;
+  color: #fcedd6;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 @media only screen and (max-height: 1000px)  {

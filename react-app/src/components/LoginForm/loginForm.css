@@ -67,17 +67,17 @@
   border-radius: 30px;
   font-size: 16px;
   font-weight: bold;
-  background-color: rgb(198 192 163);
-  color: rgb(103, 10, 21);
+  background-color: #903227;
+  color: #fcedd6;
   border: 0;
   
 }
 
 .login_login:hover {
   background-color: rgba(102, 105, 27, .9);
-  color: rgb(255, 255, 255);
+  color: #fcedd6;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .switch {
@@ -101,14 +101,13 @@
   margin: 0 2px 0 0;
   padding: 0;
   font-size: 16px;
-  color: rgba(103, 10, 21, 1);
-  font-weight: bold;
+  color: #903227;
 }
 
 .switch_to_signup:hover {
-  color: rgba(103, 10, 21, .7);
+  color: #753932;
   text-decoration: underline;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .or {
@@ -119,20 +118,24 @@
 .login_demo {
   margin: 0;
   font-size: 16px;
-  background-color: rgba(255, 255, 255, 0);
-  color: rgb(103, 10, 21);
+  background-color: transparent;
+  color: #903227;
   border: 0;
   padding-right: 0;
 }
 
 .login_demo:hover {
-  color: rgba(103, 10, 21, .7);
+  color: #753932;
   text-decoration: underline;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .demo_site {
   font-weight: 300;
   margin: 0;
+}
+
+.error_messages {
+  color: #b00020;
 }

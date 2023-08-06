@@ -3,11 +3,18 @@ from flask_login import login_required, current_user
 from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
-# import logging
-# logging.basicConfig(level=logging.DEBUG)
+# import boto3
+# from app.config import Config
+
 
 
 tasting_routes = Blueprint('tastings', __name__)
+
+
+# s3 = boto3.client('s3', 
+#                   aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
+#                   aws_secret_access_key=Config.AWS_SECRET_ACCESS_KEY, 
+#                   region_name=Config.AWS_DEFAULT_REGION)
 
 
 
