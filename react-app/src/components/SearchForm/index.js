@@ -55,22 +55,25 @@ const SearchForm = () => {
     <form className='search_form' onSubmit={submitHandler}>
       <div className='search_toggle_container'>
         <div className='search_option_container'>
-          <label className='search_option_label'>Wine Only</label>
-          <input className='tasting_option_input'
-            type="checkbox"
-            name='tasting_search_checkbox'
-            checked={searchTastings}
-            onChange={toggleSearchTastings}
-          />
+          <label className='search_option_label'>Wine Only
+            <input className='user_options_input'
+              type="checkbox"
+              name='tasting_search_checkbox'
+              checked={searchTastings}
+              onChange={toggleSearchTastings}
+            />
+            <span></span></label>
         </div>
         <div className='search_option_container'>
-          <label className='search_option_label'>Username Only</label>
-          <input className='user_option_input'
-            type="checkbox"
-            name='user_search_checkbox'
-            checked={searchUsers}
-            onChange={toggleSearchUsers}
-          />
+          <label className='search_option_label'>Username Only
+            <input className='user_options_input'
+              type="checkbox"
+              id="checkbox"
+              name='user_search_checkbox'
+              checked={searchUsers}
+              onChange={toggleSearchUsers}
+              />
+            <span></span></label>
         </div>
       </div>
       <input className='search_input'
