@@ -34,8 +34,14 @@ const MyTastingFeed = () => {
         <div className="my-feed-container">
         {userTastings?.map((tasting) => {return (
           <div key={tasting.id} className="my-tasting-container" >
-            {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
-            : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
+            {tasting.labelImage ? <div className="tasting-image-label">
+              <div className="tasting-image-label-inner" style={{ backgroundImage: `url(${tasting.labelImage})` }}></div>
+            </div>
+            : <div className='default-image-container-my'>
+                <div className="default-wine-image-inner">
+                  <i className='fa-solid fa-wine-glass-empty default-wine-image-my' />
+                </div>
+              </div>}
             <TastingCard tasting={tasting} />
           </div>
         )}).reverse()}
