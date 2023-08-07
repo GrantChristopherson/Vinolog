@@ -4,30 +4,14 @@
   flex-direction: column;
   margin: 0;
   padding: 20px 20px 0px 20px;
-  min-height: 200px;
-  background-color: rgba(39, 39, 38, 0.35);
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  border-top-style: solid;
-  border-width: 1px;
-  border-color: rgb(39, 39, 38);
   transition: transform 1s ease;
 }
 
 .tasting_transformer {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin: 0;
-  padding: 20px 20px 0px 20px;
-  /* min-height: 200px; */
   height: 600px;
   background-color: rgba(39, 39, 38, 0.85);
   border-radius: 30px;
-  border-top-style: solid;
-  border-width: 1px;
-  border-color: rgb(39, 39, 38);
-  transform: translate(0, -300px);
+  transform: translate(0, -375px);
 }
 
 .tasting-info-container {
@@ -40,7 +24,7 @@
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
-  color: rgb(192, 192, 176);
+  color: rgba(252, 237, 214, .8);
 }
 
 .tasting-card-header {
@@ -58,11 +42,11 @@
   border-bottom-style: solid;
   border-color: black;
   border-width: 1px;
-  color: rgba(192, 192, 176, .6);
+  color: rgba(252, 237, 214, .5);
 }
 
 .tasting-info {
-  color: rgba(192, 192, 176, .6);
+  color: rgba(252, 237, 214, .5);
 }
 
 .edit-delete-container {
@@ -76,7 +60,7 @@
   font-size: 12px;
   text-decoration: none;
   background-color: transparent;
-  color: rgb(192, 192, 176);
+  color: rgba(252, 237, 214, .8);
   border: 0;
 }
 
@@ -84,20 +68,20 @@
   color: rgb(102, 105, 27);
   text-decoration: underline;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .delete-button {
+  border: 0;
   font-size: 12px;
   background-color: transparent;
   color: rgba(223, 106, 114, .8);
-  border: 0;
 }
 
 .delete-button:hover {
   font-weight: bold;
-  color: rgb(103, 10, 21);
-  text-decoration: underline;
+  color: #b00020;
   cursor: pointer;
-  transition-duration: 300ms;
+  text-decoration: underline;
+  transition-duration: 500ms;
 }
