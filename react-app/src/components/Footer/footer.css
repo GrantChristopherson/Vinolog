@@ -29,11 +29,11 @@
 }
 
 #git:hover {
-  color: #e4c494;
+  color: rgba(50, 50, 50, .5);
   transition-duration: 500ms;
 }
 
 #linked:hover {
-  color: #e4c494;
+  color: rgba(50, 50, 50, .5);
   transition-duration: 500ms;
 }
