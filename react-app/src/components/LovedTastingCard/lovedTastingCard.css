@@ -108,7 +108,7 @@
 }
 
 .current_friend {
-  color: #DF6A72;
+  color: rgb(223, 106, 114);
   font-size: 12px;
   text-decoration: underline;
 }
