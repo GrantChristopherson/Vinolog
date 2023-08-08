@@ -41,13 +41,19 @@ const AllLovedFeed = () => {
       <div className="loved_feed_page">
         <span className='loved_title'>Loved Wine Tastings</span>
         <div className="loved_feed_container">
-          {lovedTastings?.map((tasting) => {return (
+        {lovedTastings?.map((tasting) => {return (
           <div key={tasting?.id} className="loved_tasting_container">
-            {tasting.labelImage ? <img className="loved-tasting-image-label" src={tasting.labelImage} alt='wine label'/>
-            : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
+            {tasting.labelImage ? <div className="loved-tasting-image-label">
+              <div className="loved-tasting-image-label-inner" style={{ backgroundImage: `url(${tasting.labelImage})` }}></div>
+            </div>
+            : <div className='default-image-container-loved' >
+                <div className="default-wine-image-loved-inner">
+                  <i className='fa-solid fa-wine-glass-empty default-wine-image-loved' />
+                </div>
+              </div>}
             <LovedTastingCard tasting={tasting} showDiscussion={showDiscussion} setShowDiscussion={setShowDiscussion} setTastingId={setTastingId} />
           </div>
-          )}).reverse()}
+        )}).reverse()}
         </div>
         {showDiscussion && <div className='discussion_wrapper'>
           <div className="discussion_container">
