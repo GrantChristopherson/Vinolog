@@ -48,14 +48,6 @@
   overflow: hidden;
   border-radius: 30px;
   position: relative;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  max-width: 100%;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.2); */
 }
 
 .loved-tasting-image-label-inner {
