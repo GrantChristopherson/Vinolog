@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import SearchForm from '../SearchForm';
 import LogoutButton from '../LogoutButton';
 import './navigation.css';
 
@@ -38,7 +37,6 @@ const Navigation = () => {
             <h1 className ='logo_logged_in' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
           </NavLink>
           <div className='logout_container'>
-            <SearchForm />
             <LogoutButton />
           </div>
         </ul>

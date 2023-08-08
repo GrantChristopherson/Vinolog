@@ -1,9 +1,15 @@
-.feed_page {
+.sidebar_body_container {
   display: flex;
+  min-height: 100vh;
+}
+
+.feed_page {
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin: 0 350px;
-  padding: 100px 250px 300px 250px;
+  flex-direction: column; */
+  flex: 1;
+  padding: 120px 250px 300px 250px;
+  overflow-y: scroll;
 }
 
 .feed_title {

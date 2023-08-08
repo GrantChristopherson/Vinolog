@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import SearchForm from '../SearchForm';
 import './sidebar.css';
 
 
@@ -10,18 +11,19 @@ const Sidebar = () => {
 
 
   return (
-    <div className='user_sidebar'>
+    <div className='sidebar'>
+      <SearchForm />
       <div className='sidebar_links_container'>
-        <NavLink to='/lovedtastings' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/lovedtastings' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
           Loved Wines
         </NavLink>
-        <NavLink to='/tastings' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-          My Tasting Notes
+        <NavLink to='/tastings' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
+          My Wine Tasting
         </NavLink>
-        <NavLink to='/tasting' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/tasting' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
           Create New Tasting
         </NavLink>
-        <NavLink to='/friendsinthefield' className={'sidebar_links'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+        <NavLink to='/friendsinthefield' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
           Friends In The Field
         </NavLink>
       </div>

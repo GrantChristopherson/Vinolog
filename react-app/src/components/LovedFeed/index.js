@@ -37,22 +37,24 @@ const AllLovedFeed = () => {
   return (
     <>
       <Navigation />
-      <Sidebar />
-      <div className="feed_page">
-        <span className='feed_title'>Vinolog Loved Wines</span>
-        <div className="feed_container">
-        {lovedTastings?.map((tasting) => {return (
-          <div key={tasting?.id} className="tasting-card">
-            <LovedTastingCard tasting={tasting} showDiscussion={showDiscussion} setShowDiscussion={setShowDiscussion} setTastingId={setTastingId} />
-          </div>
-        )}).reverse()}
-        </div>
-        {showDiscussion && <div className='discussion_wrapper'>
-          <div className="discussion_container">
-            <CreateCommentForm discussionTasting={discussionTasting}/>
-            <Discussion discussionTasting={discussionTasting} setShowDiscussion={setShowDiscussion}/>
+      <div className="sidebar_body_container">
+        <Sidebar />
+        <div className="feed_page">
+          <span className='feed_title'>Vinolog Loved Wines</span>
+          <div className="feed_container">
+          {lovedTastings?.map((tasting) => {return (
+            <div key={tasting?.id} className="tasting-card">
+              <LovedTastingCard tasting={tasting} showDiscussion={showDiscussion} setShowDiscussion={setShowDiscussion} setTastingId={setTastingId} />
             </div>
-        </div>}
+          )}).reverse()}
+          </div>
+          {showDiscussion && <div className='discussion_wrapper'>
+            <div className="discussion_container">
+              <CreateCommentForm discussionTasting={discussionTasting}/>
+              <Discussion discussionTasting={discussionTasting} setShowDiscussion={setShowDiscussion}/>
+              </div>
+          </div>}
+        </div>
       </div>
       <Footer />
     </>

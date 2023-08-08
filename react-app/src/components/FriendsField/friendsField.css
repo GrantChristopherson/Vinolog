@@ -1,9 +1,11 @@
 .field_list_container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
   margin: 0 350px;
-  padding: 100px 250px 300px 250px;
+  padding: 120px 250px 300px 250px;
+  flex: 1;
+  overflow-y: scroll;
 }
 
 .field_title {

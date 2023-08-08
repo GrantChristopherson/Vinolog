@@ -37,15 +37,17 @@ const FriendsField = () => {
   return (
     <>
       <Navigation />
-      <Sidebar />
-      <div className='field_list_container'>
-        <span className='field_title'>{friendAmountlogic(friends)}</span>
-        <div className='field_list'>
-          {haveFriends && friends?.map((friend) => {return (
-            <div key={friend?.id}>
-              <Friend friend={friend} />
-            </div>
-          )})}
+      <div className='sidebar_body_container'>
+        <Sidebar />
+        <div className='field_list_container'>
+          <span className='field_title'>{friendAmountlogic(friends)}</span>
+          <div className='field_list'>
+            {haveFriends && friends?.map((friend) => {return (
+              <div key={friend?.id}>
+                <Friend friend={friend} />
+              </div>
+            )})}
+          </div>
         </div>
       </div>
       <Footer />

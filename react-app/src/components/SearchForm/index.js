@@ -16,7 +16,6 @@ const SearchForm = () => {
   const [searchUsers, setSearchUsers] = useState(false);
   const [searchTastings, setSearchTastings] = useState(false);
 
-  
   const updateSearch = (e) => {
     setSearchWord(e.target.value)
   };
@@ -34,9 +33,9 @@ const SearchForm = () => {
   };
   
   const getPlaceholder = () => {
-    if (searchUsers) return "Search Users...";
-    if (searchTastings) return "Search Wine Tastings...";
-    return "Search Users and Tastings...";
+    if (searchUsers) return "Search Usernames...";
+    if (searchTastings) return "Search Wines...";
+    return "Search Wines and Usernames...";
   };
   
   const submitHandler = async (e) => {
@@ -52,7 +51,16 @@ const SearchForm = () => {
 
 
   return (
-    <form className='search_form' onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}>
+      <input className='search_input'
+        type="text"
+        placeholder={getPlaceholder()}
+        value={searchWord}
+        onChange={updateSearch}
+      />
+      <button className='search_submit_button' type='submit'>
+        <i className='fa-solid fa-magnifying-glass fa-rotate-90' />
+      </button>
       <div className='search_toggle_container'>
         <div className='search_option_container'>
           <label className='search_option_label'>Wine Only
@@ -76,15 +84,6 @@ const SearchForm = () => {
             <span></span></label>
         </div>
       </div>
-      <input className='search_input'
-        type="text"
-        placeholder={getPlaceholder()}
-        value={searchWord}
-        onChange={updateSearch}
-      />
-      <button className='search_submit_button' type='submit'>
-        <i className='fa-solid fa-magnifying-glass fa-rotate-90' />
-      </button>
     </form>
   );
 };
