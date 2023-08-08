@@ -38,19 +38,11 @@ const AllLovedFeed = () => {
     <>
       <Navigation />
       <Sidebar />
-      <div className="loved_feed_page">
-        <span className='loved_title'>Loved Wine Tastings</span>
-        <div className="loved_feed_container">
+      <div className="feed_page">
+        <span className='feed_title'>Vinolog Loved Wines</span>
+        <div className="feed_container">
         {lovedTastings?.map((tasting) => {return (
-          <div key={tasting?.id} className="loved_tasting_container">
-            {tasting.labelImage ? <div className="loved-tasting-image-label">
-              <div className="loved-tasting-image-label-inner" style={{ backgroundImage: `url(${tasting.labelImage})` }}></div>
-            </div>
-            : <div className='default-image-container-loved' >
-                <div className="default-wine-image-loved-inner">
-                  <i className='fa-solid fa-wine-glass-empty default-wine-image-loved' />
-                </div>
-              </div>}
+          <div key={tasting?.id} className="tasting-card">
             <LovedTastingCard tasting={tasting} showDiscussion={showDiscussion} setShowDiscussion={setShowDiscussion} setTastingId={setTastingId} />
           </div>
         )}).reverse()}

@@ -12,10 +12,9 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
   const friendList = useSelector(state => Object.values(state.fields.friends));
+  const friendIdList = friendList.map(user => user.id);
+  const isInFriend = friendIdList.includes(tasting.user.id);
   const [showInfo, setShowInfo] = useState(false);
-  
-  let friendIdList = friendList.map(user => user.id);
-  let isInFriend = friendIdList.includes(tasting.user.id);
   
   const tastingTransformer = showInfo ? 'tasting_transformer' : '';
 
@@ -37,25 +36,31 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
 
 
   return (
-    <div className={`loved_tasting_card ${tastingTransformer}`}>
-      <div className='loved_tasting_info' onClick={() => setShowInfo(!showInfo)}>
-        <div className='loved_info_container'>
-          <div className='loved_wine_info'>
-            <h3 className='loved_tasting_header'>{tasting?.vintage} {tasting?.producer}</h3>
-            <h4>{tasting?.varietal}</h4>
+    <div className='tasting-card-inner' onClick={() => setShowInfo(!showInfo)}>
+      {tasting.labelImage ? <div className="label-image-container">
+        <div className="label-image" style={{ backgroundImage: `url(${tasting.labelImage})` }}></div>
+      </div>
+      : <div className='default-label-container' >
+          <div className="default-label-inner">
+            <i className='fa-solid fa-wine-glass-empty default-label-image' />
           </div>
-          {showInfo && <div className='loved_wine_extra_info'>
-            <h4>{tasting?.region}</h4>
-            <h4>{tasting?.vineyard}</h4>
-            <h4>{tasting?.other_info}</h4>
-          </div>}
-          {showInfo && <div className='loved_tasting_notes_container'>
-            <h5>SIGHT  : {tasting?.sight}</h5>
-            <h5>NOSE  : {tasting?.nose}</h5>
-            <h5>PALATE  : {tasting?.palate}</h5>
-            <h5>{upperCasedName(tasting?.user?.username)}'S  THOUGHTS  : {tasting?.thoughts}</h5>
-          </div>}
+        </div>}
+      <div className={`tasting_container ${tastingTransformer}`}>
+        <div className='wine-main-info loved-main'>
+          <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
+          <h4>{tasting?.varietal}</h4>
         </div>
+        {showInfo && <div className='loved_wine_extra_info'>
+          <h4>{tasting?.region}</h4>
+          <h4>{tasting?.vineyard}</h4>
+          <h4>{tasting?.other_info}</h4>
+        </div>}
+        {showInfo && <div className='loved_wine_extra_info'>
+          <h5>SIGHT  : {tasting?.sight}</h5>
+          <h5>NOSE  : {tasting?.nose}</h5>
+          <h5>PALATE  : {tasting?.palate}</h5>
+          <h5>{upperCasedName(tasting?.user?.username)}'S  THOUGHTS  : {tasting?.thoughts}</h5>
+        </div>}
         <div className='user_info_container' >
           <span className='profile_cheers_container'>
             <div className='profile_image_container' >
@@ -87,7 +92,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

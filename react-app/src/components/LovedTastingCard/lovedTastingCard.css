@@ -1,47 +1,9 @@
-.loved_tasting_card {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin: 0;
-  padding: 10px 10px 0 10px;
-  transition: transform 1s ease;
-}
-
-.tasting_transformer {
-  height: 600px;
-  background-color: rgba(39, 39, 38, 0.85);
-  border-radius: 30px;
-  transform: translate(0, -375px);
-}
-
-.loved_tasting_info {
-  cursor: pointer;
-}
-
-.loved_info_container {
+.wine-main-info.loved-main {
   border-bottom: 1px solid black;
-}
-
-.loved_wine_info {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  color: rgba(252, 237, 214, .8);
-}
-
-.loved_tasting_header {
-  font-weight: bold;
-  letter-spacing: 4px;
-  margin-bottom: 0;
 }
 
 .loved_wine_extra_info {
   border-bottom: 1px solid black;
-  color: rgba(252, 237, 214, .5);
-}
-
-.loved_tasting_notes_container {
   color: rgba(252, 237, 214, .5);
 }
 
@@ -51,7 +13,6 @@
   padding-bottom: 10px;
   margin: 20px 0;
   height: 110px;
-  /* border-bottom: 1px solid black; */
 }
 
 .profile_cheers_container {
