@@ -38,10 +38,8 @@
 }
 
 .extra-wine-info {
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-color: black;
-  border-width: 1px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   color: rgba(252, 237, 214, .5);
 }
 
