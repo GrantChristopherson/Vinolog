@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyTastingsThunk } from '../../store/tasting';
 import TastingCard from "../TastingCard";
@@ -27,15 +27,17 @@ const MyTastingFeed = () => {
   return (
     <>
       <Navigation />
-      <Sidebar user={user} />
-      <div className="feed_page">
-        <span className='feed_title'>My Wine Tastings</span>
-        <div className="feed-container">
-        {userTastings?.map((tasting) => {return (
-          <div key={tasting.id} className="tasting-card">
-            <TastingCard tasting={tasting} />
+      <div className="sidebar_body_container">
+        <Sidebar user={user} />
+        <div className="feed_page">
+          <span className='feed_title'>My Wine Tastings</span>
+          <div className="feed-container">
+          {userTastings?.map((tasting) => {return (
+            <div key={tasting.id} className="tasting-card">
+              <TastingCard tasting={tasting} />
+            </div>
+          )}).reverse()}
           </div>
-        )}).reverse()}
         </div>
       </div>
       <Footer />

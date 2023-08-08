@@ -6,43 +6,41 @@
 
 .cheers_counter {
   margin: 12px 5px 0 0;
-  color: rgb(192, 192, 176);
+  color: rgba(252, 237, 214, .6);
   font-size: 10px;
 }
 
 .cheers_button {
   background-color: transparent;
-  color: rgb(192, 192, 176);
   border: none;
   font-size: 20px;
 }
 
 .cheers_button:hover {
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .user_cheers_button {
   background-color: transparent;
-  color: rgb(192, 192, 176);
   border: none;
   font-size: 20px;
 }
 
 .cheered_icon {
-  color: rgb(103, 10, 21);
+  color: rgba(223, 106, 114, .75);
 }
 
 .cheered_icon:hover {
   color: rgb(102, 105, 27);
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .uncheered_icon {
-  color: rgb(192, 192, 176);
+  color: rgba(252, 237, 214, .6);
 }
 
 .uncheered_icon:hover {
   color: rgb(102, 105, 27);
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }

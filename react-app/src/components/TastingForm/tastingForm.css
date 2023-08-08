@@ -1,9 +1,3 @@
-.create_tasting_container {
-  display: flex;
-  justify-content: center;
-  min-width: 1000px;
-}
-
 .create_form {
   background-color: white;
   opacity: .7;
