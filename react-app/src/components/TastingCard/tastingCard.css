@@ -57,7 +57,7 @@
   font-size: 250px;
 }
 
-.default-label-image:hover .default-label-inner {
+.default-label-container:hover .default-label-inner {
   transform: scale(1.1);
 }
 
@@ -71,7 +71,7 @@
 }
 
 .tasting_transformer {
-  height: 600px;
+  height: 625px;
   background-color: rgba(39, 39, 38, 0.85);
   border-radius: 30px;
   transform: translate(0, -375px);

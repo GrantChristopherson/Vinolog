@@ -28,9 +28,9 @@ const MyTastingFeed = () => {
     <>
       <Navigation />
       <Sidebar user={user} />
-      <div className="my_feed_page">
-        <span className='my_title'>My Wine Tastings</span>
-        <div className="my-feed-container">
+      <div className="feed_page">
+        <span className='feed_title'>My Wine Tastings</span>
+        <div className="feed-container">
         {userTastings?.map((tasting) => {return (
           <div key={tasting.id} className="tasting-card">
             <TastingCard tasting={tasting} />
