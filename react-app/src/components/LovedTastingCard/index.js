@@ -70,14 +70,21 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
           </span>
           <div className='friending_container'>
             <button className='discussion_toggle' onClick={() => {
-              setShowDiscussion(!showDiscussion)
-              setTastingId(tasting.id)
-              }}>Discussion</button> 
-            {tasting?.user?.id !== user?.id  && !isInFriend ? <span className='friend_button' onClick={friendHandler}>+ Add {tasting?.user?.username} to your Field</span> : <></> }
-            {isInFriend && tasting?.user?.id !== user?.id ? <div className='friend_options_container'>
-              <i className='current_friend'>Friend In Your Field</i>
-              <i className='unfriending_button' onClick={unFriendHandler}>- Remove {tasting?.user?.username}?</i>
-            </div> : <></>}
+                setShowDiscussion(!showDiscussion);
+                setTastingId(tasting.id);
+            }}>Discussion</button>
+            <div className='friend_actions'>
+                {tasting?.user?.id !== user?.id && isInFriend && 
+                    <>
+                        <i className='current_friend'>Friend In Your Field</i>
+                        <i className='unfriending_button' onClick={unFriendHandler}>- Remove {tasting?.user?.username}?</i>
+                    </>
+                }
+                {tasting?.user?.id !== user?.id && !isInFriend ? 
+                    <span className='friend_button' onClick={friendHandler}>+ Add {tasting?.user?.username} to your Field</span> 
+                    : null 
+                }
+            </div>
           </div>
         </div>
       </div> 
