@@ -35,69 +35,10 @@
   }
 }
 
-.my-tasting-container {
+.tasting-card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   width: 375px;
   border-radius: 30px;
-}
-
-.tasting-image-label {
-  height: 375px;
-  overflow: hidden;
-  border-radius: 30px;
-  position: relative;
-}
-
-.tasting-image-label-inner {
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center 80%;
-  opacity: .75;
-  transition: transform 1s ease;
-  transform: scale(1);
-  will-change: transform;
-  border-radius: 30px;
-}
-
-.tasting-image-label:hover .tasting-image-label-inner {
-  transform: scale(1.1);
-}
-
-.default-image-container-my {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 375px;
-  width: 100%;
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-  position: relative;
-}
-
-.default-wine-image-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  transition: transform 1s ease;
-  transform: scale(1);
-  will-change: transform;
-  border-radius: 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.default-wine-image-my {
-  color: rgba(66, 1, 6, .8);
-  font-size: 250px;
-}
-
-.default-image-container-my:hover .default-wine-image-inner {
-  transform: scale(1.1);
 }

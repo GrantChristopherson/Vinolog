@@ -39,7 +39,7 @@ const AllLovedFeed = () => {
       <Navigation />
       <Sidebar />
       <div className="loved_feed_page">
-        <span className='loved_title'>Loved Wine Tastings</span>
+        <span className='loved_title'>Vinolog Loved Wines</span>
         <div className="loved_feed_container">
         {lovedTastings?.map((tasting) => {return (
           <div key={tasting?.id} className="loved_tasting_container">

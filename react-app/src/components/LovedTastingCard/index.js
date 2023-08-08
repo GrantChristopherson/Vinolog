@@ -37,8 +37,8 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
 
 
   return (
-    <div className={`loved_tasting_card ${tastingTransformer}`}>
-      <div className='loved_tasting_info' onClick={() => setShowInfo(!showInfo)}>
+    <div className={`tasting_container ${tastingTransformer}`} onClick={() => setShowInfo(!showInfo)}>
+      {/* <div className='loved_tasting_info' onClick={() => setShowInfo(!showInfo)}> */}
         <div className='loved_info_container'>
           <div className='loved_wine_info'>
             <h3 className='loved_tasting_header'>{tasting?.vintage} {tasting?.producer}</h3>
@@ -87,7 +87,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </div>
           </div>
         </div>
-      </div> 
+      {/* </div>  */}
     </div>
   );
 };

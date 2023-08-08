@@ -1,9 +1,72 @@
+.tasting-card-inner {
+  cursor: pointer;
+}
+
+.label-image-container {
+  height: 375px;
+  overflow: hidden;
+  border-radius: 30px;
+  position: relative;
+}
+
+.label-image {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 80%;
+  opacity: .75;
+  transition: transform 1s ease;
+  transform: scale(1);
+  will-change: transform;
+  border-radius: 30px;
+}
+
+.label-image-container:hover .label-image {
+  transform: scale(1.1);
+}
+
+.default-label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 375px;
+  width: 100%;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.default-label-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: transform 1s ease;
+  transform: scale(1);
+  will-change: transform;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.default-label-image {
+  color: rgba(66, 1, 6, .8);
+  font-size: 250px;
+}
+
+.default-label-image:hover .default-label-inner {
+  transform: scale(1.1);
+}
+
 .tasting_container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin: 0;
-  padding: 20px 20px 0px 20px;
+  padding: 20px;
   transition: transform 1s ease;
 }
 
@@ -14,11 +77,7 @@
   transform: translate(0, -375px);
 }
 
-.tasting-info-container {
-  cursor: pointer;
-}
-
-.wine-info {
+.wine-main-info {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -33,7 +92,7 @@
   margin-bottom: 0;
 }
 
-.loved-wine-heart {
+.loved-wine-icon {
   color: rgb(223, 106, 114);
 }
 
@@ -63,7 +122,7 @@
 }
 
 .edit_my_tasting:hover {
-  color: rgb(102, 105, 27);
+  color: #788c22;
   text-decoration: underline;
   cursor: pointer;
   transition-duration: 500ms;

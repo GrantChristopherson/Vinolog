@@ -1,4 +1,4 @@
-.loved_tasting_card {
+/* .loved_tasting_card {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -12,7 +12,7 @@
   background-color: rgba(39, 39, 38, 0.85);
   border-radius: 30px;
   transform: translate(0, -375px);
-}
+} */
 
 .loved_tasting_info {
   cursor: pointer;
