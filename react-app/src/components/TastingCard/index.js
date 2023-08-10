@@ -31,12 +31,11 @@ const TastingCard = ({tasting}) => {
           </div>
         </div>}
       <div className={`tasting_container ${tastingTransformer}`} >
-        <div className='wine-main-info'>
+        <div className='wine-main_info'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
           <h4 >{tasting?.varietal}</h4>
           <div>
             {tasting?.love && <i className='fa-solid fa-heart loved-wine-icon' />}
-            <Cheers tasting={tasting} />
           </div>
         </div>
         {showInfo && <div className='extra-wine-info'>
@@ -54,6 +53,7 @@ const TastingCard = ({tasting}) => {
           <NavLink to={`/tasting/${tasting.id}/edit`} exact={true} tasting={{tasting}} activeClassName='active' >
             <button className='edit_my_tasting' >EDIT...</button>
           </NavLink>
+          <Cheers tasting={tasting} />
           <div>
             <button className='delete-button'onClick={deleteHandler}>DELETE</button>
           </div>

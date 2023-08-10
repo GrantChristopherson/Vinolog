@@ -77,19 +77,26 @@
   transform: translate(0, -375px);
 }
 
-.wine-main-info {
+.wine-main_info {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
   padding-bottom: 20px;
   color: rgba(252, 237, 214, .8);
+}
+
+.wine-main_info > * {
+  max-width: 100%;
 }
 
 .tasting-card-header {
   font-weight: bold;
   letter-spacing: 4px;
   margin-bottom: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .loved-wine-icon {
@@ -110,6 +117,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
   margin: 25px 15px;
 }
 
