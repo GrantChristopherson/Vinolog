@@ -152,7 +152,7 @@ def seed_tasting():
     varietal='Riesling, Pinot Bianco',
     vintage='2020',
     color='White',
-    label_image='www.kogodwine.com/cdn/shop/products/IMG_8672_grande.jpg',
+    label_image='',
     other_info='low alcohol, 12.5%',
     sight='light straw coloration, watery at the rim',
     nose='bruised apples, wet stone, jasmine',
