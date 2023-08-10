@@ -31,7 +31,7 @@ const MyTastingFeed = () => {
         <Sidebar user={user} />
         <div className="feed_page">
           <span className='feed_title'>My Wine Tastings</span>
-          <div className="feed-container">
+          <div className="feed_container">
           {userTastings?.map((tasting) => {return (
             <div key={tasting.id} className="tasting-card">
               <TastingCard tasting={tasting} />
