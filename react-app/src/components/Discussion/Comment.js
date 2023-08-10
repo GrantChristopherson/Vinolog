@@ -11,12 +11,10 @@ const Comment = ({ comment, filteredUser, discussionTasting, user }) => {
 
   return (
     <>
-      <div className='commentWrapper' >
-        <div className='name-and-comment'>
-          <h5 className='commentName'>{filteredUser.username} : </h5><h6 className='comment-itself'>{comment.comment}</h6>
-        </div>
+      <div className='comment_container' >
+        <h5 className='comment_name'>{filteredUser.username} : </h5><p className='comment_itself'>{comment.comment}</p>
         {comment.user_id === user.id && comment.tasting_id === discussionTasting[0].id ?
-        <i className='fa-solid fa-edit edit-comment-button' onClick={() => setShowEditCommentForm(!showEditCommentForm)}/>: null}
+        <i className='fa-solid fa-edit edit_comment_button' onClick={() => setShowEditCommentForm(!showEditCommentForm)}/>: null}
       </div>
       {showEditCommentForm && 
       comment.user_id === user.id && 

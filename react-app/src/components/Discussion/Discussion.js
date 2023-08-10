@@ -28,7 +28,7 @@ const Discussion = ({ discussionTasting }) => {
 
 
   return (
-    <div className='comment-outer-container'>
+    <>
       {lovedTastingComments?.map((comment) => {  
         return (
           <div key={comment?.id} >
@@ -37,8 +37,8 @@ const Discussion = ({ discussionTasting }) => {
             ))}    
           </div>
         )
-      }).reverse()} 
-    </div>
+      })} 
+    </>
   );
 };
 

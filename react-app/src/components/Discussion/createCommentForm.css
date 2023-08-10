@@ -1,71 +1,43 @@
-.commentFormOuterContainer {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 3px;
-  height: 10%;
-  width: 100%;
-}
-
 .discussion_wine_title {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   letter-spacing: 4px;
   font-size: 18px;
-  color: white;
+  color: rgb(252, 237, 214);
 }
 
-@media only screen and (max-width: 1750px)  {
-  
-  .discussion_wine_title {
-    margin: 40px 0 0 0;
-    padding: 0;
-  }
-}
-
-.errors {
-  color: #c73649;
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.commentContainer {
-  display: flex;
-  flex-direction: column;
-  
-}
-
-.commentInput {
+.comment_input {
   height: 50px;
   width: 100%;
-  margin: 0 0 25px 0px;
-  padding: 10px 30px 5px 10px;
+  margin: 0 0 10px 0px;
+  padding: 10px 30px 0 10px;
   border-top: 0;
   border-left: 0;
   border-right: 0;
-  border-bottom: rgba(192, 192, 176, .8);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  background-color: rgba(255, 255, 255, 0);
-  overflow: auto;
-  color: rgb(192, 192, 176);
+  border-bottom: 1px solid rgba(252, 237, 214, .5);
+  background-color: transparent;
+  overflow-y: auto;
+  color: rgba(252, 237, 214, .8);
   font-size: 12px;
 }
 
-.commentInput:focus {
+.comment_input:focus {
   outline: none;
 }
 
-.commentInput:-webkit-autofill,
-.commentInput:-webkit-autofill:hover,
-.commentInput:-webkit-autofill:focus,
-.commentInput:-webkit-autofill:active {
+.comment_input:-webkit-autofill,
+.comment_input:-webkit-autofill:hover,
+.comment_input:-webkit-autofill:focus,
+.comment_input:-webkit-autofill:active {
   transition: background-color 5000000s ease-in-out 0s;
-  -webkit-text-fill-color: rgb(192, 192, 176);
+  -webkit-text-fill-color: rgba(252, 237, 214, .8);
 }
 
-.commentInput::placeholder {
-  color: rgba(192, 192, 176, .8)
+.comment_input::placeholder {
+  color: rgba(252, 237, 214, .4);
 }
 
 .comment_buttons_container {
@@ -75,44 +47,36 @@
   width: 100%;
 }
 
-.commentButton {
-  margin: 1px 0 0 0;
-  padding: 5px 50px;
-  height: 40px;
+.comment_button {
+  height: 25px;
   width: 75%;
+  border: 0;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  border: 0;
   font-weight: bold;
-  background-color: rgb(198 192 163);
-  color: rgb(103, 10, 21);
+  background-color: rgb(252, 237, 214);
+  color: #753932;
 }
 
-.commentButton:hover {
-  background-color: rgba(103, 10, 21, .8);
-  color: rgb(198 192 163);
+.comment_button:hover {
+  background-color: #753932;
+  color: rgb(252, 237, 214);
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
-.cancelCreateButton {
-  margin: 1px 0 0 0;
-  padding: 0 1px;
+.cancel_comment_button {
+  height: 25px;
   width: 25%;
   border: 0;
   font-weight: bold;
-  background-color: rgba(103, 10, 21, .8);
-  color: rgb(198 192 163);
+  background-color: #753932;
+  color: rgb(252, 237, 214);
 }
 
-.cancelCreateButton:hover {
-  background-color: rgb(198 192 163);
-  color: rgb(103, 10, 21);
+.cancel_comment_button:hover {
+  background-color: rgb(252, 237, 214);
+  color: #753932;
   cursor: pointer;
-  transition-duration: 300ms;
-  
+  transition-duration: 500ms;
 }
-
-
-
-

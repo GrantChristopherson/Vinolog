@@ -1,42 +1,30 @@
-.commentWrapper {
+.comment_container {
+  max-width: 340px;
+  padding: 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-  padding-bottom: 0;
-  height: 40px;
-  width: 100%;
+  flex-direction: column;
 }
 
-.name-and-comment {
-  display: flex;
-  flex-direction: row;
-}
-
-.commentName {
-  color: white;
+.comment_name {
+  margin-bottom: 5px;
+  color: rgb(252, 237, 214);
   letter-spacing: 2px;
   font-weight: bold;
 }
 
-.comment-itself {
-  color: rgba(192, 192, 176, .8);
-  margin-left: 20px;
+.comment_itself {
+  color: rgba(252, 237, 214, .6);
+  margin: 0 0 5px 20px;
 }
 
-.edit-comment-button {
-  color: rgba(192, 192, 176, .2);
-  margin-right: 40px;
-  font-size: 10px;
+.edit_comment_button {
+  color: #788c22;
+  margin-left: 330px;
+  font-size: 12px;
 }
 
-.edit-comment-button:hover {
-  color: rgba(255, 255, 255, 0.5);
+.edit_comment_button:hover {
+  color: rgba(252, 237, 214, .8);
   cursor: pointer;
-  transition-duration: 300ms;
-}
-
-
-
-
+  transition-duration: 500ms;
+} 

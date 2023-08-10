@@ -31,7 +31,7 @@ const TastingCard = ({tasting}) => {
           </div>
         </div>}
       <div className={`tasting_container ${tastingTransformer}`} >
-        <div className='wine-main_info'>
+        <div className='wine-main-info'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
           <h4 >{tasting?.varietal}</h4>
           <div>

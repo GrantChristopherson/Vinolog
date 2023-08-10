@@ -64,25 +64,21 @@ const EditCommentForm = ({ comment, user, discussionTasting, setShowEditCommentF
    
 
   return (
-    <div className='editCommentFormOuterContainer'>
-      <form onSubmit={handleSubmit} className='editCommentForm'>
-        {errors.map((error, i) => (<div className="errors" key={i}>{error}</div>))}
-        <div className='editCommentContainer'>
-          <input className='editedCommentInput'
-            type="text"
-            name='comment'
-            onChange={(e) => setEditedComment(e.target.value)}
-            placeholder='Edit of Comment...'
-            value={editedComment}
-          ></input>
-          <div className='editDeleteButtonWrapper'>
-            <button className='editedCommentButton' type="submit" >Submit</button>
-            {comment?.user_id === user?.id && comment?.tasting_id === discussionTasting[0].id ?
-            <button className="deleteComment" onClick={commentDeleter(comment.id)}>Delete</button>  : null}
-          </div>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      {errors.map((error, i) => (<div className="errors" key={i}>{error}</div>))}
+      <input className='edited_comment_input'
+        type="text"
+        name='comment'
+        onChange={(e) => setEditedComment(e.target.value)}
+        placeholder='Edit of Comment...'
+        value={editedComment}
+      ></input>
+      <div className='edit_delete_button_container'>
+        <button className='edited_comment_button' type="submit" >Submit</button>
+        {comment?.user_id === user?.id && comment?.tasting_id === discussionTasting[0].id ?
+        <button className="delete_comment" onClick={commentDeleter(comment.id)}>Delete</button>  : null}
+      </div>
+    </form>
   );
 };
 
