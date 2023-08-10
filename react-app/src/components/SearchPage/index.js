@@ -21,24 +21,20 @@ const SearchPage = () => {
   return (
     <>
       <Navigation />
-      <Sidebar />
-      <div className="search_feed_page">
-        <span className="search_title">Search Results of "{searchWord}"</span>
-        <div className="title_types_container">
-          <span className="search_title_tastings">Tastings</span>
-          <span className="search_title_users">Users</span>
-        </div>
-        <div className="all_results_container">
-          <div className="tasting_results_container">
-            {tastings.map((tasting) => {return (
-              <div key={tasting.id} className="search_page_tasting_container" >
-              {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
-              : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
-              <TastingCard tasting={tasting} />
-              </div>
-            )}).reverse()}
+      <div className="sidebar_body_container">
+        <Sidebar />
+        <div className="search_feed_page">
+          <span className="search_title">Search of "{searchWord}"</span>
+          <span className="search_title_tastings">Wine results:</span>
+          <div className="feed_container">
+          {tastings.map((tasting) => {return (
+            <div key={tasting.id} className="tasting-card" >
+            <TastingCard tasting={tasting} />
+            </div>
+          )}).reverse()}
           </div>
           <div className="user_results_container">
+            <span className="search_title_users">User results:</span>
             {users.map((user) => {return (
               <div key={user.id} className="search_page_user_container" >
                 <SearchedUser user={user}/>
