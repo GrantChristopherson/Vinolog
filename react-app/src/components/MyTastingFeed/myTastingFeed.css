@@ -4,24 +4,24 @@
 }
 
 .feed_page {
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column; */
   flex: 1;
-  padding: 120px 250px 300px 250px;
+  margin: 0 340px;
+  padding: 120px 0;
   overflow-y: scroll;
 }
 
 .feed_title {
   display: flex;
   justify-content: center;
+  margin: 0 150px;
+  padding-bottom: 20px;
   font-size: 20px;
   color: #fcedd6;
-  padding-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-.feed-container {
+.feed_container {
+  
   display: grid;
   grid-template-columns: repeat(3, minmax(375px, 375px));
   grid-gap: 100px;
@@ -35,10 +35,10 @@
     padding: 100px 0px 300px 0px;
   }
   
-  .feed-container {
+  /* .feed-container {
     grid-template-columns: repeat(2, minmax(375px, 375px));
     padding: 100px 350px;
-  }
+  } */
 }
 
 .tasting-card {

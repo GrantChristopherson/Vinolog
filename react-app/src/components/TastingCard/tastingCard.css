@@ -1,5 +1,6 @@
 .tasting-card-inner {
   cursor: pointer;
+  
 }
 
 .label-image-container {
@@ -66,15 +67,16 @@
   justify-content: space-between;
   flex-direction: column;
   margin: 0;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   transition: transform 1s ease;
 }
 
 .tasting_transformer {
-  height: 625px;
+  height: 675px;
   background-color: rgba(39, 39, 38, 0.85);
   border-radius: 30px;
   transform: translate(0, -375px);
+  margin-bottom: -425px;
 }
 
 .wine-main-info {
@@ -89,6 +91,10 @@
 
 .wine-main_info > * {
   max-width: 100%;
+}
+
+.loved-main {
+  height: 180px;
 }
 
 .tasting-card-header {
@@ -118,7 +124,7 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  margin: 25px 15px;
+  margin: 25px 15px 40px 15px;
 }
 
 .edit_my_tasting {
