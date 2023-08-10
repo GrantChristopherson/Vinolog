@@ -1,9 +1,13 @@
 
 .sidebar {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: rgba(39, 39, 38, .5);
   flex: 0 0 340px;
+  top: 0; 
+  left: 0; 
+  height: 100vh;
+  background-color: rgba(39, 39, 38, .5);
 }
 
 .sidebar_links_container {

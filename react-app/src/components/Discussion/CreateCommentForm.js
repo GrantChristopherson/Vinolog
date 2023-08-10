@@ -45,25 +45,23 @@ const CreateCommentForm = ({ discussionTasting }) => {
 
 
   return (
-    <div className='commentFormOuterContainer'>
+    <>
       <div className='discussion_wine_title'><h4>{discussionTasting[0].vintage} {discussionTasting[0].producer}</h4></div>
-      <form onSubmit={handleSubmit} className='createCommentForm'>
+      <form onSubmit={handleSubmit}>
         {errors.map((error, i) => (<div className="errors" key={i}>{error}</div>))}
-        <div className='commentContainer'>
-          <input className='commentInput'
-            type="text"
-            name='comment'
-            onChange={(e) => setComment(e.target.value)}
-            placeholder='Comment...'
-            value={comment}
-          ></input>
-          <div className='comment_buttons_container'>
-            <button className='commentButton' type="submit" >Submit</button>
-            <button className='cancelCreateButton' onClick={() => handleCancel()}>Clear</button>
-          </div>
+        <input className='comment_input'
+          type="text"
+          name='comment'
+          onChange={(e) => setComment(e.target.value)}
+          placeholder='Comment...'
+          value={comment}
+        ></input>
+        <div className='comment_buttons_container'>
+          <button className='comment_button' type="submit" >Submit</button>
+          <button className='cancel_comment_button' onClick={() => handleCancel()}>Clear</button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 

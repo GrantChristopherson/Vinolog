@@ -11,7 +11,7 @@
 }
 
 .search_input::placeholder {
-  color: rgba(252, 237, 214, .5);
+  color: rgba(252, 237, 214, .3);
 }
 
 .search_input:focus {
@@ -59,7 +59,7 @@
 .search_option_label {
   display: flex;
   align-items: center;
-  color: rgba(252, 237, 214, .4);
+  color: rgba(252, 237, 214, .5);
   font-size: 12px;
 }
 

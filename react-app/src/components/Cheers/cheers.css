@@ -27,6 +27,10 @@
   font-size: 20px;
 }
 
+.user_cheered_icon {
+  color: rgba(252, 237, 214, .6);
+}
+
 .cheered_icon {
   color: rgba(223, 106, 114, .75);
 }
@@ -43,4 +47,8 @@
 .uncheered_icon:hover {
   color: rgb(102, 105, 27);
   transition-duration: 500ms;
+}
+
+.user_uncheered_icon {
+  color: rgba(252, 237, 214, .6);
 }

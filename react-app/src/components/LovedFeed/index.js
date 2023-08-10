@@ -49,10 +49,8 @@ const AllLovedFeed = () => {
           )}).reverse()}
           </div>
           {showDiscussion && <div className='discussion_wrapper'>
-            <div className="discussion_container">
-              <CreateCommentForm discussionTasting={discussionTasting}/>
-              <Discussion discussionTasting={discussionTasting} setShowDiscussion={setShowDiscussion}/>
-              </div>
+            <CreateCommentForm discussionTasting={discussionTasting}/>
+            <Discussion discussionTasting={discussionTasting} setShowDiscussion={setShowDiscussion}/>
           </div>}
         </div>
       </div>
