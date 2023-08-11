@@ -24,7 +24,8 @@ const Cheers = ({ tasting }) => {
   const cheeredIconClass = user.id === tasting.user.id ? "fa-solid fa-wine-glass user_cheered_icon" : "fa-solid fa-wine-glass cheered_icon";
   const uncheeredIconClass = user.id === tasting.user.id ? "fa-solid fa-wine-glass user_uncheered_icon" : "fa-solid fa-wine-glass-empty uncheered_icon";
 
-  const cheersHandler = () =>{
+  const cheersHandler = (e) =>{
+    e.stopPropagation();
     if (user.id === tasting.user.id) return;
     if (!isCheered) {
       dispatch(createCheersThunk(tasting?.id, user?.id));
@@ -41,7 +42,7 @@ const Cheers = ({ tasting }) => {
     <>
     {usersIconCountCheck && <div className="cheers_container">
       {cheersCounterCheck && <p className="cheers_counter">{tasting?.cheers_by?.length}</p>}
-      <button className={cheersButtonClass}  onClick={cheersHandler}>
+      <button className={cheersButtonClass}  onClick={(e) => {cheersHandler(e)}}>
         {isCheered ? <i className={cheeredIconClass}></i> : <i className={uncheeredIconClass}></i>}
       </button>
     </div>}
