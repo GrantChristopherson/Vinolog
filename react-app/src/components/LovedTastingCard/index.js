@@ -34,13 +34,11 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
   
   const friendHandler = async(e) => {
     e.stopPropagation();
-    e.preventDefault();
     dispatch(createFriendThunk(user?.id, tasting?.user?.id))
   };
 
   const unFriendHandler = async(e) => {
     e.stopPropagation();
-    e.preventDefault();
     dispatch(deleteFriendThunk(user.id, tasting?.user?.id))
   };
 

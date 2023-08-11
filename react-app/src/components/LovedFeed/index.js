@@ -31,6 +31,14 @@ const AllLovedFeed = () => {
     })();
   }, [dispatch, user.id]);
 
+  const discussionCloser = (e) => {
+    if (!showDiscussion) {
+      return
+    } else {
+      setShowDiscussion(!showDiscussion);
+    };  
+  };
+
 
 
   
@@ -49,6 +57,9 @@ const AllLovedFeed = () => {
           )}).reverse()}
           </div>
           {showDiscussion && <div className='discussion_wrapper'>
+            <div className='discussion_close_container' onClick={(e) => {discussionCloser(e)}}>
+              <i className='fa-solid fa-x fa-rotate-90 discussion_closer'/>
+            </div>
             <CreateCommentForm discussionTasting={discussionTasting}/>
             <Discussion discussionTasting={discussionTasting} setShowDiscussion={setShowDiscussion}/>
           </div>}
