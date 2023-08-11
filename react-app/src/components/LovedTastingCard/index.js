@@ -84,11 +84,11 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </div>
           </span>
           <div className='friending_container'>
-            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>Discussion</button>
+            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>Join the Discussion</button>
             <div className='friend_actions'>
               {tasting?.user?.id !== user?.id && isInFriend && 
                 <>
-                  <i className='current_friend'>Friend In Your Field</i>
+                  <i className='current_friend'>Friend in the Field</i>
                   <i className='unfriending_button' onClick={(e) => {unFriendHandler(e)}}>- Remove {tasting?.user?.username}?</i>
                 </>
               }
