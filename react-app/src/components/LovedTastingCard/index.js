@@ -21,6 +21,15 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
   const upperCasedName = (userName) => {
     return userName.toUpperCase();
   };
+
+  const discussionToggleLogic = () => {
+    if (showDiscussion) {
+      setTastingId(tasting.id);
+    } else {
+        setShowDiscussion(!showDiscussion);
+        setTastingId(tasting.id);
+    };
+  };
   
   const friendHandler = async(e) => {
     e.preventDefault();
@@ -74,10 +83,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </div>
           </span>
           <div className='friending_container'>
-            <button className='discussion_toggle' onClick={() => {
-                setShowDiscussion(!showDiscussion);
-                setTastingId(tasting.id);
-            }}>Discussion</button>
+            <button className='discussion_toggle' onClick={() => {discussionToggleLogic()}}>Discussion</button>
             <div className='friend_actions'>
                 {tasting?.user?.id !== user?.id && isInFriend && 
                     <>

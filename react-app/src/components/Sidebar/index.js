@@ -18,7 +18,7 @@ const Sidebar = () => {
           Loved Wines
         </NavLink>
         <NavLink to='/tastings' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
-          My Wine Tasting
+          My Wine Tastings
         </NavLink>
         <NavLink to='/tasting' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
           Create New Tasting
