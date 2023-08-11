@@ -52,7 +52,11 @@ const AllLovedFeed = () => {
           <div className="feed_container">
           {lovedTastings?.map((tasting) => {return (
             <div key={tasting?.id} className="tasting-card">
-              <LovedTastingCard tasting={tasting} showDiscussion={showDiscussion} setShowDiscussion={setShowDiscussion} setTastingId={setTastingId} />
+              <LovedTastingCard tasting={tasting} 
+                                showDiscussion={showDiscussion} 
+                                setShowDiscussion={setShowDiscussion}
+                                tastingId={tastingId} 
+                                setTastingId={setTastingId} />
             </div>
           )}).reverse()}
           </div>

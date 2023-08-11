@@ -7,7 +7,7 @@ import './lovedTastingCard.css';
 // tasting card feeds styling and components modified to be more dynamic
 // modify user seed data, add aws
 
-const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastingId}) => {
+const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, tastingId, setTastingId}) => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
@@ -25,7 +25,13 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
   const discussionToggleLogic = (e) => {
     e.stopPropagation();
     if (showDiscussion) {
-      setTastingId(tasting.id);
+      // add logic to change the link to a closeDiscussion button on the tasting card  that has the discussion opened
+      if (tastingId === tasting.id) {
+        setShowDiscussion(!showDiscussion);
+      } else {
+        setTastingId(tasting.id);
+      };
+      
     } else {
         setShowDiscussion(!showDiscussion);
         setTastingId(tasting.id);
@@ -84,7 +90,9 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </div>
           </span>
           <div className='friending_container'>
-            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>Join the Discussion</button>
+            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>
+              {showDiscussion && tastingId === tasting.id ? "Leave the Discussion" : "Join the Discussion"}
+            </button>
             <div className='friend_actions'>
               {tasting?.user?.id !== user?.id && isInFriend && 
                 <>
