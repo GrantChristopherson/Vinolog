@@ -21,14 +21,24 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
   const upperCasedName = (userName) => {
     return userName.toUpperCase();
   };
+
+  const discussionToggleLogic = (e) => {
+    e.stopPropagation();
+    if (showDiscussion) {
+      setTastingId(tasting.id);
+    } else {
+        setShowDiscussion(!showDiscussion);
+        setTastingId(tasting.id);
+    };
+  };
   
   const friendHandler = async(e) => {
-    e.preventDefault();
+    e.stopPropagation();
     dispatch(createFriendThunk(user?.id, tasting?.user?.id))
   };
 
   const unFriendHandler = async(e) => {
-    e.preventDefault();
+    e.stopPropagation();
     dispatch(deleteFriendThunk(user.id, tasting?.user?.id))
   };
 
@@ -74,21 +84,18 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </div>
           </span>
           <div className='friending_container'>
-            <button className='discussion_toggle' onClick={() => {
-                setShowDiscussion(!showDiscussion);
-                setTastingId(tasting.id);
-            }}>Discussion</button>
+            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>Discussion</button>
             <div className='friend_actions'>
-                {tasting?.user?.id !== user?.id && isInFriend && 
-                    <>
-                        <i className='current_friend'>Friend In Your Field</i>
-                        <i className='unfriending_button' onClick={unFriendHandler}>- Remove {tasting?.user?.username}?</i>
-                    </>
-                }
-                {tasting?.user?.id !== user?.id && !isInFriend ? 
-                    <span className='friend_button' onClick={friendHandler}>+ Add {tasting?.user?.username} to your Field</span> 
-                    : null 
-                }
+              {tasting?.user?.id !== user?.id && isInFriend && 
+                <>
+                  <i className='current_friend'>Friend In Your Field</i>
+                  <i className='unfriending_button' onClick={(e) => {unFriendHandler(e)}}>- Remove {tasting?.user?.username}?</i>
+                </>
+              }
+              {tasting?.user?.id !== user?.id && !isInFriend ? 
+                <span className='friend_button' onClick={(e) => {friendHandler(e)}}>+ Add {tasting?.user?.username} to your Field</span> 
+                : null 
+              }
             </div>
           </div>
         </div>

@@ -8,12 +8,12 @@ import './createCommentForm.css';
 const CreateCommentForm = ({ discussionTasting }) => {
 
   const dispatch = useDispatch();
-  const comments = useSelector((state) => (state?.discussion?.comments))
+  const comments = useSelector((state) => (state?.discussion?.comments));
   const [comment, setComment] = useState('');
   const [errors, setErrors] = useState([]);
   
   useEffect(()=> {
-  },[comments.comment])
+  },[comments.comment]);
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -24,13 +24,13 @@ const CreateCommentForm = ({ discussionTasting }) => {
     if (validateErrors.length > 0) {
       setErrors(validateErrors);
       return;
-    }
+    };
     
     const data = {
       comment
     };
     
-    await dispatch(createCommentThunk(data, discussionTasting[0].id))
+    await dispatch(createCommentThunk(data, discussionTasting[0].id));
     await dispatch(getCommentsThunk());
     
    
@@ -39,9 +39,11 @@ const CreateCommentForm = ({ discussionTasting }) => {
   };
 
   const handleCancel = () => {
-    setComment('')
-    setErrors([])
-  }
+    setComment('');
+    setErrors([]);
+  };
+
+
 
 
   return (

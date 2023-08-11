@@ -14,8 +14,8 @@ const SearchPage = () => {
   const { searchWord } = useParams();
   const tastings = useSelector(state => Object.values(state.search.tastings));
   const users = useSelector(state => Object.values(state.search.users))
-  console.log('tastings search====', tastings)
-  console.log('users search====', users)
+  
+  
 
 
   return (

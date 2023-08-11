@@ -9,11 +9,3 @@ body  {
   background-size: cover;
   font-family: 'Montserrat', 'Roboto';
 }
-
-/* input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 5000000s ease-in-out 0s;
-  -webkit-text-fill-color: rgb(192, 192, 176);
-} */

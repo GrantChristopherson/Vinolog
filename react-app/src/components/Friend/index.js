@@ -14,7 +14,6 @@ const Friend = (friend) => {
   
 
   const unFriendHandler = async(e) => {
-    e.preventDefault();
     dispatch(deleteFriendThunk(currentUser.id, friendId))
   };
 
