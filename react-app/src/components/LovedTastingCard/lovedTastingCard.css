@@ -2,6 +2,34 @@
   border-bottom: 1px solid black;
 }
 
+.fa-circle.red {
+  color: rgba(176, 0, 32, .7);
+}
+
+.fa-circle.white {
+  color: rgba(249, 239, 97, .6);
+}
+
+.fa-circle.rose {
+  color: rgba(223, 106, 114, .7);
+}
+
+.fa-circle.sparkling {
+  color: rgba(249, 239, 97, .6);
+}
+
+.fa-circle.orange {
+  color: rgba(238, 119, 17, .6);
+}
+
+.fa-circle.dessert {
+  color: transparent;
+}
+
+.fa-circle.other {
+  color: transparent;
+}
+
 .loved_wine_extra_info {
   border-bottom: 1px solid black;
   color: rgba(252, 237, 214, .5);

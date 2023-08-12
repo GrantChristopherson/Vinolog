@@ -86,7 +86,6 @@
   align-items: center;
   flex-wrap: wrap;
   padding-bottom: 20px;
-  color: rgba(252, 237, 214, .8);
 }
 
 .wine-main_info > * {
@@ -98,11 +97,15 @@
 }
 
 .tasting-card-header {
-  font-weight: bold;
+  color: rgba(252, 237, 214, .8);
   letter-spacing: 4px;
   margin-bottom: 0;
   text-align: center;
   width: 100%;
+}
+
+.tasting-varietal {
+  color: rgba(252, 237, 214, .8);
 }
 
 .loved-wine-icon {

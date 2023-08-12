@@ -13,6 +13,20 @@ const TastingCard = ({tasting}) => {
   const [showInfo, setShowInfo] = useState(false);
   const tastingTransformer = showInfo ? 'tasting_transformer' : '';
 
+  const colorClassMap = {
+    'Red': 'fa-solid red',
+    'White': 'fa-solid white',
+    'Rose': 'fa-solid rose',
+    'Sparkling': 'fa-regular sparkling',
+    'Orange': 'fa-solid orange',
+    'Dessert': 'fa-solid dessert',
+    'Other': 'fa-solid other'
+  };
+
+  const colorLogic = () => {
+    return colorClassMap[tasting.color] || 'fa-solid other';
+  };
+
   const deleteHandler = async() => {
     await dispatch(deleteTastingThunk(tasting?.id))
   };
@@ -33,7 +47,16 @@ const TastingCard = ({tasting}) => {
       <div className={`tasting_container ${tastingTransformer}`} >
         <div className='wine-main-info'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
-          <h4 >{tasting?.varietal}</h4>
+          <h4 className='tasting-varietal'>{tasting?.varietal}</h4>
+          {colorLogic() !== 'fa-regular sparkling' 
+            ? <i className={`fa-circle ${colorLogic()}`}></i>
+            : (
+              <div>
+                <i className={`fa-circle ${colorLogic()}`}></i>
+                <i className={`fa-circle ${colorLogic()}`}></i>
+              </div>
+            )
+          }
           <div>
             {tasting?.love && <i className='fa-solid fa-heart loved-wine-icon' />}
           </div>
