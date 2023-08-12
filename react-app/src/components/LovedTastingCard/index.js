@@ -7,7 +7,7 @@ import './lovedTastingCard.css';
 // tasting card feeds styling and components modified to be more dynamic
 // modify user seed data, add aws
 
-const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastingId}) => {
+const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, tastingId, setTastingId}) => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
@@ -22,10 +22,30 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
     return userName.toUpperCase();
   };
 
+  const colorClassMap = {
+    'Red': 'fa-solid red',
+    'White': 'fa-solid white',
+    'Rose': 'fa-solid rose',
+    'Sparkling': 'fa-regular sparkling',
+    'Orange': 'fa-solid orange',
+    'Dessert': 'fa-solid dessert',
+    'Other': 'fa-solid other'
+  };
+  
+  const colorLogic = () => {
+    return colorClassMap[tasting.color] || 'fa-solid other';
+  };
+
   const discussionToggleLogic = (e) => {
     e.stopPropagation();
     if (showDiscussion) {
-      setTastingId(tasting.id);
+  
+      if (tastingId === tasting.id) {
+        setShowDiscussion(!showDiscussion);
+      } else {
+        setTastingId(tasting.id);
+      };
+
     } else {
         setShowDiscussion(!showDiscussion);
         setTastingId(tasting.id);
@@ -58,7 +78,16 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
       <div className={`tasting_container ${tastingTransformer}`}>
         <div className='wine-main-info loved-main'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
-          <h4>{tasting?.varietal}</h4>
+          <h4 className='tasting-varietal'>{tasting?.varietal}</h4>
+          {colorLogic() !== 'fa-regular sparkling' 
+            ? <i className={`fa-circle ${colorLogic()}`}></i>
+            : (
+              <div>
+                <i className={`fa-circle ${colorLogic()}`}></i>
+                <i className={`fa-circle ${colorLogic()}`}></i>
+              </div>
+            )
+          }
         </div>
         {showInfo && <div className='loved_wine_extra_info'>
           <h4>{tasting?.region}</h4>
@@ -84,7 +113,9 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, setTastin
             </div>
           </span>
           <div className='friending_container'>
-            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>Join the Discussion</button>
+            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>
+              {showDiscussion && tastingId === tasting.id ? "Leave the Discussion" : "Join the Discussion"}
+            </button>
             <div className='friend_actions'>
               {tasting?.user?.id !== user?.id && isInFriend && 
                 <>
