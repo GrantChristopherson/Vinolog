@@ -18,7 +18,7 @@
   font-size: 20px;
   width: 340px;
   flex-wrap: wrap;
-  color: #fcedd6;
+  color: rgba(252, 237, 214, .8);
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
@@ -30,15 +30,3 @@
   padding: 100px 0;
   overflow-y: auto;
 }
-
-/* @media only screen and (max-width: 2000px)  {
-
-  .field_list_container {
-    padding: 100px 0px 300px 0px;
-  }
-  
-  .field_list {
-    padding: 100px 250px;
-  }
-} */
-

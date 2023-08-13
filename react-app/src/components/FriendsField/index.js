@@ -40,7 +40,7 @@ const FriendsField = () => {
       <div className='sidebar_body_container'>
         <Sidebar />
         <div className="feed_page">
-          <span className='feed_title'>Friend in the Field Wines</span>
+          <span className='feed_title'>Wines in your Field</span>
           <div className="feed_container">
           {/* {lovedTastings?.map((tasting) => {return (
             <div key={tasting?.id} className="tasting-card">
