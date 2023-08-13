@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 500px;
+  width: 340px;
   padding: 10px 0;
   border-bottom: .5px solid rgba(0, 0, 0, 0.4);
 }
@@ -25,7 +25,7 @@
   color: rgb(192, 192, 176);
   text-decoration: underline;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 
 .friend_profile_image {
@@ -56,6 +56,6 @@
   color: rgb(102, 105, 27);
   text-decoration: underline;
   cursor: pointer;
-  transition-duration: 300ms;
+  transition-duration: 500ms;
 }
 

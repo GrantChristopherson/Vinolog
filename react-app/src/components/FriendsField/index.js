@@ -19,7 +19,7 @@ const FriendsField = () => {
  
   const friendAmountlogic = (friends) => {
     if (friends.length === 0) {
-      return 'Meet other vinophiles in the Loved Wine Feed...  Add them to your Field of Friends!';
+      return 'No one is in your Field...';
     } else if (friends.length === 1) {
       return '1 Friend in your Field';
     } else {
@@ -39,7 +39,21 @@ const FriendsField = () => {
       <Navigation />
       <div className='sidebar_body_container'>
         <Sidebar />
-        <div className='field_list_container'>
+        <div className="feed_page">
+          <span className='feed_title'>Friend in the Field Wines</span>
+          <div className="feed_container">
+          {/* {lovedTastings?.map((tasting) => {return (
+            <div key={tasting?.id} className="tasting-card">
+              <LovedTastingCard tasting={tasting} 
+                                showDiscussion={showDiscussion} 
+                                setShowDiscussion={setShowDiscussion}
+                                tastingId={tastingId} 
+                                setTastingId={setTastingId} />
+            </div>
+          )}).reverse()} */}
+          </div> 
+        </div>
+        <div className='friend_list_container'>
           <span className='field_title'>{friendAmountlogic(friends)}</span>
           <div className='field_list'>
             {haveFriends && friends?.map((friend) => {return (
