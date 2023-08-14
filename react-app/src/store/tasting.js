@@ -1,6 +1,7 @@
 const GET_MY_TASTINGS = 'tastings/GET_MY_TASTINGS';
 const GET_ALL_LOVED_TASTINGS = 'tastings/GET_ALL_LOVED_TASTINGS';
 const GET_FRIENDS_TASTINGS = 'tastings/GET_FRIENDS_TASTINGS';
+const GET_ALL_FRIENDS_TASTINGS = 'tastings/GET_ALL_FRIENDS_TASTINGS';
 const CREATE_TASTING = 'tastings/CREATE_TASTING';
 const EDIT_TASTING = 'tasting/EDIT_TASTING';
 const DELETE_TASTING = 'tasting/DELETE_TASTING';
@@ -27,9 +28,17 @@ const getAllLovedTastings = (lovedTastings) => {
 };
 
 
-const getFriendsTastings = (friendsTastings) => {
+const getFriendsTastings = (friendTastings) => {
   return {
     type: GET_FRIENDS_TASTINGS,
+    friendTastings
+  };
+};
+
+
+const getAllFriendsTastings = (friendsTastings) => {
+  return {
+    type: GET_ALL_FRIENDS_TASTINGS,
     friendsTastings
   };
 };
@@ -126,6 +135,20 @@ export const getFriendsTastingsThunk = (friendId) => async(dispatch) => {
   } else {
     const tastings = await response.json();
     dispatch(getFriendsTastings(tastings.tastings));
+  };
+};
+
+
+export const getAllFriendsTastingsThunk = (userIds) => async(dispatch) => {
+  const response = await fetch(`/api/tastings/field?user_ids=${userIds.join(',')}`, {
+    headers: {}
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  } else {
+    const tastings = await response.json();
+    dispatch(getAllFriendsTastings(tastings.tastings));
   };
 };
 
@@ -281,6 +304,17 @@ export default function reducer(state = initialState, action) {
       };
     };
     case GET_FRIENDS_TASTINGS: {
+      const friendTastings = action.friendTastings.reduce((acc, tasting) => {
+        acc[tasting.id] = tasting;
+        return acc;
+      }, {});
+      
+      return {
+        ...state,
+        tastings: { ...state.tastings, ...friendTastings },
+      };
+    };
+    case GET_ALL_FRIENDS_TASTINGS: {
       const friendsTastings = action.friendsTastings.reduce((acc, tasting) => {
         acc[tasting.id] = tasting;
         return acc;
@@ -288,7 +322,7 @@ export default function reducer(state = initialState, action) {
       
       return {
         ...state,
-        tastings: { ...state.tastings, ...friendsTastings },
+        tastings: { ...state.tastings, ...friendsTastings},
       };
     };
     case CREATE_TASTING: {

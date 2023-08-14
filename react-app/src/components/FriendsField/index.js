@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMyFieldThunk } from '../../store/friends';
+import { getAllFriendsTastingsThunk } from '../../store/tasting';
+import FriendsTastingCard from '../FriendsTastingCard';
 import Navigation from '../Navigation';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
@@ -13,10 +15,14 @@ import './friendsField.css';
 const FriendsField = () => {
 
   const dispatch = useDispatch();
+  const [haveFriends, setHaveFriends] = useState(false);
   const user = useSelector((state) => state?.session?.user);
   const friends = useSelector((state) => Object.values(state.fields.friends));
-  const [haveFriends, setHaveFriends] = useState(false);
- 
+  const ids = useSelector((state) => Object.keys(state.fields.friends))
+  const idsInt = ids.map(id => +id);
+  const tastings = useSelector((state) => Object.values(state.tastings.tastings));
+  const friendsTastings = tastings.filter(tasting => idsInt.includes(tasting.user?.id));
+  
   const friendAmountlogic = (friends) => {
     if (friends.length === 0) {
       return 'No one is in your Field...';
@@ -28,8 +34,22 @@ const FriendsField = () => {
   };
 
   useEffect(() => {
-    dispatch(getMyFieldThunk(user.id)).then(() => setHaveFriends(true));
+    dispatch(getMyFieldThunk(user.id))
+    .then(() => {
+      setHaveFriends(true);
+    });
   }, [dispatch, user.id]);
+
+
+  const prevIds = useRef();
+
+  useEffect(() => {
+      if (prevIds.current !== JSON.stringify(ids)) {
+          dispatch(getAllFriendsTastingsThunk(ids));
+          prevIds.current = JSON.stringify(ids);
+      }
+  }, [dispatch, ids]);
+
 
 
 
@@ -42,15 +62,16 @@ const FriendsField = () => {
         <div className="feed_page">
           <span className='feed_title'>Wines in your Field</span>
           <div className="feed_container">
-          {/* {lovedTastings?.map((tasting) => {return (
+          {friendsTastings?.map((tasting) => {return (
             <div key={tasting?.id} className="tasting-card">
-              <LovedTastingCard tasting={tasting} 
-                                showDiscussion={showDiscussion} 
-                                setShowDiscussion={setShowDiscussion}
-                                tastingId={tastingId} 
-                                setTastingId={setTastingId} />
+              <FriendsTastingCard tasting={tasting} 
+                                // showDiscussion={showDiscussion} 
+                                // setShowDiscussion={setShowDiscussion}
+                                // tastingId={tastingId} 
+                                // setTastingId={setTastingId} 
+                                />
             </div>
-          )}).reverse()} */}
+          )}).reverse()}
           </div> 
         </div>
         <div className='friend_list_container'>

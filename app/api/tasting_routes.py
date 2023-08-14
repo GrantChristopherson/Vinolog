@@ -5,6 +5,10 @@ from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
 # import boto3
 # from app.config import Config
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+logger.debug("Starting Flask application.")
 
 
 
@@ -58,6 +62,24 @@ def all_loved_tastings():
 def get_friends_tastings(id):
   tastings = Tasting.query.filter(Tasting.user_id == id).all()
 
+  return {'tastings': [tasting.to_dict() for tasting in tastings]}
+
+
+
+# Get all friends tasting cards
+@tasting_routes.route('/field')
+@login_required
+def get_all_friends_tastings():
+  logger.debug("Entering get_all_friends_tastings method")
+  logger.info('Info level log')
+  print('api start===========')
+  user_ids_str = request.args.get('user_ids', '')
+  print('user_ids_str===========', user_ids_str)
+  user_ids = [int(id_) for id_ in user_ids_str.split(',') if id_.isdigit()]
+  print('user_ids=====', user_ids)
+  tastings= Tasting.query.filter(Tasting.user_id.in_(user_ids)).all()
+  print('tastings=======', tastings)
+  # print('return========', {'tastings': [tasting.to_dict() for tasting in tastings]})
   return {'tastings': [tasting.to_dict() for tasting in tastings]}
 
 
@@ -181,34 +203,7 @@ def delete_cheers(tasting_id):
 
 
 
-# Get tastings via search_word
-# @tasting_routes.route('/search/<string:search_word>')
-# @login_required
-# def get_tastings_search(search_word):
-#   try: 
-#     tastings = Tasting.query.filter(or_(
-#       Tasting.producer.ilike(f'%{search_word}%'),
-#       Tasting.region.ilike(f'%{search_word}%'),
-#       Tasting.vineyard.ilike(f'%{search_word}%'),
-#       Tasting.varietal.ilike(f'%{search_word}%'),
-#       Tasting.vintage.ilike(f'%{search_word}%'),
-#       Tasting.color.ilike(f'%{search_word}%'),
-#       Tasting.other_info.ilike(f'%{search_word}%'),
-#       Tasting.sight.ilike(f'%{search_word}%'),
-#       Tasting.nose.ilike(f'%{search_word}%'),
-#       Tasting.palate.ilike(f'%{search_word}%'),
-#       Tasting.thoughts.ilike(f'%{search_word}%'),
-#     )).all()
-
-#     return {'search': [tasting.to_dict() for tasting in tastings]}
-#   except Exception as e:
-#     return {"error": str(e)}, 500
-  
-
-
-# ---------------------------------------------------
-
-
+# Search route                               #tested successfully
 @tasting_routes.route('/search', methods=['GET'])
 @login_required
 def search():
@@ -216,6 +211,7 @@ def search():
   search_option = request.args.get('option')
 
   try:
+    # search only tastings
     if search_option == "tastings":
       tastings = Tasting.query.filter(or_(
         Tasting.producer.ilike(f'%{search_word}%'),
@@ -230,17 +226,17 @@ def search():
         Tasting.palate.ilike(f'%{search_word}%'),
         Tasting.thoughts.ilike(f'%{search_word}%'),
       )).all()
-      print('api tastings return======', {'tastings': [tasting.to_dict() for tasting in tastings]})
+      
       return {'tastings': [tasting.to_dict() for tasting in tastings], 'users': []}
 
+    # search only user usernames
     elif search_option == "users":
       users = User.query.filter(User.username.ilike(f'%{search_word}%')).all()
-      print('api users return======', {'users': [user.to_dict() for user in users]})
+     
       return {'users': [user.to_dict() for user in users], 'tastings': []}
 
     else:
-      # search both tables
-      # logging.debug('before the query debuggin======')
+      # search both tables, tastings and usernames
       tastings = Tasting.query.filter(or_(
         Tasting.producer.ilike(f'%{search_word}%'),
         Tasting.region.ilike(f'%{search_word}%'),
@@ -254,10 +250,9 @@ def search():
         Tasting.palate.ilike(f'%{search_word}%'),
         Tasting.thoughts.ilike(f'%{search_word}%'),
       )).all()
-      # logging.debug('between the two queries debuggin======')
+      
       users = User.query.filter(User.username.ilike(f'%{search_word}%')).all()
-      # logging.debug('after both queries debuggin============')
-      print('api both return========', {'tastings': [tasting.to_dict() for tasting in tastings], 'users': [user.to_dict() for user in users]})
+      
       return {'tastings': [tasting.to_dict() for tasting in tastings],
               'users': [user.to_dict() for user in users]}
 
