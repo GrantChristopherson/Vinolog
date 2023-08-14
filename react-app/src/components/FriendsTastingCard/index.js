@@ -9,6 +9,22 @@ const FriendsTastingCard = ({ tasting }) => {
 
   const [showInfo, setShowInfo] = useState(false);
 
+  const tastingTransformer = showInfo ? 'tasting_transformer' : '';
+
+  const colorClassMap = {
+    'Red': 'fa-solid red',
+    'White': 'fa-solid white',
+    'Rose': 'fa-solid rose',
+    'Sparkling': 'fa-regular sparkling',
+    'Orange': 'fa-solid orange',
+    'Dessert': 'fa-solid dessert',
+    'Other': 'fa-solid other'
+  };
+  
+  const colorLogic = () => {
+    return colorClassMap[tasting.color] || 'fa-solid other';
+  };
+
   const friend = tasting.user;
   const upperCaser = (friend => friend.toUpperCase());
 
@@ -16,14 +32,30 @@ const FriendsTastingCard = ({ tasting }) => {
 
 
   return (
-    <div className="friend_tasting_outer">
-      <div className='tasting-info-container' onClick={() => setShowInfo(!showInfo)}>
-        <div className='wine-info'>
+    <div className='tasting-card-inner' onClick={() => setShowInfo(!showInfo)}>
+      {tasting.labelImage ? <div className="label-image-container">
+        <div className="label-image" style={{ backgroundImage: `url(${tasting.labelImage})` }}></div>
+      </div>
+      : <div className='default-label-container' >
+          <div className="default-label-inner">
+            <i className='fa-solid fa-wine-glass-empty default-label-image' />
+          </div>
+        </div>}
+      <div className={`tasting_container ${tastingTransformer}`}>
+        <div className='wine-main-info friend-main'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
-          <h4 >{tasting?.varietal}</h4>
-          <div className="love_and_cheers_container">
+          <h4 className='tasting-varietal'>{tasting?.varietal}</h4>
+          <div className="love_and_color_container">
+            {colorLogic() !== 'fa-regular sparkling' 
+              ? <i className={`fa-circle ${colorLogic()}`}></i>
+              : (
+                <div>
+                  <i className={`fa-circle ${colorLogic()}`}></i>
+                  <i className={`fa-circle ${colorLogic()}`}></i>
+                </div>
+              )
+            }
             {tasting?.love && <i className='fa-solid fa-heart loved-wine-heart' />}
-            <Cheers tasting={tasting} />
           </div>
         </div>
         {showInfo && <div className='extra-wine-info'>
@@ -38,6 +70,18 @@ const FriendsTastingCard = ({ tasting }) => {
           <h5>{upperCaser(friend.username)}'S THOUGHTS  :  {tasting?.thoughts}</h5>
         </div>}
       </div>
+      <div className='user_info_container' >
+          <span className='profile_cheers_container'>
+            <div className='profile_image_container' >
+              {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
+              : <i className='fa-solid fa-user default-profile-image' />}
+              <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>
+            </div>
+            <div  className='cheers_wrapper'>
+              <Cheers tasting={tasting} />
+            </div>
+          </span>
+        </div>
     </div>
   );
 };
