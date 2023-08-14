@@ -140,20 +140,15 @@ export const getFriendsTastingsThunk = (friendId) => async(dispatch) => {
 
 
 export const getAllFriendsTastingsThunk = (userIds) => async(dispatch) => {
-  console.log('thunkapirouteARG======', `${userIds.join(',')}`)
-  console.log('thunk api route', `/api/tastings/field/?user_ids=${userIds.join(',')}`)
   const response = await fetch(`/api/tastings/field?user_ids=${userIds.join(',')}`, {
     headers: {}
   });
-  console.log('thunk response=======', response)
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   } else {
     const tastings = await response.json();
     dispatch(getAllFriendsTastings(tastings.tastings));
-
-    return Promise.resolve(tastings);
   };
 };
 
