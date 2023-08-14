@@ -39,12 +39,12 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case GET_SEARCH: {
       let newState = { ...state };
-      console.log('reducer action results tastings=====', action.results.tastings)
+      
       newState.tastings = action.results.tastings.reduce((acc, tasting) => {
         acc[tasting.id] = tasting;
         return acc;
       }, {});
-      console.log('reducer action results users=====', action.results.users)
+      
       newState.users = action.results.users.reduce((acc, user) => {
         acc[user.id] = user;
         return acc;
