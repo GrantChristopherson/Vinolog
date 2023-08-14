@@ -1,4 +1,4 @@
-.friend_tasting_outer {
+/* .friend_tasting_outer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -11,9 +11,13 @@
   border-top-style: solid;
   border-width: 1px;
   border-color: rgb(39, 39, 38);
+} */
+
+.wine-main-info.friend-main {
+  border-bottom: 1px solid black;
 }
 
-.love_and_cheers_container {
+.love_and_color_container {
   display: flex;
   flex-direction: row;
   align-items: center;
