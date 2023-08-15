@@ -35,12 +35,10 @@ const FriendTastings = () => {
       <div className="sidebar_body_container">
         <Sidebar />
         <div className="feed_page">
-          <span className="friends_feed_header">{friendsUsername}'s Wine Tastings</span>
-          <div className="friends_tastings_feed">
+          <span className="feed_title">{friendsUsername}'s Wine Tastings</span>
+          <div className="feed_container">
           {friendsTastings?.map((tasting) => {return (
-            <div key={tasting?.id} className="friends_tasting_container">
-              {tasting.labelImage ? <img className="tasting-image-label" src={tasting.labelImage} alt='wine label'/> 
-              : <div className='default-image-container' ><i className='fa-solid fa-wine-glass-empty default-wine-image' /></div>}
+            <div key={tasting?.id} className="tasting-card">
               <FriendsTastingCard key={tasting?.id} tasting={tasting} />
             </div>
           )}).reverse()}
