@@ -94,7 +94,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, tastingId
           <h4>{tasting?.vineyard}</h4>
           <h4>{tasting?.other_info}</h4>
         </div>}
-        {showInfo && <div className='loved_wine_extra_info'>
+        {showInfo && <div className='loved_wine_tasting_info'>
           <h5>SIGHT  : {tasting?.sight}</h5>
           <h5>NOSE  : {tasting?.nose}</h5>
           <h5>PALATE  : {tasting?.palate}</h5>

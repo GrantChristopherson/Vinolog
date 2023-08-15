@@ -1,6 +1,5 @@
 .tasting-card-inner {
   cursor: pointer;
-  
 }
 
 .label-image-container {
@@ -67,7 +66,7 @@
   justify-content: space-between;
   flex-direction: column;
   margin: 0;
-  padding: 20px 20px 40px 20px;
+  padding: 20px;
   transition: transform 1s ease;
 }
 
@@ -127,7 +126,7 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  margin: 25px 15px 40px 15px;
+  margin: 25px 15px 80px 15px;
 }
 
 .edit_my_tasting {
