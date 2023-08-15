@@ -16,7 +16,8 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, tastingId
   const isInFriend = friendIdList.includes(tasting.user.id);
   const [showInfo, setShowInfo] = useState(false);
   
-  const tastingTransformer = showInfo ? 'tasting_transformer' : '';
+  const tastingTransformer = showInfo ? 'loved_tasting_transformer' : '';
+  const userTransformer = showInfo ? 'user_loved_transformer' : '';
 
   const upperCasedName = (userName) => {
     return userName.toUpperCase();
@@ -75,7 +76,7 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, tastingId
             <i className='fa-solid fa-wine-glass-empty default-label-image' />
           </div>
         </div>}
-      <div className={`tasting_container ${tastingTransformer}`}>
+      <div className={`loved_tasting_container ${tastingTransformer}`}>
         <div className='wine-main-info loved-main'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
           <h4 className='tasting-varietal'>{tasting?.varietal}</h4>
@@ -94,40 +95,40 @@ const LovedTastingCard = ({tasting, showDiscussion, setShowDiscussion, tastingId
           <h4>{tasting?.vineyard}</h4>
           <h4>{tasting?.other_info}</h4>
         </div>}
-        {showInfo && <div className='loved_wine_extra_info'>
+        {showInfo && <div className='loved_wine_tasting_info'>
           <h5>SIGHT  : {tasting?.sight}</h5>
           <h5>NOSE  : {tasting?.nose}</h5>
           <h5>PALATE  : {tasting?.palate}</h5>
-          <h5>{upperCasedName(tasting?.user?.username)}'S  THOUGHTS  : {tasting?.thoughts}</h5>
+          {tasting.thoughts.length >= 1 && <h5>{upperCasedName(tasting?.user?.username)}'S  THOUGHTS  : {tasting?.thoughts}</h5>}
         </div>}
-        <div className='user_info_container' >
-          <span className='profile_cheers_container'>
-            <div className='profile_image_container' >
-              {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
-              : <i className='fa-solid fa-user default-profile-image' />}
-              {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
-              <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
-            </div>
-            <div  className='cheers_wrapper'>
-              <Cheers tasting={tasting} />
-            </div>
-          </span>
-          <div className='friending_container'>
-            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>
-              {showDiscussion && tastingId === tasting.id ? "Leave the Discussion" : "Join the Discussion"}
-            </button>
-            <div className='friend_actions'>
-              {tasting?.user?.id !== user?.id && isInFriend && 
-                <>
-                  <i className='current_friend'>Friend in the Field</i>
-                  <i className='unfriending_button' onClick={(e) => {unFriendHandler(e)}}>- Remove {tasting?.user?.username}?</i>
-                </>
-              }
-              {tasting?.user?.id !== user?.id && !isInFriend ? 
-                <span className='friend_button' onClick={(e) => {friendHandler(e)}}>+ Add {tasting?.user?.username} to your Field</span> 
-                : null 
-              }
-            </div>
+      </div>
+      <div className={`user_info_container ${userTransformer}`} >
+        <span className='profile_cheers_container'>
+          <div className='profile_image_container' >
+            {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
+            : <i className='fa-solid fa-user default-profile-image' />}
+            {tasting?.user?.username === user?.username ? <h5 className='my_header'>My Tasting</h5> :
+            <h5 className='user_header'>{tasting?.user?.username}'s Tasting</h5>}
+          </div>
+          <div  className='cheers_wrapper'>
+            <Cheers tasting={tasting} />
+          </div>
+        </span>
+        <div className='friending_container'>
+          <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>
+            {showDiscussion && tastingId === tasting.id ? "Leave the Discussion" : "Join the Discussion"}
+          </button>
+          <div className='friend_actions'>
+            {tasting?.user?.id !== user?.id && isInFriend && 
+              <>
+                <i className='current_friend'>Friend in the Field</i>
+                <i className='unfriending_button' onClick={(e) => {unFriendHandler(e)}}>- Remove {tasting?.user?.username}?</i>
+              </>
+            }
+            {tasting?.user?.id !== user?.id && !isInFriend ? 
+              <span className='friend_button' onClick={(e) => {friendHandler(e)}}>+ Add {tasting?.user?.username} to your Field</span> 
+              : null 
+            }
           </div>
         </div>
       </div>

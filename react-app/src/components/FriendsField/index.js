@@ -64,12 +64,7 @@ const FriendsField = () => {
           <div className="feed_container">
           {friendsTastings?.map((tasting) => {return (
             <div key={tasting?.id} className="tasting-card">
-              <FriendsTastingCard tasting={tasting} 
-                                // showDiscussion={showDiscussion} 
-                                // setShowDiscussion={setShowDiscussion}
-                                // tastingId={tastingId} 
-                                // setTastingId={setTastingId} 
-                                />
+              <FriendsTastingCard tasting={tasting}/>
             </div>
           )}).reverse()}
           </div> 
