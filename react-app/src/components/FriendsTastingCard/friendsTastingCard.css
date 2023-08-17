@@ -1,5 +1,15 @@
 .wine-main-info.friend-main {
-  border-bottom: 1px solid black;
+  padding-bottom: 0px;
+}
+
+.tasting_container.friends_tasting.friend_transformer {
+  height: 555px;
+  background-color: rgba(39, 39, 38, 0.9);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  transform: translate(0, -375px);
+  margin-bottom: -395px;
+
 }
 
 .love_and_color_container {
@@ -8,4 +18,10 @@
   align-items: center;
   justify-content: space-around;
   width: 100%
+}
+
+.friend_loved_transformer {
+  background-color: rgba(39, 39, 38, 0.9);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
