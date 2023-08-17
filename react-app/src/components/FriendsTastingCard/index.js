@@ -25,10 +25,14 @@ const FriendsTastingCard = ({ tasting }) => {
     return colorClassMap[tasting.color] || 'fa-solid other';
   };
 
+
+
+  
   const friend = tasting.user;
   const upperCaser = (friend => friend.toUpperCase());
 
   
+  // maybe something different?
 
 
   return (
