@@ -19,10 +19,10 @@ const AllLovedFeed = () => {
   const user = useSelector((state) => state?.session?.user);
   const allTastings = useSelector(state =>  Object.values(state?.tastings.tastings));
   const [showDiscussion, setShowDiscussion] = useState(false);
-  const [tastingId, setTastingId] = useState()
+  const [tastingId, setTastingId] = useState();
   
-  const lovedTastings = allTastings.filter(tasting => tasting.love)
-  const discussionTasting = lovedTastings.filter(tasting => tasting.id === tastingId)
+  const lovedTastings = allTastings.filter(tasting => tasting.love);
+  const discussionTasting = lovedTastings.filter(tasting => tasting.id === tastingId);
   
   useEffect(() => {
     (() => {
