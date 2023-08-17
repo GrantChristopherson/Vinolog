@@ -9,7 +9,8 @@ const FriendsTastingCard = ({ tasting }) => {
 
   const [showInfo, setShowInfo] = useState(false);
 
-  const tastingTransformer = showInfo ? 'tasting_transformer' : '';
+  const tastingTransformer = showInfo ? 'friend_transformer' : '';
+  const userTransformer = showInfo ? 'friend_loved_transformer' : '';
 
   const colorClassMap = {
     'Red': 'fa-solid red',
@@ -45,7 +46,7 @@ const FriendsTastingCard = ({ tasting }) => {
             <i className='fa-solid fa-wine-glass-empty default-label-image' />
           </div>
         </div>}
-      <div className={`tasting_container ${tastingTransformer}`}>
+      <div className={`tasting_container friends_tasting ${tastingTransformer}`}>
         <div className='wine-main-info friend-main'>
           <h3 className='tasting-card-header'>{tasting?.vintage} {tasting?.producer}</h3>
           <h4 className='tasting-varietal'>{tasting?.varietal}</h4>
@@ -59,7 +60,7 @@ const FriendsTastingCard = ({ tasting }) => {
                 </div>
               )
             }
-            {tasting?.love && <i className='fa-solid fa-heart loved-wine-heart' />}
+            {tasting?.love && <i className='fa-solid fa-heart loved-wine-icon' />}
           </div>
         </div>
         {showInfo && <div className='extra-wine-info'>
@@ -74,7 +75,7 @@ const FriendsTastingCard = ({ tasting }) => {
           <h5>{upperCaser(friend.username)}'S THOUGHTS  :  {tasting?.thoughts}</h5>
         </div>}
       </div>
-      <div className='user_info_container' >
+      <div className={`user_info_container ${userTransformer}`} >
           <span className='profile_cheers_container'>
             <div className='profile_image_container' >
               {tasting.user.profileImage ? <img className='profile_image' src={tasting.user.profileImage} alt='profile'/>
