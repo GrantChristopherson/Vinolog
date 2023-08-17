@@ -5,10 +5,10 @@ import './friendsTastingCard.css';
 
 
 
-const FriendsTastingCard = ({ tasting }) => {
+const FriendsTastingCard = ({ tasting, showDiscussion, setShowDiscussion, tastingId, setTastingId }) => {
 
   const [showInfo, setShowInfo] = useState(false);
-
+  
   const tastingTransformer = showInfo ? 'friend_transformer' : '';
   const userTransformer = showInfo ? 'friend_loved_transformer' : '';
 
@@ -26,14 +26,26 @@ const FriendsTastingCard = ({ tasting }) => {
     return colorClassMap[tasting.color] || 'fa-solid other';
   };
 
-
-
+  const discussionToggleLogic = (e) => {
+    e.stopPropagation();
+    if (showDiscussion) {
   
+      if (tastingId === tasting.id) {
+        setShowDiscussion(!showDiscussion);
+      } else {
+        setTastingId(tasting.id);
+      };
+
+    } else {
+        setShowDiscussion(!showDiscussion);
+        setTastingId(tasting.id);
+    };
+  };
+
   const friend = tasting.user;
   const upperCaser = (friend => friend.toUpperCase());
 
   
-  // maybe something different?
 
 
   return (
@@ -86,7 +98,12 @@ const FriendsTastingCard = ({ tasting }) => {
               <Cheers tasting={tasting} />
             </div>
           </span>
-        </div>
+          <div className='friend_discussion_container'>
+            <button className='discussion_toggle' onClick={(e) => {discussionToggleLogic(e)}}>
+              {showDiscussion && tastingId === tasting.id ? "Leave the Discussion" : "Join the Discussion"}
+            </button>
+          </div>
+      </div>
     </div>
   );
 };

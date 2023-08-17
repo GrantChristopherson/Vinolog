@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMyFieldThunk } from '../../store/friends';
 import { getAllFriendsTastingsThunk } from '../../store/tasting';
 import FriendsTastingCard from '../FriendsTastingCard';
+import CreateCommentForm from '../Discussion/CreateCommentForm';
+import Discussion from "../Discussion/Discussion";
 import Navigation from '../Navigation';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
@@ -16,12 +18,15 @@ const FriendsField = () => {
 
   const dispatch = useDispatch();
   const [haveFriends, setHaveFriends] = useState(false);
+  const [showDiscussion, setShowDiscussion] = useState(false);
+  const [tastingId, setTastingId] = useState()
   const user = useSelector((state) => state?.session?.user);
   const friends = useSelector((state) => Object.values(state.fields.friends));
   const ids = useSelector((state) => Object.keys(state.fields.friends))
   const idsInt = ids.map(id => +id);
   const tastings = useSelector((state) => Object.values(state.tastings.tastings));
   const friendsTastings = tastings.filter(tasting => idsInt.includes(tasting.user?.id));
+  const discussionTasting = friendsTastings.filter(tasting => tasting.id === tastingId);
   
   const friendAmountlogic = (friends) => {
     if (friends.length === 0) {
@@ -51,6 +56,15 @@ const FriendsField = () => {
   }, [dispatch, ids]);
 
 
+  const discussionCloser = (e) => {
+    if (!showDiscussion) {
+      return
+    } else {
+      setShowDiscussion(!showDiscussion);
+    };  
+  };
+
+
 
 
 
@@ -64,12 +78,23 @@ const FriendsField = () => {
           <div className="feed_container">
           {friendsTastings?.map((tasting) => {return (
             <div key={tasting?.id} className="tasting-card">
-              <FriendsTastingCard tasting={tasting}/>
+              <FriendsTastingCard tasting={tasting}
+                                  showDiscussion={showDiscussion} 
+                                  setShowDiscussion={setShowDiscussion}
+                                  tastingId={tastingId} 
+                                  setTastingId={setTastingId} />
             </div>
           )}).reverse()}
           </div> 
         </div>
-        <div className='friend_list_container'>
+        {showDiscussion && <div className='discussion_wrapper'>
+            <div className='discussion_close_container' onClick={(e) => {discussionCloser(e)}}>
+              <i className='fa-solid fa-x fa-rotate-90 discussion_closer'/>
+            </div>
+            <CreateCommentForm discussionTasting={discussionTasting}/>
+            <Discussion discussionTasting={discussionTasting} setShowDiscussion={setShowDiscussion}/>
+        </div>}
+        {!showDiscussion && <div className='friend_list_container'>
           <span className='field_title'>{friendAmountlogic(friends)}</span>
           <div className='field_list'>
             {haveFriends && friends?.map((friend) => {return (
@@ -78,7 +103,7 @@ const FriendsField = () => {
               </div>
             )})}
           </div>
-        </div>
+        </div>}
       </div>
       <Footer />
     </>
