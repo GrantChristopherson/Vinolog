@@ -1,18 +1,7 @@
 
 .splash_body_container {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("../../images/bottles-bg.png") no-repeat center;
-  background-size: cover;
-  opacity: .7;
-  height: 100vh;
-  overflow: hidden; */
   overflow: hidden;
   position: relative;
-  /* display: flex;
-  align-items: center;
-  justify-self: center; */
 }
 
 .splash_body_image {
@@ -39,7 +28,7 @@
   align-items: center;
   background-color: white;
   border-radius: 30px;
-  height: 320px;
+  height: 20vh;
   width: 40%;
   margin-bottom: 20%;
   padding: 70px 0;
@@ -49,6 +38,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 20px 0;
   border-top-style: solid;
   border-bottom-style: solid;
   border-color: rgba(0, 0, 0, 0.4);
@@ -56,28 +46,51 @@
 }
 
 .splash_quote {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   padding: 0 80px;
 }
 
 .quote {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: rgba(0, 0, 0, 0.9);
+  font-size: 20px;
 }
 
 .credit {
-  margin-top: 0;
   color: rgba(0, 0, 0, 0.9);
   font-size: 18px;
 } 
 
 .slogan {
+  margin-top: 20px;
   text-align: center;
   color: rgba(0, 0, 0, 0.9);
+  font-size: 20px;
 }
 
+/* Styles for screens larger than 2560px */
+@media (min-width: 2561px) {
 
+  .splash_container {
+    width: 30%;
+  }
 
-
-
+  .quote {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .credit {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 20px;
+  } 
+  
+  .slogan {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 24px;
+  }
+}
