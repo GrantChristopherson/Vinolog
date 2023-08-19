@@ -80,7 +80,7 @@ const LoginForm = () => {
   return (
     <div className='login_form'>
       <div className='login_header_container'>
-        <h1 className='login_header'>Login to Vinolog</h1>
+        <h2 className='login_header'>Login to Vinolog</h2>
       </div>
       <form className='card_form' onSubmit={onLogin}>
         <div className='input_container'>
@@ -95,7 +95,6 @@ const LoginForm = () => {
             value={email}
             onChange={updateEmail}
           />
-          <span className='bar'></span>
         </div>
         <div className='input_container'>
           {errors?.passwordError !== undefined && <div className='error_messages'>
@@ -109,25 +108,22 @@ const LoginForm = () => {
             value={password}
             onChange={updatePassword}
           />
-          <span className='bar'></span>
-          <div className='login_inputs'>
-            <button className='login_login' type='submit'>
-              <span>Login</span>
-            </button>
-            <div className='signup_demo'>
-              <span className='switch'>
-                Don't have an account? 
-              </span>
-              <div className='links_wrapper'>
-                <NavLink to='/sign-up' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-                  <h4 className ='switch_to_signup' >Sign Up</h4>
-                </NavLink>
-                <h6 className='or' >or</h6>
-                <button className='login_demo' onClick={demoUser}>
-                  <h4 className='demo_site'>Demo Site</h4>
-                </button>
-              </div>
-            </div>
+        </div>
+        <div className='login_inputs'>
+          <button className='login_login' type='submit'>
+            <span>Login</span>
+          </button>
+          <div className='signup_demo'>
+            <span className='switch'>Don't have an account?</span>
+            <span className='links_wrapper'>
+              <NavLink to='/sign-up' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+                <h4 className ='switch_to_signup' >Sign Up</h4>
+              </NavLink>
+              <h6 className='or' >or</h6>
+              <button className='login_demo' onClick={demoUser}>
+                <h4 className='demo_site'>Demo Site</h4>
+              </button>
+            </span>
           </div>
         </div>
       </form>
