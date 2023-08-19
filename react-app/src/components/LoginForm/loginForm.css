@@ -1,23 +1,23 @@
 
 .login_form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: white;
-  position: fixed;
-  width: 40%;
-  min-width: 550px;
-  top: 100px;
-  padding: 50px;
   border-radius: 30px;
+  height: 320px;
+  width: 40%;
+  margin-bottom: 20%;
+  padding: 20px 150px 40px 150px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  z-index: 1;
 }
 
 .login_header_container {
   border-bottom: 2px solid rgba(0, 0, 0, 0.4);
-  margin-bottom: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .login_header {
@@ -27,15 +27,11 @@
   text-align: center;
 }
 
-.card_form {
-  margin-top: 20px;
-}
-
 .card_input {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  margin: 20px auto;
+  margin: 5px auto;
   padding: 12px 20px;
   font-size: 18px;
   border: none;
@@ -54,8 +50,8 @@
 
 .login_inputs {
   display: flex;
-  justify-content: space-between;
-  margin-top: 60px;
+  justify-content: space-around;
+  margin-top: 30px;
   height: 40px;
 }
 

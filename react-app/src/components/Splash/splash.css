@@ -1,13 +1,36 @@
 
-.splash_body {
-  display: flex;
+.splash_body_container {
+  /* display: flex;
   align-items: center;
   justify-content: center;
   background: url("../../images/bottles-bg.png") no-repeat center;
   background-size: cover;
   opacity: .7;
   height: 100vh;
+  overflow: hidden; */
   overflow: hidden;
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-self: center; */
+}
+
+.splash_body_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .9;
+  transition: transform 5s ease;
+  transform: scale(1);
+  will-change: transform;
+}
+
+.splash_body_container:hover .splash_body_image {
+  transform: scale(1.05);
 }
 
 .splash_container {
@@ -15,13 +38,11 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  position: fixed;
-  max-height: 400px;
-  width: 40%;
-  min-width: 800px;
-  top: 100px;
-  padding: 70px 0;
   border-radius: 30px;
+  height: 320px;
+  width: 40%;
+  margin-bottom: 20%;
+  padding: 70px 0;
 }
 
 .quote_container {
