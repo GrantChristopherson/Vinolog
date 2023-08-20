@@ -80,7 +80,7 @@ const LoginForm = () => {
   return (
     <div className='login_form'>
       <div className='login_header_container'>
-        <h2 className='login_header'>Login to Vinolog</h2>
+        <h3 className='login_header'>Login to Vinolog</h3>
       </div>
       <form className='card_form' onSubmit={onLogin}>
         <div className='input_container'>
