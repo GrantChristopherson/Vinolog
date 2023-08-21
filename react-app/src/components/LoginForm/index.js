@@ -79,9 +79,6 @@ const LoginForm = () => {
   
   return (
     <div className='login_form'>
-      <div className='login_header_container'>
-        <h3 className='login_header'>Login to Vinolog</h3>
-      </div>
       <form className='card_form' onSubmit={onLogin}>
         <div className='input_container'>
           {errors?.emailError !== undefined && <div className='error_messages'>
