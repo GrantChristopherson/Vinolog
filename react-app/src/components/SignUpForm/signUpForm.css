@@ -106,7 +106,7 @@ transition-duration: 500ms;
 }
 
 
-/* Styles for screens larger than 2560px */
+/* Styles for screens wider than 2560px */
 @media (min-width: 2561px) {
 
   .signup_form_container {
@@ -115,7 +115,7 @@ transition-duration: 500ms;
   }
 }
 
-/* Styles for screens smaller than 2100px */
+/* Styles for screens less wide than 2100px */
 @media (max-width: 2099px) {
 
   .signup_form_container {
@@ -133,7 +133,7 @@ transition-duration: 500ms;
   }
 }
 
-/* Styles for screens smaller than 1600px */
+/* Styles for screens less wide than 1600px */
 @media (max-width: 1599px) {
 
   .signup_form_container {
@@ -161,5 +161,13 @@ transition-duration: 500ms;
     width: 6rem;
     border-radius: 15px;
     font-size: 14px;
+  }
+}
+
+/* Styles for screens taller than 1300px */
+@media (min-height: 1299px) {
+
+  .signup_form_container {
+    height: 35vh;
   }
 }

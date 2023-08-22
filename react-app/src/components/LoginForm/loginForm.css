@@ -126,7 +126,7 @@
   color: #b00020;
 }
 
-/* Styles for screens larger than 2560px */
+/* Styles for screens wider than 2560px */
 @media (min-width: 2561px) {
 
   .login_form_container {
@@ -134,7 +134,7 @@
   }
 }
 
-/* Styles for screens smaller than 1600px */
+/* Styles for screens less wide than 1600px */
 @media (max-width: 1599px) {
 
   .login_form_container {
