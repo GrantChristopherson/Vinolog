@@ -85,11 +85,8 @@ const SignUpForm = () => {
 
 
   return (
-    <div className='signup_form'>
-      <div className='signup_header_container'>
-        <h1 className='form_title'>Sign Up</h1>
-      </div>
-      <form onSubmit={onSignUp} action='' className='card_form'>
+    <div className='signup_form_container'>
+      <form onSubmit={onSignUp} action='' className='signup_form'>
         <div className='input_container'>
           {errors?.userNameError !== undefined && <div className='error_messages'>
                       <div className='errors'>{errors.userNameError}</div>
@@ -163,12 +160,14 @@ const SignUpForm = () => {
         </div>
         <div className='signup_button_container'>
           <button className='signup_button' type='submit'>Sign Up</button>
-          <span className='form_switch'>
-            Already have an account? 
-            <NavLink to='/login' exact={true} activeClassName='active' >
-              <h4 className ='switch_to_login' >Login</h4>
+          <div className='login_switch_container'>
+            <span className='form_switch'>
+              Already have an account? 
+            </span>
+            <NavLink to='/login' exact={true} className ='switch_to_login' activeClassName='active' style={{textDecoration: 'none'}}>
+              <h4 className='login_link'>Login</h4>
             </NavLink>
-          </span>
+          </div>
         </div>
       </form>
     </div>

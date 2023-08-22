@@ -6,7 +6,7 @@ import bottlesBg from '../../images/bottles-bg.png';
 import './loginPage.css';
 
 
-// todo: find and mimic more clean login
+
 
 const LoginPage = () => {
 
