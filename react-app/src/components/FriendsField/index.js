@@ -17,14 +17,15 @@ import './friendsField.css';
 const FriendsField = () => {
 
   const dispatch = useDispatch();
+  const prevIds = useRef();
   const [haveFriends, setHaveFriends] = useState(false);
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [tastingId, setTastingId] = useState()
   const user = useSelector((state) => state?.session?.user);
-  const friends = useSelector((state) => Object.values(state.fields.friends));
-  const ids = useSelector((state) => Object.keys(state.fields.friends))
+  const friends = useSelector((state) => Object.values(state.field.friends));
+  const ids = useSelector((state) => Object.keys(state.field.friends))
   const idsInt = ids.map(id => +id);
-  const tastings = useSelector((state) => Object.values(state.tastings.tastings));
+  const tastings = useSelector((state) => Object.values(state.tasting.tastings));
   const friendsTastings = tastings.filter(tasting => idsInt.includes(tasting.user?.id));
   const discussionTasting = friendsTastings.filter(tasting => tasting.id === tastingId);
   
@@ -45,16 +46,12 @@ const FriendsField = () => {
     });
   }, [dispatch, user.id]);
 
-
-  const prevIds = useRef();
-
   useEffect(() => {
       if (prevIds.current !== JSON.stringify(ids)) {
           dispatch(getAllFriendsTastingsThunk(ids));
           prevIds.current = JSON.stringify(ids);
       }
   }, [dispatch, ids]);
-
 
   const discussionCloser = (e) => {
     if (!showDiscussion) {
@@ -63,7 +60,6 @@ const FriendsField = () => {
       setShowDiscussion(!showDiscussion);
     };  
   };
-
 
 
 
