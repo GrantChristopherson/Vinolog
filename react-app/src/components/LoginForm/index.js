@@ -78,8 +78,8 @@ const LoginForm = () => {
 
   
   return (
-    <div className='login_form'>
-      <form className='card_form' onSubmit={onLogin}>
+    <div className='login_form_container'>
+      <form className='login_form' onSubmit={onLogin}>
         <div className='input_container'>
           {errors?.emailError !== undefined && <div className='error_messages'>
                     <div className='errors'>{errors.emailError}</div>

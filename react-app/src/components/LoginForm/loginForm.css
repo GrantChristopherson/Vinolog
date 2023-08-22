@@ -1,5 +1,4 @@
-
-.login_form {
+.login_form_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,9 +10,7 @@
   padding: 20px 150px;
 }
 
-.card_form {
-  display: flex;
-  flex-direction: column;
+.login_form {
   border-top: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4); 
   padding: 10px 10px;
@@ -131,7 +128,7 @@
 /* Styles for screens larger than 2560px */
 @media (min-width: 2561px) {
 
-  .login_form {
+  .login_form_container {
     width: 30%;
   }
 }
@@ -139,7 +136,7 @@
 /* Styles for screens smaller than 1600px */
 @media (max-width: 1599px) {
 
-  .login_form {
+  .login_form_container {
     padding: 10px 70px;
   }
   
@@ -193,9 +190,10 @@
   }
 }
 
+/* Styles for screens shorter than 800px */
 @media (max-height: 799px) {
 
-  .login_form {
+  .login_form_container {
     height: 22vh;
   }
 }
