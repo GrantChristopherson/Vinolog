@@ -105,7 +105,6 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
 
-    # ... other app setups ...
    
     # Tell flask about our seed commands
     app.cli.add_command(seed_commands)

@@ -1,3 +1,6 @@
+import { setError, clearError } from './error.js';
+
+
 const GET_MY_FIELD = 'field/GET_MY_FIELD';
 const GET_FRIENDEDS = 'field/GET_FRIENDEDS';
 const CREATE_FRIEND = 'friends/CREATE_FRIEND';
@@ -41,57 +44,77 @@ const deleteFriend = (friends) => {
 // --------------------------------------------thunk action creators---------------------------------
 
 export const getMyFieldThunk = (id) => async(dispatch) => {
-  const response = await fetch(`/api/users/${id}/following`, {
-    headers: {}
-  });
-  
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const data = await response.json();
-    dispatch(getMyField(data));
+  try {
+    const response = await fetch(`/api/users/${id}/following`, {
+      headers: {}
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const data = await response.json();
+      dispatch(getMyField(data));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const getFriendedsThunk = (id) => async(dispatch) => {
-  const response = await fetch(`/api/users/${id}/followers`, {
-    headers: {}
-  });
-  
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const data = await response.json();
-    dispatch(getFriendeds(data.friendeds));
+  try {
+    const response = await fetch(`/api/users/${id}/followers`, {
+      headers: {}
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const data = await response.json();
+      dispatch(getFriendeds(data.friendeds));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const createFriendThunk = (id, newfriendId) => async(dispatch) => {
-  const response = await fetch(`/api/users/${id}/following/${newfriendId}`, {
-    method: 'PUT'
-  });
-  
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const data = await response.json();
-    dispatch(createFriend(data));
+  try {
+    const response = await fetch(`/api/users/${id}/following/${newfriendId}`, {
+      method: 'PUT'
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const data = await response.json();
+      dispatch(createFriend(data));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const deleteFriendThunk = (id, deleteId) => async(dispatch) => {
-  const response = await fetch(`/api/users/${id}/following/${deleteId}`, {
-    method: 'DELETE'
-  });
-  
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const data = await response.json();
-    dispatch(deleteFriend(data));
+  try {
+    const response = await fetch(`/api/users/${id}/following/${deleteId}`, {
+      method: 'DELETE'
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const data = await response.json();
+      dispatch(deleteFriend(data));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
@@ -114,7 +137,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         friends: updatedFriends,
       };
-    };
+    }
     case GET_FRIENDEDS: {
       const { friendeds } = action;
       const updatedFriendeds = friendeds.reduce((acc, friended) => {
@@ -126,7 +149,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         friendeds: updatedFriendeds,
       };
-    };
+    }
     case CREATE_FRIEND: {
       const { friends } = action;
       const updatedFriends = friends.followings.reduce((acc, friend) => {
@@ -138,7 +161,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         friends: updatedFriends,
       };
-    };
+    }
     case DELETE_FRIEND: {
       const { friends } = action;
       const updatedFriends = friends.followings.reduce((acc, friend) => {
@@ -150,8 +173,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         friends: updatedFriends,
       };
-    };
+    }
     default: 
       return state;
-  };
+  }
 };

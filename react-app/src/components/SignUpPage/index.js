@@ -5,7 +5,7 @@ import bottlesBg from '../../images/bottles-bg.png';
 import Footer from "../Footer";
 
 
-// todo: find and mimic more clean signup
+
 
 const SignUpPage = () => {
 

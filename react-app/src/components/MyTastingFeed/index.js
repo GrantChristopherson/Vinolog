@@ -14,7 +14,7 @@ const MyTastingFeed = () => {
 
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
-  const tastings = useSelector(state => Object.values(state.tastings.tastings));
+  const tastings = useSelector(state => Object.values(state.tasting.tastings));
   const userTastings = tastings.filter(tasting => tasting.user.id === user?.id)
   
   useEffect(() => {

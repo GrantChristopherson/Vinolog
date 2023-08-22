@@ -1,17 +1,19 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import error from './error';
 import session from './session'
-import tastings from './tasting';
+import tasting from './tasting';
 import discussion from './discussion';
-import fields from './friends';
+import field from './friends';
 import search from './search';
 
 
 const rootReducer = combineReducers({
+  error,
   session,
-  tastings,
+  tasting,
   discussion,
-  fields,
+  field,
   search,
 });
 

@@ -14,7 +14,6 @@ const Home = () => {
     
     <>
       <Navigation /> 
-      {/* <Navbar /> */}
       <div className='home_body'>
         <Sidebar />
         <HomeBody />

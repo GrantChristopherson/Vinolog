@@ -16,7 +16,7 @@ function EditTastingForm() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
-  const tasting = useSelector(state => state.tastings.tastings[id]);
+  const tasting = useSelector(state => state.tasting.tastings[id]);
   
 
   const getVintage = () => {

@@ -1,3 +1,6 @@
+import { setError, clearError } from './error.js';
+
+
 const GET_MY_TASTINGS = 'tastings/GET_MY_TASTINGS';
 const GET_ALL_LOVED_TASTINGS = 'tastings/GET_ALL_LOVED_TASTINGS';
 const GET_FRIENDS_TASTINGS = 'tastings/GET_FRIENDS_TASTINGS';
@@ -98,178 +101,228 @@ const deleteCheers = (cheeredTasting, userId) => {
 // --------------------------------------------thunk action creators---------------------------------
 
 export const getMyTastingsThunk = () => async(dispatch) => {
-  const response = await fetch('/api/tastings/', {
-    headers: {}
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const tastings = await response.json();
-    dispatch(getMyTastings(tastings.tastings));
+  try {
+    const response = await fetch('/api/tastings/', {
+      headers: {}
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const tastings = await response.json();
+      dispatch(getMyTastings(tastings.tastings));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const getAllLovedTastingsThunk = () => async(dispatch) => {
-  const response = await fetch('/api/tastings/loved', {
-    headers: {}
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const tastings = await response.json();
-    dispatch(getAllLovedTastings(tastings.tastings));
+  try {
+    const response = await fetch('/api/tastings/loved', {
+      headers: {}
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const tastings = await response.json();
+      dispatch(getAllLovedTastings(tastings.tastings));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const getFriendsTastingsThunk = (friendId) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/friends/${friendId}`, {
-    headers: {}
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const tastings = await response.json();
-    dispatch(getFriendsTastings(tastings.tastings));
+  try {
+    const response = await fetch(`/api/tastings/friends/${friendId}`, {
+      headers: {}
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const tastings = await response.json();
+      dispatch(getFriendsTastings(tastings.tastings));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const getAllFriendsTastingsThunk = (userIds) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/field?user_ids=${userIds.join(',')}`, {
-    headers: {}
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const tastings = await response.json();
-    dispatch(getAllFriendsTastings(tastings.tastings));
+  try {
+    const response = await fetch(`/api/tastings/field?user_ids=${userIds.join(',')}`, {
+      headers: {}
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const tastings = await response.json();
+      dispatch(getAllFriendsTastings(tastings.tastings));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const createTastingThunk = (tasting) => async(dispatch) => {
-  const response = await fetch('/api/tastings/user/post', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      producer: tasting.producer,
-      region: tasting.region,
-      vineyard: tasting.vineyard,
-      varietal: tasting.varietal,
-      vintage: tasting.vintage,
-      color: tasting.color,
-      label_image: tasting.labelImage,
-      other_info: tasting.otherInfo,
-      sight: tasting.sight,
-      nose: tasting.nose,
-      palate: tasting.palate,
-      thoughts: tasting.thoughts,
-      love: tasting.love
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const data = await response.json();
-    dispatch(createTasting(data));
+  try {
+    const response = await fetch('/api/tastings/user/post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        producer: tasting.producer,
+        region: tasting.region,
+        vineyard: tasting.vineyard,
+        varietal: tasting.varietal,
+        vintage: tasting.vintage,
+        color: tasting.color,
+        label_image: tasting.labelImage,
+        other_info: tasting.otherInfo,
+        sight: tasting.sight,
+        nose: tasting.nose,
+        palate: tasting.palate,
+        thoughts: tasting.thoughts,
+        love: tasting.love
+      }),
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const data = await response.json();
+      dispatch(createTasting(data));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const editTastingThunk = (tasting) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/edit/${tasting.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      producer: tasting.producer,
-      region: tasting.region,
-      vineyard: tasting.vineyard,
-      varietal: tasting.varietal,
-      vintage: tasting.vintage,
-      color: tasting.color,
-      label_image: tasting.labelImage,
-      other_info: tasting.otherInfo,
-      sight: tasting.sight,
-      nose: tasting.nose,
-      palate: tasting.palate,
-      thoughts: tasting.thoughts,
-      love: tasting.love,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const data = await response.json();
-    dispatch(editTasting(data));
+  try {
+    const response = await fetch(`/api/tastings/edit/${tasting.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        producer: tasting.producer,
+        region: tasting.region,
+        vineyard: tasting.vineyard,
+        varietal: tasting.varietal,
+        vintage: tasting.vintage,
+        color: tasting.color,
+        label_image: tasting.labelImage,
+        other_info: tasting.otherInfo,
+        sight: tasting.sight,
+        nose: tasting.nose,
+        palate: tasting.palate,
+        thoughts: tasting.thoughts,
+        love: tasting.love,
+      }),
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const data = await response.json();
+      dispatch(editTasting(data));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const deleteTastingThunk = (tastingId) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/${tastingId}`, {
-    method: 'DELETE',
-  })
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    await response.json();
-    dispatch(deleteTasting(tastingId));
+  try {
+    const response = await fetch(`/api/tastings/${tastingId}`, {
+      method: 'DELETE',
+    })
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      await response.json();
+      dispatch(deleteTasting(tastingId));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const getUserCheersThunk = (id) => async (dispatch) => {
-  const response = await fetch(`/api/users/${id}/cheers`, {
-    headers: {}
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const tastings = await response.json();
-    dispatch(getAllUsersCheers(tastings.cheers));
+  try {
+    const response = await fetch(`/api/users/${id}/cheers`, {
+      headers: {}
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const tastings = await response.json();
+      dispatch(getAllUsersCheers(tastings.cheers));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const createCheersThunk = (tastingId, userId) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/${tastingId}/cheers`, {
-    method: 'PUT',
-    headers: {}
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const cheers = await response.json();
-    dispatch(createCheers(cheers.cheers, userId));
+  try {
+    const response = await fetch(`/api/tastings/${tastingId}/cheers`, {
+      method: 'PUT',
+      headers: {}
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const cheers = await response.json();
+      dispatch(createCheers(cheers.cheers, userId));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
 
 export const deleteCheersThunk = (tastingId, userId) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/${tastingId}/cheers`, {
-    method: 'DELETE',
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const cheers = await response.json();
-    dispatch(deleteCheers(cheers.cheers, userId));
+  try {
+    const response = await fetch(`/api/tastings/${tastingId}/cheers`, {
+      method: 'DELETE',
+    });
+  
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const cheers = await response.json();
+      dispatch(deleteCheers(cheers.cheers, userId));
+      dispatch(clearError());
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
@@ -291,7 +344,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         tastings: { ...state.tastings, ...myTastings },
       };
-    };
+    }
     case GET_ALL_LOVED_TASTINGS: {
       const lovedTastings = action.lovedTastings.reduce((acc, tasting) => {
         acc[tasting.id] = tasting;
@@ -302,7 +355,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         tastings: { ...state.tastings, ...lovedTastings },
       };
-    };
+    }
     case GET_FRIENDS_TASTINGS: {
       const friendTastings = action.friendTastings.reduce((acc, tasting) => {
         acc[tasting.id] = tasting;
@@ -313,7 +366,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         tastings: { ...state.tastings, ...friendTastings },
       };
-    };
+    }
     case GET_ALL_FRIENDS_TASTINGS: {
       const friendsTastings = action.friendsTastings.reduce((acc, tasting) => {
         acc[tasting.id] = tasting;
@@ -324,7 +377,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         tastings: { ...state.tastings, ...friendsTastings},
       };
-    };
+    }
     case CREATE_TASTING: {
       const { tasting } = action;
       
@@ -335,7 +388,7 @@ export default function reducer(state = initialState, action) {
           [tasting.id]: tasting,
         },
       };
-    };
+    }
     case EDIT_TASTING: {
       const { tasting } = action;
 
@@ -346,7 +399,7 @@ export default function reducer(state = initialState, action) {
           [tasting.id]: tasting,
         },
       };
-    };
+    }
     case DELETE_TASTING: {
       const { tastingId } = action;
       const { [tastingId]: deletedTasting, ...updatedTastings } = state.tastings;
@@ -355,7 +408,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         tastings: updatedTastings,
       };
-    };
+    }
     case CREATE_CHEERS: {
       const { cheeringTasting, userId } = action;
       const tasting = state.tastings[cheeringTasting.id];
@@ -375,7 +428,7 @@ export default function reducer(state = initialState, action) {
         };
       };
       return state;
-    };
+    }
     case DELETE_CHEERS: {
       const { cheeredTasting, userId } = action;
       const tasting = state.tastings[cheeredTasting.id];
@@ -395,9 +448,9 @@ export default function reducer(state = initialState, action) {
         };
       };
       return state;
-    };
+    }
     default: 
       return state;
-  };
+  }
 };
       

@@ -17,7 +17,7 @@ const AllLovedFeed = () => {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
-  const allTastings = useSelector(state =>  Object.values(state?.tastings.tastings));
+  const allTastings = useSelector(state =>  Object.values(state?.tasting.tastings));
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [tastingId, setTastingId] = useState();
   

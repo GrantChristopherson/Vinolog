@@ -19,7 +19,7 @@ const FriendTastings = () => {
   const { id } = useParams();
   const [showDiscussion, setShowDiscussion] = useState(false);
   const [tastingId, setTastingId] = useState()
-  const tastings = useSelector(state => Object.values(state.tastings.tastings));
+  const tastings = useSelector(state => Object.values(state.tasting.tastings));
   const friendsTastings = tastings.filter(tasting => tasting?.user.id === parseInt(id));
   const discussionTasting = friendsTastings.filter(tasting => tasting.id === tastingId);
   const friendsUsername = friendsTastings[0]?.user.username;

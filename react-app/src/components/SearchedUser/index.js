@@ -6,8 +6,7 @@ const SearchedUser = ( {user} ) => {
 
 
 
-
-
+  
   return (
     <div className="listed_user_container">
       <span>
