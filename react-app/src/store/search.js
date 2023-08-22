@@ -1,3 +1,7 @@
+import { setError, clearError } from './error.js';
+
+
+
 const GET_SEARCH = 'search/GET_SEARCH';
 
 
@@ -15,17 +19,22 @@ const getSearch = (results, option) => {
 // --------------------------------------------thunk action creators---------------------------------
 
 export const getTastingsSearchThunk = (searchWord, option) => async(dispatch) => {
-  const response = await fetch(`/api/tastings/search?search_word=${searchWord}&option=${option}`, {
-    headers: {}
-  });
-  
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  } else {
-    const results = await response.json();
-    dispatch(getSearch(results, option));
+  try {
+    const response = await fetch(`/api/tastings/search?search_word=${searchWord}&option=${option}`, {
+      headers: {}
+    });
     
-    return Promise.resolve(results);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      const results = await response.json();
+      dispatch(getSearch(results, option));
+      dispatch(clearError());
+      
+      return Promise.resolve(results);
+    };
+  } catch (error) {
+    dispatch(setError(error.message));
   };
 };
 
@@ -51,8 +60,8 @@ export default function reducer(state = initialState, action) {
       }, {});
 
       return newState;
-    };
+    }
     default: 
     return state;
-  };
+  }
 };
