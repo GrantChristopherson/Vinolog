@@ -19,7 +19,7 @@
 .form_input {
   width: 100%;
   margin: 5px auto;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 18px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -37,8 +37,9 @@
 .signup_button_container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
+ 
 }
 
 .signup_button {
@@ -150,6 +151,7 @@ transition-duration: 500ms;
   }
 
   .signup_button_container {
+    justify-content: space-between;
     margin-top: 12px;
   }
   
@@ -160,51 +162,4 @@ transition-duration: 500ms;
     border-radius: 15px;
     font-size: 14px;
   }
-
-  /* 
-  
-
-  .login_inputs {
-    margin-top: 12px;
-    justify-content: space-between;
-    padding: 0 10px;
-  }
-
-  .login_login {
-    height: 25px;
-    width: 6rem;
-    padding: 5px 20px;
-    border-radius: 15px;
-    font-size: 14px;
-  }
-
-  .switch {
-    font-size: 10px;
-    margin-bottom: 1px;
-  }
-  
-  .switch_to_signup {
-    margin: 0 2px 0 0;
-    font-size: 11px;
-  }
-
-  .or {
-    margin: 2px 0 0 2px; 
-    padding: 0 5px;
-    font-size: 8px;
-  }
-
-  .login_demo {
-    margin: 0;
-    font-size: 16px;
-    background-color: transparent;
-    color: #903227;
-    border: 0;
-    padding-right: 0;
-  }
-
-  .demo_site {
-    font-size: 11px;
-  } */
 }
-
