@@ -36,9 +36,10 @@
 
 .login_inputs {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   margin-top: 20px;
-  width: 100%;
+  
 }
 
 .login_login {
