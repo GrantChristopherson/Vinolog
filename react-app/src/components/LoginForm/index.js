@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import { login } from '../../store/session';
@@ -10,19 +10,26 @@ import './loginForm.css'
 const LoginForm = () => {
 
   const dispatch = useDispatch();
+  const isMounted = useRef(true);
   const user = useSelector(state => state.session.user);
-
   const [errors, setErrors] = useState({});
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+
   const onLogin = async (e) => {
     e.preventDefault();
-    await dispatch(login(email, password)); // removed await from in front of this dispatch but throws error locally?
-    // if (data) {
-    //   setErrors(data);
-    // }
+
+    dispatch(login(email, password));
+
     let validateErrors = {};
+    
     if (!email.includes('@') && !email.endsWith('.com')) {
       validateErrors['emailError'] = '* Valid email required';
     };
@@ -31,50 +38,51 @@ const LoginForm = () => {
       validateErrors['passwordError'] = '* Valid password required';
     };
 
-    setErrors(validateErrors)
-    if (Object.keys(validateErrors).length) {
-      return;
+    if (isMounted.current) {
+      setErrors(validateErrors)
+      if (Object.keys(validateErrors).length) {
+        return;
+      };
     };
-  };
-
-
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-
-  const updatePassword = (e) => {
-    setPassword(e.target.value);
   };
 
 
   const demoUser = async (e) => {
     e.preventDefault();
+    
     const email = 'demo@demo.io';
     const password = 'password';
-    await dispatch(login( email, password)); // removed await from in front of this dispatch but throws error locally?
-    // if (data) {
-    //   setErrors(data);
-    // };
+    dispatch(login( email, password));
+    
     let validateErrors = {};
     if (!email.includes('@') && !email.endsWith('.com')) {
       validateErrors['emailError'] = '* Valid email required';
     };
-
+    
     if (!password) {
       validateErrors['passwordError'] = '* Valid password required';
     };
-
-    setErrors(validateErrors)
-    if (Object.keys(validateErrors).length) {
-      return;
+    
+    if (isMounted.current) {
+      setErrors(validateErrors)
+      if (Object.keys(validateErrors).length) {
+        return;
+      };
     };
   };
+  
 
+  const updateEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const updatePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
   if (user) {
     return <Redirect to='/lovedtastings' />;
-  }
+  };
 
   
 
@@ -88,11 +96,13 @@ const LoginForm = () => {
                   </div>
                   }
           <input className='card_input'
+            id='email'
             name='email'
             type='text'
             placeholder='Email'
             value={email}
             onChange={updateEmail}
+            autoComplete='email'
           />
         </div>
         <div className='input_container'>
@@ -101,11 +111,13 @@ const LoginForm = () => {
                     </div>
                     }
           <input className='card_input'
+            id='password'
             name='password'
             type='password'
             placeholder='Password'
             value={password}
             onChange={updatePassword}
+            autoComplete='current-password'
           />
         </div>
         <div className='login_inputs'>

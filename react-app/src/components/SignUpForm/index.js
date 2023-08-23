@@ -1,63 +1,81 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect, NavLink } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './signUpForm.css'
 
 
-// any validation checks on profile image url input??
+
 
 const SignUpForm = () => {
 
+
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.session.user);
   const [errors, setErrors] = useState({});
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [profileImage, setProfileImage] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
+  const [isMounted, setIsMounted] = useState(true);
 
+  useEffect(() => {
+    return () => setIsMounted(false);
+  }, []);
 
   const onSignUp = async (e) => {
     e.preventDefault();
 
     let validateErrors = {};
 
-    if (username.length < 6 || username.length > 15) {
-      validateErrors['userNameError'] = '* User Name must be between 6 and 15 characters';
+    if (username.trim().length === 0) {
+      validateErrors['userNameError'] = '* Spacebar exclusive input is not a valid username';
+    } else if (username.length < 6 || username.length > 15) {
+      validateErrors['userNameError'] = '* Username must be between 6 and 15 characters';
     };
-    if (username.trim().length === 0) validateErrors['userNameError'] = '* Spacebar exclusive input is not a valid username';
 
-    if (!email.includes('@' && '.')) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; 
+      // checking at least one character before the "@" symbol, 
+      // at least one character after the "@" symbol and before the dot,
+      // and there are 2 to 6 characters after the dot like 'com' or 'org'
+
+    if (!emailPattern.test(email)) {
       validateErrors['emailError'] = '* Must use a valid email';
+    } else if (email.length < 12 || email.length > 30) {
+      validateErrors['emailError'] = '* Email must be between 12 and 30 characters';
     };
-    if (email.length < 12 || email.length > 30) validateErrors['emailError'] = '* Email must be between 12 and 30 characters';
-    if (email.trim().length === 0) validateErrors['emailError'] = '* Spacebar exclusive input is not a valid email';
 
-    if (password !== repeatPassword) {
+
+    const urlPattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+      '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+
+    if (profileImage && !urlPattern.test(profileImage)) {
+      validateErrors['profileImageError'] = '* Please provide a valid URL';
+    };
+
+    if (password.trim().length === 0) {
+      validateErrors['passwordError'] = '* Spacebar exclusive input is not a valid password';
+    } else if (password !== repeatPassword) {
       validateErrors['passwordError'] = '* Passwords must match';
-    };
-
-    if (password.length < 7 || password.length > 15) {
+    } else if (password.length < 7 || password.length > 15) {
       validateErrors['passwordError'] = '* Password must be between 7 and 15 characters';
-    }
-    if (password.trim().length === 0) validateErrors['passwordError'] = '* Spacebar exclusive input is not a valid password';
-    
-    
-    setErrors(validateErrors)
-    if (Object.keys(validateErrors).length) {
-      return;
     };
+    
 
-   
-    if (password === repeatPassword) {
+    setErrors(validateErrors)
+    if (Object.keys(validateErrors).length === 0) {
       const data = await dispatch(signUp(username, email, profileImage, password));
-      if (data) {
-        setErrors(data)
+      if (isMounted && data) {
+        setErrors(data);
       };
     };
   };
+
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
@@ -81,7 +99,9 @@ const SignUpForm = () => {
 
   if (user) {
     return <Redirect to='/lovedtastings' />;
-  }
+  };
+
+
 
 
   return (
@@ -92,71 +112,71 @@ const SignUpForm = () => {
                       <div className='errors'>{errors.userNameError}</div>
                     </div>
                     }
-          <i className='ri_username_line'></i>
           <input className='form_input'
-            type='text'
+            id='username'
             name='username'
+            type='text'
             placeholder='Username'
-            onChange={updateUsername}
             value={username}
+            onChange={updateUsername}
+            autoComplete='username'
           ></input>
-          <span className='bar'></span>
         </div>
         <div className='input_container'>
           {errors?.emailError !== undefined && <div className='error_messages'>
                       <div className='errors'>{errors.emailError}</div>
                     </div>
                     }
-          <i className='ri_email_line'></i>
           <input className='form_input'
-            type='text'
+            id='email'
             name='email'
+            type='text'
             placeholder='Email'
-            onChange={updateEmail}
             value={email}
+            onChange={updateEmail}
+            autoComplete='email'
           ></input>
-          <span className='bar'></span>
         </div>
         <div className='input_container'>
-          {/* {errors?.userNameError !== undefined && <div className='error_messages'>
-                      <div className='errors'>{errors.userNameError}</div>
+          {errors?.profileImageError !== undefined && <div className='error_messages'>
+                      <div className='errors'>{errors.profileImageError}</div>
                     </div>
-                    } */}
-          <i className='ri_profile_image_line'></i>
+                    }
           <input className='form_input'
-            type='text'
+            id='profileImage'
             name='profileImage'
+            type='text'
             placeholder='Profile Image URL'
-            onChange={updateProfileImage}
             value={profileImage}
+            onChange={updateProfileImage}
+            autoComplete='profileImage'
           ></input>
-          <span className='bar'></span>
         </div>
         <div className='input_container'>
           {errors?.passwordError !== undefined && <div className='error_messages'>
                         <div className='errors'>{errors.passwordError}</div>
                       </div>
                       }
-          <i className='ri_password_line'></i>
           <input className='form_input'
-            type='password'
+            id='password'
             name='password'
+            type='password'
             placeholder='Password'
-            onChange={updatePassword}
             value={password}
+            onChange={updatePassword}
+            autoComplete='new-password'
           ></input>
-          <span className='bar'></span>
         </div>
         <div className='input_container'>
-          <i className='ri_password_line'></i>
           <input className='form_input'
-            type='password'
+            id='repeat_password'
             name='repeat_password'
+            type='password'
             placeholder='Confirm password'
-            onChange={updateRepeatPassword}
             value={repeatPassword}
+            onChange={updateRepeatPassword}
+            autoComplete='new-password'
           ></input>
-          <span className='bar'></span>
         </div>
         <div className='signup_button_container'>
           <button className='signup_button' type='submit'>Sign Up</button>
