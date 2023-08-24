@@ -1,16 +1,23 @@
+.form_page {
+  flex: 1;
+  margin: 0 340px;
+  padding: 110px 0 500px 0;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+
 .create_form {
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 150px;
+  padding: 50px 100px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255);
   opacity: .7;
-  position: fixed;
   width: 40%;
   min-width: 550px;
-  padding: 50px;
-  margin: 100px 600px;
-  border-radius: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tasting_header {
