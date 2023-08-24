@@ -212,7 +212,7 @@ const TastingForm = () => {
       <Navigation />
       <div className='sidebar_body_container'>
         <Sidebar />
-        <div className="feed_page">
+        <div className="form_page">
           <form className='create_form' onSubmit={handleSubmit} >
             <h2 className='tasting_header'>New Tasting Notes</h2>
             <div className='tasting_input_container'>
