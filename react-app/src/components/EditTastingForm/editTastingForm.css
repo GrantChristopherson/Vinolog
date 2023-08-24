@@ -1,24 +1,3 @@
-.edit_tasting_container {
-  display: flex;
-  justify-content: center;
-  min-width: 1000px;
-}
-
-.edit_tasting_form {
-  background-color: white;
-  opacity: .7;
-  position: fixed;
-  width: 40%;
-  min-width: 550px;
-  padding: 50px;
-  margin: 100px 600px;
-  border-radius: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .update_header {
   display: flex;
   justify-content: center;
