@@ -51,7 +51,7 @@ const AllLovedFeed = () => {
           <span className='feed_title'>Vinolog Loved Wines</span>
           <div className="feed_container">
           {lovedTastings?.map((tasting) => {return (
-            <div key={tasting?.id} className="tasting-card">
+            <div key={tasting?.id} className="tasting_card">
               <LovedTastingCard tasting={tasting} 
                                 showDiscussion={showDiscussion} 
                                 setShowDiscussion={setShowDiscussion}

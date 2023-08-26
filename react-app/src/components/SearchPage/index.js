@@ -28,7 +28,7 @@ const SearchPage = () => {
           <span className="search_title_tastings">Wine results:</span>
           <div className="feed_container">
           {tastings.map((tasting) => {return (
-            <div key={tasting.id} className="tasting-card" >
+            <div key={tasting.id} className="tasting_card" >
             <TastingCard tasting={tasting} />
             </div>
           )}).reverse()}

@@ -24,14 +24,14 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-.feed_container {
+/* .feed_container {
   display: grid;
   grid-template-columns: repeat(3, minmax(375px, 375px));
   gap: 100px;
   justify-content: center;
   padding: 100px 0;
   
-}
+} */
 
 .user_results_container {
   position: fixed;
