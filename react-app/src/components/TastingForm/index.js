@@ -73,11 +73,6 @@ const TastingForm = () => {
       validateErrors['varietal'] = '* Varietal / type must be between 3 and 100 characters';
     };
 
-    // const today = new Date(); 
-    // if (vintage !== '' || vintage !== 'NV' && vintage < 1900 || vintage > today.getFullYear()) {
-    //   validateErrors['vintage'] = `* Vintage must be between 1900 and this year (${today.getFullYear()}), or NV`
-    // };
-
     if (color === '') {
       validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
     };
