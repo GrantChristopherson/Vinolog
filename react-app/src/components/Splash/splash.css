@@ -71,7 +71,7 @@
 }
 
 /* Styles for screens larger than 2560px */
-@media (min-width: 2561px) {
+@media only screen and (min-width: 2561px) {
 
   .splash_container {
     width: 30%;
@@ -93,7 +93,7 @@
 }
 
 /* Styles for screens smaller than 1600px */
-@media (max-width: 1599px) {
+@media only screen and (max-width: 1599px) {
 
   .quote_container {
     padding: 20px 0px;
@@ -114,7 +114,7 @@
   }
 }
 
-@media (max-height: 799px) {
+@media only screen and (max-height: 799px) {
 
   .splash_container {
     height: 25vh;

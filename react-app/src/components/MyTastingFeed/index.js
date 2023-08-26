@@ -33,7 +33,7 @@ const MyTastingFeed = () => {
           <span className='feed_title'>My Wine Tastings</span>
           <div className="feed_container">
           {userTastings?.map((tasting) => {return (
-            <div key={tasting.id} className="tasting-card">
+            <div key={tasting.id} className="tasting_card">
               <TastingCard tasting={tasting} />
             </div>
           )}).reverse()}

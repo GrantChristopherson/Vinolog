@@ -28,13 +28,13 @@
   padding: 100px 0;
 }
 
-.tasting_card {
+/* .tasting_card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   width: 375px;
   border-radius: 30px;
-}
+} */
 
 @media only screen and (max-width: 2000px)  {
 
@@ -46,10 +46,11 @@
 
 
 /* Styles for screens less wide than 1600px */
-@media (max-width: 1599px) {
+@media only screen and (max-width: 1599px) {
 
   .feed_container {
     grid-template-columns: repeat(2, minmax(275px, 275px));
+    /* padding: 100px 350px; */
   }
 }
 
