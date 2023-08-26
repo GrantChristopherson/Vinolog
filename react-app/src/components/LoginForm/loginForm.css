@@ -4,10 +4,10 @@
   justify-content: center;
   background-color: white;
   border-radius: 30px;
-  height: 20vh;
+  height: 22vh;
   width: 40%;
   margin-bottom: 20%;
-  padding: 20px 150px;
+  padding: 70px 150px;
 }
 
 .login_form {
@@ -195,6 +195,6 @@
 @media (max-height: 799px) {
 
   .login_form_container {
-    height: 22vh;
+    height: 25vh;
   }
 }
