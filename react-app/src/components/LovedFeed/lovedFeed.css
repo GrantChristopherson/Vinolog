@@ -1,10 +1,10 @@
-.feed_container {
+/* .feed_container {
   display: grid;
   grid-template-columns: repeat(3, minmax(375px, 375px));
   gap: 100px;
   justify-content: center;
   padding: 100px 0;
-}
+} */
 
 /* @media only screen and (max-width: 2000px)  {
 
