@@ -103,12 +103,16 @@ const TastingForm = () => {
 
     if (!validateInput()) {
       return;
-    }
-    
-    setIsSubmitting(!isSubmitting)
+    };
 
-    dispatch(createTastingThunk(formData));
-    history.push('/tastings')
+    if (isSubmitting) {
+      return;
+    } else {
+      setIsSubmitting(!isSubmitting)
+  
+      dispatch(createTastingThunk(formData));
+      history.push('/tastings')
+    };
   };
     
   

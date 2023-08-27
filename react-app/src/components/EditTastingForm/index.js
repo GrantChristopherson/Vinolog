@@ -18,13 +18,11 @@ function EditTastingForm() {
   const { id } = useParams();
   const tasting = useSelector(state => state.tasting.tastings[id]);
   
-
   const getVintage = () => {
     const year = new Date().getFullYear();
     return ['NV', ...Array.from({length: year - 1899}, (_, i) => String(year - i))];
   };
   
-
   const options = [
     { value: 'Red', label: 'Red' },
     { value: 'White', label: 'White' },
@@ -34,171 +32,99 @@ function EditTastingForm() {
     { value: 'Dessert', label: 'Dessert' },
     { value: 'Other', label: 'Other' }
   ];
-  
-  
-  const [errors, setErrors] = useState({});
-  const [producer, setProducer] = useState(tasting?.producer || '');
-  const [region, setRegion] = useState(tasting?.region || '');
-  const [vineyard, setVineyard] = useState(tasting?.vineyard || '');
-  const [varietal, setVarietal] = useState(tasting?.varietal || '');
-  const [vintage, setVintage] = useState(tasting?.vintage || '');
-  const [color, setColor] = useState(tasting?.color || '');
-  const [labelImage, setLabelImage] = useState(tasting?.labelImage || '');
-  const [otherInfo, setOtherInfo] = useState(tasting?.other_info || '');
-  const [sight, setSight] = useState(tasting?.sight || '');
-  const [nose, setNose] = useState(tasting?.nose || '');
-  const [palate, setPalate] = useState(tasting?.palate || '');
-  const [thoughts, setThoughts] = useState(tasting?.thoughts || '');
-  const [love, setLove] = useState(tasting?.love || '');
-  
 
+  const initialState = {
+    id: tasting.id,
+    producer: tasting?.producer || '',
+    region: tasting?.region || '',
+    vineyard: tasting?.vineyard || '',
+    varietal: tasting?.varietal || '',
+    vintage: tasting?.vintage || '',
+    color: tasting?.color || '',
+    labelImage: tasting?.labelImage || '',
+    otherInfo: tasting?.otherInfo || '',
+    sight: tasting?.sight || '',
+    nose: tasting?.nose || '',
+    palate: tasting?.palate || '',
+    thoughts: tasting?.thoughts || '',
+    love: tasting?.love || ''
+  };
+  
+  const [formData, setFormData] = useState(initialState);
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateInput = () => {
+    let validateErrors = {};
+  
+    const fieldValidations = {
+      producer: { min: 3, max: 50, required: true },
+      region: { min: 3, max: 100, required: true },
+      vineyard: { min: 3, max: 50, required: false },
+      varietal: { min: 3, max: 100, required: true },
+      color: { min: 1, max: 30, required: true },
+      labelImage: { pattern: /^https?:\/\/.*/, required: false },
+      otherInfo: { min: 3, max: 200, required: false },
+      sight: { min: 3, max: 200, required: true },
+      nose: { min: 3, max: 200, required: true },
+      palate: { min: 3, max: 200, required: true },
+      thoughts: { min: 3, max: 200, required: false },
+    };
+  
+    for (const field in fieldValidations) {
+      const value = formData[field];
+      const { min, max, required, pattern } = fieldValidations[field];
+  
+      if (required && !value) {
+        validateErrors[field] = `* ${field} is required`;
+        continue;
+      };
+      
+      if (value) {
+        if (value && value.trim().length === 0) {
+          validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
+          break;
+        };
+    
+        if (value && (value.length < min || value.length > max)) {
+          validateErrors[field] = `* ${field} must be between ${min} and ${max} characters`;
+        };
+    
+        if (pattern && !pattern.test(value)) {
+          validateErrors[field] = `* ${field} must match the required pattern`;
+        };
+      };
+    };
+  
+    setErrors(validateErrors);
+    return !Object.keys(validateErrors).length;
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let validateErrors = {};
-    if (producer.length < 3 || producer.length > 50) {
-      validateErrors['producer'] = '* Producer must be between 3 and 50 characters';
-    };
-
-    if (region.length < 3 || region.length > 100) {
-      validateErrors['region'] = '* Region must be between 3 and 100 characters';
-    };
-
-    if (vineyard) {
-      if (vineyard.length < 3 || region.length > 50) {
-        validateErrors['vineyard'] = '* Vineyard either can be null or between 3 and 50 characters';
-      };
-    };
-
-    if (varietal.length < 3 || varietal.length > 100) {
-      validateErrors['varietal'] = '* Varietal / type must be between 3 and 100 characters';
-    };
-
-    if (color === '') {
-      validateErrors['colors'] = '* Color of wine is required, please select an appropriate color';
-    };
-
-    if (labelImage !== '' && !/^https?:\/\/.*/.test(labelImage)) {
-      validateErrors['labelImage'] = '* Label image must be a valid URL';
-    };
-    
-    if (otherInfo) {
-      if (otherInfo.length < 3 || otherInfo.length > 200) {
-        validateErrors['otherInfo'] = '* Additional information either can be null or between 3 and 200 characters';
-      };
-    };
-    
-    if (sight.length < 3 || sight.length > 200) {
-      validateErrors['sight'] = '* Sight must be between 3 and 200 characters';
-    };
-
-    if (nose.length < 3 || nose.length > 200) {
-      validateErrors['nose'] = '* Nose must be between 3 and 200 characters';
-    };
-
-    if (palate.length < 3 || palate.length > 200) {
-      validateErrors['palate'] = '* Palate must be between 3 and 200 characters';
-    };
-
-    if (thoughts) {
-      if (thoughts.length < 3 || thoughts.length > 200) {
-        validateErrors['thoughts'] = '* Thoughts either can be null or between 3 and 200 characters';
-      };
-    };
-
-    if ((producer.length && producer.trim().length === 0) ||
-        (region.length && region.trim().length === 0) ||
-        (vineyard.length && vineyard.trim().length === 0) ||
-        (varietal.length && varietal.trim().length === 0) ||
-        (color.length && color.trim().length === 0) ||
-        (labelImage.length && labelImage.trim().length === 0) ||
-        (otherInfo.length && otherInfo.trim().length === 0) ||
-        (sight.length && sight.trim().length === 0) ||
-        (nose.length && nose.trim().length === 0) ||
-        (palate.length && palate.trim().length === 0) ||
-        (thoughts.length && thoughts.trim().length === 0)) {
-          validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-        };
-
-    
-
-    setErrors(validateErrors)
-    if (Object.keys(validateErrors).length) {
+    if (!validateInput()) {
       return;
-    }
-
-    const taste = {
-      id: tasting.id,
-      producer,
-      region,
-      vineyard,
-      varietal,
-      vintage,
-      color,
-      labelImage,
-      other_info: otherInfo,
-      sight,
-      nose,
-      palate,
-      thoughts,
-      love,
     };
-    
-    dispatch(editTastingThunk(taste));
-    history.push('/tastings');
+
+    if (isSubmitting) {
+      return;
+    } else {
+      setIsSubmitting(!isSubmitting)
+      
+      dispatch(editTastingThunk(formData));
+      history.push('/tastings');
+    };
   };
     
-   
-  const updateProducer = (e) => {
-    setProducer(e.target.value);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
   };
-  
-  const updateRegion = (e) => {
-    setRegion(e.target.value);
-  };
-  
-  const updateVineyard = (e) => {
-    setVineyard(e.target.value);
-  };
-  
-  const updateVarietal = (e) => {
-    setVarietal(e.target.value);
-  };
-  
-  const updateVintage = (e) => {
-    setVintage(e.target.value);
-  };
-  
-  const updateColor = (e) => {
-    setColor(e.target.value);
-  };
-  
-  const updateLabelImage = (e) => {
-    setLabelImage(e.target.value);
-  };
-  
-  const updateOtherInfo = (e) => {
-    setOtherInfo(e.target.value);
-  };
-  
-  const updateSight = (e) => {
-    setSight(e.target.value);
-  };
-  
-  const updateNose = (e) => {
-    setNose(e.target.value);
-  };
-  
-  const updatePalate = (e) => {
-    setPalate(e.target.value);
-  };
-  
-  const updateThoughts = (e) => {
-    setThoughts(e.target.value);
-  };
-  
-  const updateLove = (e) => {
-  setLove(e.target.checked);
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: checked }));
   };
   
   
@@ -224,9 +150,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='producer'
-              onChange={updateProducer}
+              onChange={handleInputChange}
               placeholder='Producer'
-              value={producer}
+              value={formData.producer}
               ></input>
             </div>
             <div className='edit_tasting_input_container'>
@@ -237,9 +163,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='region'
-              onChange={updateRegion}
+              onChange={handleInputChange}
               placeholder='Region'
-              value={region}
+              value={formData.region}
               ></input>
             </div>
             <div className='edit_tasting_input_container'>
@@ -250,9 +176,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='vineyard'
-              onChange={updateVineyard}
+              onChange={handleInputChange}
               placeholder='Vineyard'
-              value={vineyard}
+              value={formData.vineyard}
               ></input> 
             </div>
             <div className='edit_tasting_input_container'>
@@ -263,9 +189,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='varietal'
-              onChange={updateVarietal}
+              onChange={handleInputChange}
               placeholder='Varietal / Type'
-              value={varietal}
+              value={formData.varietal}
               ></input> 
             </div>
             <div className='edit_tasting_input_container'>
@@ -273,16 +199,7 @@ function EditTastingForm() {
                 <div className='errors'>{errors.vintage}</div>
               </div>
               } 
-              {/* <input className='selection_info_input'
-              type='number'
-              name='vintage'
-              onChange={updateVintage}
-              placeholder='Vintage'
-              min='1900'
-              max={currentYear}
-              value={vintage}
-              ></input> */}
-              <select className='selection_info_input' onChange={updateVintage} value={vintage || ''}>
+              <select className='selection_info_input' name='vintage' onChange={handleInputChange} value={formData.vintage || ''}>
                 <option value="" disabled>Select a Vintage...</option>
                 {getVintage().map(option =>
                   <option key={option} value={option}>{option}</option>
@@ -294,10 +211,10 @@ function EditTastingForm() {
                   <div className='errors'>{errors.colors}</div>
                 </div>
                 }
-              <select className='selection_info_input' onChange={updateColor} value={color || ''}>
+              <select className='selection_info_input' name='color' onChange={handleInputChange} value={formData.color || ''}>
                 <option value="" disabled>Select the Style of Wine...</option>
                 {options.map(option =>
-                  <option key={option.value}>{option.value}</option>
+                  <option key={option.value} value={option.value}>{option.value}</option>
                   )}
               </select>
             </div>
@@ -309,9 +226,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='labelImage'
-              onChange={updateLabelImage}
+              onChange={handleInputChange}
               placeholder='URL of Wine Label Image'
-              value={labelImage}
+              value={formData.labelImage}
               ></input> 
             </div>
             <div className='edit_tasting_input_container'>
@@ -322,9 +239,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='otherInfo'
-              onChange={updateOtherInfo}
+              onChange={handleInputChange}
               placeholder='Additional Information...'
-              value={otherInfo}
+              value={formData.otherInfo}
               ></input> 
             </div>
             <div className='edit_tasting_input_container'>
@@ -335,9 +252,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='sight'
-              onChange={updateSight}
+              onChange={handleInputChange}
               placeholder='Sight'
-              value={sight}
+              value={formData.sight}
               ></input> 
             </div>
             <div className='edit_tasting_input_container'>
@@ -348,9 +265,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='nose'
-              onChange={updateNose}
+              onChange={handleInputChange}
               placeholder='Nose'
-              value={nose}
+              value={formData.nose}
               ></input> 
             </div>
             <div className='edit_tasting_input_container'>
@@ -361,9 +278,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='palate'
-              onChange={updatePalate}
+              onChange={handleInputChange}
               placeholder='Palate'
-              value={palate}
+              value={formData.palate}
               ></input> 
             </div>
             <div className='edit_tasting_input_container'>
@@ -374,9 +291,9 @@ function EditTastingForm() {
               <input className='info_input'
               type='text'
               name='thoughts'
-              onChange={updateThoughts}
+              onChange={handleInputChange}
               placeholder='Additional thoughts...'
-              value={thoughts}
+              value={formData.thoughts}
               ></input> 
             </div>
             <div className='edit_love_container'>
@@ -384,8 +301,8 @@ function EditTastingForm() {
               <input className='edit_love_input'
                 type="checkbox"
                 name='love'
-                checked={love}
-                onChange={updateLove}
+                checked={formData.love}
+                onChange={handleCheckboxChange}
               />
             </div>
             <div className='edit_submit_close_container'>
@@ -405,8 +322,3 @@ function EditTastingForm() {
 
 
 export default EditTastingForm;
-
-
-
-
-
