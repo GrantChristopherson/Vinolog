@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { createTastingThunk } from '../../store/tasting';
@@ -15,6 +15,8 @@ const TastingForm = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
+  const fileInputRef = useRef(null);
+
 
   const getVintage = () => {
     const year = new Date().getFullYear();
@@ -53,6 +55,8 @@ const TastingForm = () => {
  
   const validateInput = () => {
     let validateErrors = {};
+
+    const file = fileInputRef.current?.files[0];
   
     const fieldValidations = {
       producer: { min: 3, max: 50, required: true },
@@ -60,17 +64,30 @@ const TastingForm = () => {
       vineyard: { min: 3, max: 50, required: false },
       varietal: { min: 3, max: 100, required: true },
       color: { min: 1, max: 30, required: true },
-      labelImage: { pattern: /^https?:\/\/.*/, required: false },
+      labelImage: { required: false },
       otherInfo: { min: 3, max: 200, required: false },
       sight: { min: 3, max: 200, required: true },
       nose: { min: 3, max: 200, required: true },
       palate: { min: 3, max: 200, required: true },
       thoughts: { min: 3, max: 200, required: false },
     };
+
+    if (file) {
+      // 1. Validating File Size (For example, limit to 4MB)
+      if (file.size > 4 * 1024 * 1024) {
+        validateErrors.labelImage = '* The image file is too large (max 2MB)';
+      };
+    
+      // 2. Validating File Type
+      const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+      if (!acceptedImageTypes.includes(file.type)) {
+        validateErrors.labelImage = '* The image file format is not supported';
+      };
+    };
   
     for (const field in fieldValidations) {
       const value = formData[field];
-      const { min, max, required, pattern } = fieldValidations[field];
+      const { min, max, required } = fieldValidations[field];
   
       if (required && !value) {
         validateErrors[field] = `* ${field} is required`;
@@ -80,15 +97,10 @@ const TastingForm = () => {
       if (value) {
         if (value && value.trim().length === 0) {
           validateErrors['spacing'] = '* Spacebar exclusive input is not valid for any field';
-          break;
         };
     
         if (value && (value.length < min || value.length > max)) {
           validateErrors[field] = `* ${field} must be between ${min} and ${max} characters`;
-        };
-    
-        if (pattern && !pattern.test(value)) {
-          validateErrors[field] = `* ${field} must match the required pattern`;
         };
       };
     };
@@ -107,12 +119,18 @@ const TastingForm = () => {
 
     if (isSubmitting) {
       return;
-    } else {
-      setIsSubmitting(!isSubmitting)
-  
-      dispatch(createTastingThunk(formData));
-      history.push('/tastings')
     };
+
+    setIsSubmitting(true);
+  
+    dispatch(createTastingThunk(formData)).then((response) => {
+      setIsSubmitting(false);
+      history.push('/tastings');
+      })
+      .catch((error) => {
+        setIsSubmitting(false);
+        console.error("Error submitting form:", error)
+      });
   };
     
   
@@ -223,10 +241,11 @@ const TastingForm = () => {
               </div>
               }
               <input className='info_input'
-              type='text'
+              type='file'
               name='labelImage'
               onChange={handleInputChange}
-              placeholder='URL of Wine Label Image'
+              ref={fileInputRef}
+              placeholder='Upload a photo of the Wine Label...'
               value={formData.labelImage}
               ></input> 
             </div>
