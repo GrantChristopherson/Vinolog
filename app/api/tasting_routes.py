@@ -4,8 +4,8 @@ from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
 
-# import boto3
-# from app.config import Config
+import boto3
+from app.config import Config
 
 # import logging
 # logging.basicConfig(level=logging.DEBUG)
@@ -17,10 +17,10 @@ from sqlalchemy import or_
 tasting_routes = Blueprint('tastings', __name__)
 
 
-# s3 = boto3.client('s3', 
-#                   aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
-#                   aws_secret_access_key=Config.AWS_SECRET_ACCESS_KEY, 
-#                   region_name=Config.AWS_DEFAULT_REGION)
+s3 = boto3.client('s3', 
+                  aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
+                  aws_secret_access_key=Config.AWS_SECRET_ACCESS_KEY, 
+                  region_name=Config.AWS_DEFAULT_REGION)
 
 
 
