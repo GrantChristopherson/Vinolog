@@ -4,8 +4,8 @@ from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
 
-# import boto3
-# from app.config import Config
+import boto3
+from app.config import Config
 
 # import logging
 # logging.basicConfig(level=logging.DEBUG)
@@ -17,10 +17,21 @@ from sqlalchemy import or_
 tasting_routes = Blueprint('tastings', __name__)
 
 
-# s3 = boto3.client('s3', 
-#                   aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
-#                   aws_secret_access_key=Config.AWS_SECRET_ACCESS_KEY, 
-#                   region_name=Config.AWS_DEFAULT_REGION)
+s3 = boto3.client('s3', 
+                  aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
+                  aws_secret_access_key=Config.AWS_SECRET_ACCESS_KEY, 
+                  region_name=Config.AWS_DEFAULT_REGION)
+
+
+
+def upload_to_s3(file):
+    """Upload a file to your S3 bucket and return its public URL."""
+    
+    filename = file.filename
+    bucket_name = 'wine-labels-vinolog'
+    s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
+    
+    return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
 
 
 
@@ -104,6 +115,12 @@ def post_tasting():
 
     form = TastingForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+
+    label_image_url = None  # Defaults to None
+    file = request.files.get('label_image') # Checking for an image upload in the form data
+    if file and file.filename != '':
+      label_image_url = upload_to_s3(file)  # If there's a file, uploading it to S3
+
     if form.validate_on_submit():
       tasting = Tasting(
         producer = form.data['producer'],
@@ -112,7 +129,7 @@ def post_tasting():
         varietal = form.data['varietal'],
         vintage = form.data['vintage'],
         color = form.data['color'],
-        label_image = form.data['label_image'],
+        label_image = label_image_url,
         other_info = form.data['other_info'],
         sight = form.data['sight'],
         nose = form.data['nose'],
