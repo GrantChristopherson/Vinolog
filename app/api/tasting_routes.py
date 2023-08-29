@@ -161,6 +161,11 @@ def edit_tasting_card(id):
     if tasting.user.id != current_user.id:
       redirect('api/auth/unauthorized')
 
+    #label_image_url = None  # Defaults to None
+    # file = request.files.get('label_image') # Checking for an image upload in the form data
+    # if file and file.filename != '':
+    #   label_image_url = upload_to_s3(file)  # If there's a file, uploading it to S3
+
     form = TastingForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
@@ -170,6 +175,7 @@ def edit_tasting_card(id):
       tasting.varietal = form.data['varietal']
       tasting.vintage = form.data['vintage']
       tasting.color = form.data['color']
+      # tasting.label_image = label_image_url,
       tasting.label_image = form.data['label_image']
       tasting.other_info = form.data['other_info']
       tasting.sight = form.data['sight']
