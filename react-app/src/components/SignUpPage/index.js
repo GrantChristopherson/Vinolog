@@ -3,6 +3,7 @@ import SignUpForm from '../SignUpForm';
 import Navigation from '../Navigation';
 import bottlesBg from '../../images/bottles-bg.png';
 import Footer from "../Footer";
+import './signUpPage.css';
 
 
 
