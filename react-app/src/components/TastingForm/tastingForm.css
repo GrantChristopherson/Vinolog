@@ -82,6 +82,10 @@
   outline: none;
 }
 
+.file_input {
+  
+}
+
 .love_container {
   display: flex;
   justify-content: flex-start;
