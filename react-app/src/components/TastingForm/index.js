@@ -240,7 +240,7 @@ const TastingForm = () => {
                 <div className='errors'>{errors.labelImage}</div>
               </div>
               }
-              <input className='info_input'
+              <input className='file_input'
               type='file'
               name='labelImage'
               onChange={handleInputChange}

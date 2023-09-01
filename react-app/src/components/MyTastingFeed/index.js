@@ -8,7 +8,7 @@ import Footer from '../Footer';
 import './myTastingFeed.css';
 
 
-// tasting card feeds with image aws
+
 
 const MyTastingFeed = () => {
 
