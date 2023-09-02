@@ -5,7 +5,8 @@
 const SearchedUser = ( {user} ) => {
 
 
-
+// need to be able to click on users and see tastings
+//friending possible as well
   
   return (
     <div className="listed_user_container">
