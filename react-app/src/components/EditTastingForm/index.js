@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import './editTastingForm.css';
 
 
-// impement aws here
+// implement aws here
 
 function EditTastingForm() {
 
@@ -70,6 +70,19 @@ function EditTastingForm() {
       palate: { min: 3, max: 200, required: true },
       thoughts: { min: 3, max: 200, required: false },
     };
+
+    // if (file) {
+    //   // 1. Validating File Size (For example, limit to 4MB)
+    //   if (file.size > 4 * 1024 * 1024) {
+    //     validateErrors.labelImage = '* The image file is too large (max 2MB)';
+    //   };
+    
+    //   // 2. Validating File Type
+    //   const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+    //   if (!acceptedImageTypes.includes(file.type)) {
+    //     validateErrors.labelImage = '* The image file format is not supported';
+    //   };
+    // };
   
     for (const field in fieldValidations) {
       const value = formData[field];
