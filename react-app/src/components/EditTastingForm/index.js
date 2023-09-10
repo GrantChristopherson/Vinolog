@@ -105,10 +105,6 @@ function EditTastingForm() {
         if (value && (value.length < min || value.length > max)) {
           validateErrors[field] = `* ${field} must be between ${min} and ${max} characters`;
         };
-    
-        if (pattern && !pattern.test(value)) {
-          validateErrors[field] = `* ${field} must match the required pattern`;
-        };
       };
     };
   
