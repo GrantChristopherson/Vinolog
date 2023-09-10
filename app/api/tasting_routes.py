@@ -161,9 +161,13 @@ def edit_tasting_card(id):
     if tasting.user.id != current_user.id:
       redirect('api/auth/unauthorized')
 
-    label_image_url = tasting.label_image  # Default to the current image
+    label_image_url = tasting.label_image   # Default to the current image
     file = request.files.get('label_image') # Checking for an image upload in the form data
     if file and file.filename != '':
+     
+      if tasting.label_image:               # Deletes the previous image from S3 if it exists
+          s3.delete_object(Bucket='wine-labels-vinolog', Key=tasting.label_image.split('/')[-1])
+
       label_image_url = upload_to_s3(file)  # If there's a file, uploading it to S3
 
     form = TastingForm()
@@ -176,7 +180,6 @@ def edit_tasting_card(id):
       tasting.vintage = form.data['vintage']
       tasting.color = form.data['color']
       tasting.label_image = label_image_url
-      tasting.label_image = form.data['label_image']
       tasting.other_info = form.data['other_info']
       tasting.sight = form.data['sight']
       tasting.nose = form.data['nose']

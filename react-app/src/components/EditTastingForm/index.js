@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory, NavLink } from 'react-router-dom';
 import { editTastingThunk } from '../../store/tasting';
@@ -15,6 +15,7 @@ function EditTastingForm() {
   
   const dispatch = useDispatch();
   const history = useHistory();
+  const fileInputRef = useRef(null);
   const { id } = useParams();
   const tasting = useSelector(state => state.tasting.tastings[id]);
   
@@ -56,6 +57,8 @@ function EditTastingForm() {
 
   const validateInput = () => {
     let validateErrors = {};
+
+    const file = fileInputRef.current?.files[0];
   
     const fieldValidations = {
       producer: { min: 3, max: 50, required: true },
@@ -63,7 +66,7 @@ function EditTastingForm() {
       vineyard: { min: 3, max: 50, required: false },
       varietal: { min: 3, max: 100, required: true },
       color: { min: 1, max: 30, required: true },
-      labelImage: { pattern: /^https?:\/\/.*/, required: false },
+      labelImage: { required: false },
       otherInfo: { min: 3, max: 200, required: false },
       sight: { min: 3, max: 200, required: true },
       nose: { min: 3, max: 200, required: true },
@@ -71,22 +74,22 @@ function EditTastingForm() {
       thoughts: { min: 3, max: 200, required: false },
     };
 
-    // if (file) {
-    //   // 1. Validating File Size (For example, limit to 4MB)
-    //   if (file.size > 4 * 1024 * 1024) {
-    //     validateErrors.labelImage = '* The image file is too large (max 2MB)';
-    //   };
+    if (file) {
+      // 1. Validating File Size (For example, limit to 4MB)
+      if (file.size > 4 * 1024 * 1024) {
+        validateErrors.labelImage = '* The image file is too large (max 2MB)';
+      };
     
-    //   // 2. Validating File Type
-    //   const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
-    //   if (!acceptedImageTypes.includes(file.type)) {
-    //     validateErrors.labelImage = '* The image file format is not supported';
-    //   };
-    // };
+      // 2. Validating File Type
+      const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+      if (!acceptedImageTypes.includes(file.type)) {
+        validateErrors.labelImage = '* The image file format is not supported';
+      };
+    };
   
     for (const field in fieldValidations) {
       const value = formData[field];
-      const { min, max, required, pattern } = fieldValidations[field];
+      const { min, max, required } = fieldValidations[field];
   
       if (required && !value) {
         validateErrors[field] = `* ${field} is required`;
@@ -236,11 +239,12 @@ function EditTastingForm() {
                 <div className='errors'>{errors.labelImage}</div>
               </div>
               }
-              <input className='info_input'
-              type='text'
+              <input className='file_input'
+              type='file'
               name='labelImage'
               onChange={handleInputChange}
-              placeholder='URL of Wine Label Image'
+              ref={fileInputRef}
+              placeholder='Upload a photo of the Wine Label...'
               value={formData.labelImage}
               ></input> 
             </div>
@@ -319,9 +323,9 @@ function EditTastingForm() {
               />
             </div>
             <div className='edit_submit_close_container'>
-              <button className='update_tasting_button' type='submitEditWine'>Update</button>
+              {!isSubmitting && <button className='update_tasting_button' type='submitEditWine'>Update</button>}
               <NavLink to='/tastings' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-              <h4 className='close_edit_wine' >Cancel</h4>
+                <h4 className='close_edit_wine' >Cancel</h4>
               </NavLink>
             </div>
           </form>
