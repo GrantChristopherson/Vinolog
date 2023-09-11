@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import './editTastingForm.css';
 
 
-// implement aws here
+
 
 function EditTastingForm() {
 
@@ -231,20 +231,6 @@ function EditTastingForm() {
               </select>
             </div>
             <div className='edit_tasting_input_container'>
-              {errors?.labelImage !== undefined && <div className='error'>
-                <div className='errors'>{errors.labelImage}</div>
-              </div>
-              }
-              <input className='file_input'
-              type='file'
-              name='labelImage'
-              onChange={handleInputChange}
-              ref={fileInputRef}
-              placeholder='Upload a photo of the Wine Label...'
-              value={formData.labelImage}
-              ></input> 
-            </div>
-            <div className='edit_tasting_input_container'>
               {errors?.otherInfo !== undefined && <div className='error'>
                 <div className='errors'>{errors.otherInfo}</div>
               </div>
@@ -309,14 +295,28 @@ function EditTastingForm() {
               value={formData.thoughts}
               ></input> 
             </div>
+            <div className='edit_tasting_input_container'>
+              {errors?.labelImage !== undefined && <div className='error'>
+                <div className='errors'>{errors.labelImage}</div>
+              </div>
+              }
+              <input className='file_input'
+              type='file'
+              name='labelImage'
+              onChange={handleInputChange}
+              ref={fileInputRef}
+              placeholder='Upload a photo of the Wine Label...'
+              value={formData.labelImage}
+              ></input> 
+            </div>
             <div className='edit_love_container'>
-              <label className='edit_love_label'>Love the wine?</label>
               <input className='edit_love_input'
                 type="checkbox"
                 name='love'
                 checked={formData.love}
                 onChange={handleCheckboxChange}
               />
+              <label className='edit_love_label'>Love the wine?</label>
             </div>
             <div className='edit_submit_close_container'>
               {!isSubmitting && <button className='update_tasting_button' type='submitEditWine'>Update</button>}
