@@ -236,20 +236,6 @@ const TastingForm = () => {
               </select>
             </div>
             <div className='tasting_input_container'>
-              {errors?.labelImage !== undefined && <div className='error'>
-                <div className='errors'>{errors.labelImage}</div>
-              </div>
-              }
-              <input className='file_input'
-              type='file'
-              name='labelImage'
-              onChange={handleInputChange}
-              ref={fileInputRef}
-              placeholder='Upload a photo of the Wine Label...'
-              value={formData.labelImage}
-              ></input> 
-            </div>
-            <div className='tasting_input_container'>
               {errors?.otherInfo !== undefined && <div className='error'>
                 <div className='errors'>{errors.otherInfo}</div>
               </div>
@@ -314,14 +300,28 @@ const TastingForm = () => {
               value={formData.thoughts}
               ></input>
             </div>
+            <div className='tasting_input_container'>
+              {errors?.labelImage !== undefined && <div className='error'>
+                <div className='errors'>{errors.labelImage}</div>
+              </div>
+              }
+              <input className='file_input'
+              type='file'
+              name='labelImage'
+              onChange={handleInputChange}
+              ref={fileInputRef}
+              placeholder='Upload a photo of the Wine Label...'
+              value={formData.labelImage}
+              ></input> 
+            </div>
             <div className='love_container'>
-              <label className='love_label'>Love the wine?</label>
               <input className='love_input'
                 type="checkbox"
                 name='love'
                 checked={formData.love}
                 onChange={handleCheckboxChange}
               />
+              <label className='love_label'>Love the wine?</label>
             </div>
           <div className='submit_cancel_container'>
             {!isSubmitting && <button  className='submit_tasting' >Submit</button>}
