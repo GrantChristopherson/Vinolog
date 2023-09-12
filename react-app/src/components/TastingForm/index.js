@@ -75,7 +75,7 @@ const TastingForm = () => {
     if (file) {
       // 1. Validating File Size (For example, limit to 4MB)
       if (file.size > 4 * 1024 * 1024) {
-        validateErrors.labelImage = '* The image file is too large (max 2MB)';
+        validateErrors.labelImage = '* The image file is too large (max 4MB)';
       };
     
       // 2. Validating File Type
