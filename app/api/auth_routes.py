@@ -1,10 +1,31 @@
-from flask import Blueprint, jsonify, session, request
+from flask import Blueprint, request
 from app.models import User, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
-from flask_login import current_user, login_user, logout_user, login_required
+from flask_login import current_user, login_user, logout_user
+import boto3
+from app.config import Config
+
 
 auth_routes = Blueprint('auth', __name__)
+
+
+s3 = boto3.client('s3', 
+                  aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
+                  aws_secret_access_key=Config.AWS_SECRET_ACCESS_KEY, 
+                  region_name=Config.AWS_DEFAULT_REGION)
+
+
+
+def upload_to_s3(file):
+    """Upload a file to your S3 bucket and return its public URL."""
+    
+    filename = file.filename
+    bucket_name = 'wine-labels-vinolog'
+    s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
+    
+    return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
+
 
 
 
@@ -85,12 +106,18 @@ def sign_up():
 
         form = SignUpForm()
         form['csrf_token'].data = request.cookies['csrf_token']
+
+        profile_image_url = None  # Defaults to None
+        file = request.files.get('profile_image') # Checking for an image upload in the form data
+        if file and file.filename != '':
+            profile_image_url = upload_to_s3(file)  # If there's a file, uploading it to S3
+
         if form.validate_on_submit():
             user = User(
                 username=form.data['username'],
                 email=form.data['email'],
                 password=form.data['password'],
-                profile_image=form.data['profile_image']
+                profile_image= profile_image_url
             )
             db.session.add(user)
             db.session.commit()
