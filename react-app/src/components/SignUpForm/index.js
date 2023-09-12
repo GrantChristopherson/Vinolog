@@ -30,6 +30,8 @@ const SignUpForm = () => {
 
     let validateErrors = {};
 
+    const file = fileInputRef.current?.files[0];
+
     if (username.trim().length === 0) {
       validateErrors['userNameError'] = '* Spacebar exclusive input is not a valid username';
     } else if (username.length < 6 || username.length > 15) {
@@ -48,15 +50,28 @@ const SignUpForm = () => {
     };
 
 
-    const urlPattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-      '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+    // const urlPattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+    //   '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
+    //   '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+    //   '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+    //   '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+    //   '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
 
-    if (profileImage && !urlPattern.test(profileImage)) {
-      validateErrors['profileImageError'] = '* Please provide a valid URL';
+    // if (profileImage && !urlPattern.test(profileImage)) {
+    //   validateErrors['profileImageError'] = '* Please provide a valid URL';
+    // };
+
+    if (file) {
+      // 1. Validating File Size (For example, limit to 4MB)
+      if (file.size > 4 * 1024 * 1024) {
+        validateErrors['profileImageError'] = '* The image file is too large (max 4MB)';
+      };
+    
+      // 2. Validating File Type
+      const acceptedImageTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+      if (!acceptedImageTypes.includes(file.type)) {
+        validateErrors['profileImageError'] = '* The image file format is not supported';
+      };
     };
 
     if (password.trim().length === 0) {
@@ -138,7 +153,7 @@ const SignUpForm = () => {
             autoComplete='email'
           ></input>
         </div>
-        <div className='input_container'>
+        {/* <div className='input_container'>
           {errors?.profileImageError !== undefined && <div className='error_messages'>
                       <div className='errors'>{errors.profileImageError}</div>
                     </div>
@@ -152,7 +167,23 @@ const SignUpForm = () => {
             onChange={updateProfileImage}
             autoComplete='profileImage'
           ></input>
-        </div>
+        </div> */}
+        <div className='input_container'>
+              {errors?.profileImageError !== undefined && <div className='error_messages'>
+                <div className='errors'>{errors.profileImageError}</div>
+              </div>
+              }
+              <input className='file_input'
+              id='profileImage'
+              type='file'
+              name='profileImage'
+              onChange={updateProfileImage}
+              autoComplete='profileImage'
+              ref={fileInputRef}
+              placeholder='Upload a profile photo...'
+              value={profileImage}
+              ></input> 
+            </div>
         <div className='input_container'>
           {errors?.passwordError !== undefined && <div className='error_messages'>
                         <div className='errors'>{errors.passwordError}</div>
