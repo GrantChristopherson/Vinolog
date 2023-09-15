@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import { signUp } from '../../store/session';
-import './signUpForm.css'
+import './signUpForm.css';
 
 
 // impement aws here
