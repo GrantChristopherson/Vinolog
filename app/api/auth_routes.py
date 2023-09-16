@@ -117,7 +117,8 @@ def sign_up():
                 username=form.data['username'],
                 email=form.data['email'],
                 password=form.data['password'],
-                profile_image= profile_image_url
+                profile_image= profile_image_url,
+                bio= form.data['bio']
             )
             db.session.add(user)
             db.session.commit()
