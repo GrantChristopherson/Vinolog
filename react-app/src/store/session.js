@@ -199,6 +199,17 @@ export default function reducer(state = initialState, action) {
         return acc;
       }, {});
       return { ...state, users: { ...state.users, ...users } };
+    case EDIT_USER: {
+      const { user } = action;
+
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [user.id]: user,
+        },
+      };
+    }
     default:
       return state;
   }

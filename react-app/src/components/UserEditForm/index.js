@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
+import { editUserThunk } from '../../store/session';
 import './userEditForm.css';
 
 
@@ -87,14 +88,14 @@ const UserEditForm = () => {
 
     setIsSubmitting(true);
   
-    // dispatch(createTastingThunk(formData)).then((response) => {
-    //   setIsSubmitting(false);
-    //   history.push(`/profile/${user.id}`);
-    //   })
-    //   .catch((error) => {
-    //     setIsSubmitting(false);
-    //     console.error("Error submitting form:", error)
-    //   });
+    dispatch(editUserThunk(formData)).then((response) => {
+      setIsSubmitting(false);
+      history.push(`/profile/${user.id}`);
+      })
+      .catch((error) => {
+        setIsSubmitting(false);
+        console.error("Error submitting form:", error)
+      });
   };
 
   const handleInputChange = (e) => {
