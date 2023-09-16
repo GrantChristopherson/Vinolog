@@ -1,8 +1,31 @@
-from flask import Blueprint, jsonify
-from flask_login import login_required
+from flask import Blueprint, redirect, request
+from flask_login import login_required, current_user
 from app.models import User, db
+from app.forms.signup_form import SignUpForm
+import boto3
+from app.config import Config
+
 
 user_routes = Blueprint('users', __name__)
+
+
+
+s3 = boto3.client('s3', 
+                  aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
+                  aws_secret_access_key=Config.AWS_SECRET_ACCESS_KEY, 
+                  region_name=Config.AWS_DEFAULT_REGION)
+
+
+
+def upload_to_s3(file):
+    """Upload a file to your S3 bucket and return its public URL."""
+    
+    filename = file.filename
+    bucket_name = 'wine-labels-vinolog'
+    s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
+    
+    return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
+
 
 
 
@@ -112,4 +135,40 @@ def user_likes(id):
         return  cheers_users.to_dict_get_cheers()
     
     except Exception as e:
+        return {"error": str(e)}, 500
+    
+
+
+# Edit user profile_image or bio
+@user_routes.route('/<int:id>/edit', methods=['PUT'])
+def edit_user(id):
+    try:
+
+        user = User.query.get(id)
+
+        if user.id != current_user.id:
+            redirect('api/auth/unauthorized')
+
+        profile_image_url = user.profile_image
+        file = request.files.get('profile_image') # Checking for an image upload in the form data
+        if file and file.filename != '':
+        
+            if user.profile_image:               # Deletes the previous image from S3 if it exists
+                s3.delete_object(Bucket='wine-labels-vinolog', Key=user.profile_image.split('/')[-1])
+
+            profile_image_url = upload_to_s3(file)  # If there's a file, uploading it to S3
+
+        form = SignUpForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            user.profile_image = profile_image_url
+            user.bio = form.data['bio']
+           
+            
+            db.session.commit()
+            return user.to_dict()
+        return {'errors': form.errors}, 400
+    
+    except Exception as e:
+        db.session.rollback()
         return {"error": str(e)}, 500
