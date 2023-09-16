@@ -50,6 +50,9 @@ function App() {
         <ProtectedRoute path='/profile/:id' exact={true} >
           <UserPage />
         </ProtectedRoute>
+        <ProtectedRoute path='/profile/:id/edit' exact={true} >
+          <UserEditPage />
+        </ProtectedRoute>
         <ProtectedRoute path='/tasting' exact={true} >
           <TastingForm />
         </ProtectedRoute>
