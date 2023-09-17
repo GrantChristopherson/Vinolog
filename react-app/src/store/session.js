@@ -142,11 +142,8 @@ export const editUserThunk = (user) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        username,
-        email,
         profile_image: user.profileImage,
         bio: user.bio,
-        password,
       }),
     });
     
