@@ -5,6 +5,7 @@ import { authenticate } from './store/session';
 import LoginPage from './components/LoginPage';
 import SignUpPage from './components/SignUpPage';
 import UserPage from './components/UserPage';
+import UserEditPage from './components/UserEditPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed';
 import LovedFeed from './components/LovedFeed';
