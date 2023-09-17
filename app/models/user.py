@@ -21,7 +21,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     profile_image = db.Column(db.String(1000))
-    # bio = db.Column(db.String(1000))
+    bio = db.Column(db.String(200))
 
     tastings = db.relationship('Tasting', back_populates='user',cascade='all, delete')
     discussions = db.relationship('Discussion', back_populates='user',cascade='all, delete')
@@ -61,8 +61,8 @@ class User(db.Model, UserMixin):
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'profileImage': self.profile_image
-            # 'bio': self.bio
+            'profileImage': self.profile_image,
+            'bio': self.bio
         }
 
 

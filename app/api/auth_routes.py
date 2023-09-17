@@ -21,7 +21,7 @@ def upload_to_s3(file):
     """Upload a file to your S3 bucket and return its public URL."""
     
     filename = file.filename
-    bucket_name = 'wine-labels-vinolog'
+    bucket_name = 'profile-photos-vinolog'
     s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
     
     return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
@@ -117,7 +117,8 @@ def sign_up():
                 username=form.data['username'],
                 email=form.data['email'],
                 password=form.data['password'],
-                profile_image= profile_image_url
+                profile_image= profile_image_url,
+                bio= form.data['bio']
             )
             db.session.add(user)
             db.session.commit()

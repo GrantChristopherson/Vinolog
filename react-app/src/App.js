@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { authenticate } from './store/session';
 import LoginPage from './components/LoginPage';
 import SignUpPage from './components/SignUpPage';
+import UserPage from './components/UserPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import MyTastingFeed from './components/MyTastingFeed';
 import LovedFeed from './components/LovedFeed';
@@ -46,6 +47,12 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpPage />
         </Route>
+        <ProtectedRoute path='/profile/:id' exact={true} >
+          <UserPage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/profile/:id/edit' exact={true} >
+          <UserEditPage />
+        </ProtectedRoute>
         <ProtectedRoute path='/tasting' exact={true} >
           <TastingForm />
         </ProtectedRoute>
@@ -71,5 +78,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;
