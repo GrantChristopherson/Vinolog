@@ -4,12 +4,12 @@ from app.models import db, User, Tasting, Discussion
 
 def seed_tasting():
 
-  demo = User(username='Demo', email='demo@demo.io', password='password', followers=[], following=[])
-  oliver = User(username='Oliver', email='oliver@gmail.com', password='password', profile_image='https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[demo], following=[demo])
-  grace = User(username='Grace', email='gracie@gmail.com', password='password', profile_image='https://images.pexels.com/photos/1486213/pexels-photo-1486213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[demo, oliver], following=[oliver])
-  user1 = User(username='Mark', email='mark@gmail.com', password='password', profile_image='https://images.pexels.com/photos/15865898/pexels-photo-15865898/free-photo-of-man-with-cigarette-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[], following=[])
-  user2 = User(username='Gary', email='gary@gmail.com', password='password', profile_image='https://images.pexels.com/photos/1722198/pexels-photo-1722198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[], following=[user1])
-  user3 = User(username='Ron', email='ron@gmail.com', password='password', profile_image='https://images.pexels.com/photos/1975342/pexels-photo-1975342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', followers=[user1, user2], following=[user1])
+  demo = User(username='Demo', email='demo@demo.io', password='password', bio='Just checking things out around here!', followers=[], following=[])
+  oliver = User(username='Oliver', email='oliver@gmail.com', password='password', bio='All about them juicy reds', profile_image='https://profile-photos-vinolog.s3.us-west-1.amazonaws.com/pexels-photo-1729931.jpeg', followers=[demo], following=[demo])
+  grace = User(username='Grace', email='gracie@gmail.com', password='password', bio='Working on my Somm skills', profile_image='https://profile-photos-vinolog.s3.us-west-1.amazonaws.com/pexels-photo-1486213.jpeg', followers=[demo, oliver], following=[oliver])
+  user1 = User(username='Mark', email='mark@gmail.com', password='password', bio='Who am I kidding, I love all wine!', profile_image='https://profile-photos-vinolog.s3.us-west-1.amazonaws.com/free-photo-of-man-with-cigarette-in-black-and-white.jpeg', followers=[], following=[])
+  user2 = User(username='Gary', email='gary@gmail.com', password='password', bio='Wine brat through and through', profile_image='https://profile-photos-vinolog.s3.us-west-1.amazonaws.com/pexels-photo-1722198.jpeg', followers=[], following=[user1])
+  user3 = User(username='Ron', email='ron@gmail.com', password='password', bio='My palate leans towards crisp and lean whites, but trying to expand...', profile_image='https://profile-photos-vinolog.s3.us-west-1.amazonaws.com/pexels-photo-1975342.jpg', followers=[user1, user2], following=[user1])
 
   db.session.add(demo)
   db.session.add(oliver)
@@ -26,7 +26,7 @@ def seed_tasting():
     varietal='Trousseau Noir',
     vintage='2018',
     color='Red',
-    label_image='https://www.wine-searcher.com/images/labels/82/14/11428214.jpg',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/11428214.jpg',
     other_info='Small production, 26 barrels',
     sight='Ruby, legs move quickly... low alcohol, no evidence of sediment',
     nose='Fresh Raspberries, currants, granite',
@@ -44,7 +44,7 @@ def seed_tasting():
     varietal='Gruner Veltliner',
     vintage='2016',
     color='White',
-    label_image='https://images.vivino.com/thumbs/w2WXtVQlRxSPYwQgy8YgBQ_pb_600x600.png',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/w2WXtVQlRxSPYwQgy8YgBQ_pb_600x600.png',
     other_info='Federspiel',
     sight='Star Bright, straw, maybe amber',
     nose='Stone Fruit, white Flowers, Almond',
@@ -62,7 +62,7 @@ def seed_tasting():
     varietal='Pelaverga Piccolo',
     vintage='2019',
     color='Red',
-    label_image='https://shop.thewinethief.com/images/sites/thewinethief/labels/fratelli-alessandria-speziale-pelaverga-verduno_1.jpg',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/fratelli-alessandria-speziale-pelaverga-verduno_1.jpeg',
     other_info='DOC, indigenous to the region',
     sight='Garnet, very light bodied, some fine bubbles present',
     nose='under ripe strawberry, potting soil',
@@ -80,7 +80,7 @@ def seed_tasting():
     varietal='Pinot Noir',
     vintage='2016',
     color='Red',
-    label_image='https://cdn.ct-static.com/labels/925de1d1-6e03-4635-a3d4-3da6badea147.jpg',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/925de1d1-6e03-4635-a3d4-3da6badea147.jpeg',
     other_info='I think the grapes are grown near Monterey',
     sight='light plum color, no sediment',
     nose='baked cherries, hibiscus, dried roses petals',
@@ -98,7 +98,7 @@ def seed_tasting():
     varietal='Cortese',
     vintage='2016',
     color='White',
-    label_image='https://s2.wine.style/images_gen/776/77665/0_0_prod_desktop.jpg',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/0_0_prod_desktop.jpeg',
     other_info='Gavi de Gavi, grown in clay and marl soil',
     sight='light yellow almost green hue',
     nose='under ripe pear and apple, slate, cinnamon',
@@ -116,7 +116,7 @@ def seed_tasting():
     varietal='Grecanico',
     vintage='2021',
     color='Orange',
-    label_image='https://primalwine.com/cdn/shop/products/cos-pithos-bianco-natural-wine-primal-wine_540x.jpg?v=1641332656',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/cos-pithos-bianco-natural-wine-primal-wine_540x.jpg',
     other_info='orange wine is just white wine with more skin contact! Who knew??',
     sight='amber colored, a bit of sediment',
     nose='baked apples and honeysuckle',
@@ -134,7 +134,7 @@ def seed_tasting():
     varietal='Sylvaner',
     vintage='2018',
     color='White',
-    label_image='https://pbs.twimg.com/media/FH4e8s_XMAUlKI8?format=webp&name=900x900',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/FH4e8s_XMAUlKI8.jpg',
     other_info='Northern, high altitude region.  Bavarian history, hence German sounding name.',
     sight='transparent pale greenish yellow',
     nose='tropical fruit and flowers',
@@ -170,7 +170,7 @@ def seed_tasting():
     varietal='Nerello Mascalese',
     vintage='2020',
     color='Red',
-    label_image='https://www.wine.com/product/images/w_767,c_fit,q_auto:good,fl_progressive/buanoi8enea6z0yjnywp.jpg',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/buanoi8enea6z0yjnywp.jpeg',
     other_info='Northern side of Mount Etna, cooler climate, neutral oak barrels',
     sight='Deep purple',
     nose='Blackberries, herbaceous and earthy',
@@ -188,7 +188,7 @@ def seed_tasting():
     varietal='Chardonnay and Pinot Noir',
     vintage='NV',
     color='Sparkling',
-    label_image='https://www.zachys.com/media/catalog/product/e/g/egly-ouriet-brut-grandcru-nv-new.jpg?optimize=on&bg-color=255,255,255&fit=bounds&height=&width=',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/egly-ouriet-brut-grandcru-nv-new.jpg',
     other_info='Grand Cru',
     sight='fine bubbles, golden color',
     nose='Yellow apples mainly but white flowers and chalk too.',
@@ -205,7 +205,7 @@ def seed_tasting():
     varietal='Malvasia Bianca',
     vintage='2021',
     color='White',
-    label_image='https://shop.onwardwines.com/assets/images/products/pictures/OnwardMalvasiaBianca2021.png',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/OnwardMalvasiaBianca2021.png',
     other_info='',
     sight='dark yellow, maybe even honey colored',
     nose='Melon and quince and orange zest',
@@ -223,7 +223,7 @@ def seed_tasting():
     varietal='Cabernet Sauvignon',
     vintage='2019',
     color='Red',
-    label_image='https://www.mrdwine.com/cdn/shop/files/MatthiassonCabernetSauvignon2019_37b584fb-a27b-4f41-aa8a-3ecbf12b56a3_470x.png?v=1689628911',
+    label_image='https://wine-labels-vinolog.s3.us-west-1.amazonaws.com/MatthiassonCabernetSauvignon2019_37b584fb-a27b-4f41-aa8a-3ecbf12b56a3_470x.jpg',
     other_info='Robert Mathiasson has made wine for many of the best CA wine producers',
     sight='Inky purple',
     nose='Black cherries, blueberries and baking spice',
