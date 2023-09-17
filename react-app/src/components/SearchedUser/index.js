@@ -11,6 +11,7 @@ const SearchedUser = ( {user} ) => {
 // so can not edit, but see some specifics?
   
 
+
   return (
     <div className="listed_user_container">
       <span>
