@@ -29,9 +29,14 @@ def upload_to_s3(file):
     
     filename = file.filename
     bucket_name = 'wine-labels-vinolog'
-    s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
+    try:
+      s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
+      
+      return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
     
-    return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
+    except boto3.exceptions.S3UploadFailedError as e:
+      print(f"Upload failed: {e}")
+  
 
 
 
