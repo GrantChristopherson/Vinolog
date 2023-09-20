@@ -25,6 +25,7 @@ s3 = boto3.client('s3',
 
 
 def upload_to_s3(file):
+    
     """Upload a file to your S3 bucket and return its public URL."""
     
     filename = file.filename
