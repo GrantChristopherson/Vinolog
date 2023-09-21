@@ -120,7 +120,7 @@ const TastingForm = () => {
     if (isSubmitting) {
       return;
     };
-
+    console.log(formData.labelImage)
     setIsSubmitting(true);
   
     dispatch(createTastingThunk(formData)).then((response) => {
