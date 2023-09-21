@@ -6,15 +6,21 @@ from sqlalchemy import or_
 
 import boto3
 from app.config import Config
+import uuid
+import mimetypes
+import botocore
 
-# import logging
-# logging.basicConfig(level=logging.DEBUG)
-# logger = logging.getLogger(__name__)
-# logger.debug("Starting Flask application.")
+import logging
+logging.basicConfig(level=logging.INFO,  # Can also use DEBUG, ERROR, etc.
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+logger = logging.getLogger(__name__)
+
 
 
 
 tasting_routes = Blueprint('tastings', __name__)
+
 
 
 s3 = boto3.client('s3', 
@@ -23,21 +29,35 @@ s3 = boto3.client('s3',
                   region_name=Config.AWS_DEFAULT_REGION)
 
 
-
 def upload_to_s3(file):
-    
     """Upload a file to your S3 bucket and return its public URL."""
     
-    filename = file.filename
+    # Use the original filename, but prefix it with a UUID to avoid potential collisions
+    filename = str(uuid.uuid4()) + "_" + file.filename
     bucket_name = 'wine-labels-vinolog'
-    try:
-      s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
-      
-      return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
     
-    except boto3.exceptions.S3UploadFailedError as e:
-      print(f"Upload failed: {e}")
-  
+    # Guess the file's content type (useful for images, for example)
+    content_type = mimetypes.guess_type(filename)[0] or 'application/octet-stream'
+
+    try:
+        s3.upload_fileobj(
+            file,
+            bucket_name,
+            filename,
+            ExtraArgs={
+                "ACL": "public-read",
+                "ContentType": content_type
+            }
+        )
+        logger.info(f"File {filename} uploaded successfully to {bucket_name}.")
+        return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
+    
+    except botocore.exceptions.BotoCoreError as e:
+        logger.error(f"BotoCoreError encountered: {e}")
+    except botocore.exceptions.ClientError as e:
+        logger.error(f"ClientError encountered: {e}")
+
+    return None
 
 
 
