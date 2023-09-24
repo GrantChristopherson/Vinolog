@@ -32,11 +32,11 @@ s3 = boto3.client('s3',
 def upload_to_s3(file):
     """Upload a file to your S3 bucket and return its public URL."""
     
-    # Use the original filename, but prefix it with a UUID to avoid potential collisions
+    # Uses the original filename, but prefix it with a UUID to avoid potential collisions
     filename = str(uuid.uuid4()) + "_" + file.filename
     bucket_name = 'wine-labels-vinolog'
     
-    # Guess the file's content type (useful for images, for example)
+    # Guessing the file's content type (because it is useful for images)
     content_type = mimetypes.guess_type(filename)[0] or 'application/octet-stream'
 
     try:
