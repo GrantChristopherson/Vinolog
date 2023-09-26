@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import SearchForm from '../SearchForm';
 import './sidebar.css';
@@ -7,6 +8,8 @@ import './sidebar.css';
 
 
 const Sidebar = () => {
+
+  const user = useSelector(state => state?.session?.user);
 
 
 
@@ -25,6 +28,9 @@ const Sidebar = () => {
         </NavLink>
         <NavLink to='/friendsinthefield' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
           Friends In The Field
+        </NavLink>
+        <NavLink to={`/profile/${user.id}`} className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
+          {`${user.username}'s Profile`}
         </NavLink>
       </div>
     </div>
