@@ -30,7 +30,7 @@ const Sidebar = () => {
           Friends In The Field
         </NavLink>
         <NavLink to={`/profile/${user.id}`} className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
-          {`${user.username}'s Profile`}
+          My Profile
         </NavLink>
       </div>
     </div>
