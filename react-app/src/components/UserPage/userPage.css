@@ -2,3 +2,18 @@
   display: flex;
   flex-direction: row;
 }
+
+.edit_user {
+  font-size: 12px;
+  text-decoration: none;
+  background-color: transparent;
+  color: rgba(252, 237, 214, .8);
+  border: 0;
+}
+
+.edit_user:hover {
+  color: #788c22;
+  text-decoration: underline;
+  cursor: pointer;
+  transition-duration: 500ms;
+}
