@@ -1,3 +1,16 @@
+.user_body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 150px;
+  padding: 50px 100px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255);
+  opacity: .7;
+  width: 40%;
+  min-width: 550px;
+}
+
 .profile_image_bio_container {
   display: flex;
   flex-direction: row;
