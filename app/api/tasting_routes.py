@@ -21,7 +21,25 @@ logger = logging.getLogger(__name__)
 
 tasting_routes = Blueprint('tastings', __name__)
 
-
+# previous permissions
+# {
+#     "Version": "2012-10-17",
+#     "Statement": [
+#         {
+#             "Sid": "AddPerm",
+#             "Effect": "Allow",
+#             "Principal": {
+#                 "AWS": "arn:aws:iam::231616480626:user/S3VinologUser"
+#             },
+#             "Action": [
+#                 "s3:PutObject",
+#                 "s3:GetObject",
+#                 "s3:DeleteObject"
+#             ],
+#             "Resource": "arn:aws:s3:::wine-labels-vinolog/*"
+#         }
+#     ]
+# }
 
 s3 = boto3.client('s3', 
                   aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
