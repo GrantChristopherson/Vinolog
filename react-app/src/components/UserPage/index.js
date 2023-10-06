@@ -22,7 +22,10 @@ const UserPage = () => {
           <div className="user_body">
             <h2 className='user_header'>{`${user.username}'s Profile`}</h2>
             <div className="profile_image_bio_container">
-              <div className="profile_image">{user.profileImage}</div>
+              <div className="user_profile_image_container">
+                {user.profileImage ? <img className='user_profile_image' src={user.profileImage} alt='profile'/>
+                : <i className='fa-solid fa-user default-profile-image' />}
+              </div>
               <span>{user.bio}</span>
             </div>
             <NavLink to={`/profile/${user.id}/edit`} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
