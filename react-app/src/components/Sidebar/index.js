@@ -17,8 +17,8 @@ const Sidebar = () => {
     <div className='sidebar'>
       <SearchForm />
       <div className='sidebar_links_container'>
-        <NavLink to='/lovedtastings' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
-          Loved Wines
+        <NavLink to={`/profile/${user.id}`} className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
+          My Profile
         </NavLink>
         <NavLink to='/tastings' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
           My Wine Tastings
@@ -29,8 +29,8 @@ const Sidebar = () => {
         <NavLink to='/friendsinthefield' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
           Friends In The Field
         </NavLink>
-        <NavLink to={`/profile/${user.id}`} className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
-          My Profile
+        <NavLink to='/lovedtastings' className={'sidebar_links'} exact={true} activeClassName='active_sidebar' style={{textDecoration: 'none'}}>
+          Loved Wines
         </NavLink>
       </div>
     </div>
