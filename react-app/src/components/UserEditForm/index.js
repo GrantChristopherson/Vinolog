@@ -137,7 +137,7 @@ const UserEditForm = () => {
               value={formData.bio}
               ></input> 
             </div>
-            <div className='edit_user_submit_container'>
+            <div className='edit_submit_container'>
               {!isSubmitting && <button className='update_user_button' type='submitEditUser'>Update</button>}
               <NavLink to={`/profile/${user.id}`} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
                 <h4 className='edit_user' >Cancel</h4>
