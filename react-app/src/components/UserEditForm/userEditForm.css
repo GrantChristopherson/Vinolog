@@ -4,3 +4,20 @@
   justify-content: space-between;
   margin: 12px 0;
 }
+
+.update_user_button {
+  padding: 5px 20px;
+  height: 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  background-color: rgb(198 192 163);
+  color: rgb(103, 10, 21);
+  border: 0;
+}
+
+.update_user_button:hover {
+  background-color: rgba(102, 105, 27, .9);
+  color: rgb(243, 218, 201);
+  cursor: pointer;
+  transition-duration: 300ms;
+}
