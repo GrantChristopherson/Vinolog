@@ -4,11 +4,12 @@ from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
 
-import boto3
 from app.config import Config
+import boto3
+import botocore
 import uuid
 import mimetypes
-import botocore
+
 
 import logging
 logging.basicConfig(level=logging.INFO,  # Can also use DEBUG, ERROR, etc.
