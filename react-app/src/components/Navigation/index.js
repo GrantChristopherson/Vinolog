@@ -37,6 +37,9 @@ const Navigation = () => {
             <h1 className ='logo_logged_in' style={{textDecoration: 'none'}}>- V  I  N  O  L  O  G -</h1>
           </NavLink>
           <div className='logout_container'>
+            <NavLink to={`/profile/${user.id}`} className={'profile_link'} exact={true} style={{textDecoration: 'none'}}>
+              My Profile
+            </NavLink>
             <LogoutButton />
           </div>
         </ul>

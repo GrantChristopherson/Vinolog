@@ -123,3 +123,15 @@
    width: 800px;
   }
 }
+
+.profile_link {
+  color: #fcedd6;
+  font-size: 14px;
+  font-style: italic;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(50, 50, 50, .9);
+    transition-duration: 500ms;
+  }
+}
