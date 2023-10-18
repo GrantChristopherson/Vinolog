@@ -28,9 +28,11 @@ const UserPage = () => {
               </div>
               <span className="profile_bio">{user.bio}</span>
             </div>
-            <NavLink to={`/profile/${user.id}/edit`} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
-              <h4 className='edit_user' >Edit</h4>
-            </NavLink>
+            <div className="edit_user_container">
+              <NavLink to={`/profile/${user.id}/edit`} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
+                <h4 className='edit_user' >Edit</h4>
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

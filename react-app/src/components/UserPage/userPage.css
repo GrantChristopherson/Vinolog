@@ -31,6 +31,12 @@
   margin: 20px 0;
 }
 
+.edit_user_container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0 0 0;
+}
+
 .edit_user {
   font-size: 12px;
   text-decoration: none;
