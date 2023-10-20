@@ -1,3 +1,18 @@
+.user_edit_label {
+  color: rgb(103, 10, 21);
+}
+
+.edit_profile_image_input_container {
+  margin-top: 20px;
+}
+
+.info_input.bio {
+  margin-top: 10px;
+}
+
+.edit_bio_input_container {
+  margin: 20px 0;
+}
 
 .edit_submit_container {
   display: flex;
