@@ -115,7 +115,7 @@ const UserEditForm = () => {
                 <div className='errors'>{errors.profileImage}</div>
               </div>
               }
-              <label htmlFor="profileImage">Upload a profile photo...</label>
+              <label className='user_edit_label'>Upload a profile photo...</label>
               <input className='file_input'
               type='file'
               name='profileImage'
@@ -129,7 +129,8 @@ const UserEditForm = () => {
                 <div className='errors'>{errors.bio}</div>
               </div>
               }
-              <input className='info_input'
+              <label className='user_edit_label'>Update your one-liner...</label>
+              <input className='info_input bio'
               type='text'
               name='bio'
               onChange={handleInputChange}
