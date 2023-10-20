@@ -115,12 +115,12 @@ const UserEditForm = () => {
                 <div className='errors'>{errors.profileImage}</div>
               </div>
               }
+              <label htmlFor="profileImage">Upload a profile photo...</label>
               <input className='file_input'
               type='file'
               name='profileImage'
               onChange={handleInputChange}
               ref={fileInputRef}
-              placeholder='Upload a profile photo...'
               value={formData.profileImage}
               ></input> 
             </div>
