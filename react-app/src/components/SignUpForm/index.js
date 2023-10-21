@@ -153,37 +153,6 @@ const SignUpForm = () => {
             autoComplete='email'
           ></input>
         </div>
-        {/* <div className='input_container'>
-          {errors?.profileImageError !== undefined && <div className='error_messages'>
-                      <div className='errors'>{errors.profileImageError}</div>
-                    </div>
-                    }
-          <input className='form_input'
-            id='profileImage'
-            name='profileImage'
-            type='text'
-            placeholder='Profile Image URL'
-            value={profileImage}
-            onChange={updateProfileImage}
-            autoComplete='profileImage'
-          ></input>
-        </div> */}
-        <div className='input_container'>
-              {errors?.profileImageError !== undefined && <div className='error_messages'>
-                <div className='errors'>{errors.profileImageError}</div>
-              </div>
-              }
-              <input className='file_input'
-              id='profileImage'
-              type='file'
-              name='profileImage'
-              onChange={updateProfileImage}
-              autoComplete='profileImage'
-              ref={fileInputRef}
-              placeholder='Upload a profile photo...'
-              value={profileImage}
-              ></input> 
-            </div>
         <div className='input_container'>
           {errors?.passwordError !== undefined && <div className='error_messages'>
                         <div className='errors'>{errors.passwordError}</div>
@@ -209,6 +178,23 @@ const SignUpForm = () => {
             onChange={updateRepeatPassword}
             autoComplete='new-password'
           ></input>
+        <div className='input_container'>
+              {errors?.profileImageError !== undefined && <div className='error_messages'>
+                <div className='errors'>{errors.profileImageError}</div>
+              </div>
+              }
+              <label className='user_edit_label'>Upload a profile photo...</label>
+              <input className='file_input'
+              id='profileImage'
+              type='file'
+              name='profileImage'
+              onChange={updateProfileImage}
+              autoComplete='profileImage'
+              ref={fileInputRef}
+              placeholder='Upload a profile photo...'
+              value={profileImage}
+              ></input> 
+            </div>
         </div>
         <div className='signup_button_container'>
           <button className='signup_button' type='submit'>Sign Up</button>
