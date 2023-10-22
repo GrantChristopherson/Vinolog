@@ -34,6 +34,17 @@
   outline: none;
 }
 
+.file_input_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_profile_label {
+  margin: 10px 0 0 12px;
+  font-size: 14px;
+  color: rgb(103, 10, 21);
+}
+
 .signup_button_container {
   display: flex;
   align-items: center;

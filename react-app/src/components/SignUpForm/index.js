@@ -178,12 +178,12 @@ const SignUpForm = () => {
             onChange={updateRepeatPassword}
             autoComplete='new-password'
           ></input>
-        <div className='input_container'>
+        <div className='file_input_container'>
               {errors?.profileImageError !== undefined && <div className='error_messages'>
                 <div className='errors'>{errors.profileImageError}</div>
               </div>
               }
-              <label className='user_edit_label'>Upload a profile photo...</label>
+              <label className='user_profile_label'>Upload a profile photo...</label>
               <input className='file_input'
               id='profileImage'
               type='file'
