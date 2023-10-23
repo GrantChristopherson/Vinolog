@@ -19,7 +19,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 12px 0;
+  margin: 20px 0;
+  
 }
 
 .update_user_button {
