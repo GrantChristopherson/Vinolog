@@ -91,6 +91,10 @@
   border: 0;
 }
 
+.file_input:hover {
+  cursor: pointer;
+}
+
 .love_container {
   display: flex;
   justify-content: flex-start;
