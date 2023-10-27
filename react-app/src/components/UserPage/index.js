@@ -18,7 +18,7 @@ const UserPage = () => {
       <Navigation />
       <div className="sidebar_body_container">
         <Sidebar />
-        <div className="feed_page">
+        <div className="user_page">
           <div className="user_body">
             <h2 className='profile_header'>{`${user.username}'s Profile`}</h2>
             <div className="profile_image_bio_container">
