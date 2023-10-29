@@ -17,7 +17,7 @@ const UserEditPage = () => {
       <Navigation />
       <div className="sidebar_body_container">
         <Sidebar />
-        <div className="feed_page">
+        <div className="user_page">
           <div className="user_body">
             <UserEditForm />
           </div>

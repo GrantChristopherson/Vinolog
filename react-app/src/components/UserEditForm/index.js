@@ -110,7 +110,7 @@ const UserEditForm = () => {
     <>
       <form className='user_edit_form' onSubmit={handleSubmit}>
         <h2 className='profile_header'>{`Edit ${user.username}'s Profile`}</h2>
-        <div className='edit_profile_image_input_container'>
+        <div className='file_input_container'>
               {errors?.profileImage !== undefined && <div className='error'>
                 <div className='errors'>{errors.profileImage}</div>
               </div>
