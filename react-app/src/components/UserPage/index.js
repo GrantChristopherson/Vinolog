@@ -35,6 +35,12 @@ const UserPage = () => {
             </div>
           </div>
         </div>
+        <div className='friend_list_container'>
+          <span className='field_title'>Your Stats</span>
+          <div className='field_list'>
+            {/* stats to add ... how many tastings total, loved total, cheered wines total, users cheered your wines... */}
+          </div>
+        </div>
       </div>
       <Footer />
     </>
