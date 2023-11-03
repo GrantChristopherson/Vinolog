@@ -1,5 +1,7 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { getMyTastingsThunk } from '../../store/tasting';
 import Navigation from "../Navigation";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";
@@ -10,7 +12,18 @@ import './userPage.css';
 
 const UserPage = () => {
 
+  const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
+  const tastings = useSelector(state => Object.values(state.tasting.tastings));
+  const userTastings = tastings.filter(tasting => tasting.user.id === user?.id);
+
+  const total = () => {
+    return userTastings.length;
+  };
+
+  useEffect(() => {
+    (()=> dispatch(getMyTastingsThunk()))();
+  }, [dispatch])
 
   
   return (
@@ -39,6 +52,10 @@ const UserPage = () => {
           <span className='field_title'>Your Stats</span>
           <div className='field_list'>
             {/* stats to add ... how many tastings total, loved total, cheered wines total, users cheered your wines... */}
+            <span><h5>Total Tastings : </h5><h6>{total()}</h6></span>
+            <span><h5>Loved Tastings : </h5><h6>{}</h6></span>
+            <span><h5>Tastings You've Cheered: </h5><h6>{}</h6></span>
+            <span><h5>User's Cheered Your Tastings : </h5><h6>{}</h6></span>
           </div>
         </div>
       </div>
