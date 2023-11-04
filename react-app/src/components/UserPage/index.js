@@ -16,9 +16,14 @@ const UserPage = () => {
   const user = useSelector(state => state?.session?.user);
   const tastings = useSelector(state => Object.values(state.tasting.tastings));
   const userTastings = tastings.filter(tasting => tasting.user.id === user?.id);
+  const lovedTastings = tastings.filter(tasting => tasting.love === true);
 
   const total = () => {
     return userTastings.length;
+  };
+
+  const loved = () => {
+    return lovedTastings.length;
   };
 
   useEffect(() => {
@@ -50,12 +55,20 @@ const UserPage = () => {
         </div>
         <div className='friend_list_container'>
           <span className='field_title'>Your Stats</span>
-          <div className='field_list'>
-            {/* stats to add ... how many tastings total, loved total, cheered wines total, users cheered your wines... */}
-            <span><h5>Total Tastings : </h5><h6>{total()}</h6></span>
-            <span><h5>Loved Tastings : </h5><h6>{}</h6></span>
-            <span><h5>Tastings You've Cheered: </h5><h6>{}</h6></span>
-            <span><h5>User's Cheered Your Tastings : </h5><h6>{}</h6></span>
+          <div className='stats_list'>
+            {/* stats to add ... loved total, cheered wines total, users cheered your wines... */}
+            <div className="field_list_item">
+              <h5>Total Tastings : </h5><h6>{total()}</h6>
+            </div>
+            <div className="field_list_item">
+              <h5>Loved Tastings : </h5><h6>{loved()}</h6>
+            </div>
+            <div className="field_list_item">
+              <h5>Tastings You've Cheered : </h5><h6>{}</h6>
+            </div>
+            <div className="field_list_item">
+              <h5>User's Cheered Your Tastings : </h5><h6>{}</h6>
+            </div>
           </div>
         </div>
       </div>
