@@ -16,15 +16,21 @@ const UserPage = () => {
   const user = useSelector(state => state?.session?.user);
   const tastings = useSelector(state => Object.values(state.tasting.tastings));
   const userTastings = tastings.filter(tasting => tasting.user.id === user?.id);
-  const lovedTastings = tastings.filter(tasting => tasting.love === true);
+  const lovedTastings = tastings.filter(tasting => tasting.love === true && tasting.user.id === user?.id);
+  const friends = useSelector((state) => Object.values(state.field.friends));
 
-  const total = () => {
+  const tastingTotal = () => {
     return userTastings.length;
   };
 
   const loved = () => {
     return lovedTastings.length;
   };
+
+  const friendCount = (friends) => {
+    return friends.length; 
+  };
+
 
   useEffect(() => {
     (()=> dispatch(getMyTastingsThunk()))();
@@ -56,19 +62,22 @@ const UserPage = () => {
         <div className='friend_list_container'>
           <span className='field_title'>Your Stats</span>
           <div className='stats_list'>
-            {/* stats to add ... loved total, cheered wines total, users cheered your wines... */}
+            {/* stats to add ... cheered wines total, users cheered your wines... */}
             <div className="field_list_item">
-              <h5>Total Tastings : </h5><h6>{total()}</h6>
+              <h5>Total Tastings : </h5><h6>{tastingTotal()}</h6>
             </div>
             <div className="field_list_item">
               <h5>Loved Tastings : </h5><h6>{loved()}</h6>
             </div>
             <div className="field_list_item">
+              <h5>Friends In Your Field : </h5><h6>{friendCount(friends)}</h6>
+            </div>
+            {/* <div className="field_list_item">
               <h5>Tastings You've Cheered : </h5><h6>{}</h6>
             </div>
             <div className="field_list_item">
               <h5>User's Cheered Your Tastings : </h5><h6>{}</h6>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
