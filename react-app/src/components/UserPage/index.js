@@ -16,7 +16,7 @@ const UserPage = () => {
   const user = useSelector(state => state?.session?.user);
   const tastings = useSelector(state => Object.values(state.tasting.tastings));
   const userTastings = tastings.filter(tasting => tasting.user.id === user?.id);
-  const lovedTastings = tastings.filter(tasting => tasting.loved === true);
+  const lovedTastings = tastings.filter(tasting => tasting.love === true);
 
   const total = () => {
     return userTastings.length;
