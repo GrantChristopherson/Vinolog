@@ -63,6 +63,19 @@
   transition-duration: 500ms;
 }
 
+.stats_list {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.field_list_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: rgba(252, 237, 214, .6);
+}
+
 /* Styles for screens less wide than 1600px */
 @media only screen and (min-width: 1599px) {
 
