@@ -41,6 +41,8 @@ tasting_routes = Blueprint('tastings', __name__)
 #         }
 #     ]
 # }
+## ------------------------------------------------------------------------------------------
+
 
 s3 = boto3.client('s3', 
                   aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
@@ -79,18 +81,7 @@ def upload_to_s3(file):
     return None
 
 
-
-# def validation_errors_to_error_messages(validation_errors):
-#   """
-#   Simple function that turns the WTForms validation errors into a simple list
-#   """
-  
-  # errorMessages = []
-  # for field in validation_errors:
-  #     for error in validation_errors[field]:
-  #         errorMessages.append(f'{field} : {error}')
-  # return errorMessages
-
+# ------------------------------------------------------------------------------------------
 
 
 # Get current user's tasting cards

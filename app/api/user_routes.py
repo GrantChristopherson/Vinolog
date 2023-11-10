@@ -9,6 +9,8 @@ from app.config import Config
 user_routes = Blueprint('users', __name__)
 
 
+# ------------------------------------------------------------------------------------------
+
 
 s3 = boto3.client('s3', 
                   aws_access_key_id=Config.AWS_ACCESS_KEY_ID, 
@@ -27,6 +29,7 @@ def upload_to_s3(file):
     return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
 
 
+# ------------------------------------------------------------------------------------------
 
 
 # Get all users
