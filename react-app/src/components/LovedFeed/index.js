@@ -24,6 +24,7 @@ const AllLovedFeed = () => {
   const lovedTastings = allTastings.filter(tasting => tasting.love);
   const discussionTasting = lovedTastings.filter(tasting => tasting.id === tastingId);
   
+
   useEffect(() => {
     (() => {
       dispatch(getAllLovedTastingsThunk());
@@ -31,6 +32,7 @@ const AllLovedFeed = () => {
     })();
   }, [dispatch, user.id]);
 
+  
   const discussionCloser = (e) => {
     if (!showDiscussion) {
       return
