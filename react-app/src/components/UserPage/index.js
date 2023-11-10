@@ -61,7 +61,7 @@ const UserPage = () => {
             </div>
           </div>
         </div>
-        <div className='friend_list_container'>
+        <div className='stat_list_container'>
           <span className='field_title'>Your Stats</span>
           <div className='stats_list'>
             {/* stats to add ... cheered wines total, users cheered your wines... */}
