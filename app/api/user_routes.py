@@ -6,7 +6,10 @@ import boto3
 from app.config import Config
 
 
+
+
 user_routes = Blueprint('users', __name__)
+
 
 
 # ------------------------------------------------------------------------------------------
@@ -27,6 +30,8 @@ def upload_to_s3(file):
     s3.upload_fileobj(file, bucket_name, filename, ExtraArgs={"ACL": "public-read"})
     
     return f"https://{bucket_name}.s3.amazonaws.com/{filename}"
+
+
 
 
 # ------------------------------------------------------------------------------------------

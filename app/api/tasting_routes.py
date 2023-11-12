@@ -9,12 +9,10 @@ import boto3
 import botocore
 import uuid
 import mimetypes
-
-
 import logging
+
 logging.basicConfig(level=logging.INFO,  # Can also use DEBUG, ERROR, etc.
                     format='%(asctime)s - %(levelname)s - %(message)s')
-
 logger = logging.getLogger(__name__)
 
 
@@ -22,25 +20,9 @@ logger = logging.getLogger(__name__)
 
 tasting_routes = Blueprint('tastings', __name__)
 
-# previous permissions
-# {
-#     "Version": "2012-10-17",
-#     "Statement": [
-#         {
-#             "Sid": "AddPerm",
-#             "Effect": "Allow",
-#             "Principal": {
-#                 "AWS": "arn:aws:iam::231616480626:user/S3VinologUser"
-#             },
-#             "Action": [
-#                 "s3:PutObject",
-#                 "s3:GetObject",
-#                 "s3:DeleteObject"
-#             ],
-#             "Resource": "arn:aws:s3:::wine-labels-vinolog/*"
-#         }
-#     ]
-# }
+
+
+
 ## ------------------------------------------------------------------------------------------
 
 
