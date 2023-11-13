@@ -88,6 +88,7 @@
   flex-direction: row;
   justify-content: space-between;
   color: rgba(252, 237, 214, .6);
+  border-bottom: black;
 }
 
 /* Styles for screens less wide than 1600px */
