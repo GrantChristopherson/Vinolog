@@ -19,6 +19,7 @@ const UserPage = () => {
   const lovedTastings = tastings.filter(tasting => tasting.love === true && tasting.user.id === user?.id);
   const friends = useSelector((state) => Object.values(state.field.friends));
 
+  
   const tastingTotal = () => {
     return userTastings.length;
   };
