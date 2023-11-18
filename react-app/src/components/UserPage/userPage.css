@@ -4,7 +4,6 @@
   align-items: center;
   flex: 1;
   margin: 0 340px;
-  padding: 120px 0;
   overflow-y: scroll;
 }
 
@@ -12,7 +11,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 150px 200px 150px;
   padding: 30px 50px;
   border-radius: 30px;
   background-color: rgba(255, 255, 255);
