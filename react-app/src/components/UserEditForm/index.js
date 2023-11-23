@@ -107,7 +107,6 @@ const UserEditForm = () => {
 
 
   return (
-    <>
       <form className='user_edit_form' onSubmit={handleSubmit}>
         <h2 className='profile_header'>{`Edit ${user.username}'s Profile`}</h2>
         <div className='file_input_container'>
@@ -145,7 +144,6 @@ const UserEditForm = () => {
               </NavLink>
             </div>
       </form>
-    </>
   );
 
 };
