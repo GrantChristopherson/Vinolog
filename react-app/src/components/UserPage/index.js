@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import './userPage.css';
 
 
-
+// connect to api queries for appropriate stats
 
 const UserPage = () => {
 
