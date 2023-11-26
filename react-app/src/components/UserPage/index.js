@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import './userPage.css';
 
 
-// connect to api queries for appropriate stats
+// connect to api queries for appropriate stats, user's cheers count and other users cheersing your tastings
 
 const UserPage = () => {
 
