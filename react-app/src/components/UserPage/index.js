@@ -74,12 +74,12 @@ const UserPage = () => {
             <div className="field_list_item">
               <h5>Friends In Your Field : </h5><h6>{friendCount(friends)}</h6>
             </div>
-            <div className="field_list_item">
+            {/* <div className="field_list_item">
               <h5>Tastings You've Cheered : </h5><h6>{}</h6>
             </div>
             <div className="field_list_item">
               <h5>User's Cheered Your Tastings : </h5><h6>{}</h6>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
