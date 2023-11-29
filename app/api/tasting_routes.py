@@ -3,7 +3,6 @@ from flask_login import login_required, current_user
 from app.models import db, Tasting, User
 from app.forms.tasting_form import TastingForm
 from sqlalchemy import or_
-
 from app.config import Config
 import boto3
 import botocore
