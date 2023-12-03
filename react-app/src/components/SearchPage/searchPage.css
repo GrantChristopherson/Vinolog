@@ -17,10 +17,11 @@
 
 .search_title_tastings {
   margin: 0 150px;
-  padding-right: 300px;
-  padding-bottom: 20px;
+  /* padding-right: 300px; */
+  /* padding-bottom: 1px; */
   font-size: 18px;
   color: rgba(252, 237, 214, .8);
+  border-bottom: 1px solid rgba(252, 237, 214, .8);
 }
 
 .user_results_container {
@@ -38,8 +39,9 @@
 }
 
 .search_title_users {
-  padding-right: 280px;
-  padding-bottom: 20px;
+  /* padding-right: 280px; */
+  /* padding-bottom: 20px; */
   font-size: 18px;
   color: rgba(252, 237, 214, .8);
+  border-bottom: 1px solid rgba(252, 237, 214, .8);
 }
