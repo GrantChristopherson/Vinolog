@@ -11,14 +11,16 @@
   margin: 0 150px 20px 150px;
   padding-bottom: 20px;
   font-size: 20px;
-  color: #fcedd6;
+  /* color: #fcedd6; */
+  color: black;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .search_title_tastings {
   margin: 0 150px;
   font-size: 18px;
-  color: rgba(252, 237, 214, .8);
+  /* color: rgba(252, 237, 214, .8); */
+  color: black;
   border-bottom: 1px solid rgba(252, 237, 214, .8);
 }
 
@@ -39,7 +41,8 @@
 .search_title_users {
   padding-right: 250px;
   font-size: 18px;
-  color: rgba(252, 237, 214, .8);
+  /* color: rgba(252, 237, 214, .8); */
+  color: black;
   border-bottom: 1px solid rgba(252, 237, 214, .8);
 }
 
