@@ -48,15 +48,24 @@
 
 /* Styles for screens less wide than 1600px */
 @media only screen and (min-width: 1599px) {
-
+  
+  .user_results_container {
+    
+  }
 }
 
 /* Styles for screens less wide than 1400px */
 @media only screen and (max-width: 1399px) {
 
+  .user_results_container {
+    
+  }
 }
 
 /* Styles for screens shorter than 1000px */
 @media only screen and (max-height: 999px) {
 
+  .user_results_container {
+    
+  }
 }
