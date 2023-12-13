@@ -28,11 +28,11 @@ const SearchPage = () => {
           <span className="search_title">Search of "{searchWord}"</span>
           <span className="search_title_tastings">Wine results:</span>
           <div className="feed_container">
-          {tastings.map((tasting) => {return (
-            <div key={tasting.id} className="tasting_card" >
-            <TastingCard tasting={tasting} />
-            </div>
-          )}).reverse()}
+            {tastings.map((tasting) => {return (
+              <div key={tasting.id} className="tasting_card" >
+              <TastingCard tasting={tasting} />
+              </div>
+            )}).reverse()}
           </div>
           <div className="user_results_container">
             <span className="search_title_users">User results:</span>
