@@ -36,11 +36,11 @@ const SearchPage = () => {
           </div>
           <div className="user_results_container">
             <span className="search_title_users">User results:</span>
-            {users.map((user) => {return (
-              <div key={user.id} className="search_page_user_container" >
-                <SearchedUser user={user}/>
-              </div>
-            )})}
+              {users.map((user) => {return (
+                <div key={user.id} className="search_page_user_container" >
+                  <SearchedUser user={user}/>
+                </div>
+              )})}
           </div>
         </div>
       </div>
