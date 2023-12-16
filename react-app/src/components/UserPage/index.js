@@ -66,19 +66,19 @@ const UserPage = () => {
           <span className='field_title'>Your Stats</span>
           <div className='stats_list'>
             <div className="field_list_item">
-              <h5>Total Tastings : </h5><h6>{tastingTotal()}</h6>
+              <h5>Total Tastings : </h5><div><h6>{tastingTotal()}</h6></div>
             </div>
             <div className="field_list_item">
-              <h5>Loved Tastings : </h5><h6>{loved()}</h6>
+              <h5>Loved Tastings : </h5><div><h6>{loved()}</h6></div>
             </div>
             <div className="field_list_item">
-              <h5>Friends In Your Field : </h5><h6>{friendCount(friends)}</h6>
+              <h5>Friends In Your Field : </h5><div><h6>{friendCount(friends)}</h6></div>
             </div>
             <div className="field_list_item">
-              <h5>Tastings You've Cheered : </h5><h6>{}</h6>
+              <h5>Tastings You've Cheered : </h5><div><h6>{}</h6></div>
             </div>
             <div className="field_list_item">
-              <h5>User's Cheered Your Tastings : </h5><h6>{}</h6>
+              <h5>User's Cheered Your Tastings : </h5><div><h6>{}</h6></div>
             </div>
           </div>
         </div>
