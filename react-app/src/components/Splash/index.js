@@ -15,6 +15,11 @@ const Splash = () => {
       <div className='splash_body_container'>
         <div className='splash_body_image' style={{ backgroundImage: `url(${bottlesBg})` }}>
           <div className='splash_container'>
+          <div className='quote_container'>
+              <div className='splash_quote'>
+                <span className='quote'>"Happy holidays to everyone!"</span>
+              </div>
+            </div>
             <div className='quote_container'>
               <div className='splash_quote'>
                 <span className='quote'>"Wine is a passport to the world."</span>
