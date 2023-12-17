@@ -10,16 +10,16 @@ import uuid
 import mimetypes
 import logging
 
+
 logging.basicConfig(level=logging.INFO,  # Can also use DEBUG, ERROR, etc.
                     format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 
+## ------------------------------------------------------------------------------------------
 
 
 tasting_routes = Blueprint('tastings', __name__)
-
-
 
 
 ## ------------------------------------------------------------------------------------------
