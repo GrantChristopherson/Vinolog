@@ -14,12 +14,14 @@ const Splash = () => {
       <Navigation />
       <div className='splash_body_container'>
         <div className='splash_body_image' style={{ backgroundImage: `url(${bottlesBg})` }}>
-          <div className='splash_container'>
-          <div className='quote_container'>
+          <div className='splash_holiday_container'>
+            <div className='holiday_container'>
               <div className='splash_quote'>
-                <span className='quote'>"Happy holidays to everyone!"</span>
+                <span className='quote'>"Happy holidays to all!"</span>
               </div>
             </div>
+          </div>
+          <div className='splash_container'>
             <div className='quote_container'>
               <div className='splash_quote'>
                 <span className='quote'>"Wine is a passport to the world."</span>
