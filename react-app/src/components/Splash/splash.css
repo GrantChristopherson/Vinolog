@@ -45,7 +45,7 @@
   flex-direction: column;
   justify-content: space-around;
   margin: 20px 0;
-  padding: 15px 0;
+  padding: 20px 20%;
   border-top: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4); 
 }
@@ -68,7 +68,7 @@
   flex-direction: column;
   justify-content: space-around;
   margin: 20px 0;
-  padding: 20px 0;
+  padding: 20px 20%;
   border-top: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4); 
 }
@@ -82,12 +82,12 @@
 }
 
 .quote {
-  margin-bottom: 5px;
   color: rgba(0, 0, 0, 0.9);
   font-size: 20px;
 }
 
 .credit {
+  margin-top: 10px;
   color: rgba(0, 0, 0, 0.9);
   font-size: 18px;
 } 
@@ -107,7 +107,6 @@
   }
 
   .quote {
-    margin-bottom: 10px;
     font-size: 24px;
   }
   
@@ -125,12 +124,11 @@
 @media only screen and (max-width: 1599px) {
 
   .quote_container {
-    padding: 20px 0px;
+    padding: 20px 20%;
 
   }
 
   .quote {
-    margin-bottom: 10px;
     font-size: 14px;
   }
   
