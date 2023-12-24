@@ -17,7 +17,7 @@ const Splash = () => {
           <div className='splash_holiday_container'>
             <div className='holiday_container'>
               <div className='splash_quote'>
-                <span className='quote'>"Happy holidays to all!"</span>
+                <span className='quote'>Happy holidays to all!</span>
               </div>
             </div>
           </div>
