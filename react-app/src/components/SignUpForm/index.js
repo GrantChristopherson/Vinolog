@@ -10,6 +10,7 @@ import './signUpForm.css';
 
 const SignUpForm = () => {
 
+  
   const dispatch = useDispatch();
   const fileInputRef = useRef(null);
   const user = useSelector(state => state.session.user);
