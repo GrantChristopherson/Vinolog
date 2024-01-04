@@ -8,6 +8,7 @@ import './navigation.css';
 
 const Navigation = () => {
 
+  
   const user = useSelector(state => state?.session?.user);
 
   if (!user) {
