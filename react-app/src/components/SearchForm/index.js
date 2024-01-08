@@ -9,7 +9,6 @@ import './searchForm.css';
 
 const SearchForm = () => {
 
-  
   const dispatch = useDispatch();
   const history = useHistory();
   const [searchWord, setSearchWord] = useState('');
