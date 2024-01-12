@@ -8,7 +8,6 @@ import './signUpForm.css';
 // impement aws here
 
 const SignUpForm = () => {
-
   
   const dispatch = useDispatch();
   const fileInputRef = useRef(null);
