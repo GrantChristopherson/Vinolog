@@ -5,7 +5,7 @@ import { signUp } from '../../store/session';
 import './signUpForm.css';
 
 
-// impement aws here
+
 
 const SignUpForm = () => {
   
