@@ -15,6 +15,7 @@ import './lovedFeed.css';
 
 const AllLovedFeed = () => {
 
+  
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.session?.user);
   const allTastings = useSelector(state =>  Object.values(state?.tasting.tastings));
