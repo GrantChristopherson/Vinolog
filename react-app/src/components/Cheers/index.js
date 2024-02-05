@@ -8,6 +8,7 @@ import './cheers.css';
 
 const Cheers = ({ tasting }) => {
 
+  
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
   const[isCheered, setIsCheered] = useState(tasting?.cheers_by?.includes(user?.id));
