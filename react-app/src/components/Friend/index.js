@@ -7,7 +7,6 @@ import './friend.css';
 
 const Friend = (friend) => {
 
-  
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state?.session?.user)
   const friendId = friend.friend.id;
