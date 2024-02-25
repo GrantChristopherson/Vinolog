@@ -8,6 +8,7 @@ import './signUpForm.css';
 
 
 const SignUpForm = () => {
+
   
   const dispatch = useDispatch();
   const fileInputRef = useRef(null);
