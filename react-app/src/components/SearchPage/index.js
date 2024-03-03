@@ -8,7 +8,7 @@ import Footer from '../Footer';
 import './searchPage.css';
 
 
-// needs a styling rework
+// needs more a styling rework
 
 const SearchPage = () => {
 
