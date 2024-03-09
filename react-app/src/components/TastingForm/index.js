@@ -11,8 +11,8 @@ import './tastingForm.css';
 
 
 const TastingForm = () => {
-// need aws work
-
+  // need aws work
+  // fix aws bugs
   const dispatch = useDispatch();
   const history = useHistory();
   const fileInputRef = useRef(null);
