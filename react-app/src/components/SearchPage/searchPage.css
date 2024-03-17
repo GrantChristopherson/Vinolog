@@ -3,6 +3,7 @@
   margin: 0 340px;
   padding: 120px 0;
   overflow-y: scroll;
+  
 }
 
 .search_title {
@@ -13,6 +14,7 @@
   font-size: 20px;
   color: #fcedd6;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  
 }
 
 .search_title_tastings {
@@ -20,6 +22,7 @@
   font-size: 18px;
   color: rgba(252, 237, 214, .8);
   border-bottom: 1px solid rgba(252, 237, 214, .8);
+  
 }
 
 .user_results_container {
@@ -34,6 +37,7 @@
   overflow-y: auto;
   background-color: rgba(39, 39, 38, .5);
   border-left: 1px solid rgba(252, 237, 214, .5);
+  
 }
 
 .search_title_users {
