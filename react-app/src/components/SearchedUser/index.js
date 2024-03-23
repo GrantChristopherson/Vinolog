@@ -9,7 +9,7 @@ const SearchedUser = ( {user} ) => {
 //friending possible as well
 // maybe an ability to view a version if you are NOT the user,
 // so can not edit, but see some specifics?
-  // style updates
+  // style updates need to be prioritized
 
   return (
     <div className="listed_user_container">
