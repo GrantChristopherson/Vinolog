@@ -4,7 +4,7 @@ import SearchForm from '../SearchForm';
 import './sidebar.css';
 
 
-
+// modernize sidebar for better user experience, reduction of sidebar when not hovering
 
 const Sidebar = () => {
 
