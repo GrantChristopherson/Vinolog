@@ -19,7 +19,19 @@
   height: 100%;
   background-color: rgba(39, 39, 38, .5);
   transition: width 0.4s;
-}*/
+ }
+
+  .sidebar .open {
+    width 260px;
+  }
+
+  .sidebar .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 260px;
+  }
+*/
 
 .sidebar_links_container {
   display: flex;
