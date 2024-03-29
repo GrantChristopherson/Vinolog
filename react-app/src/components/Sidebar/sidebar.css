@@ -57,6 +57,37 @@
     padding: 6px;
     gap: 2px;
   }
+
+  .sidebar nav > button {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 12px;
+    border-radius: 8px;
+    
+  }
+
+  .sidebar nav> button: hover {
+    background: rgb(0 0 0 / 30%);
+  }
+
+  .sidebar header > img,
+  .sidebar nav > button p {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .sidebar .open :is(nav button p, header > img) {
+    opacity: 1;
+  }
+
+  .sidebar .open nav > button {
+    width: 100%;
+  }
 */
 
 .sidebar_links_container {
