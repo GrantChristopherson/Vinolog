@@ -39,6 +39,24 @@
     padding: 0 6px;
     background: rgb(0 0 0 / 25%);
   }
+
+  .sidebar-burger {
+    width: 44px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    
+  }
+
+  .sidebar header > img {
+    height: 28px;
+  }
+
+  .sidebar nav {
+    display: grid;
+    padding: 6px;
+    gap: 2px;
+  }
 */
 
 .sidebar_links_container {
