@@ -19,6 +19,11 @@
   height: 100%;
   background-color: rgba(39, 39, 38, .5);
   transition: width 0.4s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
  }
 
   .sidebar .open {
