@@ -158,3 +158,22 @@
   text-decoration: underline;
   transition-duration: 500ms;
 }
+
+/*
+.card .front,
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  transition: .6s;
+  cursor: pointer;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+*/
