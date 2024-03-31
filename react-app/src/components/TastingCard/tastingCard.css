@@ -160,6 +160,7 @@
 }
 
 /*
+
 .card .front,
 .card .back {
   position: absolute;
@@ -170,10 +171,15 @@
   backface-visibility: hidden;
   transition: .6s;
   cursor: pointer;
+
 }
 
 .back {
   transform: rotateY(180deg);
+}
+
+.front {
+
 }
 
 */
