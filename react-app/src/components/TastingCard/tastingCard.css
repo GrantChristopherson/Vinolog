@@ -206,4 +206,16 @@
   margin-top: 76px;
 }
 
+@media (width <= 440px) {
+  .card {
+    margin: 0 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 60px;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
 */
