@@ -37,3 +37,19 @@
   color: rgba(50, 50, 50, .5);
   transition-duration: 500ms;
 }
+
+/*
+.footer_svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform:
+    scaleY(3)
+    scaleX(2.25);
+  transform-origin: bottom;
+  display: block;
+  pointer-events: none;
+}
+*/
