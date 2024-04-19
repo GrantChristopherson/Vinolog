@@ -198,6 +198,76 @@
   opacity: 1;
 }
 
+/*
+
+.label_image {
+  max-width: 280px;
+  width: 28vw;
+  height: 300px;
+  object-fit: cover;
+  border-radius: inherit;
+  box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  transition: .6s;
+  cursor: pointer;
+
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.front {
+
+}
+
+.input {
+  position: absolute;
+  scale: 0;
+}
+
+.input:checked ~ .card .back {
+  transform: rotateY(0);
+}
+
+.input:checked ~ .card .front {
+  transform: rotateY(-180deg);
+}
+
+#summary :is(var, h3) { color: #3b82f6; }
+
+.card :is(h4, p) {
+  opacity: 0.6;
+  font-size: 20px;
+}
+
+.card p {
+  margin-top: 76px;
+}
+
+@media (width <= 440px) {
+  .card {
+    margin: 0 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 60px;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+*/
+
 
 
 
