@@ -39,6 +39,7 @@
 }
 
 /*
+
 .footer_svg {
   position: absolute;
   top: 0;
@@ -51,16 +52,6 @@
   transform-origin: bottom;
   display: block;
   pointer-events: none;
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 30px;
-  padding-bottom: 80px;
-  padding-left: 60px;
-  width: 100%;
 }
 
 add svg into footer and modify these stylings
