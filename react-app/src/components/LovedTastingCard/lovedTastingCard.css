@@ -200,8 +200,6 @@
 
 /*
 
-needs further testing and addition of different media stylings 
-
 .label_image {
   max-width: 280px;
   width: 28vw;
@@ -210,6 +208,7 @@ needs further testing and addition of different media stylings
   border-radius: inherit;
   box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
 }
+
 
 .card .front,
 .card .back {
@@ -221,7 +220,6 @@ needs further testing and addition of different media stylings
   backface-visibility: hidden;
   transition: .6s;
   cursor: pointer;
-
 }
 
 .back {
