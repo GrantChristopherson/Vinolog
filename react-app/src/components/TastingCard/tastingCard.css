@@ -160,7 +160,6 @@
 }
 
 /*
-
 .label_image {
   max-width: 280px;
   width: 28vw;
@@ -180,7 +179,6 @@
   backface-visibility: hidden;
   transition: .6s;
   cursor: pointer;
-
 }
 
 .back {
@@ -226,5 +224,4 @@
     flex-direction: column;
   }
 }
-
 */
