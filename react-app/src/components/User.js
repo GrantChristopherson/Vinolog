@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+
 function User() {
+  
   const [user, setUser] = useState({});
   const { userId }  = useParams();
 
@@ -20,6 +22,7 @@ function User() {
     return null;
   }
 
+  
   return (
     <ul>
       <li>
@@ -34,4 +37,5 @@ function User() {
     </ul>
   );
 }
+
 export default User;
