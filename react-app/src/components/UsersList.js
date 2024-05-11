@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+
+
+
 function UsersList() {
+  
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -13,6 +17,7 @@ function UsersList() {
     fetchData();
   }, []);
 
+  
   const userComponents = users.map((user) => {
     return (
       <li key={user.id}>
