@@ -4,7 +4,6 @@ import './comment.css';
 
 
 
-
 const Comment = ({ comment, filteredUser, discussionTasting, user }) => {
 
   const [showEditCommentForm, setShowEditCommentForm] = useState(false);
