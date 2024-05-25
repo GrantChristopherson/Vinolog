@@ -22,10 +22,12 @@
 }
 
 .friend_image_name_container:hover {
+  
   color: #788c22;
   text-decoration: underline;
   cursor: pointer;
   transition-duration: 500ms;
+  
 }
 
 .friend_profile_image {
