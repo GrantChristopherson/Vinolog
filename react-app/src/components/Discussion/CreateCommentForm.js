@@ -33,7 +33,6 @@ const CreateCommentForm = ({ discussionTasting }) => {
     await dispatch(createCommentThunk(data, discussionTasting[0].id));
     await dispatch(getCommentsThunk());
     
-   
     setComment("");
     setErrors([]);
   };
@@ -66,5 +65,6 @@ const CreateCommentForm = ({ discussionTasting }) => {
     </>
   );
 };
+
 
 export default CreateCommentForm;
