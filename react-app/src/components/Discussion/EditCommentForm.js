@@ -48,7 +48,6 @@ const EditCommentForm = ({ comment, user, tasting, setShowEditCommentForm }) => 
     setEditedComment("");
     setErrors([]);
     setShowEditCommentForm(false);
-
   };
 
 
