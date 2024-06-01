@@ -28,6 +28,7 @@ const Discussion = ({ discussionTasting }) => {
 
 
   return (
+    
     <>
       {lovedTastingComments?.map((comment) => {  
         return (
