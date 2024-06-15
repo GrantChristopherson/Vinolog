@@ -41,6 +41,7 @@ const FriendTastings = () => {
 
 
   return (
+    
     <>
       <Navigation />
       <div className="sidebar_body_container">
@@ -69,6 +70,7 @@ const FriendTastings = () => {
       </div>
       <Footer />
     </>
+
   );
 };
 
