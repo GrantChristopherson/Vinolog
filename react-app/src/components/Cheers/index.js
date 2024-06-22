@@ -8,7 +8,6 @@ import './cheers.css';
 
 const Cheers = ({ tasting }) => {
 
-  
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
   const[isCheered, setIsCheered] = useState(tasting?.cheers_by?.includes(user?.id));
@@ -40,7 +39,6 @@ const Cheers = ({ tasting }) => {
 
 
   return (
-    
     <>
     {usersIconCountCheck && <div className="cheers_container">
       {cheersCounterCheck && <p className="cheers_counter">{tasting?.cheers_by?.length}</p>}
@@ -49,7 +47,6 @@ const Cheers = ({ tasting }) => {
       </button>
     </div>}
     </>
-
   );
 };
 
