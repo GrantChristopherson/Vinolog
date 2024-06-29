@@ -8,8 +8,10 @@ import './loginForm.css'
 
 
 const LoginForm = () => {
+  
   // need aws work
   // fix aws bugs
+  
   const dispatch = useDispatch();
   const isMounted = useRef(true);
   const user = useSelector(state => state.session.user);
@@ -89,6 +91,7 @@ const LoginForm = () => {
 
   
   return (
+    
     <div className='login_form_container'>
       <form className='login_form' onSubmit={onLogin}>
         <div className='input_container'>
@@ -140,6 +143,7 @@ const LoginForm = () => {
         </div>
       </form>
     </div>
+
   );
 };
 
