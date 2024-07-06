@@ -52,6 +52,7 @@ const SearchForm = () => {
 
 
   return (
+    
     <form onSubmit={submitHandler}>
       <input className='search_input'
         type="text"
@@ -86,6 +87,7 @@ const SearchForm = () => {
         </div>
       </div>
     </form>
+  
   );
 };
 
