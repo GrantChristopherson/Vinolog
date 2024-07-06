@@ -11,7 +11,9 @@ const Navigation = () => {
   const user = useSelector(state => state?.session?.user);
 
   if (!user) {
+    
     return (
+      
       <nav className='nav_logged_out'>
         <ul className='nav_links'>
           <NavLink to='/' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
@@ -27,10 +29,14 @@ const Navigation = () => {
           </div>
         </ul>
       </nav>
+
     )
 
+
   } else {
+    
     return (
+      
       <nav className='nav_logged_in'>
         <ul className='nav_links'>
           <NavLink to='/lovedtastings' exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
@@ -44,6 +50,7 @@ const Navigation = () => {
           </div>
         </ul>
       </nav>
+
     )
   };
 };
