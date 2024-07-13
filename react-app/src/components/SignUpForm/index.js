@@ -122,6 +122,7 @@ const SignUpForm = () => {
 
 
   return (
+    
     <div className='signup_form_container'>
       <form onSubmit={onSignUp} action='' className='signup_form'>
         <div className='input_container'>
@@ -210,6 +211,7 @@ const SignUpForm = () => {
         </div>
       </form>
     </div>
+
   );
 };
 
