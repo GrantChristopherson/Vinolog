@@ -13,14 +13,13 @@ import './searchPage.css';
 
 const SearchPage = () => {
 
-  
   const { searchWord } = useParams();
   const tastings = useSelector(state => Object.values(state.search.tastings));
   const users = useSelector(state => Object.values(state.search.users))
   
   
-
   return (
+    
     <>
       <Navigation />
       <div className="sidebar_body_container">
@@ -47,6 +46,7 @@ const SearchPage = () => {
       </div>
       <Footer />
     </>
+
   );
 };
 
