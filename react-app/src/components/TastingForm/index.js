@@ -7,12 +7,11 @@ import Sidebar from '../Sidebar';
 import Footer from '../Footer';
 import './tastingForm.css';
 
-
-
-
-const TastingForm = () => {
   // need aws work
   // fix aws bugs
+
+const TastingForm = () => {
+
   const dispatch = useDispatch();
   const history = useHistory();
   const fileInputRef = useRef(null);
