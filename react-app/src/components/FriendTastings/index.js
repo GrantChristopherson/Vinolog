@@ -15,6 +15,7 @@ import './friendTastings.css';
 
 const FriendTastings = () => {
 
+  
   const dispatch = useDispatch();
   const { id } = useParams();
   const [showDiscussion, setShowDiscussion] = useState(false);
