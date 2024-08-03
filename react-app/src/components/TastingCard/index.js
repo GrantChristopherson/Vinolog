@@ -9,6 +9,7 @@ import './tastingCard.css';
 
 const TastingCard = ({tasting}) => {
 
+  
   const dispatch = useDispatch();
   const [showInfo, setShowInfo] = useState(false);
   const tastingTransformer = showInfo ? 'tasting_transformer' : '';
@@ -30,8 +31,6 @@ const TastingCard = ({tasting}) => {
   const deleteHandler = async() => {
     await dispatch(deleteTastingThunk(tasting?.id));
   };
-
-
 
 
   return (
