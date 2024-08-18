@@ -5,6 +5,7 @@ import './friend.css';
 
 
 
+
 const Friend = (friend) => {
 
   
@@ -17,6 +18,8 @@ const Friend = (friend) => {
   };
 
 
+
+  
   return (
     <div className="listed_friend_container">
       <NavLink to={`/friends/${friendId}/tastings`} className={'friend_tastings'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
