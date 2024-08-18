@@ -7,6 +7,7 @@ import './tastingCard.css';
 
 
 
+
 const TastingCard = ({tasting}) => {
 
   
@@ -34,6 +35,7 @@ const TastingCard = ({tasting}) => {
 
 
   return (
+    
     <div className='tasting-card-inner' onClick={() => setShowInfo(!showInfo)}>
       {tasting.labelImage ? <div className="label-image-container">
         <div className="label-image" style={{ backgroundImage: `url(${tasting.labelImage})` }}></div>
@@ -82,6 +84,7 @@ const TastingCard = ({tasting}) => {
         </div>}
       </div>
     </div>
+
   );
 };
 
