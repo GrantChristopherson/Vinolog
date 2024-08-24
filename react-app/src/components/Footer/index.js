@@ -8,7 +8,6 @@ const Footer = () => {
 
   
   return (
-    
     <footer className='footer'> 
       <h5 className='dev_by'>Developed by : </h5>
       <h4 className='dev_name'>Grant Christopherson</h4>
@@ -20,7 +19,6 @@ const Footer = () => {
         </a>
       </div>        
     </footer>
-  
   );
 };
 
