@@ -10,10 +10,8 @@ import './userPage.css';
 
 
 // connect to api queries for appropriate stats, user's cheers count and other users cheersing your tastings
-
 const UserPage = () => {
 
-  
   const dispatch = useDispatch();
   const user = useSelector(state => state?.session?.user);
   const tastings = useSelector(state => Object.values(state.tasting.tastings));
@@ -43,6 +41,7 @@ const UserPage = () => {
 
   
   return (
+    
     <>
       <Navigation />
       <div className="sidebar_body_container">
@@ -87,6 +86,7 @@ const UserPage = () => {
       </div>
       <Footer />
     </>
+
   );
 };
 
