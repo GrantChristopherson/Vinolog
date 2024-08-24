@@ -21,6 +21,7 @@ const Friend = (friend) => {
 
   
   return (
+    
     <div className="listed_friend_container">
       <NavLink to={`/friends/${friendId}/tastings`} className={'friend_tastings'} exact={true} activeClassName='active' style={{textDecoration: 'none'}}>
         <span className="friend_image_name_container">
@@ -33,6 +34,7 @@ const Friend = (friend) => {
         <button className='unfriend_button' onClick={unFriendHandler}>Remove...</button>
       </div>
     </div>
+
   );
 };
 
