@@ -41,6 +41,8 @@ const FriendTastings = () => {
   };
 
 
+
+  
   return (
     <>
       <Navigation />
